@@ -3,6 +3,7 @@ import TechnologySection from "@/components/home/TechnologySection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import PageHero from "@/components/PageHero";
 import WhyChooseUs from "@/components/about/WhyChooseUs";
+import FaqSection from "@/components/about/FaqSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function AboutUsPage() {
             <StatsSection />
             <TestimonialsSection />
             <WhyChooseUs />
+            <FaqSection />
         </>
     );
 }
