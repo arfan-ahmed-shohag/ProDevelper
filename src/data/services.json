@@ -1,134 +1,157 @@
-[
-  {
-    "title": "WordPress Website Development",
-    "href": "/service/wordpress-website-development/",
-    "description": "WordPress is a powerful platform for building modern and flexible websites. I develop fast, secure,...",
-    "image": "/assets/download-Photoroom-88a8218a.webp"
+{
+  "badge": "What I Offer",
+  "heading": {
+    "title": "Our",
+    "outline": "Services."
   },
-  {
-    "title": "Shopify Website Development",
-    "href": "/service/shopify-website-development/",
-    "description": "From planning to launch, I follow a structured process to build Shopify stores that are...",
-    "image": "/assets/shopify-ed3ed411.webp"
+  "description": "Helping businesses scale with high-end development and design solutions tailored to your unique digital goals.",
+  "cardLinkLabel": "Explore Service",
+  "home": {
+    "limit": 6,
+    "viewAll": {
+      "href": "/services",
+      "title": "See All",
+      "outline": "Services",
+      "label": "View My All Servicess"
+    }
   },
-  {
-    "title": "Webflow Website Development",
-    "href": "/service/webflow-website-development/",
-    "description": "Webflow is a powerful platform for building modern and visually engaging websites. I develop responsive...",
-    "image": "/assets/webflow_logo_icon_169218-db531753.webp"
+  "catalog": {
+    "initialCount": 12,
+    "batchSize": 12,
+    "loadMoreLabel": "Load More Services"
   },
-  {
-    "title": "Wix Website Development",
-    "href": "/service/wix-website-development/",
-    "description": "Wix is a flexible platform for creating modern and visually appealing websites. I build professional...",
-    "image": "/assets/wix-ad656978.webp"
-  },
-  {
-    "title": "Squarespace Website Development",
-    "href": "/service/squarespace-website-development/",
-    "description": "Squarespace is a powerful platform for creating elegant and visually engaging websites. I build professional...",
-    "image": "/assets/squarespace-4e532ee3.webp"
-  },
-  {
-    "title": "Framer Website Development",
-    "href": "/service/framer-website-development/",
-    "description": "Framer is a modern platform for building highly interactive and visually engaging websites. I create...",
-    "image": "/assets/212-2123536_framer-x-icon-png-transparent-png-1-e1773314761487-17511544.webp"
-  },
-  {
-    "title": "PrestaShop Website Development",
-    "href": "/service/prestashop-website-development/",
-    "description": "PrestaShop is a powerful eCommerce platform designed for building scalable and feature-rich online stores. I...",
-    "image": "/assets/images-removebg-preview__1_-removebg-preview-png-9523e7e6.webp"
-  },
-  {
-    "title": "OpenCart Website Development",
-    "href": "/service/opencart-website-development/",
-    "description": "OpenCart is a reliable eCommerce platform designed for building flexible and scalable online stores. I...",
-    "image": "/assets/images__2_-removebg-preview-png-760e9579.webp"
-  },
-  {
-    "title": "BigCommerce Website Development",
-    "href": "/service/bigcommerce-website-development/",
-    "description": "BigCommerce is a powerful eCommerce platform built for growing and scalable online stores. I develop...",
-    "image": "/assets/download-22-70b6fd96.webp"
-  },
-  {
-    "title": "Contentful CMS Development",
-    "href": "/service/contentful-cms-development/",
-    "description": "Contentful is a powerful headless CMS designed for modern, scalable digital platforms. I build Contentful-powered...",
-    "image": "/assets/42669e3b49c6837402b10bc76a1f6296-removebg-preview-png-26d1a995.webp"
-  },
-  {
-    "title": "Hostinger Website Builder Development",
-    "href": "/service/hostinger-website-builder-development/",
-    "description": "Hostinger Website Builder is a fast and user-friendly platform designed for creating modern websites without...",
-    "image": "/assets/images__3_-removebg-preview-png-89d0a853.webp"
-  },
-  {
-    "title": "Bluehost Website Builder Development",
-    "href": "/service/bluehost-website-builder-development/",
-    "description": "Bluehost Website Builder is a simple yet powerful platform for creating professional websites quickly. I...",
-    "image": "/assets/images-b3c6064a.webp"
-  },
-  {
-    "title": "GoDaddy Website Builder Development",
-    "href": "/service/godaddy-website-builder-development/",
-    "description": "GoDaddy Website Builder is designed to help businesses create professional websites quickly and efficiently. I...",
-    "image": "/assets/download-25-7ca0531a.webp"
-  },
-  {
-    "title": "Full Stack Web Application Development (Next.js)",
-    "href": "/service/full-stack-web-application-development-next-js/",
-    "description": "Next.js is one of the most powerful frameworks for building modern web applications. I develop...",
-    "image": "/assets/Adobe-Express-file-2-1-7008b355.webp"
-  },
-  {
-    "title": "API Integration & Automation",
-    "href": "/service/api-integration-automation/",
-    "description": "Modern applications rely on APIs to connect different platforms and automate workflows. I provide professional...",
-    "image": "/assets/6982df44-2d57-4663-b047-9d8a0ef9b1f4-1-51bf80f2.webp"
-  },
-  {
-    "title": "AI Integration & Workflow Automation",
-    "href": "/service/ai-integration-workflow-automation/",
-    "description": "Artificial Intelligence can transform how businesses operate by automating tasks, analyzing data, and improving decision-making....",
-    "image": "/assets/Adobe-Express-file-1-80d1cd65.webp"
-  },
-  {
-    "title": "Website Speed Optimization",
-    "href": "/service/website-speed-optimization/",
-    "description": "Website speed plays a critical role in user experience, search engine rankings, and overall website...",
-    "image": "/assets/download__8_-removebg-preview-1-9d78f5c3.webp"
-  },
-  {
-    "title": "Website Security & Protection",
-    "href": "/service/website-security-protection/",
-    "description": "Website security is essential for protecting your business, data, and users from cyber threats. I...",
-    "image": "/assets/istockphoto-1335169133-612x612-removebg-preview-1-4dda087e.webp"
-  },
-  {
-    "title": "Website Maintenance & Technical Support",
-    "href": "/service/website-maintenance-technical-support/",
-    "description": "A website requires regular updates, monitoring, and technical support to remain secure, stable, and high-performing....",
-    "image": "/assets/download__9_-removebg-preview-9fdc827c.webp"
-  },
-  {
-    "title": "WordPress Customization & Enhancement",
-    "href": "/service/wordpress-customization-enhancement/",
-    "description": "WordPress customization allows businesses to extend the functionality and improve the design of their existing...",
-    "image": "/assets/Adobe-Express-file-1-1-b58203a9.webp"
-  },
-  {
-    "title": "HubSpot CRM Integration",
-    "href": "/service/hubspot-crm-integration/",
-    "description": "Integrate HubSpot CRM to centralize customer data, automate follow-ups, and improve your overall sales performance.",
-    "image": "/assets/download-10-816df116.webp"
-  },
-  {
-    "title": "Zoho CRM Integration",
-    "href": "/service/zoho-crm-integration/",
-    "description": "Connect Zoho CRM with your website to capture leads automatically and manage customer relationships efficiently.",
-    "image": "/assets/Zoho-CRM-Integration-ProDeveloper2-256dba94.webp"
-  }
-]
+  "items": [
+    {
+      "title": "WordPress Website Development",
+      "href": "/service/wordpress-website-development/",
+      "description": "WordPress is a powerful platform for building modern and flexible websites. I develop fast, secure,...",
+      "image": "/assets/download-Photoroom-88a8218a.webp"
+    },
+    {
+      "title": "Shopify Website Development",
+      "href": "/service/shopify-website-development/",
+      "description": "From planning to launch, I follow a structured process to build Shopify stores that are...",
+      "image": "/assets/shopify-ed3ed411.webp"
+    },
+    {
+      "title": "Webflow Website Development",
+      "href": "/service/webflow-website-development/",
+      "description": "Webflow is a powerful platform for building modern and visually engaging websites. I develop responsive...",
+      "image": "/assets/webflow_logo_icon_169218-db531753.webp"
+    },
+    {
+      "title": "Wix Website Development",
+      "href": "/service/wix-website-development/",
+      "description": "Wix is a flexible platform for creating modern and visually appealing websites. I build professional...",
+      "image": "/assets/wix-ad656978.webp"
+    },
+    {
+      "title": "Squarespace Website Development",
+      "href": "/service/squarespace-website-development/",
+      "description": "Squarespace is a powerful platform for creating elegant and visually engaging websites. I build professional...",
+      "image": "/assets/squarespace-4e532ee3.webp"
+    },
+    {
+      "title": "Framer Website Development",
+      "href": "/service/framer-website-development/",
+      "description": "Framer is a modern platform for building highly interactive and visually engaging websites. I create...",
+      "image": "/assets/212-2123536_framer-x-icon-png-transparent-png-1-e1773314761487-17511544.webp"
+    },
+    {
+      "title": "PrestaShop Website Development",
+      "href": "/service/prestashop-website-development/",
+      "description": "PrestaShop is a powerful eCommerce platform designed for building scalable and feature-rich online stores. I...",
+      "image": "/assets/images-removebg-preview__1_-removebg-preview-png-9523e7e6.webp"
+    },
+    {
+      "title": "OpenCart Website Development",
+      "href": "/service/opencart-website-development/",
+      "description": "OpenCart is a reliable eCommerce platform designed for building flexible and scalable online stores. I...",
+      "image": "/assets/images__2_-removebg-preview-png-760e9579.webp"
+    },
+    {
+      "title": "BigCommerce Website Development",
+      "href": "/service/bigcommerce-website-development/",
+      "description": "BigCommerce is a powerful eCommerce platform built for growing and scalable online stores. I develop...",
+      "image": "/assets/download-22-70b6fd96.webp"
+    },
+    {
+      "title": "Contentful CMS Development",
+      "href": "/service/contentful-cms-development/",
+      "description": "Contentful is a powerful headless CMS designed for modern, scalable digital platforms. I build Contentful-powered...",
+      "image": "/assets/42669e3b49c6837402b10bc76a1f6296-removebg-preview-png-26d1a995.webp"
+    },
+    {
+      "title": "Hostinger Website Builder Development",
+      "href": "/service/hostinger-website-builder-development/",
+      "description": "Hostinger Website Builder is a fast and user-friendly platform designed for creating modern websites without...",
+      "image": "/assets/images__3_-removebg-preview-png-89d0a853.webp"
+    },
+    {
+      "title": "Bluehost Website Builder Development",
+      "href": "/service/bluehost-website-builder-development/",
+      "description": "Bluehost Website Builder is a simple yet powerful platform for creating professional websites quickly. I...",
+      "image": "/assets/images-b3c6064a.webp"
+    },
+    {
+      "title": "GoDaddy Website Builder Development",
+      "href": "/service/godaddy-website-builder-development/",
+      "description": "GoDaddy Website Builder is designed to help businesses create professional websites quickly and efficiently. I...",
+      "image": "/assets/download-25-7ca0531a.webp"
+    },
+    {
+      "title": "Full Stack Web Application Development (Next.js)",
+      "href": "/service/full-stack-web-application-development-next-js/",
+      "description": "Next.js is one of the most powerful frameworks for building modern web applications. I develop...",
+      "image": "/assets/Adobe-Express-file-2-1-7008b355.webp"
+    },
+    {
+      "title": "API Integration & Automation",
+      "href": "/service/api-integration-automation/",
+      "description": "Modern applications rely on APIs to connect different platforms and automate workflows. I provide professional...",
+      "image": "/assets/6982df44-2d57-4663-b047-9d8a0ef9b1f4-1-51bf80f2.webp"
+    },
+    {
+      "title": "AI Integration & Workflow Automation",
+      "href": "/service/ai-integration-workflow-automation/",
+      "description": "Artificial Intelligence can transform how businesses operate by automating tasks, analyzing data, and improving decision-making....",
+      "image": "/assets/Adobe-Express-file-1-80d1cd65.webp"
+    },
+    {
+      "title": "Website Speed Optimization",
+      "href": "/service/website-speed-optimization/",
+      "description": "Website speed plays a critical role in user experience, search engine rankings, and overall website...",
+      "image": "/assets/download__8_-removebg-preview-1-9d78f5c3.webp"
+    },
+    {
+      "title": "Website Security & Protection",
+      "href": "/service/website-security-protection/",
+      "description": "Website security is essential for protecting your business, data, and users from cyber threats. I...",
+      "image": "/assets/istockphoto-1335169133-612x612-removebg-preview-1-4dda087e.webp"
+    },
+    {
+      "title": "Website Maintenance & Technical Support",
+      "href": "/service/website-maintenance-technical-support/",
+      "description": "A website requires regular updates, monitoring, and technical support to remain secure, stable, and high-performing....",
+      "image": "/assets/download__9_-removebg-preview-9fdc827c.webp"
+    },
+    {
+      "title": "WordPress Customization & Enhancement",
+      "href": "/service/wordpress-customization-enhancement/",
+      "description": "WordPress customization allows businesses to extend the functionality and improve the design of their existing...",
+      "image": "/assets/Adobe-Express-file-1-1-b58203a9.webp"
+    },
+    {
+      "title": "HubSpot CRM Integration",
+      "href": "/service/hubspot-crm-integration/",
+      "description": "Integrate HubSpot CRM to centralize customer data, automate follow-ups, and improve your overall sales performance.",
+      "image": "/assets/download-10-816df116.webp"
+    },
+    {
+      "title": "Zoho CRM Integration",
+      "href": "/service/zoho-crm-integration/",
+      "description": "Connect Zoho CRM with your website to capture leads automatically and manage customer relationships efficiently.",
+      "image": "/assets/Zoho-CRM-Integration-ProDeveloper2-256dba94.webp"
+    }
+  ]
+}
