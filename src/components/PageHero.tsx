@@ -11,9 +11,11 @@ export type PageHeroProps = {
   highlight?: ReactNode;
   titleSuffix?: ReactNode;
   subtitle?: ReactNode;
-  outline: ReactNode;
+  outline?: ReactNode;
   description: ReactNode;
   stats?: readonly PageHeroStat[];
+  statsVariant?: "metrics" | "features";
+  variant?: "default" | "service";
   badgePulse?: boolean;
   className?: string;
 };
@@ -27,9 +29,13 @@ export default function PageHero({
   outline,
   description,
   stats = [],
+  statsVariant = "metrics",
+  variant = "default",
   badgePulse = false,
   className = "",
 }: PageHeroProps) {
+  const isService = variant === "service";
+
   return (
     <section
       className={`pd_reveal hero-bg relative min-h-[50vh] lg:min-h-[60vh] flex items-center overflow-hidden pt-28 pb-16 ${className}`}
@@ -47,34 +53,54 @@ export default function PageHero({
           </span>
         </div>
 
-        <h1 className="text-5xl lg:text-7xl 2xl:text-8xl font-black text-white leading-[0.9] lg:leading-none tracking-tighter mb-8">
-          {title}
-          {highlight && (
-            <>
-              {" "}
-              <span className="text-brand-light">{highlight}</span>
-            </>
-          )}
-          {titleSuffix}
-          <br />
-          {subtitle && <>{subtitle} </>}
-          <span
-            className="text-transparent"
-            style={{
-              WebkitTextStroke: "1.5px rgb(var(--rgb-white))",
-              fontFamily: "var(--font-outline)",
-            }}
-          >
-            {outline}
-          </span>
-        </h1>
+        {isService ? (
+          <div className="min-h-[1.2em] lg:min-h-[1.8em] flex items-center justify-center mb-8">
+            <h1 className="text-5xl lg:text-7xl 2xl:text-8xl font-black text-white leading-[0.9] lg:leading-none tracking-tighter italic">
+              {title}
+            </h1>
+          </div>
+        ) : (
+          <h1 className="text-5xl lg:text-7xl 2xl:text-8xl font-black text-white leading-[0.9] lg:leading-none tracking-tighter mb-8">
+            {title}
+            {highlight && (
+              <>
+                {" "}
+                <span className="text-brand-light">{highlight}</span>
+              </>
+            )}
+            {titleSuffix}
+            <br />
+            {subtitle && <>{subtitle} </>}
+            <span
+              className="text-transparent"
+              style={{
+                WebkitTextStroke: "1.5px rgb(var(--rgb-white))",
+                fontFamily: "var(--font-outline)",
+              }}
+            >
+              {outline}
+            </span>
+          </h1>
+        )}
 
-        <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed md:leading-7 mb-12">
-          {description}
-        </p>
+        {isService ? (
+          <div className="text-base md:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed md:leading-7 mb-12">
+            <p>{description}</p>
+          </div>
+        ) : (
+          <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed md:leading-7 mb-12">
+            {description}
+          </p>
+        )}
 
         {stats.length > 0 && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 max-w-4xl mx-auto border-t border-white/10 pt-10">
+          <div
+            className={`grid grid-cols-2 md:grid-cols-4 gap-4 mx-auto border-t border-white/10 pt-10 ${
+              statsVariant === "features"
+                ? "max-w-5xl"
+                : "md:gap-0 max-w-4xl"
+            }`}
+          >
             {stats.map((stat) => (
               <div
                 key={stat.label}
@@ -83,7 +109,11 @@ export default function PageHero({
                 <h4 className="text-3xl font-black text-brand-light">
                   {stat.value}
                 </h4>
-                <p className="text-[9px] text-white/40 font-bold uppercase tracking-widest">
+                <p
+                  className={`text-[9px] font-bold uppercase tracking-widest ${
+                    statsVariant === "features" ? "text-white/60" : "text-white/40"
+                  }`}
+                >
                   {stat.label}
                 </p>
               </div>

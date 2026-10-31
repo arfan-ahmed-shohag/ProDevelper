@@ -142,7 +142,7 @@ export default function SiteFooter() {
                 <ul id="menu-footer-our-services" className="space-y-4">
                   <li>
                     <Link
-                      href="/service/wordpress-website-development/"
+                      href="/services/wordpress-website-development/"
                       className="text-gray-100 hover:text-white hover:pl-2 transition-all duration-300 flex items-center"
                     >
                       <i className="fas fa-chevron-right text-[12px] mr-3 opacity-70"></i>
@@ -152,7 +152,7 @@ export default function SiteFooter() {
 
                   <li>
                     <Link
-                      href="/service/shopify-website-development/"
+                      href="/services/shopify-website-development/"
                       className="text-gray-100 hover:text-white hover:pl-2 transition-all duration-300 flex items-center"
                     >
                       <i className="fas fa-chevron-right text-[12px] mr-3 opacity-70"></i>
@@ -162,7 +162,7 @@ export default function SiteFooter() {
 
                   <li>
                     <Link
-                      href="/service/webflow-website-development/"
+                      href="/services/webflow-website-development/"
                       className="text-gray-100 hover:text-white hover:pl-2 transition-all duration-300 flex items-center"
                     >
                       <i className="fas fa-chevron-right text-[12px] mr-3 opacity-70"></i>
@@ -172,7 +172,7 @@ export default function SiteFooter() {
 
                   <li>
                     <Link
-                      href="/service/wix-website-development/"
+                      href="/services/wix-website-development/"
                       className="text-gray-100 hover:text-white hover:pl-2 transition-all duration-300 flex items-center"
                     >
                       <i className="fas fa-chevron-right text-[12px] mr-3 opacity-70"></i>
@@ -182,7 +182,7 @@ export default function SiteFooter() {
 
                   <li>
                     <Link
-                      href="/service/full-stack-web-application-development-next-js/"
+                      href="/services/full-stack-web-application-development-next-js/"
                       className="text-gray-100 hover:text-white hover:pl-2 transition-all duration-300 flex items-center"
                     >
                       <i className="fas fa-chevron-right text-[12px] mr-3 opacity-70"></i>

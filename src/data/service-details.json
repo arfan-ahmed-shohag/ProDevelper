@@ -1,0 +1,2247 @@
+{
+  "hero": {
+    "badge": "Next-Gen Web Solutions"
+  },
+  "process": {
+    "badge": "The Workflow",
+    "title": "Our",
+    "outline": "Process.",
+    "description": "From concept to launch, we follow a structured path to ensure your digital success."
+  },
+  "services": [
+    {
+      "slug": "wordpress-website-development",
+      "title": "WordPress Website Development",
+      "introduction": "WordPress is a powerful platform for building modern and flexible websites. I develop fast, secure, and fully responsive WordPress websites tailored to your business needs. From custom design to plugin integration, every website is optimized for performance, usability, and long-term growth.",
+      "seo": {
+        "title": "WordPress Website Development",
+        "description": "WordPress is a powerful platform for building modern and flexible websites."
+      },
+      "indicators": [
+        {
+          "value": "Build",
+          "label": "WORDPRESS DEVELOPMENT"
+        },
+        {
+          "value": "Design",
+          "label": "UI/UX & THEME DESIGN"
+        },
+        {
+          "value": "Optimize",
+          "label": "SEO & PERFORMANCE"
+        },
+        {
+          "value": "Support",
+          "label": "MAINTENANCE & SECURITY"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Project Planning",
+          "description": "First, I understand your business goals, target audience, and website requirements. Based on this, I plan the website structure, pages, and functionality.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/character-daydreaming-instead-working_23-2148498570-e177283470819-9594205e.webp",
+            "alt": "Project Planning",
+            "width": 740,
+            "height": 458
+          }
+        },
+        {
+          "number": "02",
+          "title": "Design & Layout",
+          "description": "Next, I create a clean and modern website layout that reflects your brand and provides a smooth user experience.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Woman-Using-Laptop-to-Create-Text-Graph-for-Website-UI-UX-design--4b6db108.webp",
+            "alt": "Design & Layout",
+            "width": 1200,
+            "height": 632
+          }
+        },
+        {
+          "number": "03",
+          "title": "WordPress Development",
+          "description": "I build the website using WordPress, configure the theme, create pages, and implement the required functionality.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/software-8082767_1280-e1772898698286-63e42e39.webp",
+            "alt": "WordPress Development",
+            "width": 1200,
+            "height": 672
+          }
+        },
+        {
+          "number": "04",
+          "title": "Content & Feature Setup",
+          "description": "I add your content, images, and integrate important features like forms, SEO tools, and performance optimization.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/content-writer-journalist-background-vector-illustration-copy-wri-43ab243b.webp",
+            "alt": "Content & Feature Setup",
+            "width": 625,
+            "height": 376
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "Before launch, I test the website on different devices and browsers to ensure speed, responsiveness, and smooth performance.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/data-analyst-oversees-governs-income-expenses-with-magnifier-fina-ba41e323.webp",
+            "alt": "Testing & Optimization",
+            "width": 740,
+            "height": 493
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "Finally, the website goes live. I make sure everything works properly and provide guidance for managing the website.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/istockphoto-1455746997-612x612-1-e1772834269211-7ed639fb.webp",
+            "alt": "Launch & Support",
+            "width": 612,
+            "height": 344
+          }
+        }
+      ]
+    },
+    {
+      "slug": "shopify-website-development",
+      "title": "Shopify Website Development",
+      "introduction": "From planning to launch, I follow a structured process to build Shopify stores that are fast, conversion-focused, and ready for real customers.",
+      "seo": {
+        "title": "Shopify Website Development",
+        "description": "From planning to launch, I follow a structured process to build Shopify stores that are fast, conversion-focused, and ready for real customers."
+      },
+      "indicators": [
+        {
+          "value": "Build",
+          "label": "SHOPIFY DEVELOPMENT"
+        },
+        {
+          "value": "Design",
+          "label": "SHOPIFY STORE DESIGN"
+        },
+        {
+          "value": "Grow",
+          "label": "SEO & MARKETING"
+        },
+        {
+          "value": "Solve",
+          "label": "SHOPIFY APPS & CUSTOMIZATION"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Store Planning & Requirements",
+          "description": "I start by understanding your products, target audience, and business goals. Based on this, I plan the store structure, product categories, and customer journey.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/image8_e76e49d4-5c48-44bc-b30f-f3578533030b-be98630c.webp",
+            "alt": "Store Planning & Requirements",
+            "width": 1100,
+            "height": 611
+          }
+        },
+        {
+          "number": "02",
+          "title": "Shopify Theme Setup",
+          "description": "Next, I install and configure the Shopify theme that best fits your brand and product presentation.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/61ae7c3dea7d1f6a2a970255_Pr15IvcZnAq7K_2W-6ofUV-whqyAVdIg7vkbCM8z-930694f5.webp",
+            "alt": "Shopify Theme Setup",
+            "width": 1200,
+            "height": 627
+          }
+        },
+        {
+          "number": "03",
+          "title": "Product & Store Setup",
+          "description": "I add products, collections, product variations, and organize everything so customers can easily browse and purchase.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/CJbVr5Pc4PYCEAE-28dc8779.webp",
+            "alt": "Product & Store Setup",
+            "width": 1200,
+            "height": 675
+          }
+        },
+        {
+          "number": "04",
+          "title": "Apps & Feature Integration",
+          "description": "Essential Shopify apps are integrated for features like payments, shipping, reviews, and marketing automation.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/shopify-mobile-app-template-1-1-f0052b43.webp",
+            "alt": "Apps & Feature Integration",
+            "width": 800,
+            "height": 500
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "Before launch, I test checkout, payments, mobile responsiveness, and site performance to ensure everything works perfectly.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/data-analyst-oversees-governs-income-expenses-with-magnifier-fina-ba41e323.webp",
+            "alt": "Testing & Optimization",
+            "width": 740,
+            "height": 493
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Growth",
+          "description": "Finally, your Shopify store goes live. After launch, I help with optimization, SEO, and conversion improvements.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/istockphoto-1455746997-612x612-1-e1772834269211-7ed639fb.webp",
+            "alt": "Launch & Growth",
+            "width": 612,
+            "height": 344
+          }
+        }
+      ]
+    },
+    {
+      "slug": "webflow-website-development",
+      "title": "Webflow Website Development",
+      "introduction": "Webflow is a powerful platform for building modern and visually engaging websites. I develop responsive Webflow websites that combine clean design, smooth interactions, and strong performance. Each website is built with a scalable structure and CMS support so you can easily manage and update your content as your business grows.",
+      "seo": {
+        "title": "Webflow Website Development",
+        "description": "Webflow is a powerful platform for building modern and visually engaging websites."
+      },
+      "indicators": [
+        {
+          "value": "Build",
+          "label": "WEBFLOW DEVELOPMENT"
+        },
+        {
+          "value": "Design",
+          "label": "MODERN UI/UX DESIGN"
+        },
+        {
+          "value": "Optimize",
+          "label": "PERFORMANCE & SEO"
+        },
+        {
+          "value": "Scale",
+          "label": "CMS & SITE MANAGEMENT"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Project Discovery",
+          "description": "First, I understand your business goals, target audience, and website requirements. This helps define the structure, pages, and overall direction of the Webflow website.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/27668260_100y_c5pn8sjfdpgnat1d60pg-1-scaled-e1772904819799-ab04f74b.webp",
+            "alt": "Project Discovery",
+            "width": 1200,
+            "height": 894
+          }
+        },
+        {
+          "number": "02",
+          "title": "UI/UX Design",
+          "description": "Next, I design a clean and modern layout that aligns with your brand and ensures a smooth user experience across all devices.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/22821974_Na_Dec_21_1-scaled-e1772900073166-c27c9dfc.webp",
+            "alt": "UI/UX Design",
+            "width": 1200,
+            "height": 611
+          }
+        },
+        {
+          "number": "03",
+          "title": "Webflow Development",
+          "description": "The website is built in Webflow with responsive design, structured layout, and clean interactions to ensure performance and flexibility.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/software-8082767_1280-e1772898698286-63e42e39.webp",
+            "alt": "Webflow Development",
+            "width": 1200,
+            "height": 672
+          }
+        },
+        {
+          "number": "04",
+          "title": "CMS & Content Setup",
+          "description": "Content, images, and CMS collections are configured so the website is easy to manage and update without technical knowledge.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/flat-design-cms-illustration-e7904558.webp",
+            "alt": "CMS & Content Setup",
+            "width": 1200,
+            "height": 800
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "Before launch, I test responsiveness, performance, and user flow to ensure everything works smoothly on different devices and browsers.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/data-analyst-oversees-governs-income-expenses-with-magnifier-fina-ba41e323.webp",
+            "alt": "Testing & Optimization",
+            "width": 740,
+            "height": 493
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "Finally, the website goes live. I ensure everything runs properly and provide guidance so you can easily manage and grow your website.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/istockphoto-1455746997-612x612-1-e1772834269211-7ed639fb.webp",
+            "alt": "Launch & Support",
+            "width": 612,
+            "height": 344
+          }
+        }
+      ]
+    },
+    {
+      "slug": "wix-website-development",
+      "title": "Wix Website Development",
+      "introduction": "Wix is a flexible platform for creating modern and visually appealing websites. I build professional Wix websites that are responsive, easy to manage, and designed to represent your brand effectively. From layout design to feature integration, each website is optimized for performance, user experience, and long-term scalability.",
+      "seo": {
+        "title": "Wix Website Development",
+        "description": "Wix is a flexible platform for creating modern and visually appealing websites."
+      },
+      "indicators": [
+        {
+          "value": "Build",
+          "label": "WIX WEBSITE DEVELOPMENT"
+        },
+        {
+          "value": "Design",
+          "label": "MODERN UI/UX DESIGN"
+        },
+        {
+          "value": "Optimize",
+          "label": "SEO & PERFORMANCE"
+        },
+        {
+          "value": "Manage",
+          "label": "CONTENT & SITE MANAGEMENT"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Project Planning",
+          "description": "First, I understand your business goals, target audience, and website requirements to define the structure and pages of the website.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/character-daydreaming-instead-working_23-2148498570-e177283470819-9594205e.webp",
+            "alt": "Project Planning",
+            "width": 740,
+            "height": 458
+          }
+        },
+        {
+          "number": "02",
+          "title": "Design & Layout",
+          "description": "Next, I design a modern and visually engaging layout that reflects your brand and ensures a great user experience on all devices.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Woman-Using-Laptop-to-Create-Text-Graph-for-Website-UI-UX-design--4b6db108.webp",
+            "alt": "Design & Layout",
+            "width": 1200,
+            "height": 632
+          }
+        },
+        {
+          "number": "03",
+          "title": "Wix Development",
+          "description": "The website is developed using Wix tools and features with responsive sections, clean structure, and smooth navigation.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/8354902_3847762-1-scaled-e1772900164254-df9e8b31.webp",
+            "alt": "Wix Development",
+            "width": 1200,
+            "height": 806
+          }
+        },
+        {
+          "number": "04",
+          "title": "Content & Feature Setup",
+          "description": "Content, images, and important features such as forms, galleries, and integrations are added to make the website fully functional.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/content-writer-journalist-background-vector-illustration-copy-wri-43ab243b.webp",
+            "alt": "Content & Feature Setup",
+            "width": 625,
+            "height": 376
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "Before launch, I test the website on different devices to ensure responsiveness, performance, and a smooth browsing experience.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/27668260_100y_c5pn8sjfdpgnat1d60pg-1-scaled-e1772904819799-ab04f74b.webp",
+            "alt": "Testing & Optimization",
+            "width": 1200,
+            "height": 894
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "Finally, the website is launched and ready for visitors. I also provide guidance so you can easily manage and update your website.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/istockphoto-1455746997-612x612-1-e1772834269211-7ed639fb.webp",
+            "alt": "Launch & Support",
+            "width": 612,
+            "height": 344
+          }
+        }
+      ]
+    },
+    {
+      "slug": "squarespace-website-development",
+      "title": "Squarespace Website Development",
+      "introduction": "Squarespace is a powerful platform for creating elegant and visually engaging websites. I build professional Squarespace websites that are responsive, easy to manage, and designed to showcase your brand effectively. Each website is optimized for performance, clean design, and smooth user experience to help your business establish a strong online presence.",
+      "seo": {
+        "title": "Squarespace Website Development",
+        "description": "Squarespace is a powerful platform for creating elegant and visually engaging websites."
+      },
+      "indicators": [
+        {
+          "value": "Build",
+          "label": "SQUARESPACE DEVELOPMENT"
+        },
+        {
+          "value": "Design",
+          "label": "MODERN UI/UX DESIGN"
+        },
+        {
+          "value": "Optimize",
+          "label": "SEO & PERFORMANCE"
+        },
+        {
+          "value": "Manage",
+          "label": "CONTENT & SITE MANAGEMENT"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Project Discovery",
+          "description": "First, I understand your business goals, target audience, and website requirements to define the website structure and page layout.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/8354902_3847762-1-scaled-e1772900164254-df9e8b31.webp",
+            "alt": "Project Discovery",
+            "width": 1200,
+            "height": 806
+          }
+        },
+        {
+          "number": "02",
+          "title": "Design & Layout",
+          "description": "Next, I design a clean and visually engaging layout that reflects your brand identity and ensures a smooth experience across all devices.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/27037302_site_layout_3-scaled-f9795fe7.webp",
+            "alt": "Design & Layout",
+            "width": 1200,
+            "height": 800
+          }
+        },
+        {
+          "number": "03",
+          "title": "Squarespace Development",
+          "description": "The website is built using Squarespace tools with responsive sections, structured layout, and optimized performance.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/4167281_18776-scaled-e1772888745965-81bf8eba.webp",
+            "alt": "Squarespace Development",
+            "width": 1200,
+            "height": 744
+          }
+        },
+        {
+          "number": "04",
+          "title": "Content & Feature Setup",
+          "description": "Images, text content, forms, galleries, and essential features are added to ensure the website is fully functional.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/13404158_5224178-e1772888617345-92d75611.webp",
+            "alt": "Content & Feature Setup",
+            "width": 1200,
+            "height": 882
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "Before launch, I test responsiveness, loading speed, and usability to ensure the website performs smoothly on all devices.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Mobile-testing-rafiki-e1772905389606-a61562cd.webp",
+            "alt": "Testing & Optimization",
+            "width": 1200,
+            "height": 874
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "Finally, the website goes live. I ensure everything works perfectly and provide guidance so you can easily manage and update your website.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Market-launch-bro-1-e1772901100803-1e77de3e.webp",
+            "alt": "Launch & Support",
+            "width": 1200,
+            "height": 1066
+          }
+        }
+      ]
+    },
+    {
+      "slug": "framer-website-development",
+      "title": "Framer Website Development",
+      "introduction": "Framer is a modern platform for building highly interactive and visually engaging websites. I create professional Framer websites that combine smooth animations, responsive layouts, and fast performance. Each website is designed to deliver a premium user experience while remaining easy to manage and scalable for future growth.",
+      "seo": {
+        "title": "Framer Website Development",
+        "description": "Framer is a modern platform for building highly interactive and visually engaging websites."
+      },
+      "indicators": [
+        {
+          "value": "Build",
+          "label": "FRAMER WEBSITE DEVELOPMENT"
+        },
+        {
+          "value": "Design",
+          "label": "MODERN UI/UX DESIGN"
+        },
+        {
+          "value": "Optimize",
+          "label": "PERFORMANCE & SEO"
+        },
+        {
+          "value": "Animate",
+          "label": "INTERACTIONS & MOTION"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Project Discovery",
+          "description": "First, I understand your business goals, target audience, and website requirements to define the structure and direction of the website.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/character-daydreaming-instead-working_23-2148498570-e177283470819-9594205e.webp",
+            "alt": "Project Discovery",
+            "width": 740,
+            "height": 458
+          }
+        },
+        {
+          "number": "02",
+          "title": "UI/UX Design",
+          "description": "Next, I design a modern and visually engaging interface that reflects your brand identity and ensures a smooth user experience.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/22821974_Na_Dec_21_1-scaled-e1772900073166-c27c9dfc.webp",
+            "alt": "UI/UX Design",
+            "width": 1200,
+            "height": 611
+          }
+        },
+        {
+          "number": "03",
+          "title": "Framer Development",
+          "description": "The website is built in Framer with responsive layouts, structured sections, and optimized performance.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/software-8082767_1280-e1772898698286-63e42e39.webp",
+            "alt": "Framer Development",
+            "width": 1200,
+            "height": 672
+          }
+        },
+        {
+          "number": "04",
+          "title": "Animations & Interactions",
+          "description": "Interactive elements and smooth animations are implemented to create a dynamic and engaging browsing experience.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Animation-cuate-1-a1d7771d.webp",
+            "alt": "Animations & Interactions",
+            "width": 1200,
+            "height": 1200
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "Before launch, the website is tested for responsiveness, speed, and usability across different devices and browsers.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Mobile-testing-rafiki-e1772905389606-a61562cd.webp",
+            "alt": "Testing & Optimization",
+            "width": 1200,
+            "height": 874
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "Finally, the website goes live. I ensure everything runs smoothly and provide guidance for managing and updating your website.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/data-analyst-oversees-governs-income-expenses-with-magnifier-fina-ba41e323.webp",
+            "alt": "Launch & Support",
+            "width": 740,
+            "height": 493
+          }
+        }
+      ]
+    },
+    {
+      "slug": "prestashop-website-development",
+      "title": "PrestaShop Website Development",
+      "introduction": "PrestaShop is a powerful eCommerce platform designed for building scalable and feature-rich online stores. I develop professional PrestaShop websites that are optimized for performance, secure transactions, and a smooth shopping experience. Each store is structured to manage products easily, handle orders efficiently, and support long-term business growth.",
+      "seo": {
+        "title": "PrestaShop Website Development",
+        "description": "PrestaShop is a powerful eCommerce platform designed for building scalable and feature-rich online stores."
+      },
+      "indicators": [
+        {
+          "value": "Build",
+          "label": "PRESTASHOP DEVELOPMENT"
+        },
+        {
+          "value": "Design",
+          "label": "E-COMMERCE STORE DESIGN"
+        },
+        {
+          "value": "Sell",
+          "label": "PRODUCT & PAYMENT SETUP"
+        },
+        {
+          "value": "Scale",
+          "label": "PERFORMANCE & OPTIMIZATION"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Store Planning",
+          "description": "First, I understand your business goals, products, and target customers to define the structure of the online store.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/4167281_18776-scaled-e1772888745965-81bf8eba.webp",
+            "alt": "Store Planning",
+            "width": 1200,
+            "height": 744
+          }
+        },
+        {
+          "number": "02",
+          "title": "Store Design",
+          "description": "Next, I design a clean and professional eCommerce layout that highlights your products and improves the shopping experience.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Furniture-store-amico-fb7ff1b9.webp",
+            "alt": "Store Design",
+            "width": 1200,
+            "height": 1200
+          }
+        },
+        {
+          "number": "03",
+          "title": "PrestaShop Development",
+          "description": "The store is developed using PrestaShop with responsive design, product categories, and optimized store structure.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Development-pana-e1772905996528-20f4c3a9.webp",
+            "alt": "PrestaShop Development",
+            "width": 1200,
+            "height": 783
+          }
+        },
+        {
+          "number": "04",
+          "title": "Product & Payment Setup",
+          "description": "Products, categories, payment gateways, and shipping methods are configured to ensure smooth transactions.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Product-quality-bro-e1772901727194-b6810cc0.webp",
+            "alt": "Product & Payment Setup",
+            "width": 1200,
+            "height": 1018
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "Before launch, the store is tested for performance, responsiveness, and checkout functionality across devices.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Mobile-testing-bro-e1772901000858-a42d7151.webp",
+            "alt": "Testing & Optimization",
+            "width": 1200,
+            "height": 872
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "Finally, the store goes live. I ensure everything runs smoothly and provide guidance for managing your online store.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Business-support-bro-e1772899697534-b35cb333.webp",
+            "alt": "Launch & Support",
+            "width": 1200,
+            "height": 810
+          }
+        }
+      ]
+    },
+    {
+      "slug": "opencart-website-development",
+      "title": "OpenCart Website Development",
+      "introduction": "OpenCart is a reliable eCommerce platform designed for building flexible and scalable online stores. I develop professional OpenCart websites that are optimized for performance, easy product management, and a smooth shopping experience. Each store is structured to help businesses manage products, handle orders efficiently, and grow their online sales.",
+      "seo": {
+        "title": "OpenCart Website Development",
+        "description": "OpenCart is a reliable eCommerce platform designed for building flexible and scalable online stores."
+      },
+      "indicators": [
+        {
+          "value": "Build",
+          "label": "OPENCART DEVELOPMENT"
+        },
+        {
+          "value": "Design",
+          "label": "E-COMMERCE STORE DESIGN"
+        },
+        {
+          "value": "Sell",
+          "label": "PRODUCT & PAYMENT SETUP"
+        },
+        {
+          "value": "Scale",
+          "label": "PERFORMANCE & OPTIMIZATION"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Store Planning",
+          "description": "First, I understand your products, target audience, and business goals to define the structure of your online store.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/character-daydreaming-instead-working_23-2148498570-e177283470819-9594205e.webp",
+            "alt": "Store Planning",
+            "width": 740,
+            "height": 458
+          }
+        },
+        {
+          "number": "02",
+          "title": "Store Design",
+          "description": "Next, I design a clean and professional eCommerce layout that highlights your products and improves the shopping experience.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/27668260_100y_c5pn8sjfdpgnat1d60pg-1-scaled-e1772904819799-ab04f74b.webp",
+            "alt": "Store Design",
+            "width": 1200,
+            "height": 894
+          }
+        },
+        {
+          "number": "03",
+          "title": "OpenCart Development",
+          "description": "Products, categories, payment gateways, and shipping methods are configured to ensure smooth order processing.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/content-writer-journalist-background-vector-illustration-copy-wri-43ab243b.webp",
+            "alt": "OpenCart Development",
+            "width": 625,
+            "height": 376
+          }
+        },
+        {
+          "number": "04",
+          "title": "Product & Payment Setup",
+          "description": "Products, categories, payment gateways, and shipping methods are configured to ensure smooth order processing.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/13404158_5224178-e1772888617345-92d75611.webp",
+            "alt": "Product & Payment Setup",
+            "width": 1200,
+            "height": 882
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "Before launch, the website is tested for responsiveness, speed, and checkout functionality across multiple devices.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/69989114_9693965-e1772901768290-e66daeea.webp",
+            "alt": "Testing & Optimization",
+            "width": 1200,
+            "height": 840
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "Finally, the store goes live. I ensure everything runs smoothly and provide guidance for managing your online store.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/d8838a29-1d86-4c30-b998-63728e13cc88-bc250b20.webp",
+            "alt": "Launch & Support",
+            "width": 100,
+            "height": 100
+          }
+        }
+      ]
+    },
+    {
+      "slug": "bigcommerce-website-development",
+      "title": "BigCommerce Website Development",
+      "introduction": "BigCommerce is a powerful eCommerce platform built for growing and scalable online stores. I develop professional BigCommerce websites that deliver strong performance, secure transactions, and a seamless shopping experience. Each store is structured to manage products efficiently, support multiple payment options, and help businesses scale their online sales.",
+      "seo": {
+        "title": "BigCommerce Website Development",
+        "description": "BigCommerce is a powerful eCommerce platform built for growing and scalable online stores."
+      },
+      "indicators": [
+        {
+          "value": "Build",
+          "label": "BIGCOMMERCE DEVELOPMENT"
+        },
+        {
+          "value": "Design",
+          "label": "E-COMMERCE STORE DESIGN"
+        },
+        {
+          "value": "Sell",
+          "label": "PRODUCT & PAYMENT SETUP"
+        },
+        {
+          "value": "Scale",
+          "label": "PERFORMANCE & OPTIMIZATION"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Store Planning",
+          "description": "First, I understand your products, target customers, and business goals to define the structure and functionality of your online store.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Furniture-store-amico-fb7ff1b9.webp",
+            "alt": "Store Planning",
+            "width": 1200,
+            "height": 1200
+          }
+        },
+        {
+          "number": "02",
+          "title": "Store Design",
+          "description": "Next, I design a clean and modern eCommerce layout that highlights your products and provides a smooth shopping experience",
+          "reverse": true,
+          "image": {
+            "src": "/assets/8354902_3847762-1-scaled-e1772900164254-df9e8b31.webp",
+            "alt": "Store Design",
+            "width": 1200,
+            "height": 806
+          }
+        },
+        {
+          "number": "03",
+          "title": "BigCommerce Development",
+          "description": "The store is developed using BigCommerce with responsive layouts, organized product categories, and optimized store performance.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Woman-Using-Laptop-to-Create-Text-Graph-for-Website-UI-UX-design--c6f0d393.webp",
+            "alt": "BigCommerce Development",
+            "width": 1200,
+            "height": 675
+          }
+        },
+        {
+          "number": "04",
+          "title": "Product & Payment Setup",
+          "description": "Products, payment gateways, shipping methods, and essential store features are configured to ensure smooth transactions.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Product-quality-pana-1-9d425dfe.webp",
+            "alt": "Product & Payment Setup",
+            "width": 1200,
+            "height": 1200
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "Before launch, the website is tested for speed, responsiveness, and checkout functionality across multiple devices.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/data-analyst-oversees-governs-income-expenses-with-magnifier-fina-ba41e323.webp",
+            "alt": "Testing & Optimization",
+            "width": 740,
+            "height": 493
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "Finally, the store goes live. I ensure everything works smoothly and provide guidance for managing your BigCommerce store.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Customer-relationship-management-rafiki-cc75f571.webp",
+            "alt": "Launch & Support",
+            "width": 1200,
+            "height": 1200
+          }
+        },
+        {
+          "number": "07",
+          "title": "Launch & Support",
+          "description": "Finally, the store goes live. I ensure everything works smoothly and provide guidance for managing your BigCommerce store.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Active-Support-bro-e1772901057903-763aedf4.webp",
+            "alt": "Launch & Support",
+            "width": 1200,
+            "height": 1107
+          }
+        }
+      ]
+    },
+    {
+      "slug": "contentful-cms-development",
+      "title": "Contentful CMS Development",
+      "introduction": "Contentful is a powerful headless CMS designed for modern, scalable digital platforms. I build Contentful-powered websites and applications that allow businesses to manage content efficiently across multiple platforms. The system is structured to deliver flexible content management, fast performance, and seamless integration with modern frontend technologies.",
+      "seo": {
+        "title": "Contentful CMS Development",
+        "description": "Contentful is a powerful headless CMS designed for modern, scalable digital platforms."
+      },
+      "indicators": [
+        {
+          "value": "Build",
+          "label": "CONTENTFUL CMS DEVELOPMENT"
+        },
+        {
+          "value": "Structure",
+          "label": "CONTENT MODEL & ARCHITECTURE"
+        },
+        {
+          "value": "Integrate",
+          "label": "API & FRONTEND CONNECTION"
+        },
+        {
+          "value": "Scale",
+          "label": "PERFORMANCE & CONTENT DELIVERY"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Project Discovery",
+          "description": "First, I understand your business goals, content structure, and platform requirements to define the CMS architecture.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/character-daydreaming-instead-working_23-2148498570-e177283470819-9594205e.webp",
+            "alt": "Project Discovery",
+            "width": 740,
+            "height": 458
+          }
+        },
+        {
+          "number": "02",
+          "title": "Content Modeling",
+          "description": "Content models, fields, and relationships are designed to ensure flexible and organized content management.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/content-writer-journalist-background-vector-illustration-copy-wri-43ab243b.webp",
+            "alt": "Content Modeling",
+            "width": 625,
+            "height": 376
+          }
+        },
+        {
+          "number": "03",
+          "title": "Contentful Setup",
+          "description": "The Contentful CMS is configured with structured content types, roles, and permissions for efficient content workflows.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Market-launch-bro-1-e1772901100803-1e77de3e.webp",
+            "alt": "Contentful Setup",
+            "width": 1200,
+            "height": 1066
+          }
+        },
+        {
+          "number": "04",
+          "title": "Frontend Integration",
+          "description": "Contentful APIs are integrated with the frontend application to deliver dynamic content across the website or platform.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/22821974_Na_Dec_21_1-scaled-e1772900073166-c27c9dfc.webp",
+            "alt": "Frontend Integration",
+            "width": 1200,
+            "height": 611
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "The system is tested to ensure content delivery, API performance, and smooth integration across devices and platforms.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/data-analyst-oversees-governs-income-expenses-with-magnifier-fina-ba41e323.webp",
+            "alt": "Testing & Optimization",
+            "width": 740,
+            "height": 493
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "Finally, the system goes live and is ready for content publishing. Guidance is provided for managing and scaling the CMS.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/istockphoto-1455746997-612x612-1-e1772834269211-7ed639fb.webp",
+            "alt": "Launch & Support",
+            "width": 612,
+            "height": 344
+          }
+        }
+      ]
+    },
+    {
+      "slug": "hostinger-website-builder-development",
+      "title": "Hostinger Website Builder Development",
+      "introduction": "Hostinger Website Builder is a fast and user-friendly platform designed for creating modern websites without complex development. I build clean, responsive, and professional websites using Hostinger’s website builder so businesses can launch their online presence quickly while keeping the site easy to manage.",
+      "seo": {
+        "title": "Hostinger Website Builder Development",
+        "description": "Hostinger Website Builder is a fast and user-friendly platform designed for creating modern websites without complex development."
+      },
+      "indicators": [
+        {
+          "value": "Build",
+          "label": "HOSTINGER WEBSITE SETUP"
+        },
+        {
+          "value": "Design",
+          "label": "WEBSITE LAYOUT & STRUCTURE"
+        },
+        {
+          "value": "Optimize",
+          "label": "MOBILE & SPEED OPTIMIZATION"
+        },
+        {
+          "value": "Launch",
+          "label": "LIVE WEBSITE DEPLOYMENT"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Project Planning",
+          "description": "First, I understand your business goals, website structure, and design preferences to plan the project.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Woman-Using-Laptop-to-Create-Text-Graph-for-Website-UI-UX-design--4b6db108.webp",
+            "alt": "Project Planning",
+            "width": 1200,
+            "height": 632
+          }
+        },
+        {
+          "number": "02",
+          "title": "Website Design",
+          "description": "A clean and modern layout is designed using Hostinger’s website builder to match your brand and content needs.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Development-pana-e1772905996528-20f4c3a9.webp",
+            "alt": "Website Design",
+            "width": 1200,
+            "height": 783
+          }
+        },
+        {
+          "number": "03",
+          "title": "Content Setup",
+          "description": "Pages, images, and text content are added and structured to ensure a clear and engaging website experience.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/software-8082767_1280-e1772898698286-63e42e39.webp",
+            "alt": "Content Setup",
+            "width": 1200,
+            "height": 672
+          }
+        },
+        {
+          "number": "04",
+          "title": "Responsive Optimization",
+          "description": "The website is optimized for mobile, tablet, and desktop devices to ensure smooth performance on all screens.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Mobile-testing-bro-e1772901000858-a42d7151.webp",
+            "alt": "Responsive Optimization",
+            "width": 1200,
+            "height": 872
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Review",
+          "description": "The website is tested to ensure proper functionality, page speed, and visual consistency across devices.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/data-analyst-oversees-governs-income-expenses-with-magnifier-fina-ba41e323.webp",
+            "alt": "Testing & Review",
+            "width": 740,
+            "height": 493
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "Finally, the website is published and ready for visitors. Guidance is provided for managing and updating the website easily.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/istockphoto-1455746997-612x612-1-e1772834269211-7ed639fb.webp",
+            "alt": "Launch & Support",
+            "width": 612,
+            "height": 344
+          }
+        }
+      ]
+    },
+    {
+      "slug": "bluehost-website-builder-development",
+      "title": "Bluehost Website Builder Development",
+      "introduction": "Bluehost Website Builder is a simple yet powerful platform for creating professional websites quickly. I build modern, responsive, and user-friendly websites using Bluehost’s website builder to help businesses establish a strong online presence.",
+      "seo": {
+        "title": "Bluehost Website Builder Development",
+        "description": "Bluehost Website Builder is a simple yet powerful platform for creating professional websites quickly."
+      },
+      "indicators": [
+        {
+          "value": "Design",
+          "label": "WEBSITE LAYOUT PLANNING"
+        },
+        {
+          "value": "Build",
+          "label": "BLUEHOST WEBSITE SETUP"
+        },
+        {
+          "value": "Optimize",
+          "label": "MOBILE & PERFORMANCE OPTIMIZATION"
+        },
+        {
+          "value": "Launch",
+          "label": "LIVE WEBSITE DEPLOYMENT"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Project Planning",
+          "description": "First, I analyze your business goals, target audience, and website requirements to plan the structure and layout.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Woman-Using-Laptop-to-Create-Text-Graph-for-Website-UI-UX-design--4b6db108.webp",
+            "alt": "Project Planning",
+            "width": 1200,
+            "height": 632
+          }
+        },
+        {
+          "number": "02",
+          "title": "Website Design",
+          "description": "A clean and modern website layout is designed to match your brand identity and content structure.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/4167281_18776-scaled-e1772888745965-81bf8eba.webp",
+            "alt": "Website Design",
+            "width": 1200,
+            "height": 744
+          }
+        },
+        {
+          "number": "03",
+          "title": "Website Development",
+          "description": "The website is built using the Bluehost website builder with responsive sections and optimized page layouts.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/content-writer-journalist-background-vector-illustration-copy-wri-43ab243b.webp",
+            "alt": "Website Development",
+            "width": 625,
+            "height": 376
+          }
+        },
+        {
+          "number": "04",
+          "title": "Content Integration",
+          "description": "Images, text, and website content are added and structured to ensure a professional presentation.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/13404158_5224178-e1772888617345-92d75611.webp",
+            "alt": "Content Integration",
+            "width": 1200,
+            "height": 882
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "The website is tested for responsiveness, performance, and usability across multiple devices.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/data-analyst-oversees-governs-income-expenses-with-magnifier-fina-ba41e323.webp",
+            "alt": "Testing & Optimization",
+            "width": 740,
+            "height": 493
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "The website is published and ready for visitors, with guidance provided for managing and updating the site.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/istockphoto-1455746997-612x612-1-e1772834269211-7ed639fb.webp",
+            "alt": "Launch & Support",
+            "width": 612,
+            "height": 344
+          }
+        }
+      ]
+    },
+    {
+      "slug": "godaddy-website-builder-development",
+      "title": "GoDaddy Website Builder Development",
+      "introduction": "GoDaddy Website Builder is designed to help businesses create professional websites quickly and efficiently. I build modern, responsive, and user-friendly websites using GoDaddy’s website builder to ensure a strong and reliable online presence.",
+      "seo": {
+        "title": "GoDaddy Website Builder Development",
+        "description": "GoDaddy Website Builder is designed to help businesses create professional websites quickly and efficiently."
+      },
+      "indicators": [
+        {
+          "value": "Design",
+          "label": "WEBSITE STRUCTURE PLANNING"
+        },
+        {
+          "value": "Build",
+          "label": "GODADDY WEBSITE SETUP"
+        },
+        {
+          "value": "Optimize",
+          "label": "MOBILE & SPEED OPTIMIZATION"
+        },
+        {
+          "value": "Launch",
+          "label": "LIVE WEBSITE DEPLOYMENT"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Project Planning",
+          "description": "First, I understand your business goals, target audience, and website requirements to define the website structure.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Woman-Using-Laptop-to-Create-Text-Graph-for-Website-UI-UX-design--4b6db108.webp",
+            "alt": "Project Planning",
+            "width": 1200,
+            "height": 632
+          }
+        },
+        {
+          "number": "02",
+          "title": "Website Design",
+          "description": "A modern and clean layout is designed to align with your brand identity and present your content clearly.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Development-pana-e1772905996528-20f4c3a9.webp",
+            "alt": "Website Design",
+            "width": 1200,
+            "height": 783
+          }
+        },
+        {
+          "number": "03",
+          "title": "Website Development",
+          "description": "The website is developed using GoDaddy’s website builder with responsive sections and optimized page layouts.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/4167281_18776-scaled-e1772888745965-81bf8eba.webp",
+            "alt": "Website Development",
+            "width": 1200,
+            "height": 744
+          }
+        },
+        {
+          "number": "04",
+          "title": "Content Integration",
+          "description": "Images, text, and other website content are added and structured to ensure a professional presentation.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/software-8082767_1280-e1772898698286-63e42e39.webp",
+            "alt": "Content Integration",
+            "width": 1200,
+            "height": 672
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "The website is tested for responsiveness, functionality, and performance across multiple devices.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/data-analyst-oversees-governs-income-expenses-with-magnifier-fina-ba41e323.webp",
+            "alt": "Testing & Optimization",
+            "width": 740,
+            "height": 493
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "Finally, the website is published and ready for visitors, with guidance provided for managing and updating the site.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/istockphoto-1455746997-612x612-1-e1772834269211-7ed639fb.webp",
+            "alt": "Launch & Support",
+            "width": 612,
+            "height": 344
+          }
+        }
+      ]
+    },
+    {
+      "slug": "full-stack-web-application-development-next-js",
+      "title": "Full Stack Web Application Development (Next.js)",
+      "introduction": "Next.js is one of the most powerful frameworks for building modern web applications. I develop scalable full-stack web applications using Next.js that deliver high performance, secure architecture, and seamless user experience.",
+      "seo": {
+        "title": "Full Stack Web Application Development (Next.js)",
+        "description": "Next.js is one of the most powerful frameworks for building modern web applications."
+      },
+      "indicators": [
+        {
+          "value": "Plan",
+          "label": "APPLICATION ARCHITECTURE"
+        },
+        {
+          "value": "Design",
+          "label": "UI & USER EXPERIENCE"
+        },
+        {
+          "value": "Develop",
+          "label": "FULL STACK DEVELOPMENT"
+        },
+        {
+          "value": "Deploy",
+          "label": "SCALABLE APPLICATION LAUNCH"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Project Planning",
+          "description": "First, I analyze your business requirements, application features, and technical goals to define the system architecture.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Business-Plan-bro-1-e1772900312965-cb5962fe.webp",
+            "alt": "Project Planning",
+            "width": 1200,
+            "height": 1108
+          }
+        },
+        {
+          "number": "02",
+          "title": "UI & UX Design",
+          "description": "A clean and user-friendly interface is designed to ensure smooth navigation and an engaging user experience.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/22821974_Na_Dec_21_1-scaled-e1772900073166-c27c9dfc.webp",
+            "alt": "UI & UX Design",
+            "width": 1200,
+            "height": 611
+          }
+        },
+        {
+          "number": "03",
+          "title": "Frontend Development",
+          "description": "The frontend is developed using Next.js with responsive components and optimized performance.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/8354902_3847762-1-scaled-e1772900164254-df9e8b31.webp",
+            "alt": "Frontend Development",
+            "width": 1200,
+            "height": 806
+          }
+        },
+        {
+          "number": "04",
+          "title": "Backend & API Integration",
+          "description": "Backend logic, APIs, and database connections are implemented to ensure secure and efficient application functionality.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Programming-bro-1-e1772900000888-204fa8a2.webp",
+            "alt": "Backend & API Integration",
+            "width": 1200,
+            "height": 752
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "The application is tested for performance, responsiveness, and security to ensure a stable user experience.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/data-analyst-oversees-governs-income-expenses-with-magnifier-fina-ba41e323.webp",
+            "alt": "Testing & Optimization",
+            "width": 740,
+            "height": 493
+          }
+        },
+        {
+          "number": "06",
+          "title": "Deployment & Launch",
+          "description": "Finally, the application is deployed to production and configured for scalability, monitoring, and long-term stability.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Business-support-bro-e1772899697534-b35cb333.webp",
+            "alt": "Deployment & Launch",
+            "width": 1200,
+            "height": 810
+          }
+        }
+      ]
+    },
+    {
+      "slug": "api-integration-automation",
+      "title": "API Integration & Automation",
+      "introduction": "Modern applications rely on APIs to connect different platforms and automate workflows. I provide professional API integration and automation solutions that allow systems, applications, and services to communicate efficiently.",
+      "seo": {
+        "title": "API Integration & Automation",
+        "description": "Modern applications rely on APIs to connect different platforms and automate workflows."
+      },
+      "indicators": [
+        {
+          "value": "Connect",
+          "label": "API PLATFORM INTEGRATION"
+        },
+        {
+          "value": "Automate",
+          "label": "WORKFLOW AUTOMATION"
+        },
+        {
+          "value": "Secure",
+          "label": "AUTHENTICATION & DATA FLOW"
+        },
+        {
+          "value": "Optimize",
+          "label": "PERFORMANCE & RELIABILITY"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Requirement Analysis",
+          "description": "First, I analyze your system requirements, platforms, and APIs to understand the integration workflow.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Research-paper-pana-1-25be0135.webp",
+            "alt": "Requirement Analysis",
+            "width": 1200,
+            "height": 1200
+          }
+        },
+        {
+          "number": "02",
+          "title": "API Architecture Planning",
+          "description": "A structured integration plan is created to ensure reliable communication between applications and services",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Market-launch-bro-1-e1772901100803-1e77de3e.webp",
+            "alt": "API Architecture Planning",
+            "width": 1200,
+            "height": 1066
+          }
+        },
+        {
+          "number": "03",
+          "title": "API Integration",
+          "description": "Third-party APIs, services, or custom APIs are integrated to enable seamless data exchange.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Programming-bro-1-e1772900000888-204fa8a2.webp",
+            "alt": "API Integration",
+            "width": 1200,
+            "height": 752
+          }
+        },
+        {
+          "number": "04",
+          "title": "Automation Development",
+          "description": "Automated workflows are developed to reduce manual work and improve operational efficiency.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Market-launch-bro-1-e1772901100803-1e77de3e.webp",
+            "alt": "Automation Development",
+            "width": 1200,
+            "height": 1066
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Validation",
+          "description": "The integration is tested to ensure proper data flow, security, and system stability.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Mobile-testing-bro-e1772901000858-a42d7151.webp",
+            "alt": "Testing & Validation",
+            "width": 1200,
+            "height": 872
+          }
+        },
+        {
+          "number": "06",
+          "title": "Deployment & Monitoring",
+          "description": "Finally, the integration is deployed and configured to ensure reliable performance and long-term scalability.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Active-Support-bro-e1772901057903-763aedf4.webp",
+            "alt": "Deployment & Monitoring",
+            "width": 1200,
+            "height": 1107
+          }
+        }
+      ]
+    },
+    {
+      "slug": "ai-integration-workflow-automation",
+      "title": "AI Integration & Workflow Automation",
+      "introduction": "Artificial Intelligence can transform how businesses operate by automating tasks, analyzing data, and improving decision-making. I provide AI integration and workflow automation solutions that connect intelligent systems with your applications, platforms, and business processes.",
+      "seo": {
+        "title": "AI Integration & Workflow Automation",
+        "description": "Artificial Intelligence can transform how businesses operate by automating tasks, analyzing data, and improving decision-making."
+      },
+      "indicators": [
+        {
+          "value": "Analyze",
+          "label": "WORKFLOW & AI STRATEGY"
+        },
+        {
+          "value": "Integrate",
+          "label": "AI MODEL & API CONNECTION"
+        },
+        {
+          "value": "Automate",
+          "label": "INTELLIGENT WORKFLOW SETUP"
+        },
+        {
+          "value": "Optimize",
+          "label": "PERFORMANCE & SCALABILITY"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Requirement Analysis",
+          "description": "First, I analyze your business processes to identify areas where AI and automation can improve efficiency.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/4167281_18776-scaled-e1772888745965-81bf8eba.webp",
+            "alt": "Requirement Analysis",
+            "width": 1200,
+            "height": 744
+          }
+        },
+        {
+          "number": "02",
+          "title": "AI Strategy Planning",
+          "description": "A structured plan is created to determine the best AI tools, APIs, and automation workflows for your system.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/software-8082767_1280-e1772898698286-63e42e39.webp",
+            "alt": "AI Strategy Planning",
+            "width": 1200,
+            "height": 672
+          }
+        },
+        {
+          "number": "03",
+          "title": "AI Integration",
+          "description": "AI services, models, or APIs are integrated with your applications to enable intelligent features.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Chat-bot-bro-1-e1772901922632-3185c875.webp",
+            "alt": "AI Integration",
+            "width": 1200,
+            "height": 1038
+          }
+        },
+        {
+          "number": "04",
+          "title": "Workflow Automation",
+          "description": "Automated workflows are built to streamline repetitive tasks and improve operational productivity.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/69989114_9693965-e1772901768290-e66daeea.webp",
+            "alt": "Workflow Automation",
+            "width": 1200,
+            "height": 840
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "The system is tested to ensure accuracy, reliability, and smooth automation across the workflow.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Business-support-bro-e1772899697534-b35cb333.webp",
+            "alt": "Testing & Optimization",
+            "width": 1200,
+            "height": 810
+          }
+        },
+        {
+          "number": "06",
+          "title": "Deployment & Monitoring",
+          "description": "Finally, the AI-powered system is deployed and monitored to ensure stable and scalable performance.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Product-quality-bro-e1772901727194-b6810cc0.webp",
+            "alt": "Deployment & Monitoring",
+            "width": 1200,
+            "height": 1018
+          }
+        }
+      ]
+    },
+    {
+      "slug": "website-speed-optimization",
+      "title": "Website Speed Optimization",
+      "introduction": "Website speed plays a critical role in user experience, search engine rankings, and overall website performance. I provide professional website speed optimization services to improve loading time, enhance performance, and ensure smooth browsing across devices.",
+      "seo": {
+        "title": "Website Speed Optimization",
+        "description": "Website speed plays a critical role in user experience, search engine rankings, and overall website performance."
+      },
+      "indicators": [
+        {
+          "value": "Analyze",
+          "label": "WEBSITE PERFORMANCE AUDIT"
+        },
+        {
+          "value": "Optimize",
+          "label": "CODE & RESOURCE OPTIMIZATION"
+        },
+        {
+          "value": "Accelerate",
+          "label": "CACHING & LOADING IMPROVEMENTS"
+        },
+        {
+          "value": "Improve",
+          "label": "SPEED & USER EXPERIENCE"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Performance Analysis",
+          "description": "First, I analyze the website using performance tools to identify slow-loading elements and optimization opportunities.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Product-quality-bro-e1772901727194-b6810cc0.webp",
+            "alt": "Performance Analysis",
+            "width": 1200,
+            "height": 1018
+          }
+        },
+        {
+          "number": "02",
+          "title": "Code Optimization",
+          "description": "Unnecessary scripts, styles, and resources are optimized to reduce page load time and improve performance.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/software-8082767_1280-e1772898698286-63e42e39.webp",
+            "alt": "Code Optimization",
+            "width": 1200,
+            "height": 672
+          }
+        },
+        {
+          "number": "03",
+          "title": "Image & Media Optimization",
+          "description": "Images and media files are compressed and optimized to improve loading speed without sacrificing quality.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/27668260_100y_c5pn8sjfdpgnat1d60pg-1-scaled-e1772904819799-ab04f74b.webp",
+            "alt": "Image & Media Optimization",
+            "width": 1200,
+            "height": 894
+          }
+        },
+        {
+          "number": "04",
+          "title": "Caching & CDN Setup",
+          "description": "Caching strategies and content delivery networks are implemented to accelerate website loading globally.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Programming-bro-1-e1772900000888-204fa8a2.webp",
+            "alt": "Caching & CDN Setup",
+            "width": 1200,
+            "height": 752
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Performance Review",
+          "description": "The website is tested again to verify improvements in speed, responsiveness, and performance metrics.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Research-paper-pana-1-25be0135.webp",
+            "alt": "Testing & Performance Review",
+            "width": 1200,
+            "height": 1200
+          }
+        },
+        {
+          "number": "06",
+          "title": "Final Optimization",
+          "description": "Final adjustments are made to ensure stable performance and an improved user experience across devices.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/8354902_3847762-1-scaled-e1772900164254-df9e8b31.webp",
+            "alt": "Final Optimization",
+            "width": 1200,
+            "height": 806
+          }
+        }
+      ]
+    },
+    {
+      "slug": "website-security-protection",
+      "title": "Website Security & Protection",
+      "introduction": "Website security is essential for protecting your business, data, and users from cyber threats. I provide professional website security and protection solutions to safeguard websites from malware, hacking attempts, and vulnerabilities.",
+      "seo": {
+        "title": "Website Security & Protection",
+        "description": "Website security is essential for protecting your business, data, and users from cyber threats."
+      },
+      "indicators": [
+        {
+          "value": "Audit",
+          "label": "WEBSITE SECURITY ANALYSIS"
+        },
+        {
+          "value": "Protect",
+          "label": "FIREWALL & MALWARE DEFENSE"
+        },
+        {
+          "value": "Secure",
+          "label": "VULNERABILITY FIXES"
+        },
+        {
+          "value": "Monitor",
+          "label": "ONGOING SECURITY PROTECTION"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Security Audit",
+          "description": "First, I analyze the website to identify vulnerabilities, outdated components, and potential security risks.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/character-daydreaming-instead-working_23-2148498570-e177283470819-9594205e.webp",
+            "alt": "Security Audit",
+            "width": 740,
+            "height": 458
+          }
+        },
+        {
+          "number": "02",
+          "title": "Vulnerability Fixing",
+          "description": "Security issues such as outdated plugins, weak configurations, and vulnerabilities are fixed to strengthen protection.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Business-support-bro-e1772899697534-b35cb333.webp",
+            "alt": "Vulnerability Fixing",
+            "width": 1200,
+            "height": 810
+          }
+        },
+        {
+          "number": "03",
+          "title": "Firewall & Protection Setup",
+          "description": "Security firewalls and protection layers are implemented to block malicious traffic and attacks.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/27668260_100y_c5pn8sjfdpgnat1d60pg-1-scaled-e1772904819799-ab04f74b.webp",
+            "alt": "Firewall & Protection Setup",
+            "width": 1200,
+            "height": 894
+          }
+        },
+        {
+          "number": "04",
+          "title": "Malware Protection",
+          "description": "Malware scans and protection systems are configured to detect and prevent harmful threats.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Chat-bot-bro-1-e1772901922632-3185c875.webp",
+            "alt": "Malware Protection",
+            "width": 1200,
+            "height": 1038
+          }
+        },
+        {
+          "number": "05",
+          "title": "Security Testing",
+          "description": "The website is tested to ensure all security measures are functioning properly.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Active-Support-bro-e1772901057903-763aedf4.webp",
+            "alt": "Security Testing",
+            "width": 1200,
+            "height": 1107
+          }
+        },
+        {
+          "number": "06",
+          "title": "Monitoring & Maintenance",
+          "description": "Security monitoring and updates are implemented to maintain long-term website protection.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Market-launch-bro-1-e1772901100803-1e77de3e.webp",
+            "alt": "Monitoring & Maintenance",
+            "width": 1200,
+            "height": 1066
+          }
+        }
+      ]
+    },
+    {
+      "slug": "website-maintenance-technical-support",
+      "title": "Website Maintenance & Technical Support",
+      "introduction": "A website requires regular updates, monitoring, and technical support to remain secure, stable, and high-performing. I provide professional website maintenance and technical support services to ensure your website runs smoothly without interruptions.",
+      "seo": {
+        "title": "Website Maintenance & Technical Support",
+        "description": "A website requires regular updates, monitoring, and technical support to remain secure, stable, and high-performing."
+      },
+      "indicators": [
+        {
+          "value": "Monitor",
+          "label": "WEBSITE HEALTH CHECK"
+        },
+        {
+          "value": "Maintain",
+          "label": "UPDATES & BUG FIXING"
+        },
+        {
+          "value": "Secure",
+          "label": "SECURITY & BACKUPS"
+        },
+        {
+          "value": "Support",
+          "label": "TECHNICAL ASSISTANCE"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Website Analysis",
+          "description": "First, I review the website to identify technical issues, outdated components, and performance concerns.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Research-paper-pana-1-25be0135.webp",
+            "alt": "Website Analysis",
+            "width": 1200,
+            "height": 1200
+          }
+        },
+        {
+          "number": "02",
+          "title": "Updates & Maintenance",
+          "description": "Core updates, plugin updates, and system improvements are applied to keep the website stable and secure.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/data-analyst-oversees-governs-income-expenses-with-magnifier-fina-ba41e323.webp",
+            "alt": "Updates & Maintenance",
+            "width": 740,
+            "height": 493
+          }
+        },
+        {
+          "number": "03",
+          "title": "Bug Fixing",
+          "description": "Technical issues, broken features, or errors are fixed to ensure smooth website functionality.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Mobile-testing-rafiki-e1772905389606-a61562cd.webp",
+            "alt": "Bug Fixing",
+            "width": 1200,
+            "height": 874
+          }
+        },
+        {
+          "number": "04",
+          "title": "Security Monitoring",
+          "description": "Security checks and monitoring are performed to prevent threats and maintain website protection.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Woman-Using-Laptop-to-Create-Text-Graph-for-Website-UI-UX-design--4b6db108.webp",
+            "alt": "Security Monitoring",
+            "width": 1200,
+            "height": 632
+          }
+        },
+        {
+          "number": "05",
+          "title": "Performance Check",
+          "description": "Website speed and performance are reviewed to ensure smooth loading and user experience.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Business-Plan-bro-1-e1772900312965-cb5962fe.webp",
+            "alt": "Performance Check",
+            "width": 1200,
+            "height": 1108
+          }
+        },
+        {
+          "number": "06",
+          "title": "Ongoing Support",
+          "description": "Continuous technical support is provided to resolve issues and maintain website stability.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Active-Support-bro-e1772901057903-763aedf4.webp",
+            "alt": "Ongoing Support",
+            "width": 1200,
+            "height": 1107
+          }
+        }
+      ]
+    },
+    {
+      "slug": "wordpress-customization-enhancement",
+      "title": "WordPress Customization & Enhancement",
+      "introduction": "WordPress customization allows businesses to extend the functionality and improve the design of their existing websites. I provide professional WordPress customization and enhancement services to modify layouts, add new features, and improve the overall user experience.",
+      "seo": {
+        "title": "WordPress Customization & Enhancement",
+        "description": "WordPress customization allows businesses to extend the functionality and improve the design of their existing websites."
+      },
+      "indicators": [
+        {
+          "value": "Customize",
+          "label": "DESIGN & FEATURE ENHANCEMENT"
+        },
+        {
+          "value": "Improve",
+          "label": "FUNCTIONALITY OPTIMIZATION"
+        },
+        {
+          "value": "Deliver",
+          "label": "STABLE WEBSITE UPDATE"
+        },
+        {
+          "value": "Analyze",
+          "label": "WEBSITE STRUCTURE REVIEW"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Website Analysis",
+          "description": "First, I review the existing WordPress website structure, design, and functionality to identify improvement opportunities.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Development-pana-e1772905996528-20f4c3a9.webp",
+            "alt": "Website Analysis",
+            "width": 1200,
+            "height": 783
+          }
+        },
+        {
+          "number": "02",
+          "title": "Customization Planning",
+          "description": "A customization plan is created based on your requirements, including design changes and new feature implementations.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Business-Plan-bro-1-e1772900312965-cb5962fe.webp",
+            "alt": "Customization Planning",
+            "width": 1200,
+            "height": 1108
+          }
+        },
+        {
+          "number": "03",
+          "title": "Design Enhancements",
+          "description": "Layouts, sections, and visual elements are improved to create a modern and engaging website design.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/13404158_5224178-e1772888617345-92d75611.webp",
+            "alt": "Design Enhancements",
+            "width": 1200,
+            "height": 882
+          }
+        },
+        {
+          "number": "04",
+          "title": "Feature Development",
+          "description": "New features, functionality improvements, or plugin customizations are implemented to enhance website capabilities.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/istockphoto-1455746997-612x612-1-e1772834269211-7ed639fb.webp",
+            "alt": "Feature Development",
+            "width": 612,
+            "height": 344
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Optimization",
+          "description": "The customized website is tested to ensure stability, responsiveness, and smooth performance.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Woman-Using-Laptop-to-Create-Text-Graph-for-Website-UI-UX-design--c6f0d393.webp",
+            "alt": "Testing & Optimization",
+            "width": 1200,
+            "height": 675
+          }
+        },
+        {
+          "number": "06",
+          "title": "Final Delivery",
+          "description": "The updated website is delivered with all improvements applied and ready for use.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/content-writer-journalist-background-vector-illustration-copy-wri-43ab243b.webp",
+            "alt": "Final Delivery",
+            "width": 625,
+            "height": 376
+          }
+        }
+      ]
+    },
+    {
+      "slug": "hubspot-crm-integration",
+      "title": "HubSpot CRM Integration",
+      "introduction": "Integrate HubSpot CRM to centralize customer data, automate follow-ups, and improve your overall sales performance.",
+      "seo": {
+        "title": "HubSpot CRM Integration",
+        "description": "Integrate HubSpot CRM to centralize customer data, automate follow-ups, and improve your overall sales performance."
+      },
+      "indicators": [
+        {
+          "value": "Secure",
+          "label": "Data Protection"
+        },
+        {
+          "value": "Automated",
+          "label": "Smart Workflows"
+        },
+        {
+          "value": "Accurate",
+          "label": "Data Sync"
+        },
+        {
+          "value": "Scalable",
+          "label": "Business Growth"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Requirement & Goal Setup",
+          "description": "We begin by understanding your sales funnel, lead sources, and HubSpot pipeline structure to define how customer data should be captured and managed.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Requirement-Goal-Setup-HubSpot-CRM-Integration-b07320ae.webp",
+            "alt": "Requirement & Goal Setup",
+            "width": 500,
+            "height": 292
+          }
+        },
+        {
+          "number": "02",
+          "title": "CRM Access & Integration Setup",
+          "description": "HubSpot API credentials are securely configured, and a stable connection is established between your website and the HubSpot CRM system.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/CRM-Access-Integration-Setup-HubSpot-CRM-Integration-83e30126.webp",
+            "alt": "CRM Access & Integration Setup",
+            "width": 500,
+            "height": 448
+          }
+        },
+        {
+          "number": "03",
+          "title": "Field Mapping & Form Connection",
+          "description": "Website forms are connected to HubSpot, and all fields are accurately mapped to ensure contacts and leads are recorded in the correct CRM modules.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Field-Mapping-Form-Connection-HubSpot-CRM-Integration-dd76ca0c.webp",
+            "alt": "Field Mapping & Form Connection",
+            "width": 700,
+            "height": 428
+          }
+        },
+        {
+          "number": "04",
+          "title": "Automation & Lead Routing",
+          "description": "We configure workflows including lead assignment, tagging, automated emails, and sales notifications to streamline your marketing and sales process.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Automation-Lead-Routing-HubSpot-CRM-Integration-c3988388.webp",
+            "alt": "Automation & Lead Routing",
+            "width": 880,
+            "height": 470
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Quality Check",
+          "description": "Comprehensive testing is performed to verify accurate data synchronization, prevent duplication, and ensure all automation flows work seamlessly.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Testing-Quality-Check-HubSpot-CRM-Integration-937656fe.webp",
+            "alt": "Testing & Quality Check",
+            "width": 500,
+            "height": 314
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "After deployment, we monitor the integration, provide guidance on CRM usage, and offer ongoing support to maintain optimal performance.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Launch-Support-HubSpot-CRM-Integration-4d864e2b.webp",
+            "alt": "Launch & Support",
+            "width": 500,
+            "height": 253
+          }
+        }
+      ]
+    },
+    {
+      "slug": "zoho-crm-integration",
+      "title": "Zoho CRM Integration",
+      "introduction": "Connect Zoho CRM with your website to capture leads automatically and manage customer relationships efficiently.",
+      "seo": {
+        "title": "Zoho CRM Integration",
+        "description": "Connect Zoho CRM with your website to capture leads automatically and manage customer relationships efficiently."
+      },
+      "indicators": [
+        {
+          "value": "Secure",
+          "label": "Data Protection"
+        },
+        {
+          "value": "Automated",
+          "label": "Smart Workflows"
+        },
+        {
+          "value": "Accurate",
+          "label": "Data Sync"
+        },
+        {
+          "value": "Scalable",
+          "label": "Business Growth"
+        }
+      ],
+      "steps": [
+        {
+          "number": "01",
+          "title": "Requirement & Goal Setup",
+          "description": "We begin by understanding your business goals, lead sources, and CRM workflow to define how data should be captured and organized within Zoho CRM.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Requirement-and-Goal-Setup-607c2c9b.webp",
+            "alt": "Requirement & Goal Setup",
+            "width": 500,
+            "height": 353
+          }
+        },
+        {
+          "number": "02",
+          "title": "CRM Access & Integration Setup",
+          "description": "Secure API credentials are configured and a stable connection is established between your website and Zoho CRM for safe data synchronization.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/CRM-Access-Integration-Setup-756957ba.webp",
+            "alt": "CRM Access & Integration Setup",
+            "width": 500,
+            "height": 299
+          }
+        },
+        {
+          "number": "03",
+          "title": "Field Mapping & Form Connection",
+          "description": "Website form fields such as name, email, phone, and service inquiries are accurately mapped to the appropriate Zoho CRM modules and fields.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Field-Mapping-Form-Connection-68e88312.webp",
+            "alt": "Field Mapping & Form Connection",
+            "width": 500,
+            "height": 424
+          }
+        },
+        {
+          "number": "04",
+          "title": "Automation & Lead Routing",
+          "description": "We configure automated workflows including lead assignment, tagging, notifications, and follow-up sequences to streamline your sales process.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Automation-Lead-Routing-048d8ce4.webp",
+            "alt": "Automation & Lead Routing",
+            "width": 500,
+            "height": 269
+          }
+        },
+        {
+          "number": "05",
+          "title": "Testing & Quality Check",
+          "description": "Comprehensive testing is performed to ensure data accuracy, eliminate duplicates, and confirm that all automation processes function correctly.",
+          "reverse": false,
+          "image": {
+            "src": "/assets/Testing-Quality-Check-5523d748.webp",
+            "alt": "Testing & Quality Check",
+            "width": 500,
+            "height": 281
+          }
+        },
+        {
+          "number": "06",
+          "title": "Launch & Support",
+          "description": "After deployment, we monitor performance, provide usage guidance, and offer continued support to ensure long-term system efficiency.",
+          "reverse": true,
+          "image": {
+            "src": "/assets/Launch-Support-ea243632.webp",
+            "alt": "Launch & Support",
+            "width": 500,
+            "height": 254
+          }
+        }
+      ]
+    }
+  ]
+}

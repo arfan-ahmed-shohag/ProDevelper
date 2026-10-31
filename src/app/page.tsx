@@ -1,5 +1,5 @@
 import Hero from "@/components/home/Hero";
-import ServicesSection from "@/components/home/ServicesSection";
+import ServicesSection from "@/components/ServicesSection";
 import SelectedWorks from "@/components/home/SelectedWorks";
 import TechnologySection from "@/components/home/TechnologySection";
 import StatsSection from "@/components/home/StatsSection";
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <ServicesSection />
+      <ServicesSection variant="home" />
       <SelectedWorks />
       <TechnologySection />
       <StatsSection />
