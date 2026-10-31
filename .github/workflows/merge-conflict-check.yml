@@ -1,0 +1,154 @@
+
+name: Merge Conflict Check
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, reopened, synchronize, edited]
+  # A base-branch push does not reliably trigger PR synchronize events.
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+  # Publish the required status on PR head SHAs, including after main moves.
+  statuses: write
+
+# Serialize status writers. Every run scans all open main PRs, so GitHub's
+# replacement of a pending concurrency run cannot drop a PR's evaluation.
+concurrency:
+  group: merge-conflict-check-main
+  cancel-in-progress: false
+
+jobs:
+  merge-conflict-check:
+    name: merge-conflict-check
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      # Security: no checkout, dependencies, artifacts, or code from the PR.
+      - name: Check mergeability against the latest main
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          retries: 3
+          script: |
+            const repo = context.repo;
+            const statusContext = 'merge-conflict-check';
+            const targetUrl = `${process.env.GITHUB_SERVER_URL}/${repo.owner}/${repo.repo}/actions/runs/${context.runId}`;
+            const maxAttempts = 12;
+            const sleep = () => new Promise(resolve => setTimeout(resolve, 5000));
+            const failures = [];
+
+            const pulls = await github.paginate(github.rest.pulls.list, {
+              ...repo,
+              state: 'open',
+              base: 'main',
+              per_page: 100,
+            });
+
+            if (pulls.length === 0) {
+              core.info('No open pull requests targeting main.');
+              return;
+            }
+
+            async function publish(sha, state, description) {
+              await github.rest.repos.createCommitStatus({
+                ...repo,
+                sha,
+                state,
+                context: statusContext,
+                description,
+                target_url: targetUrl,
+              });
+            }
+
+            // Invalidate previous successes before waiting for calculations.
+            for (const pull of pulls) {
+              await publish(pull.head.sha, 'pending', 'Checking merge conflicts against the latest main.');
+            }
+
+            async function checkPull(initialPull) {
+              const number = initialPull.number;
+              let headSha = initialPull.head.sha;
+              try {
+                for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+                  const { data: pull } = await github.rest.pulls.get({
+                    ...repo,
+                    pull_number: number,
+                  });
+
+                  if (pull.state !== 'open' || pull.base.ref !== 'main') {
+                    core.info(`PR #${number} is closed or no longer targets main; skipping.`);
+                    return;
+                  }
+
+                  if (pull.head.sha !== headSha) {
+                    headSha = pull.head.sha;
+                    await publish(headSha, 'pending', 'PR head changed; checking merge conflicts again.');
+                  }
+
+                  const { data: main } = await github.rest.repos.getBranch({
+                    ...repo,
+                    branch: 'main',
+                  });
+
+                  if (pull.base.sha === main.commit.sha && typeof pull.mergeable === 'boolean') {
+                    // Confirm that the head/base did not change during the API calls.
+                    const { data: current } = await github.rest.pulls.get({
+                      ...repo,
+                      pull_number: number,
+                    });
+                    if (current.state !== 'open' || current.base.ref !== 'main') return;
+                    const { data: latestMain } = await github.rest.repos.getBranch({
+                      ...repo,
+                      branch: 'main',
+                    });
+                    if (latestMain.commit.sha === main.commit.sha &&
+                        current.head.sha === headSha && current.base.sha === main.commit.sha &&
+                        current.mergeable === pull.mergeable) {
+                      const base = main.commit.sha.slice(0, 12);
+                      if (pull.mergeable) {
+                        await publish(headSha, 'success', `No merge conflicts with main at ${base}.`);
+                        core.info(`PR #${number}: merges cleanly with main at ${base}.`);
+                      } else {
+                        const message = `PR #${number}: merge conflicts with main at ${base}. Resolve conflicts locally and push the resolution.`;
+                        await publish(headSha, 'failure', `Merge conflicts with main at ${base}.`);
+                        core.error(message);
+                        failures.push(message);
+                      }
+                      return;
+                    }
+                  }
+
+                  core.info(`PR #${number}: awaiting a stable mergeability result (${attempt}/${maxAttempts}).`);
+                  if (attempt < maxAttempts) await sleep();
+                }
+
+                throw new Error('GitHub did not return a stable mergeability result for the latest main within 12 attempts. Re-run this workflow.');
+              } catch (error) {
+                const message = `PR #${number}: ${error.message}`;
+                core.error(message);
+                failures.push(message);
+                try {
+                  await publish(headSha, 'error', 'Unable to verify mergeability. See workflow logs and re-run.');
+                } catch (statusError) {
+                  core.error(`PR #${number}: could not publish the error status: ${statusError.message}`);
+                }
+              }
+            }
+
+            // Bound API traffic while checking multiple PRs during a base update.
+            let next = 0;
+            async function worker() {
+              while (next < pulls.length) {
+                const pull = pulls[next++];
+                await checkPull(pull);
+              }
+            }
+            await Promise.all(Array.from({ length: Math.min(4, pulls.length) }, () => worker()));
+
+            if (failures.length > 0) {
+              core.setFailed(`${failures.length} PR(s) have conflicts or could not be verified. See the errors above.`);
+            }
