@@ -14,6 +14,7 @@ export type PageHeroProps = {
   outline: ReactNode;
   description: ReactNode;
   stats?: readonly PageHeroStat[];
+  statsVariant?: "metrics" | "features";
   badgePulse?: boolean;
   className?: string;
 };
@@ -27,6 +28,7 @@ export default function PageHero({
   outline,
   description,
   stats = [],
+  statsVariant = "metrics",
   badgePulse = false,
   className = "",
 }: PageHeroProps) {
@@ -74,7 +76,13 @@ export default function PageHero({
         </p>
 
         {stats.length > 0 && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 max-w-4xl mx-auto border-t border-white/10 pt-10">
+          <div
+            className={`grid grid-cols-2 md:grid-cols-4 gap-4 mx-auto border-t border-white/10 pt-10 ${
+              statsVariant === "features"
+                ? "max-w-5xl"
+                : "md:gap-0 max-w-4xl"
+            }`}
+          >
             {stats.map((stat) => (
               <div
                 key={stat.label}
@@ -83,7 +91,11 @@ export default function PageHero({
                 <h4 className="text-3xl font-black text-brand-light">
                   {stat.value}
                 </h4>
-                <p className="text-[9px] text-white/40 font-bold uppercase tracking-widest">
+                <p
+                  className={`text-[9px] font-bold uppercase tracking-widest ${
+                    statsVariant === "features" ? "text-white/60" : "text-white/40"
+                  }`}
+                >
                   {stat.label}
                 </p>
               </div>
