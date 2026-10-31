@@ -16,7 +16,7 @@ export default function TechnologySection() {
           }
         ></div>
 
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-green/5 rounded-full blur-[120px]"></div>
+        <div className="absolute top-0 right-0 w-150 h-150 bg-brand-green/5 rounded-full blur-[120px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
