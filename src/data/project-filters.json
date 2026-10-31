@@ -1,0 +1,1430 @@
+[
+  {
+    "name": "Industry",
+    "taxonomy": "industry-type",
+    "options": [
+      {
+        "label": "Accommodation",
+        "slug": "accommodation",
+        "id": 1340,
+        "count": 1
+      },
+      {
+        "label": "Advertisement",
+        "slug": "advertisement",
+        "id": 891,
+        "count": 5
+      },
+      {
+        "label": "Advertising Agency",
+        "slug": "advertising-agency",
+        "id": 2037,
+        "count": 1
+      },
+      {
+        "label": "Advisor",
+        "slug": "advisor",
+        "id": 838,
+        "count": 4
+      },
+      {
+        "label": "Agency",
+        "slug": "agency",
+        "id": 866,
+        "count": 29
+      },
+      {
+        "label": "Agency|Business & Corporate",
+        "slug": "agency|business-&-corporate",
+        "id": 1098,
+        "count": 5
+      },
+      {
+        "label": "Agency|Landing Page",
+        "slug": "agency|landing-page",
+        "id": 1088,
+        "count": 2
+      },
+      {
+        "label": "Architecture",
+        "slug": "architecture",
+        "id": 1503,
+        "count": 2
+      },
+      {
+        "label": "Artificial Intelligence & Machine Learning",
+        "slug": "artificial-intelligence-&-machine-learning",
+        "id": 1621,
+        "count": 4
+      },
+      {
+        "label": "Automotive",
+        "slug": "automotive",
+        "id": 1554,
+        "count": 7
+      },
+      {
+        "label": "Automotive Aftermarket Parts",
+        "slug": "automotive-aftermarket-parts",
+        "id": 945,
+        "count": 2
+      },
+      {
+        "label": "Blog",
+        "slug": "blog",
+        "id": 1319,
+        "count": 4
+      },
+      {
+        "label": "Breeder",
+        "slug": "breeder",
+        "id": 1871,
+        "count": 1
+      },
+      {
+        "label": "Built with Bricks",
+        "slug": "built-with-bricks",
+        "id": 919,
+        "count": 19
+      },
+      {
+        "label": "Business",
+        "slug": "business",
+        "id": 932,
+        "count": 12
+      },
+      {
+        "label": "Business & Corporate",
+        "slug": "business-&-corporate",
+        "id": 1087,
+        "count": 25
+      },
+      {
+        "label": "Business & Corporate|Featured",
+        "slug": "business-&-corporate|featured",
+        "id": 1092,
+        "count": 1
+      },
+      {
+        "label": "Business & Corporate|Landing Page",
+        "slug": "business-&-corporate|landing-page",
+        "id": 1096,
+        "count": 1
+      },
+      {
+        "label": "Business & Services",
+        "slug": "business-&-services",
+        "id": 1536,
+        "count": 4
+      },
+      {
+        "label": "Caching",
+        "slug": "caching",
+        "id": 929,
+        "count": 1
+      },
+      {
+        "label": "campain",
+        "slug": "campain",
+        "id": 927,
+        "count": 2
+      },
+      {
+        "label": "Clothing & Fashion",
+        "slug": "clothing-&-fashion",
+        "id": 1528,
+        "count": 8
+      },
+      {
+        "label": "Coaching",
+        "slug": "coaching",
+        "id": 888,
+        "count": 5
+      },
+      {
+        "label": "Community & Events",
+        "slug": "community-&-events",
+        "id": 1596,
+        "count": 5
+      },
+      {
+        "label": "Construction",
+        "slug": "construction",
+        "id": 1667,
+        "count": 2
+      },
+      {
+        "label": "Consultancy",
+        "slug": "consultancy",
+        "id": 1665,
+        "count": 2
+      },
+      {
+        "label": "Consulting",
+        "slug": "consulting",
+        "id": 850,
+        "count": 9
+      },
+      {
+        "label": "Corporate",
+        "slug": "corporate",
+        "id": 933,
+        "count": 8
+      },
+      {
+        "label": "Cybersecurity",
+        "slug": "cybersecurity",
+        "id": 1700,
+        "count": 1
+      },
+      {
+        "label": "Digital Agency",
+        "slug": "digital-agency",
+        "id": 1862,
+        "count": 1
+      },
+      {
+        "label": "Digital Marketing",
+        "slug": "digital-marketing",
+        "id": 874,
+        "count": 14
+      },
+      {
+        "label": "Ecommerce",
+        "slug": "ecommerce",
+        "id": 995,
+        "count": 43
+      },
+      {
+        "label": "Education",
+        "slug": "education",
+        "id": 1562,
+        "count": 12
+      },
+      {
+        "label": "Education & Marketing",
+        "slug": "education-&-marketing",
+        "id": 2064,
+        "count": 1
+      },
+      {
+        "label": "Electrical",
+        "slug": "electrical",
+        "id": 1101,
+        "count": 2
+      },
+      {
+        "label": "Electronics",
+        "slug": "electronics",
+        "id": 1541,
+        "count": 1
+      },
+      {
+        "label": "Electronics & Gadgets",
+        "slug": "electronics-&-gadgets",
+        "id": 1543,
+        "count": 1
+      },
+      {
+        "label": "Entertainment",
+        "slug": "entertainment",
+        "id": 1574,
+        "count": 2
+      },
+      {
+        "label": "Environmental Conservation",
+        "slug": "environmental-conservation",
+        "id": 1896,
+        "count": 1
+      },
+      {
+        "label": "Event Management",
+        "slug": "event-management",
+        "id": 892,
+        "count": 3
+      },
+      {
+        "label": "Fashion",
+        "slug": "fashion",
+        "id": 1529,
+        "count": 2
+      },
+      {
+        "label": "Finance & Banking",
+        "slug": "finance-&-banking",
+        "id": 851,
+        "count": 2
+      },
+      {
+        "label": "Financial Technology",
+        "slug": "financial-technology",
+        "id": 967,
+        "count": 3
+      },
+      {
+        "label": "food & agricultural",
+        "slug": "food-&-agricultural",
+        "id": 1514,
+        "count": 1
+      },
+      {
+        "label": "Food & Beverage",
+        "slug": "food-&-beverage",
+        "id": 894,
+        "count": 10
+      },
+      {
+        "label": "Funnel",
+        "slug": "funnel",
+        "id": 1110,
+        "count": 3
+      },
+      {
+        "label": "Gaming & Entertainment",
+        "slug": "gaming-&-entertainment",
+        "id": 1557,
+        "count": 1
+      },
+      {
+        "label": "Gourmet Food & Beverage",
+        "slug": "gourmet-food-&-beverage",
+        "id": 949,
+        "count": 3
+      },
+      {
+        "label": "Health & Beauty",
+        "slug": "health-&-beauty",
+        "id": 1538,
+        "count": 6
+      },
+      {
+        "label": "Health & Fitness",
+        "slug": "health-&-fitness",
+        "id": 1102,
+        "count": 20
+      },
+      {
+        "label": "Health & Science",
+        "slug": "health-&-science",
+        "id": 1613,
+        "count": 4
+      },
+      {
+        "label": "Healthcare",
+        "slug": "healthcare",
+        "id": 1834,
+        "count": 4
+      },
+      {
+        "label": "Home & Garden",
+        "slug": "home-&-garden",
+        "id": 1783,
+        "count": 4
+      },
+      {
+        "label": "Home Renovation",
+        "slug": "home-renovation",
+        "id": 1116,
+        "count": 2
+      },
+      {
+        "label": "Home Services",
+        "slug": "home-services",
+        "id": 1654,
+        "count": 2
+      },
+      {
+        "label": "Hospitality",
+        "slug": "hospitality",
+        "id": 1902,
+        "count": 1
+      },
+      {
+        "label": "Hospitality & Tourism",
+        "slug": "hospitality-&-tourism",
+        "id": 893,
+        "count": 7
+      },
+      {
+        "label": "Hotel",
+        "slug": "hotel",
+        "id": 1903,
+        "count": 1
+      },
+      {
+        "label": "Hotel & Resort",
+        "slug": "hotel-&-resort",
+        "id": 1294,
+        "count": 1
+      },
+      {
+        "label": "Hotel & Restaurant",
+        "slug": "hotel-&-restaurant",
+        "id": 1099,
+        "count": 6
+      },
+      {
+        "label": "Hotel & Restaurant|Tour & Travels",
+        "slug": "hotel-&-restaurant|tour-&-travels",
+        "id": 1104,
+        "count": 2
+      },
+      {
+        "label": "House Rental",
+        "slug": "house-rental",
+        "id": 2099,
+        "count": 7
+      },
+      {
+        "label": "Household & Gadgets",
+        "slug": "household-&-gadgets",
+        "id": 1551,
+        "count": 1
+      },
+      {
+        "label": "IDX Integration",
+        "slug": "idx-integration",
+        "id": 1922,
+        "count": 9
+      },
+      {
+        "label": "Immigration support",
+        "slug": "immigration-support",
+        "id": 990,
+        "count": 1
+      },
+      {
+        "label": "Information Technology",
+        "slug": "information-technology",
+        "id": 1701,
+        "count": 3
+      },
+      {
+        "label": "It/tech",
+        "slug": "it/tech",
+        "id": 1114,
+        "count": 8
+      },
+      {
+        "label": "Jewellery & Accessories",
+        "slug": "jewellery-&-accessories",
+        "id": 1560,
+        "count": 1
+      },
+      {
+        "label": "Jewelry & Luxury",
+        "slug": "jewelry-&-luxury",
+        "id": 1535,
+        "count": 1
+      },
+      {
+        "label": "Landing Page",
+        "slug": "landing-page",
+        "id": 1106,
+        "count": 8
+      },
+      {
+        "label": "Law Firm",
+        "slug": "law-firm",
+        "id": 864,
+        "count": 4
+      },
+      {
+        "label": "Lead Capture",
+        "slug": "lead-capture",
+        "id": 2026,
+        "count": 6
+      },
+      {
+        "label": "Legal & Law",
+        "slug": "legal-&-law",
+        "id": 962,
+        "count": 3
+      },
+      {
+        "label": "Legal Advice",
+        "slug": "legal-advice",
+        "id": 865,
+        "count": 4
+      },
+      {
+        "label": "Legal Services",
+        "slug": "legal-services",
+        "id": 1676,
+        "count": 2
+      },
+      {
+        "label": "Local Business",
+        "slug": "local-business",
+        "id": 1481,
+        "count": 28
+      },
+      {
+        "label": "Luxury Brokerage",
+        "slug": "luxury-brokerage",
+        "id": 1948,
+        "count": 2
+      },
+      {
+        "label": "Luxury Properties",
+        "slug": "luxury-properties",
+        "id": 1935,
+        "count": 5
+      },
+      {
+        "label": "Marketing",
+        "slug": "marketing",
+        "id": 898,
+        "count": 21
+      },
+      {
+        "label": "Media",
+        "slug": "media",
+        "id": 1507,
+        "count": 4
+      },
+      {
+        "label": "Medical Research",
+        "slug": "medical-research",
+        "id": 1835,
+        "count": 2
+      },
+      {
+        "label": "Medical Services",
+        "slug": "medical-services",
+        "id": 1801,
+        "count": 2
+      },
+      {
+        "label": "Non-Profit",
+        "slug": "non-profit",
+        "id": 1855,
+        "count": 2
+      },
+      {
+        "label": "Nonprofit & Charity",
+        "slug": "nonprofit-&-charity",
+        "id": 1612,
+        "count": 4
+      },
+      {
+        "label": "Online Business",
+        "slug": "online-business",
+        "id": 2063,
+        "count": 1
+      },
+      {
+        "label": "Online Course",
+        "slug": "online-course",
+        "id": 991,
+        "count": 1
+      },
+      {
+        "label": "Online Education",
+        "slug": "online-education",
+        "id": 2051,
+        "count": 1
+      },
+      {
+        "label": "Painting",
+        "slug": "painting",
+        "id": 1084,
+        "count": 3
+      },
+      {
+        "label": "Performance Marketing",
+        "slug": "performance-marketing",
+        "id": 2074,
+        "count": 1
+      },
+      {
+        "label": "Pet care",
+        "slug": "pet-care",
+        "id": 1108,
+        "count": 2
+      },
+      {
+        "label": "Pets & Animals",
+        "slug": "pets-&-animals",
+        "id": 1870,
+        "count": 1
+      },
+      {
+        "label": "Pharmaceuticals",
+        "slug": "pharmaceuticals",
+        "id": 1818,
+        "count": 4
+      },
+      {
+        "label": "Plumbing",
+        "slug": "plumbing",
+        "id": 1094,
+        "count": 14
+      },
+      {
+        "label": "Portfolio Showcase",
+        "slug": "portfolio-showcase",
+        "id": 1494,
+        "count": 6
+      },
+      {
+        "label": "Product-sell",
+        "slug": "product-sell",
+        "id": 943,
+        "count": 38
+      },
+      {
+        "label": "Professional Services",
+        "slug": "professional-services",
+        "id": 913,
+        "count": 15
+      },
+      {
+        "label": "Property Management",
+        "slug": "property-management",
+        "id": 1923,
+        "count": 1
+      },
+      {
+        "label": "Property Rental",
+        "slug": "property-rental",
+        "id": 1363,
+        "count": 1
+      },
+      {
+        "label": "Property Sales",
+        "slug": "property-sales",
+        "id": 1942,
+        "count": 1
+      },
+      {
+        "label": "Property Search",
+        "slug": "property-search",
+        "id": 1931,
+        "count": 1
+      },
+      {
+        "label": "Real Estate",
+        "slug": "real-estate",
+        "id": 1640,
+        "count": 19
+      },
+      {
+        "label": "Real State",
+        "slug": "real-state",
+        "id": 914,
+        "count": 7
+      },
+      {
+        "label": "Rental",
+        "slug": "rental",
+        "id": 1085,
+        "count": 4
+      },
+      {
+        "label": "Restaurant",
+        "slug": "restaurant",
+        "id": 920,
+        "count": 2
+      },
+      {
+        "label": "Revenue Marketing",
+        "slug": "revenue-marketing",
+        "id": 2079,
+        "count": 1
+      },
+      {
+        "label": "SaaS",
+        "slug": "saas",
+        "id": 1563,
+        "count": 5
+      },
+      {
+        "label": "Software Development",
+        "slug": "software-development",
+        "id": 926,
+        "count": 4
+      },
+      {
+        "label": "Sourcing",
+        "slug": "sourcing",
+        "id": 1884,
+        "count": 1
+      },
+      {
+        "label": "Sports Analytics",
+        "slug": "sports-analytics",
+        "id": 1912,
+        "count": 1
+      },
+      {
+        "label": "Sports Equipment",
+        "slug": "sports-equipment",
+        "id": 1522,
+        "count": 2
+      },
+      {
+        "label": "Student visa",
+        "slug": "student-visa",
+        "id": 989,
+        "count": 1
+      },
+      {
+        "label": "Technology",
+        "slug": "technology",
+        "id": 1478,
+        "count": 16
+      },
+      {
+        "label": "Tour & Travels",
+        "slug": "tour-&-travels",
+        "id": 980,
+        "count": 6
+      },
+      {
+        "label": "Travel & Tourism",
+        "slug": "travel-&-tourism",
+        "id": 1511,
+        "count": 2
+      },
+      {
+        "label": "Vacation Rental",
+        "slug": "vacation-rental",
+        "id": 2124,
+        "count": 2
+      },
+      {
+        "label": "Vehicle Service",
+        "slug": "vehicle-service",
+        "id": 1489,
+        "count": 2
+      },
+      {
+        "label": "Wholesale",
+        "slug": "wholesale",
+        "id": 1743,
+        "count": 1
+      },
+      {
+        "label": "WordPress Redesign",
+        "slug": "wordpress-redesign",
+        "id": 1854,
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "Functionality",
+    "taxonomy": "functionality",
+    "options": [
+      {
+        "label": "A/B Testing",
+        "slug": "a/b-testing",
+        "id": 2034,
+        "count": 4
+      },
+      {
+        "label": "Accessibility Validation",
+        "slug": "accessibility-validation",
+        "id": 1921,
+        "count": 1
+      },
+      {
+        "label": "Admin Dashboard",
+        "slug": "admin-dashboard",
+        "id": 1599,
+        "count": 1
+      },
+      {
+        "label": "Affiliate Management",
+        "slug": "affiliate-management",
+        "id": 2062,
+        "count": 2
+      },
+      {
+        "label": "Analytics",
+        "slug": "analytics",
+        "id": 843,
+        "count": 63
+      },
+      {
+        "label": "Analytics & Advertising",
+        "slug": "analytics-&-advertising",
+        "id": 2106,
+        "count": 1
+      },
+      {
+        "label": "Analytics & Marketing",
+        "slug": "analytics-&-marketing",
+        "id": 1645,
+        "count": 2
+      },
+      {
+        "label": "Analytics & Marketing Automation",
+        "slug": "analytics-&-marketing-automation",
+        "id": 2134,
+        "count": 1
+      },
+      {
+        "label": "Analytics & Reporting",
+        "slug": "analytics-&-reporting",
+        "id": 1585,
+        "count": 2
+      },
+      {
+        "label": "Analytics & Tracking",
+        "slug": "analytics-&-tracking",
+        "id": 1895,
+        "count": 18
+      },
+      {
+        "label": "Animation",
+        "slug": "animation",
+        "id": 1853,
+        "count": 1
+      },
+      {
+        "label": "API Integration",
+        "slug": "api-integration",
+        "id": 1626,
+        "count": 1
+      },
+      {
+        "label": "Appointment Scheduling (Booking)",
+        "slug": "appointment-scheduling-(booking)",
+        "id": 2123,
+        "count": 1
+      },
+      {
+        "label": "Audio Integration",
+        "slug": "audio-integration",
+        "id": 1576,
+        "count": 1
+      },
+      {
+        "label": "Blog",
+        "slug": "blog",
+        "id": 1330,
+        "count": 24
+      },
+      {
+        "label": "Blog Solution",
+        "slug": "blog-solution",
+        "id": 849,
+        "count": 25
+      },
+      {
+        "label": "Booking",
+        "slug": "booking",
+        "id": 916,
+        "count": 22
+      },
+      {
+        "label": "Booking System",
+        "slug": "booking-system",
+        "id": 1533,
+        "count": 10
+      },
+      {
+        "label": "Business Showcase",
+        "slug": "business-showcase",
+        "id": 1881,
+        "count": 1
+      },
+      {
+        "label": "Calculators",
+        "slug": "calculators",
+        "id": 1634,
+        "count": 4
+      },
+      {
+        "label": "Call Tracking",
+        "slug": "call-tracking",
+        "id": 2035,
+        "count": 1
+      },
+      {
+        "label": "Case Studies",
+        "slug": "case-studies",
+        "id": 1675,
+        "count": 13
+      },
+      {
+        "label": "ChatBot",
+        "slug": "chatbot",
+        "id": 938,
+        "count": 6
+      },
+      {
+        "label": "cleaning and house keeping",
+        "slug": "cleaning-and-house-keeping",
+        "id": 923,
+        "count": 1
+      },
+      {
+        "label": "Client Testimonials",
+        "slug": "client-testimonials",
+        "id": 1692,
+        "count": 11
+      },
+      {
+        "label": "constructor",
+        "slug": "constructor",
+        "id": 987,
+        "count": 1
+      },
+      {
+        "label": "Contact & Support",
+        "slug": "contact-&-support",
+        "id": 1660,
+        "count": 17
+      },
+      {
+        "label": "Contact Forms",
+        "slug": "contact-forms",
+        "id": 1343,
+        "count": 25
+      },
+      {
+        "label": "Content Management",
+        "slug": "content-management",
+        "id": 1851,
+        "count": 9
+      },
+      {
+        "label": "Corporate Website",
+        "slug": "corporate-website",
+        "id": 1702,
+        "count": 2
+      },
+      {
+        "label": "CRM",
+        "slug": "crm",
+        "id": 1607,
+        "count": 2
+      },
+      {
+        "label": "CRM & Marketing Automation",
+        "slug": "crm-&-marketing-automation",
+        "id": 1953,
+        "count": 1
+      },
+      {
+        "label": "CRM & Telephony Integration",
+        "slug": "crm-&-telephony-integration",
+        "id": 1624,
+        "count": 1
+      },
+      {
+        "label": "Cybersecurity Services",
+        "slug": "cybersecurity-services",
+        "id": 1703,
+        "count": 1
+      },
+      {
+        "label": "Database Management",
+        "slug": "database-management",
+        "id": 1598,
+        "count": 1
+      },
+      {
+        "label": "Digital Asset Management",
+        "slug": "digital-asset-management",
+        "id": 1647,
+        "count": 1
+      },
+      {
+        "label": "Digital Marketing",
+        "slug": "digital-marketing",
+        "id": 873,
+        "count": 5
+      },
+      {
+        "label": "Dynamic Content",
+        "slug": "dynamic-content",
+        "id": 1852,
+        "count": 4
+      },
+      {
+        "label": "Dynamic UI",
+        "slug": "dynamic-ui",
+        "id": 1910,
+        "count": 1
+      },
+      {
+        "label": "E-commerce",
+        "slug": "e-commerce",
+        "id": 875,
+        "count": 55
+      },
+      {
+        "label": "E-commerce/Booking (WooCommerce)",
+        "slug": "e-commerce/booking-(woocommerce)",
+        "id": 1940,
+        "count": 1
+      },
+      {
+        "label": "Ecommerce / Booking",
+        "slug": "ecommerce-/-booking",
+        "id": 1900,
+        "count": 1
+      },
+      {
+        "label": "Email Marketing",
+        "slug": "email-marketing",
+        "id": 2061,
+        "count": 1
+      },
+      {
+        "label": "Event Management",
+        "slug": "event-management",
+        "id": 1729,
+        "count": 3
+      },
+      {
+        "label": "Fast Performance",
+        "slug": "fast-performance",
+        "id": 1861,
+        "count": 1
+      },
+      {
+        "label": "Field Service Management",
+        "slug": "field-service-management",
+        "id": 908,
+        "count": 2
+      },
+      {
+        "label": "Financial Technology",
+        "slug": "financial-technology",
+        "id": 966,
+        "count": 1
+      },
+      {
+        "label": "Form & Lead Generation",
+        "slug": "form-&-lead-generation",
+        "id": 1961,
+        "count": 1
+      },
+      {
+        "label": "Form Building",
+        "slug": "form-building",
+        "id": 2024,
+        "count": 1
+      },
+      {
+        "label": "Forms",
+        "slug": "forms",
+        "id": 848,
+        "count": 54
+      },
+      {
+        "label": "Fundraising & Donations",
+        "slug": "fundraising-&-donations",
+        "id": 1893,
+        "count": 1
+      },
+      {
+        "label": "Gallery",
+        "slug": "gallery",
+        "id": 1668,
+        "count": 15
+      },
+      {
+        "label": "House Rentals",
+        "slug": "house-rentals",
+        "id": 2114,
+        "count": 1
+      },
+      {
+        "label": "Information Portal",
+        "slug": "information-portal",
+        "id": 1614,
+        "count": 15
+      },
+      {
+        "label": "Interactive Maps",
+        "slug": "interactive-maps",
+        "id": 2115,
+        "count": 1
+      },
+      {
+        "label": "Interactive UI",
+        "slug": "interactive-ui",
+        "id": 1860,
+        "count": 2
+      },
+      {
+        "label": "Law & Advices",
+        "slug": "law-&-advices",
+        "id": 971,
+        "count": 2
+      },
+      {
+        "label": "Lead Generation",
+        "slug": "lead-generation",
+        "id": 1641,
+        "count": 41
+      },
+      {
+        "label": "Live Chat",
+        "slug": "live-chat",
+        "id": 1337,
+        "count": 7
+      },
+      {
+        "label": "Live Chat Integration",
+        "slug": "live-chat-integration",
+        "id": 1875,
+        "count": 2
+      },
+      {
+        "label": "LMS (Learning Management System)",
+        "slug": "lms-(learning-management-system)",
+        "id": 1564,
+        "count": 6
+      },
+      {
+        "label": "Login",
+        "slug": "login",
+        "id": 879,
+        "count": 14
+      },
+      {
+        "label": "Luxury Real Estate Showcase",
+        "slug": "luxury-real-estate-showcase",
+        "id": 2088,
+        "count": 2
+      },
+      {
+        "label": "Maps Integration",
+        "slug": "maps-integration",
+        "id": 1350,
+        "count": 9
+      },
+      {
+        "label": "Marketing",
+        "slug": "marketing",
+        "id": 1502,
+        "count": 6
+      },
+      {
+        "label": "Marketing Automation",
+        "slug": "marketing-automation",
+        "id": 2036,
+        "count": 4
+      },
+      {
+        "label": "Membership",
+        "slug": "membership",
+        "id": 1721,
+        "count": 2
+      },
+      {
+        "label": "Mobile App Integration",
+        "slug": "mobile-app-integration",
+        "id": 1586,
+        "count": 4
+      },
+      {
+        "label": "Multi Language",
+        "slug": "multi-language",
+        "id": 885,
+        "count": 23
+      },
+      {
+        "label": "Multi-level Mega Menu",
+        "slug": "multi-level-mega-menu",
+        "id": 1674,
+        "count": 4
+      },
+      {
+        "label": "Newsletter",
+        "slug": "newsletter",
+        "id": 1682,
+        "count": 14
+      },
+      {
+        "label": "No-Code Visual Flow Builder",
+        "slug": "no-code-visual-flow-builder",
+        "id": 1623,
+        "count": 2
+      },
+      {
+        "label": "Online Course",
+        "slug": "online-course",
+        "id": 992,
+        "count": 2
+      },
+      {
+        "label": "Online Courses & Coaching",
+        "slug": "online-courses-&-coaching",
+        "id": 2050,
+        "count": 1
+      },
+      {
+        "label": "Payment Integration",
+        "slug": "payment-integration",
+        "id": 1351,
+        "count": 47
+      },
+      {
+        "label": "Payment Method",
+        "slug": "payment-method",
+        "id": 1328,
+        "count": 2
+      },
+      {
+        "label": "Performance Optimization",
+        "slug": "performance-optimization",
+        "id": 1960,
+        "count": 3
+      },
+      {
+        "label": "Performance Tracking Showcase",
+        "slug": "performance-tracking-showcase",
+        "id": 1911,
+        "count": 1
+      },
+      {
+        "label": "Personalization",
+        "slug": "personalization",
+        "id": 2142,
+        "count": 1
+      },
+      {
+        "label": "Personalization & A/B Testing",
+        "slug": "personalization-&-a/b-testing",
+        "id": 1608,
+        "count": 1
+      },
+      {
+        "label": "Photo Galleries",
+        "slug": "photo-galleries",
+        "id": 1934,
+        "count": 1
+      },
+      {
+        "label": "Photo Gallery",
+        "slug": "photo-gallery",
+        "id": 1901,
+        "count": 1
+      },
+      {
+        "label": "Portfolio",
+        "slug": "portfolio",
+        "id": 931,
+        "count": 15
+      },
+      {
+        "label": "Pricing & Rates",
+        "slug": "pricing-&-rates",
+        "id": 1365,
+        "count": 1
+      },
+      {
+        "label": "Property Listings",
+        "slug": "property-listings",
+        "id": 2096,
+        "count": 6
+      },
+      {
+        "label": "Property Listings (IDX)",
+        "slug": "property-listings-(idx)",
+        "id": 1930,
+        "count": 8
+      },
+      {
+        "label": "Property Search (IDX)",
+        "slug": "property-search-(idx)",
+        "id": 1920,
+        "count": 1
+      },
+      {
+        "label": "PWA (Progressive Web App)",
+        "slug": "pwa-(progressive-web-app)",
+        "id": 1646,
+        "count": 1
+      },
+      {
+        "label": "Quiz System",
+        "slug": "quiz-system",
+        "id": 1597,
+        "count": 2
+      },
+      {
+        "label": "Real State",
+        "slug": "real-state",
+        "id": 924,
+        "count": 6
+      },
+      {
+        "label": "Real-time Analytics",
+        "slug": "real-time-analytics",
+        "id": 1625,
+        "count": 3
+      },
+      {
+        "label": "Reviews",
+        "slug": "reviews",
+        "id": 1473,
+        "count": 23
+      },
+      {
+        "label": "Reviews Integration",
+        "slug": "reviews-integration",
+        "id": 2133,
+        "count": 2
+      },
+      {
+        "label": "SaaS",
+        "slug": "saas",
+        "id": 876,
+        "count": 2
+      },
+      {
+        "label": "Search & Filtering",
+        "slug": "search-&-filtering",
+        "id": 1348,
+        "count": 21
+      },
+      {
+        "label": "Search Integration",
+        "slug": "search-integration",
+        "id": 1941,
+        "count": 1
+      },
+      {
+        "label": "Security",
+        "slug": "security",
+        "id": 2098,
+        "count": 1
+      },
+      {
+        "label": "Security & Compliance",
+        "slug": "security-&-compliance",
+        "id": 1587,
+        "count": 5
+      },
+      {
+        "label": "Security Management",
+        "slug": "security-management",
+        "id": 1954,
+        "count": 2
+      },
+      {
+        "label": "SEO",
+        "slug": "seo",
+        "id": 860,
+        "count": 41
+      },
+      {
+        "label": "SEO & Speed Optimization",
+        "slug": "seo-&-speed-optimization",
+        "id": 1530,
+        "count": 30
+      },
+      {
+        "label": "SEO Optimization",
+        "slug": "seo-optimization",
+        "id": 2025,
+        "count": 3
+      },
+      {
+        "label": "Service Showcase",
+        "slug": "service-showcase",
+        "id": 1659,
+        "count": 29
+      },
+      {
+        "label": "Showcase / Gallery",
+        "slug": "showcase-/-gallery",
+        "id": 1869,
+        "count": 1
+      },
+      {
+        "label": "Social Feed Integration",
+        "slug": "social-feed-integration",
+        "id": 2078,
+        "count": 1
+      },
+      {
+        "label": "Social Media Integration",
+        "slug": "social-media-integration",
+        "id": 1883,
+        "count": 1
+      },
+      {
+        "label": "Spam Protection",
+        "slug": "spam-protection",
+        "id": 847,
+        "count": 4
+      },
+      {
+        "label": "Speed Optimization",
+        "slug": "speed-optimization",
+        "id": 845,
+        "count": 31
+      },
+      {
+        "label": "Sponsorship System",
+        "slug": "sponsorship-system",
+        "id": 1615,
+        "count": 1
+      },
+      {
+        "label": "Store Locator",
+        "slug": "store-locator",
+        "id": 1525,
+        "count": 5
+      },
+      {
+        "label": "Structural Cabling",
+        "slug": "structural-cabling",
+        "id": 1691,
+        "count": 1
+      },
+      {
+        "label": "Subscription Integration",
+        "slug": "subscription-integration",
+        "id": 1575,
+        "count": 3
+      },
+      {
+        "label": "User Management",
+        "slug": "user-management",
+        "id": 935,
+        "count": 40
+      },
+      {
+        "label": "User Registration",
+        "slug": "user-registration",
+        "id": 1882,
+        "count": 1
+      },
+      {
+        "label": "Vacation Rentals",
+        "slug": "vacation-rentals",
+        "id": 2097,
+        "count": 6
+      },
+      {
+        "label": "Video Integration",
+        "slug": "video-integration",
+        "id": 1894,
+        "count": 1
+      },
+      {
+        "label": "Video Showcase",
+        "slug": "video-showcase",
+        "id": 1947,
+        "count": 1
+      },
+      {
+        "label": "Voice AI & NLP",
+        "slug": "voice-ai-&-nlp",
+        "id": 1622,
+        "count": 1
+      }
+    ]
+  }
+]

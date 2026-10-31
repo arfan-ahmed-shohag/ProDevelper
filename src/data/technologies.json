@@ -1,0 +1,294 @@
+[
+  [
+    {
+      "label": "Salesforce",
+      "image": "/assets/home/Untitled-design-46-5de4388f.png",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "label": "HubSpot",
+      "image": "/assets/home/Untitled-design-34-43fc0924.png",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "label": "Zoho",
+      "image": "/assets/home/Untitled-design-54-caf5a2c3.png",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "label": "Pipedrive",
+      "image": "/assets/home/Untitled-design-52-4f66b76f.png",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "label": "Freshsales",
+      "image": "/assets/home/Untitled-design-36-69eceb61.png",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "label": "Monday.com",
+      "image": "/assets/home/Untitled-design-42-b0512d57.png",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "label": "Insightly",
+      "image": "/assets/home/Untitled-design-38-ad15f0c9.png",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "label": "Copper",
+      "image": "/assets/home/Untitled-design-12-7ba26971.png",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "label": "Sugar",
+      "image": "/assets/home/Untitled-design-49-0cb8abe3.png",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "label": "Creatio",
+      "image": "/assets/home/Untitled-design-41-14e9b251.png",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "label": "ActiveCampaign",
+      "image": "/assets/home/Untitled-design-13-26b8cb43.png",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "label": "Keap",
+      "image": "/assets/home/Untitled-design-40-d01f1264.png",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "label": "Zendesk Sell",
+      "image": "/assets/home/Untitled-design-53-5143acb8.png",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "label": "Wordpress",
+      "image": "/assets/home/Untitled-design-c969c9cb.png",
+      "width": 150,
+      "height": 150
+    }
+  ],
+  [
+    {
+      "label": "HTML",
+      "image": "/assets/home/icons8-html-5-100-6b89c28c.webp",
+      "width": 100,
+      "height": 100
+    },
+    {
+      "label": "CSS",
+      "image": "/assets/home/icons8-css-logo-100-d87bf9c2.webp",
+      "width": 100,
+      "height": 100
+    },
+    {
+      "label": "SASS",
+      "image": "/assets/home/icons8-sass-96-4d18c156.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "Node.JS",
+      "image": "/assets/home/icons8-node-js-96-c6247267.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "JavaScript",
+      "image": "/assets/home/icons8-javascript-logo-100-731805de.webp",
+      "width": 100,
+      "height": 100
+    },
+    {
+      "label": "Shopify",
+      "image": "/assets/home/shopify-1-59f4996f.webp",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "label": "React.JS",
+      "image": "/assets/home/icons8-react-80-1-419a7c6c.webp",
+      "width": 80,
+      "height": 80
+    },
+    {
+      "label": "MongoDB",
+      "image": "/assets/home/icons8-mongodb-96-38da975d.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "Next.JS",
+      "image": "/assets/home/icons8-next-js-96-62dc22dc.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "Wix",
+      "image": "/assets/home/wix-ad656978.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "label": "Webflow",
+      "image": "/assets/home/webflow_logo_icon_169218-db531753.webp",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "label": "Duda",
+      "image": "/assets/home/duda-logo-png_seeklogo-499386-6b5c05ad.png",
+      "width": 600,
+      "height": 600
+    },
+    {
+      "label": "Squarespace",
+      "image": "/assets/home/squarespace-4e532ee3.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "label": "Elementor",
+      "image": "/assets/home/download-1-720fb386.webp",
+      "width": 225,
+      "height": 225
+    },
+    {
+      "label": "Firebase",
+      "image": "/assets/home/icons8-firebase-96-58aa4a83.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "PHP",
+      "image": "/assets/home/icons8-php-logo-100-0716bb47.webp",
+      "width": 100,
+      "height": 100
+    },
+    {
+      "label": "MySQL",
+      "image": "/assets/home/icons8-mysql-logo-96-088a629c.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "Angular",
+      "image": "/assets/home/icons8-angularjs-96-27baa39b.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "Vue.js",
+      "image": "/assets/home/icons8-vue-js-96-655a1f48.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "Laravel",
+      "image": "/assets/home/icons8-laravel-96-8be299fd.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "PostgreSQL",
+      "image": "/assets/home/icons8-postgresql-96-b578dd41.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "Redis",
+      "image": "/assets/home/icons8-redis-logo-96-8f512bea.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "Adobe Photoshop",
+      "image": "/assets/home/icons8-adobe-photoshop-96-e89b6406.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "Postman",
+      "image": "/assets/home/images-9a222412.webp",
+      "width": 554,
+      "height": 554
+    },
+    {
+      "label": "GitHub",
+      "image": "/assets/home/icons8-github-90-fed38614.webp",
+      "width": 90,
+      "height": 90
+    },
+    {
+      "label": "Figma",
+      "image": "/assets/home/icons8-figma-96-0d5588d1.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "WPML",
+      "image": "/assets/home/images-1-dab652dd.webp",
+      "width": 554,
+      "height": 554
+    },
+    {
+      "label": "TypeScript",
+      "image": "/assets/home/icons8-typescript-96-51792603.webp",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "label": "WooCommerce",
+      "image": "/assets/home/download-15-167968ac.webp",
+      "width": 225,
+      "height": 225
+    },
+    {
+      "label": "Yoast SEO",
+      "image": "/assets/home/download-2-1-e74f37ef.webp",
+      "width": 225,
+      "height": 225
+    },
+    {
+      "label": "ACF",
+      "image": "/assets/home/download-1-1-1a622ceb.webp",
+      "width": 225,
+      "height": 225
+    },
+    {
+      "label": "Gravity Forms",
+      "image": "/assets/home/download-17-374f8ff1.png",
+      "width": 196,
+      "height": 257
+    },
+    {
+      "label": "Vercel",
+      "image": "/assets/home/icons8-vercel-100-dfb56f26.webp",
+      "width": 100,
+      "height": 100
+    },
+    {
+      "label": "Supabase",
+      "image": "/assets/home/icons8-supabase-96-03f61f4f.webp",
+      "width": 96,
+      "height": 96
+    }
+  ]
+]

@@ -1,0 +1,560 @@
+[
+  {
+    "name": "Industry Type",
+    "taxonomy": "industry-type",
+    "options": [
+      {
+        "label": "Accommodation",
+        "slug": "accommodation",
+        "id": 1340,
+        "count": 4
+      },
+      {
+        "label": "Advertisement",
+        "slug": "advertisement",
+        "id": 891,
+        "count": 1
+      },
+      {
+        "label": "Advisor",
+        "slug": "advisor",
+        "id": 838,
+        "count": 3
+      },
+      {
+        "label": "Agency",
+        "slug": "agency",
+        "id": 866,
+        "count": 18
+      },
+      {
+        "label": "Agency|Business & Corporate",
+        "slug": "agency|business-&-corporate",
+        "id": 1098,
+        "count": 5
+      },
+      {
+        "label": "Agency|Landing Page",
+        "slug": "agency|landing-page",
+        "id": 1088,
+        "count": 1
+      },
+      {
+        "label": "Architectural Services",
+        "slug": "architectural-services",
+        "id": 1493,
+        "count": 4
+      },
+      {
+        "label": "Architecture",
+        "slug": "architecture",
+        "id": 1503,
+        "count": 2
+      },
+      {
+        "label": "Automotive Aftermarket Parts",
+        "slug": "automotive-aftermarket-parts",
+        "id": 945,
+        "count": 2
+      },
+      {
+        "label": "Blog",
+        "slug": "blog",
+        "id": 1319,
+        "count": 10
+      },
+      {
+        "label": "Business",
+        "slug": "business",
+        "id": 932,
+        "count": 42
+      },
+      {
+        "label": "Business & Corporate",
+        "slug": "business-&-corporate",
+        "id": 1087,
+        "count": 9
+      },
+      {
+        "label": "Business & Corporate|Landing Page",
+        "slug": "business-&-corporate|landing-page",
+        "id": 1096,
+        "count": 5
+      },
+      {
+        "label": "Cafe",
+        "slug": "cafe",
+        "id": 1480,
+        "count": 1
+      },
+      {
+        "label": "campain",
+        "slug": "campain",
+        "id": 927,
+        "count": 1
+      },
+      {
+        "label": "Coaching",
+        "slug": "coaching",
+        "id": 888,
+        "count": 4
+      },
+      {
+        "label": "Consulting",
+        "slug": "consulting",
+        "id": 850,
+        "count": 2
+      },
+      {
+        "label": "Corporate",
+        "slug": "corporate",
+        "id": 933,
+        "count": 2
+      },
+      {
+        "label": "Digital Marketing",
+        "slug": "digital-marketing",
+        "id": 874,
+        "count": 2
+      },
+      {
+        "label": "Ecommerce",
+        "slug": "ecommerce",
+        "id": 995,
+        "count": 13
+      },
+      {
+        "label": "Electrical",
+        "slug": "electrical",
+        "id": 1101,
+        "count": 3
+      },
+      {
+        "label": "Event Management",
+        "slug": "event-management",
+        "id": 892,
+        "count": 7
+      },
+      {
+        "label": "Finance & Banking",
+        "slug": "finance-&-banking",
+        "id": 851,
+        "count": 4
+      },
+      {
+        "label": "Financial Technology",
+        "slug": "financial-technology",
+        "id": 967,
+        "count": 3
+      },
+      {
+        "label": "food & agricultural",
+        "slug": "food-&-agricultural",
+        "id": 1514,
+        "count": 1
+      },
+      {
+        "label": "Food & Beverage",
+        "slug": "food-&-beverage",
+        "id": 894,
+        "count": 9
+      },
+      {
+        "label": "Health & Fitness",
+        "slug": "health-&-fitness",
+        "id": 1102,
+        "count": 5
+      },
+      {
+        "label": "Home Renovation",
+        "slug": "home-renovation",
+        "id": 1116,
+        "count": 1
+      },
+      {
+        "label": "Hospitality & Tourism",
+        "slug": "hospitality-&-tourism",
+        "id": 893,
+        "count": 12
+      },
+      {
+        "label": "Hotel & Resort",
+        "slug": "hotel-&-resort",
+        "id": 1294,
+        "count": 14
+      },
+      {
+        "label": "Hotel & Restaurant",
+        "slug": "hotel-&-restaurant",
+        "id": 1099,
+        "count": 18
+      },
+      {
+        "label": "Hotel & Restaurant|Tour & Travels",
+        "slug": "hotel-&-restaurant|tour-&-travels",
+        "id": 1104,
+        "count": 16
+      },
+      {
+        "label": "Houzez",
+        "slug": "houzez",
+        "id": 1515,
+        "count": 1
+      },
+      {
+        "label": "It/tech",
+        "slug": "it/tech",
+        "id": 1114,
+        "count": 12
+      },
+      {
+        "label": "Landing Page",
+        "slug": "landing-page",
+        "id": 1106,
+        "count": 17
+      },
+      {
+        "label": "Legal Advice",
+        "slug": "legal-advice",
+        "id": 865,
+        "count": 1
+      },
+      {
+        "label": "Local Business",
+        "slug": "local-business",
+        "id": 1481,
+        "count": 4
+      },
+      {
+        "label": "Magazine",
+        "slug": "magazine",
+        "id": 1329,
+        "count": 1
+      },
+      {
+        "label": "Marketing",
+        "slug": "marketing",
+        "id": 898,
+        "count": 3
+      },
+      {
+        "label": "Media",
+        "slug": "media",
+        "id": 1507,
+        "count": 6
+      },
+      {
+        "label": "News & Articles Platform",
+        "slug": "news-&-articles-platform",
+        "id": 1509,
+        "count": 3
+      },
+      {
+        "label": "News Paper",
+        "slug": "news-paper",
+        "id": 1320,
+        "count": 4
+      },
+      {
+        "label": "Online Course",
+        "slug": "online-course",
+        "id": 991,
+        "count": 2
+      },
+      {
+        "label": "Plumbing",
+        "slug": "plumbing",
+        "id": 1094,
+        "count": 1
+      },
+      {
+        "label": "Portfolio Showcase",
+        "slug": "portfolio-showcase",
+        "id": 1494,
+        "count": 5
+      },
+      {
+        "label": "Product-sell",
+        "slug": "product-sell",
+        "id": 943,
+        "count": 4
+      },
+      {
+        "label": "Professional Services",
+        "slug": "professional-services",
+        "id": 913,
+        "count": 13
+      },
+      {
+        "label": "Property Rental",
+        "slug": "property-rental",
+        "id": 1363,
+        "count": 2
+      },
+      {
+        "label": "Real State",
+        "slug": "real-state",
+        "id": 914,
+        "count": 38
+      },
+      {
+        "label": "Rental",
+        "slug": "rental",
+        "id": 1085,
+        "count": 39
+      },
+      {
+        "label": "Restaurant",
+        "slug": "restaurant",
+        "id": 920,
+        "count": 12
+      },
+      {
+        "label": "Robotsics",
+        "slug": "robotsics",
+        "id": 1495,
+        "count": 1
+      },
+      {
+        "label": "Safari Tours",
+        "slug": "safari-tours",
+        "id": 1512,
+        "count": 1
+      },
+      {
+        "label": "Software Development",
+        "slug": "software-development",
+        "id": 926,
+        "count": 6
+      },
+      {
+        "label": "Technology",
+        "slug": "technology",
+        "id": 1478,
+        "count": 5
+      },
+      {
+        "label": "Tour & Travels",
+        "slug": "tour-&-travels",
+        "id": 980,
+        "count": 12
+      },
+      {
+        "label": "Tourism / Travel",
+        "slug": "tourism-/-travel",
+        "id": 1339,
+        "count": 12
+      },
+      {
+        "label": "Travel & Tourism",
+        "slug": "travel-&-tourism",
+        "id": 1511,
+        "count": 1
+      },
+      {
+        "label": "Vehicle Service",
+        "slug": "vehicle-service",
+        "id": 1489,
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "Functionality",
+    "taxonomy": "functionality",
+    "options": [
+      {
+        "label": "Analytics",
+        "slug": "analytics",
+        "id": 843,
+        "count": 7
+      },
+      {
+        "label": "App Showcase",
+        "slug": "app-showcase",
+        "id": 1477,
+        "count": 5
+      },
+      {
+        "label": "Blog",
+        "slug": "blog",
+        "id": 1330,
+        "count": 10
+      },
+      {
+        "label": "Blog Solution",
+        "slug": "blog-solution",
+        "id": 849,
+        "count": 28
+      },
+      {
+        "label": "Booking",
+        "slug": "booking",
+        "id": 916,
+        "count": 60
+      },
+      {
+        "label": "ChatBot",
+        "slug": "chatbot",
+        "id": 938,
+        "count": 3
+      },
+      {
+        "label": "cleaning and house keeping",
+        "slug": "cleaning-and-house-keeping",
+        "id": 923,
+        "count": 1
+      },
+      {
+        "label": "constructor",
+        "slug": "constructor",
+        "id": 987,
+        "count": 1
+      },
+      {
+        "label": "Contact Forms",
+        "slug": "contact-forms",
+        "id": 1343,
+        "count": 54
+      },
+      {
+        "label": "Digital Marketing",
+        "slug": "digital-marketing",
+        "id": 873,
+        "count": 5
+      },
+      {
+        "label": "E-commerce",
+        "slug": "e-commerce",
+        "id": 875,
+        "count": 16
+      },
+      {
+        "label": "Financial Technology",
+        "slug": "financial-technology",
+        "id": 966,
+        "count": 2
+      },
+      {
+        "label": "Forms",
+        "slug": "forms",
+        "id": 848,
+        "count": 67
+      },
+      {
+        "label": "Host & Guest",
+        "slug": "host-&-guest",
+        "id": 1349,
+        "count": 4
+      },
+      {
+        "label": "Live Chat",
+        "slug": "live-chat",
+        "id": 1337,
+        "count": 1
+      },
+      {
+        "label": "Login",
+        "slug": "login",
+        "id": 879,
+        "count": 18
+      },
+      {
+        "label": "Maps Integration",
+        "slug": "maps-integration",
+        "id": 1350,
+        "count": 15
+      },
+      {
+        "label": "Marketing",
+        "slug": "marketing",
+        "id": 1502,
+        "count": 3
+      },
+      {
+        "label": "Multi Language",
+        "slug": "multi-language",
+        "id": 885,
+        "count": 1
+      },
+      {
+        "label": "Online Course",
+        "slug": "online-course",
+        "id": 992,
+        "count": 1
+      },
+      {
+        "label": "Payment Integration",
+        "slug": "payment-integration",
+        "id": 1351,
+        "count": 17
+      },
+      {
+        "label": "Payment Method",
+        "slug": "payment-method",
+        "id": 1328,
+        "count": 18
+      },
+      {
+        "label": "Portfolio",
+        "slug": "portfolio",
+        "id": 931,
+        "count": 16
+      },
+      {
+        "label": "Pricing & Rates",
+        "slug": "pricing-&-rates",
+        "id": 1365,
+        "count": 19
+      },
+      {
+        "label": "Real State",
+        "slug": "real-state",
+        "id": 924,
+        "count": 37
+      },
+      {
+        "label": "Reviews",
+        "slug": "reviews",
+        "id": 1473,
+        "count": 15
+      },
+      {
+        "label": "SaaS",
+        "slug": "saas",
+        "id": 876,
+        "count": 4
+      },
+      {
+        "label": "Search & Filtering",
+        "slug": "search-&-filtering",
+        "id": 1348,
+        "count": 14
+      },
+      {
+        "label": "SEO",
+        "slug": "seo",
+        "id": 860,
+        "count": 31
+      },
+      {
+        "label": "Speed Optimization",
+        "slug": "speed-optimization",
+        "id": 845,
+        "count": 23
+      },
+      {
+        "label": "Tours",
+        "slug": "tours",
+        "id": 1513,
+        "count": 2
+      },
+      {
+        "label": "User Management",
+        "slug": "user-management",
+        "id": 935,
+        "count": 8
+      }
+    ]
+  }
+]

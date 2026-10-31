@@ -1,0 +1,6195 @@
+[
+  {
+    "title": "Oliver’s Travels – Luxury Villas & House Rentals",
+    "href": "https://www.oliverstravels.com/",
+    "image": "/assets/projects/olivers-travels-house-rental-scaled-4376ce28.webp",
+    "tags": [
+      "AWS",
+      "House Rental",
+      "Luxury Villas",
+      "Next.js",
+      "Oliver's Travels",
+      "React",
+      "Tailwind CSS"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        2099,
+        2124
+      ],
+      "functionality": [
+        2034,
+        2062,
+        1895,
+        2142,
+        2096,
+        2097
+      ]
+    },
+    "id": 10621,
+    "publishedAt": "2026-10-03T10:21:44"
+  },
+  {
+    "title": "Plum Guide – Vacation Homes & House Rentals",
+    "href": "https://www.plumguide.com/",
+    "image": "/assets/projects/plum-guide-house-rental-scaled-698e709d.webp",
+    "tags": [
+      "House Rental",
+      "Next.js",
+      "Plum Guide",
+      "React",
+      "Shopify",
+      "Vacation Homes"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        2099
+      ],
+      "functionality": [
+        875,
+        2036,
+        2096,
+        2133,
+        2097
+      ]
+    },
+    "id": 10620,
+    "publishedAt": "2026-10-03T10:21:44"
+  },
+  {
+    "title": "onefinestay – Luxury Villas & Vacation Rentals",
+    "href": "https://www.onefinestay.com/",
+    "image": "/assets/projects/onefinestay-house-rental-scaled-ff92fffb.webp",
+    "tags": [
+      "AWS",
+      "House Rental",
+      "Luxury Villas",
+      "Next.js",
+      "onefinestay",
+      "Tailwind CSS",
+      "Vacation Rentals"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        2099,
+        1935
+      ],
+      "functionality": [
+        2134,
+        1337,
+        2096,
+        2133,
+        2097
+      ]
+    },
+    "id": 10619,
+    "publishedAt": "2026-10-03T10:21:44"
+  },
+  {
+    "title": "Stirling Estate Chalets – Vacation & House Rentals",
+    "href": "https://stirlingestatechalets.com.au/",
+    "image": "/assets/projects/stirling-estate-chalets-house-rental-scaled-55aac39e.webp",
+    "tags": [
+      "Cloudbeds",
+      "Divi Theme",
+      "House Rental",
+      "Stirling Estate Chalets",
+      "Vacation Rentals",
+      "WordPress"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        2099,
+        2124
+      ],
+      "functionality": [
+        2123,
+        1960,
+        2025,
+        2097
+      ]
+    },
+    "id": 10618,
+    "publishedAt": "2026-10-03T10:21:44"
+  },
+  {
+    "title": "Prime Property – Real Estate & House Rentals",
+    "href": "https://www.prime-property.com/",
+    "image": "/assets/projects/prime-property-house-rental-scaled-b397ce64.webp",
+    "tags": [
+      "House Rental",
+      "Laravel",
+      "Prime Property",
+      "Real Estate",
+      "Tailwind CSS",
+      "Web Application"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        2099,
+        1640
+      ],
+      "functionality": [
+        1895,
+        2114,
+        2115,
+        1337,
+        2096
+      ]
+    },
+    "id": 10617,
+    "publishedAt": "2026-10-03T10:21:44"
+  },
+  {
+    "title": "Villa Bali – Luxury Villa Rentals",
+    "href": "https://www.villa-bali.com/",
+    "image": "/assets/projects/villa-bali-house-rental-scaled-648e37a4.webp",
+    "tags": [
+      "AWS",
+      "Bali Villas",
+      "House Rental",
+      "Vacation Rentals",
+      "Villa Bali"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        2099
+      ],
+      "functionality": [
+        2106,
+        1337,
+        1960,
+        2096,
+        2097
+      ]
+    },
+    "id": 10616,
+    "publishedAt": "2026-10-03T10:21:44"
+  },
+  {
+    "title": "The Villa Collection – Luxury House Rentals",
+    "href": "https://thevillacollection.com/",
+    "image": "/assets/projects/the-villa-collection-house-rental-scaled-cae258cd.webp",
+    "tags": [
+      "Azure Web App",
+      "House Rental",
+      "Luxury Villas",
+      "The Villa Collection",
+      "Vacation Rentals"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        2099
+      ],
+      "functionality": [
+        1895,
+        2096,
+        2098,
+        2097
+      ]
+    },
+    "id": 10615,
+    "publishedAt": "2026-10-03T10:21:44"
+  },
+  {
+    "title": "Tracy Tutor – Luxury Real Estate",
+    "href": "https://tracytutor.com/",
+    "image": "/assets/projects/tracy-tutor-idx-integration-scaled-06115922.webp",
+    "tags": [
+      "Custom Web App",
+      "IDX Integration",
+      "Luxury Homes",
+      "Real Estate Website",
+      "Tracy Tutor"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1922,
+        1935,
+        1640
+      ],
+      "functionality": [
+        1895,
+        2088,
+        1930
+      ]
+    },
+    "id": 10614,
+    "publishedAt": "2026-10-03T10:17:47"
+  },
+  {
+    "title": "Jade Mills Estates – Luxury Real Estate & Properties",
+    "href": "https://jademillsestates.com/",
+    "image": "/assets/projects/jade-mills-estates-idx-integration-scaled-2223ac21.webp",
+    "tags": [
+      "Custom Web App",
+      "IDX Integration",
+      "Jade Mills Estates",
+      "Luxury Homes",
+      "Real Estate Website"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1922,
+        1935,
+        1640
+      ],
+      "functionality": [
+        1895,
+        1641,
+        2088,
+        1930
+      ]
+    },
+    "id": 10613,
+    "publishedAt": "2026-10-03T10:17:47"
+  },
+  {
+    "title": "Single Grain – Revenue Marketing Agency & Lead Capture",
+    "href": "https://www.singlegrain.com/",
+    "image": "/assets/projects/single-grain-lead-capture-scaled-fe1e6dfa.webp",
+    "tags": [
+      "Digital Marketing Agency",
+      "Kinsta",
+      "Lead Capture",
+      "Revenue Marketing",
+      "Single Grain",
+      "WordPress Website"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        874,
+        2026,
+        2079
+      ],
+      "functionality": [
+        2034,
+        1895,
+        1641,
+        1954,
+        2025,
+        2078
+      ]
+    },
+    "id": 10600,
+    "publishedAt": "2026-10-03T06:41:39"
+  },
+  {
+    "title": "KlientBoost – Performance Marketing Agency & Lead Capture",
+    "href": "https://www.klientboost.com/",
+    "image": "/assets/klientboost-lead-capture-scaled-c7f7f204.webp",
+    "tags": [
+      "Digital Marketing Agency",
+      "Gatsby",
+      "HubSpot",
+      "KlientBoost",
+      "Lead Capture",
+      "React"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        874,
+        2026,
+        2074
+      ],
+      "functionality": [
+        2034,
+        1895,
+        1641,
+        1337,
+        2036
+      ]
+    },
+    "id": 10599,
+    "publishedAt": "2026-10-03T06:41:39"
+  },
+  {
+    "title": "Smart Passive Income – Online Business & Lead Capture Community",
+    "href": "https://www.smartpassiveincome.com/",
+    "image": "/assets/smart-passive-income-lead-capture-scaled-bccc2e4f.webp",
+    "tags": [
+      "ConvertKit",
+      "Lead Capture",
+      "Pat Flynn",
+      "Rockbase Theme",
+      "Smart Passive Income",
+      "WordPress Website"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        2064,
+        2026,
+        2063
+      ],
+      "functionality": [
+        2062,
+        1895,
+        1851,
+        2061,
+        1641
+      ]
+    },
+    "id": 10598,
+    "publishedAt": "2026-10-03T06:41:39"
+  },
+  {
+    "title": "Marie Forleo – Online Business Coach & Lead Capture",
+    "href": "https://www.marieforleo.com/",
+    "image": "/assets/marie-forleo-lead-capture-scaled-69b3dd38.webp",
+    "tags": [
+      "Klaviyo",
+      "Lead Capture",
+      "Marie Forleo",
+      "Online Education",
+      "Shopify",
+      "Webflow",
+      "WordPress"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        874,
+        2026,
+        2051
+      ],
+      "functionality": [
+        875,
+        1641,
+        1337,
+        2036,
+        2050
+      ]
+    },
+    "id": 10597,
+    "publishedAt": "2026-10-03T06:41:39"
+  },
+  {
+    "title": "Disruptive Advertising – Digital Marketing Agency & Lead Generation",
+    "href": "https://disruptiveadvertising.com/",
+    "image": "/assets/disruptive-advertising-lead-capture-scaled-c66ecee4.webp",
+    "tags": [
+      "Digital Marketing Agency",
+      "Gatsby",
+      "HubSpot",
+      "Lead Generation",
+      "React",
+      "Tailwind CSS"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        2037,
+        874,
+        2026
+      ],
+      "functionality": [
+        2034,
+        1895,
+        2035,
+        1641,
+        2036
+      ]
+    },
+    "id": 10596,
+    "publishedAt": "2026-10-03T06:41:39"
+  },
+  {
+    "title": "Syed Balkhi – Lead Capture",
+    "href": "https://syedbalkhi.com/",
+    "image": "/assets/syed-balkhi-lead-capture-scaled-f8428b62.webp",
+    "tags": [
+      "Lead Capture",
+      "OptinMonster",
+      "Syed Balkhi",
+      "WordPress Website",
+      "WPForms"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        2026
+      ],
+      "functionality": [
+        1895,
+        2024,
+        1641,
+        2025
+      ]
+    },
+    "id": 10595,
+    "publishedAt": "2026-10-03T06:41:39"
+  },
+  {
+    "title": "The Georgina Jacobson Group – Newport Beach Real Estate",
+    "href": "https://georginajacobson.com/",
+    "image": "/assets/georgina-jacobson-group-scaled-8f4df61d.webp",
+    "tags": [
+      "Custom WordPress Theme",
+      "IDX Integration",
+      "Newport Beach Realtor",
+      "Perfmatters",
+      "Real Estate Website"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1922,
+        1935,
+        1640
+      ],
+      "functionality": [
+        1895,
+        1961,
+        1960,
+        1930
+      ]
+    },
+    "id": 10583,
+    "publishedAt": "2026-10-03T05:23:11"
+  },
+  {
+    "title": "Joyce Rey – Luxury Beverly Hills Real Estate Agent",
+    "href": "https://joycerey.com/",
+    "image": "/assets/joyce-rey-scaled-463d674e.webp",
+    "tags": [
+      "Beverly Hills Realtor",
+      "HubSpot",
+      "IDX Integration",
+      "Luxury Real Estate",
+      "Real Estate Brokerage",
+      "WordPress Website"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1922,
+        1948,
+        1640
+      ],
+      "functionality": [
+        1895,
+        1953,
+        1641,
+        1930,
+        1954
+      ]
+    },
+    "id": 10582,
+    "publishedAt": "2026-10-03T05:23:11"
+  },
+  {
+    "title": "The Oppenheim Group – Luxury Real Estate & Brokerage",
+    "href": "https://ogroup.com/",
+    "image": "/assets/the-oppenheim-group-scaled-1e71e430.webp",
+    "tags": [
+      "IDX Integration",
+      "Luxury Real Estate",
+      "Real Estate Brokerage",
+      "The Oppenheim Group",
+      "WordPress Website"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1922,
+        1948,
+        1640
+      ],
+      "functionality": [
+        1895,
+        1641,
+        1875,
+        1930,
+        1947
+      ]
+    },
+    "id": 10581,
+    "publishedAt": "2026-10-03T05:23:11"
+  },
+  {
+    "title": "Stephen Rothstein Real Estate – Realtor & Property Listings",
+    "href": "https://stephenrothsteinrealestate.com/",
+    "image": "/assets/HOME-Stephen-Rothstein-10-01-2026_04_59_PM-scaled-1-c66ec1b6.webp",
+    "tags": [
+      "Astra Theme",
+      "Elementor Website",
+      "IDX Integration",
+      "Property Listings",
+      "Real Estate Agent"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1922,
+        1942,
+        1640
+      ],
+      "functionality": [
+        1851,
+        1940,
+        1930,
+        1941
+      ]
+    },
+    "id": 10574,
+    "publishedAt": "2026-10-01T11:04:59"
+  },
+  {
+    "title": "Freestone Properties – Luxury Real Estate & Properties",
+    "href": "https://www.freestoneproperties.com/",
+    "image": "/assets/Asheville-Real-Estate-Black-Mountain-NC-Real-Estate-Freestone-10--dd2d0831.webp",
+    "tags": [
+      "Genesis Framework",
+      "Gravity Forms",
+      "IDX Integration",
+      "Luxury Homes",
+      "Real Estate Website"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1922,
+        1935,
+        1640
+      ],
+      "functionality": [
+        1895,
+        1641,
+        1934,
+        1930
+      ]
+    },
+    "id": 10572,
+    "publishedAt": "2026-10-01T11:04:59"
+  },
+  {
+    "title": "Miami Luxury – Luxury Real Estate",
+    "href": "https://www.miami-luxury.com/",
+    "image": "/assets/Miami-Luxury-Real-Estate-by-JL-Delbeke-Miami-Team-10-01-2026_04_2-6a42e0fc.webp",
+    "tags": [
+      "IDX Integration",
+      "Luxury Homes",
+      "Miami Real Estate",
+      "Property Search",
+      "Real Estate Website"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1922,
+        1931,
+        1640
+      ],
+      "functionality": [
+        1895,
+        1851,
+        1641,
+        1930
+      ]
+    },
+    "id": 10570,
+    "publishedAt": "2026-10-01T11:04:59"
+  },
+  {
+    "title": "Brentview Realty – Real Estate Services",
+    "href": "https://www.brentviewrealty.com/",
+    "image": "/assets/Brentview-Realty-Four-Generations-of-Realtors-10-01-2026_04_19_PM-1abd2a9e.webp",
+    "tags": [
+      "Custom WordPress Theme",
+      "Gravity Forms",
+      "IDX Integration",
+      "Property Search",
+      "Real Estate Website"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1922,
+        1923,
+        1640
+      ],
+      "functionality": [
+        1921,
+        1895,
+        1641,
+        1920
+      ]
+    },
+    "id": 10568,
+    "publishedAt": "2026-10-01T11:04:59"
+  },
+  {
+    "title": "Gerford AI – Elite Sports Analytics & Athlete Performance Tracking",
+    "href": "https://gerford.com/",
+    "image": "/assets/Gerford-AI-Elite-Sports-Analytics-Athlete-Performance-Tracking-10-73251f2f.webp",
+    "tags": [
+      "Artificial Intelligence",
+      "Elementor Website",
+      "Hello Elementor",
+      "Sports Analytics",
+      "WordPress Redesign"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1912,
+        1478,
+        1854
+      ],
+      "functionality": [
+        1851,
+        1910,
+        1911
+      ]
+    },
+    "id": 10561,
+    "publishedAt": "2026-10-01T09:37:34"
+  },
+  {
+    "title": "The Vera – Boutique Hotel",
+    "href": "https://theverahotel.com/",
+    "image": "/assets/Vera-The-Vera-Hotel-10-01-2026-03-01-PM-scaled-d75ba1ab.webp",
+    "tags": [
+      "Boutique Hotel",
+      "Elementor Website",
+      "Hotel Website",
+      "WooCommerce",
+      "WordPress Redesign"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1902,
+        1903,
+        1854
+      ],
+      "functionality": [
+        1895,
+        1900,
+        1901
+      ]
+    },
+    "id": 10559,
+    "publishedAt": "2026-10-01T09:11:41"
+  },
+  {
+    "title": "Pacific Wild – Wildlife & Environmental Conservation",
+    "href": "https://pacificwild.org/",
+    "image": "/assets/Great-Bear-Rainforest-Conservation-BC-10-01-2026-03-00-PM-scaled-585e1db7.webp",
+    "tags": [
+      "Elementor Website",
+      "Non-Profit Organization",
+      "OceanWP Theme",
+      "Wildlife Conservation",
+      "WordPress Redesign"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1896,
+        1855,
+        1854
+      ],
+      "functionality": [
+        1895,
+        1851,
+        1893,
+        1894
+      ]
+    },
+    "id": 10557,
+    "publishedAt": "2026-10-01T09:11:41"
+  },
+  {
+    "title": "Avartek Sourcing – Sourcing & Procurement",
+    "href": "https://avarteksourcing.co.uk/",
+    "image": "/assets/1-new-message-10-01-2026-02-58-PM-scaled-d6303b2c.webp",
+    "tags": [
+      "Business Services",
+      "Elementor Website",
+      "Sourcing",
+      "UK Business",
+      "WordPress Redesign"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1536,
+        1884,
+        1854
+      ],
+      "functionality": [
+        1881,
+        1851,
+        1883,
+        1882
+      ]
+    },
+    "id": 10555,
+    "publishedAt": "2026-10-01T09:11:41"
+  },
+  {
+    "title": "Flyaway International – Travel & Visa Consultancy",
+    "href": "https://flyawayinternational.com/",
+    "image": "/assets/Fly-Away-International-Expert-Immigration-And-Visa-Consultancy-10-814e42d8.webp",
+    "tags": [
+      "Elementor Website",
+      "JetEngine",
+      "Travel Agency",
+      "Visa Services",
+      "WordPress Redesign"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1665,
+        1511,
+        1854
+      ],
+      "functionality": [
+        1851,
+        1852,
+        1860,
+        1875
+      ]
+    },
+    "id": 10551,
+    "publishedAt": "2026-10-01T07:31:10"
+  },
+  {
+    "title": "Miami Toy Poodles – Toy Poodle Breeder",
+    "href": "https://miamitoypoodles.com/",
+    "image": "/assets/Healthy-Toy-Poodle-Puppy-in-Miami-For-Sale-10-01-2026_01_38_PM-03f9ab71.webp",
+    "tags": [
+      "Dog Breeder",
+      "Elementor Website",
+      "Miami Pets",
+      "Toy Poodles",
+      "WordPress Redesign"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1871,
+        1870,
+        1854
+      ],
+      "functionality": [
+        1851,
+        1852,
+        1869
+      ]
+    },
+    "id": 10550,
+    "publishedAt": "2026-10-01T07:31:10"
+  },
+  {
+    "title": "Digitizeflow – Digital Agency & Tech Services",
+    "href": "https://www.digitizeflow.com/",
+    "image": "/assets/DigitizeFlow-Enterprise-Solutions-for-SharePoint-Power-Platform-1-a1ffb987.webp",
+    "tags": [
+      "Next.js",
+      "UI/UX Design",
+      "Vercel",
+      "Web Development",
+      "WordPress Redesign"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1862,
+        1478,
+        1854
+      ],
+      "functionality": [
+        1852,
+        1861,
+        1860
+      ]
+    },
+    "id": 10549,
+    "publishedAt": "2026-10-01T07:31:10"
+  },
+  {
+    "title": "Aimed STEM For All – Education & Non-Profit",
+    "href": "https://aimedstemforall.org/",
+    "image": "/assets/AI-Med-Stem-For-ALL-10-01-2026_10_09_AM-scaled-435fe297.webp",
+    "tags": [
+      "Elementor Website",
+      "Non-Profit Organization",
+      "STEM Education",
+      "WordPress Redesign"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1562,
+        1855,
+        1854
+      ],
+      "functionality": [
+        1853,
+        1851,
+        1852
+      ]
+    },
+    "id": 10545,
+    "publishedAt": "2026-10-01T06:02:13"
+  },
+  {
+    "title": "Hanson Wade",
+    "href": "https://hansonwade.com/",
+    "image": "/assets/Hanson-Wade-Life-Sciences-Research-and-Events-09-29-2026_06_22_PM-7c197bf6.webp",
+    "tags": [
+      "Conferences"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1834,
+        913
+      ],
+      "functionality": [
+        1668
+      ]
+    },
+    "id": 10532,
+    "publishedAt": "2026-09-29T12:25:36"
+  },
+  {
+    "title": "Mankind Pharma",
+    "href": "https://www.mankindpharma.com/",
+    "image": "/assets/Mankind-Pharma-Leading-Pharmaceutical-Company-in-India-09-29-2026-f18dd291.webp",
+    "tags": [
+      "Healthcare",
+      "Medical Products",
+      "Pharmaceuticals"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1834,
+        1818
+      ],
+      "functionality": [
+        1614
+      ]
+    },
+    "id": 10526,
+    "publishedAt": "2026-09-29T10:09:37"
+  },
+  {
+    "title": "Zydus Group",
+    "href": "",
+    "image": "/assets/Zydus-Group-scaled-06e4651f.webp",
+    "tags": [
+      "Corporate Compliance",
+      "Enterprise Training",
+      "Global Brand"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1621,
+        932,
+        933,
+        1613
+      ],
+      "functionality": [
+        1585,
+        1343,
+        848,
+        1668,
+        1351,
+        1659
+      ]
+    },
+    "id": 10528,
+    "publishedAt": "2026-09-29T10:08:29"
+  },
+  {
+    "title": "Cadila Pharmaceuticals",
+    "href": "https://www.cadilapharma.com/",
+    "image": "/assets/Cadila-Pharmaceuticals-The-Care-Continues-09-29-2026_03_56_PM-sca-4de3b791.webp",
+    "tags": [
+      "Global Healthcare",
+      "Healthcare",
+      "Medical Research",
+      "Pharmaceuticals"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1834,
+        1835,
+        1818
+      ],
+      "functionality": []
+    },
+    "id": 10524,
+    "publishedAt": "2026-09-29T09:59:46"
+  },
+  {
+    "title": "Glover Sports",
+    "href": "https://weareglover.com/",
+    "image": "/assets/Glover-Sports-scaled-fd07bd6f.webp",
+    "tags": [
+      "B2B Training",
+      "Booking",
+      "Coaching",
+      "Ecommerce",
+      "Sports Equipment"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        888,
+        995,
+        1102,
+        1522
+      ],
+      "functionality": [
+        916,
+        1533,
+        1343,
+        875,
+        848,
+        1641,
+        1659
+      ]
+    },
+    "id": 10520,
+    "publishedAt": "2026-09-29T09:44:44"
+  },
+  {
+    "title": "Eisai – Global Pharmaceutical Company",
+    "href": "https://www.eisai.com/",
+    "image": "/assets/Eisai-Co-Ltd--EF-BD-9CA-human-health-care-company-09-29-2026_03_4-479e8c8a.webp",
+    "tags": [
+      "Healthcare",
+      "Life Sciences",
+      "Medical Research",
+      "Pharmaceuticals"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1834,
+        1835,
+        1818
+      ],
+      "functionality": [
+        1614
+      ]
+    },
+    "id": 10506,
+    "publishedAt": "2026-09-29T09:43:32"
+  },
+  {
+    "title": "Protection & Prosperity Financial Services",
+    "href": "https://ppfs.ie/",
+    "image": "/assets/Protection-Prosperity-Financial-Services-scaled-a5ee3169.webp",
+    "tags": [
+      "B2B Services",
+      "Finance Website",
+      "Financial Technology",
+      "Leadership",
+      "Local Business"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        838,
+        850,
+        851,
+        967,
+        913
+      ],
+      "functionality": [
+        1660,
+        1343,
+        848,
+        1641,
+        1682,
+        1659
+      ]
+    },
+    "id": 10518,
+    "publishedAt": "2026-09-29T09:13:08"
+  },
+  {
+    "title": "Floppycats",
+    "href": "https://www.floppycats.com/",
+    "image": "/assets/Floppycats-scaled-facb2c02.webp",
+    "tags": [
+      "Affiliate Marketing",
+      "Blog",
+      "Ecommerce",
+      "Reviews"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1319,
+        995,
+        1507
+      ],
+      "functionality": [
+        1330,
+        849,
+        1660,
+        875,
+        1668,
+        1682,
+        1473,
+        1348
+      ]
+    },
+    "id": 10516,
+    "publishedAt": "2026-09-29T09:04:29"
+  },
+  {
+    "title": "iLusso",
+    "href": "https://www.ilusso.com/",
+    "image": "/assets/iLusso-scaled-4f75159d.webp",
+    "tags": [
+      "Automotive Tech",
+      "Global Brand",
+      "Local Business",
+      "Luxury",
+      "Luxury Brand"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1554,
+        932
+      ],
+      "functionality": [
+        1634,
+        1343,
+        848,
+        1641,
+        1328,
+        1348
+      ]
+    },
+    "id": 10514,
+    "publishedAt": "2026-09-29T08:35:39"
+  },
+  {
+    "title": "Beverly Hills Car Club",
+    "href": "https://www.beverlyhillscarclub.com/",
+    "image": "/assets/Beverly-Hills-Car-Club-scaled-2eabf464.webp",
+    "tags": [
+      "Automotive Tech",
+      "Classic Car Parts",
+      "Global Brand",
+      "Gravity Forms",
+      "Local Business"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1554,
+        932
+      ],
+      "functionality": [
+        1330,
+        1343,
+        848,
+        1641,
+        1337,
+        885,
+        1682,
+        1348
+      ]
+    },
+    "id": 10512,
+    "publishedAt": "2026-09-29T08:24:03"
+  },
+  {
+    "title": "Vegas Auto Gallery",
+    "href": "https://www.vegasautogallery.com/",
+    "image": "/assets/Vegas-Auto-Gallery-scaled-55d2913b.webp",
+    "tags": [
+      "Automotive Tech",
+      "Classic Car Parts",
+      "Exotic Car Dealer",
+      "Local Business",
+      "Luxury"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1554,
+        995,
+        1481
+      ],
+      "functionality": [
+        1330,
+        916,
+        1533,
+        1634,
+        1343,
+        848,
+        1641,
+        1348
+      ]
+    },
+    "id": 10510,
+    "publishedAt": "2026-09-29T07:02:40"
+  },
+  {
+    "title": "Hollmann International GmbH & Co. KG",
+    "href": "https://hollmann.international/",
+    "image": "/assets/Hollmann-International-GmbH-Co--KG-scaled-f418ce20.webp",
+    "tags": [
+      "Automotive Tech",
+      "Global Brand",
+      "Luxury",
+      "Luxury Brand"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1554,
+        945,
+        932
+      ],
+      "functionality": [
+        1660,
+        1668,
+        1586,
+        1348,
+        1659
+      ]
+    },
+    "id": 10508,
+    "publishedAt": "2026-09-29T06:55:30"
+  },
+  {
+    "title": "Motors",
+    "href": "https://motors.stylemixthemes.com/",
+    "image": "/assets/Motors-scaled-8902e64a.webp",
+    "tags": [
+      "Automotive Tech",
+      "Booking",
+      "Classic Car Parts"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1554,
+        1489
+      ],
+      "functionality": [
+        1330,
+        1634,
+        1343,
+        875,
+        848,
+        1668,
+        1641,
+        1674,
+        1682,
+        1328,
+        1348
+      ]
+    },
+    "id": 10504,
+    "publishedAt": "2026-09-29T06:37:42"
+  },
+  {
+    "title": "Global Pharmaceutical & Healthcare Company",
+    "href": "https://www.merck.com/",
+    "image": "/assets/Merck-Home-09-29-2026_12_29_PM-scaled-24ae4a4c.webp",
+    "tags": [
+      "Global Healthcare",
+      "Medical Research",
+      "Pharmaceuticals"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1801,
+        1818
+      ],
+      "functionality": [
+        1614
+      ]
+    },
+    "id": 10503,
+    "publishedAt": "2026-09-29T06:34:07"
+  },
+  {
+    "title": "Blackeye Studio",
+    "href": "https://blackeye.studio/",
+    "image": "/assets/Blackeye-Studio-scaled-493c12bb.webp",
+    "tags": [
+      "Agency",
+      "Branding",
+      "Bricks",
+      "Design Studio",
+      "Portfolio",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        919,
+        1507,
+        1494
+      ],
+      "functionality": [
+        1675,
+        1343,
+        848,
+        1641,
+        931,
+        1659
+      ]
+    },
+    "id": 10500,
+    "publishedAt": "2026-09-29T06:13:35"
+  },
+  {
+    "title": "On The Way Electrical",
+    "href": "https://onthewayelectrical.com.au/",
+    "image": "/assets/Sydneys-Electrical-Heroes-09-29-2026_12_03_PM-scaled-43a072d6.webp",
+    "tags": [
+      "Electrical Contractor",
+      "Electrician",
+      "Emergency Electrician"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1101,
+        1481
+      ],
+      "functionality": [
+        1533,
+        1343,
+        1659
+      ]
+    },
+    "id": 10495,
+    "publishedAt": "2026-09-29T06:04:50"
+  },
+  {
+    "title": "Yassir Yahya",
+    "href": "https://yassiryahya.com/",
+    "image": "/assets/Yassir-Yahya-scaled-8745c187.webp",
+    "tags": [
+      "B2B Services",
+      "B2B Training",
+      "Bricks",
+      "Cloud Solutions",
+      "Leadership",
+      "Marketing Automation",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        838,
+        1621,
+        919,
+        850,
+        874,
+        1701
+      ],
+      "functionality": [
+        1675,
+        1692,
+        1343,
+        848,
+        1641,
+        860,
+        1659
+      ]
+    },
+    "id": 10497,
+    "publishedAt": "2026-09-29T05:59:46"
+  },
+  {
+    "title": "Auckland Garden Services",
+    "href": "https://aucklandgardenservices.co.nz/",
+    "image": "/assets/Auckland-Garden-Services-Lawn-Mowing-Garden-Maintenance-09-29-202-9de7fa3a.webp",
+    "tags": [
+      "Auckland Gardening",
+      "Garden Services",
+      "Property Maintenance"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1783,
+        1481,
+        1363
+      ],
+      "functionality": [
+        1350,
+        1659
+      ]
+    },
+    "id": 10492,
+    "publishedAt": "2026-09-29T05:51:49"
+  },
+  {
+    "title": "Mathieu Immobilier & Conseils",
+    "href": "https://www.mathieuimmobilier.fr/",
+    "image": "/assets/Mathieu-Immobilier-Conseils-scaled-20e0d295.webp",
+    "tags": [
+      "Blog",
+      "Lead Generation",
+      "Local Business",
+      "Property Rental",
+      "Real Estate",
+      "Real Estate Lead Gen",
+      "Real State"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1481,
+        913,
+        1640
+      ],
+      "functionality": [
+        1330,
+        1343,
+        848,
+        1668,
+        1641,
+        924,
+        1348
+      ]
+    },
+    "id": 10491,
+    "publishedAt": "2026-09-29T05:49:20"
+  },
+  {
+    "title": "Letterjazz",
+    "href": "https://letterjazz.com/",
+    "image": "/assets/Letterjazz-scaled-298d721f.webp",
+    "tags": [
+      "Branding",
+      "Local Business",
+      "Newsletter"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        932,
+        1536,
+        1481,
+        898
+      ],
+      "functionality": [
+        1330,
+        1660,
+        1343,
+        848,
+        1682,
+        1659
+      ]
+    },
+    "id": 10486,
+    "publishedAt": "2026-09-29T05:41:12"
+  },
+  {
+    "title": "Best at Flooring",
+    "href": "https://www.bestatflooring.co.uk/",
+    "image": "/assets/Shop-Laminate-LVT-Wood-Flooring-Best-at-Flooring-09-29-2026_11_30-8d4be80d.webp",
+    "tags": [
+      "Flooring",
+      "Home Decor",
+      "Home Improvement"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1667,
+        1783,
+        1116,
+        1654
+      ],
+      "functionality": [
+        875,
+        1502,
+        1473,
+        1348
+      ]
+    },
+    "id": 10488,
+    "publishedAt": "2026-09-29T05:32:15"
+  },
+  {
+    "title": "Honey Aesthetics",
+    "href": "https://www.honeyaesthetics.com/",
+    "image": "/assets/Med-Spa-Honey-Aesthetics-09-29-2026_11_05_AM-scaled-a6d81412.webp",
+    "tags": [
+      "Beauty Store",
+      "Healthcare",
+      "Medical Spa",
+      "Skincare Retail"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1538,
+        1801
+      ],
+      "functionality": [
+        1614,
+        1641,
+        1659
+      ]
+    },
+    "id": 10484,
+    "publishedAt": "2026-09-29T05:08:04"
+  },
+  {
+    "title": "HOLM Experiences",
+    "href": "https://holm-experiences.com/",
+    "image": "/assets/HOLM-Experiences-scaled-16ae0aca.webp",
+    "tags": [
+      "Event",
+      "Event Management",
+      "Luxury",
+      "Luxury Brand"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        932,
+        1596,
+        893
+      ],
+      "functionality": [
+        1660,
+        1659
+      ]
+    },
+    "id": 10482,
+    "publishedAt": "2026-09-29T05:03:28"
+  },
+  {
+    "title": "Empty Vase – Luxury Florist & Home Decor",
+    "href": "https://emptyvase.com/",
+    "image": "/assets/The-Empty-Vase-Los-Angeles-and-Orange-County-Luxury-Florist-09-29-98d0c10a.webp",
+    "tags": [
+      "Home Decor",
+      "Los Angeles Florist",
+      "Luxury Florist"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1783
+      ],
+      "functionality": [
+        875,
+        1502
+      ]
+    },
+    "id": 10476,
+    "publishedAt": "2026-09-29T04:52:06"
+  },
+  {
+    "title": "Lausanne Marketing",
+    "href": "https://lausanne.marketing/",
+    "image": "/assets/Lausanne-Marketing-scaled-d647ea5a.webp",
+    "tags": [
+      "Branding",
+      "Cloud Solutions",
+      "Conversational AI",
+      "Lead Generation",
+      "Marketing",
+      "Marketing Automation",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        1621,
+        874,
+        1701,
+        898,
+        926
+      ],
+      "functionality": [
+        1330,
+        1675,
+        1343,
+        1607,
+        848,
+        1641,
+        1502,
+        1623,
+        1348,
+        860,
+        1659,
+        845
+      ]
+    },
+    "id": 10480,
+    "publishedAt": "2026-09-29T04:41:23"
+  },
+  {
+    "title": "Apollo Workspace",
+    "href": "https://apolloworkspace.com/",
+    "image": "/assets/Apollo-Workspace-scaled-98dff7d6.webp",
+    "tags": [
+      "Branding",
+      "Local Business",
+      "Professional Services",
+      "Real Estate",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1087,
+        1481,
+        913,
+        1640
+      ],
+      "functionality": [
+        1343,
+        848,
+        1668,
+        1641,
+        1659
+      ]
+    },
+    "id": 10478,
+    "publishedAt": "2026-09-29T04:28:18"
+  },
+  {
+    "title": "OMNY Digital",
+    "href": "https://omny.digital/",
+    "image": "/assets/OMNY-Digital-scaled-b07c03c9.webp",
+    "tags": [
+      "Agency",
+      "Branding",
+      "Bricks",
+      "Lead Generation",
+      "Local Business",
+      "Marketing",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        891,
+        866,
+        1098,
+        919,
+        874,
+        898
+      ],
+      "functionality": [
+        1675,
+        1692,
+        1343,
+        873,
+        848,
+        1641,
+        1502,
+        860,
+        1659
+      ]
+    },
+    "id": 10475,
+    "publishedAt": "2026-09-29T04:19:46"
+  },
+  {
+    "title": "Southward Distilling",
+    "href": "https://www.southwarddistilling.com/",
+    "image": "/assets/Southward-Distilling-scaled-a08bf8b7.webp",
+    "tags": [
+      "Booking",
+      "Booking Engine",
+      "Ecommerce",
+      "Food Delivery",
+      "Local Business",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        894,
+        893,
+        1481
+      ],
+      "functionality": [
+        1330,
+        916,
+        1533,
+        1343,
+        875,
+        848,
+        1351
+      ]
+    },
+    "id": 10473,
+    "publishedAt": "2026-09-29T03:52:17"
+  },
+  {
+    "title": "Rolling Greens – Plant Nursery, Home Decor & Landscape Design",
+    "href": "https://www.rollinggreens.com/",
+    "image": "/assets/Rolling-Greens--E2-80-93-Rolling-Greens-09-28-2026_05_01_PM-scale-d33468d1.webp",
+    "tags": [
+      "Home Decor",
+      "Lifestyle Retail",
+      "Plant Nursery"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1783,
+        1085
+      ],
+      "functionality": [
+        875,
+        1668,
+        1502,
+        1351,
+        1473
+      ]
+    },
+    "id": 10470,
+    "publishedAt": "2026-09-28T11:08:39"
+  },
+  {
+    "title": "Silverback Strategies",
+    "href": "https://www.silverbackstrategies.com/",
+    "image": "/assets/Silverback-Strategies-Digital-Performance-Marketing-Agency-09-28--e3484613.webp",
+    "tags": [
+      "Analytics & Attribution",
+      "Marketing",
+      "SEO Services"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1087,
+        874,
+        898,
+        913
+      ],
+      "functionality": [
+        1343,
+        1641,
+        1625
+      ]
+    },
+    "id": 10468,
+    "publishedAt": "2026-09-28T10:26:56"
+  },
+  {
+    "title": "Cammach Industries – Offshore & Industrial Engineering Solutions",
+    "href": "https://cammach.com/",
+    "image": "/assets/Home-09-28-2026_04_09_PM-scaled-a19205f2.webp",
+    "tags": [
+      "Offshore Engineering",
+      "Oil & Gas Services",
+      "Subsea Services"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1098,
+        1087,
+        933
+      ],
+      "functionality": []
+    },
+    "id": 10466,
+    "publishedAt": "2026-09-28T10:14:55"
+  },
+  {
+    "title": "Lars Ossendrijver",
+    "href": "https://larsossendrijver.com/",
+    "image": "/assets/Lars-Ossendrijver-scaled-e353418b.webp",
+    "tags": [
+      "Branding",
+      "Portfolio",
+      "Professional Services",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        898,
+        1494,
+        913,
+        1478
+      ],
+      "functionality": [
+        1675,
+        1660,
+        931,
+        1659
+      ]
+    },
+    "id": 10462,
+    "publishedAt": "2026-09-28T09:56:56"
+  },
+  {
+    "title": "Based Analytics – Data Engineering, AI & Business Intelligence Services",
+    "href": "https://basedanalytics.net/",
+    "image": "/assets/Based-Analytics--E2-80-93-Your-success-story-starts-with-data-09--812b76a7.webp",
+    "tags": [
+      "AI & Data Science",
+      "Business Intelligence",
+      "Machine Learning"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        933,
+        913,
+        1478
+      ],
+      "functionality": [
+        1614,
+        1641,
+        1659
+      ]
+    },
+    "id": 10459,
+    "publishedAt": "2026-09-28T09:41:22"
+  },
+  {
+    "title": "Gerhard Hacker",
+    "href": "https://hacker-gmbh.com/",
+    "image": "/assets/Gerhard-Hacker-scaled-f71c08d7.webp",
+    "tags": [
+      "Booking",
+      "Bricks",
+      "Business",
+      "Local Business",
+      "Professional Services"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1554,
+        919,
+        1481,
+        1084,
+        1489
+      ],
+      "functionality": [
+        1330,
+        916,
+        1660,
+        1668,
+        1659
+      ]
+    },
+    "id": 10457,
+    "publishedAt": "2026-09-28T09:37:50"
+  },
+  {
+    "title": "Santa Masa Tamaleria – Authentic Mexican Restaurant",
+    "href": "https://www.santamasa.com/",
+    "image": "/assets/Santa-Masa-Tamaleria-Tamales-7544-West-Addison-Street-Chicago-IL--0104fa1b.webp",
+    "tags": [
+      "Chicago Restaurant",
+      "Mexican Food",
+      "Tacos"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        894,
+        949,
+        893
+      ],
+      "functionality": [
+        1729
+      ]
+    },
+    "id": 10456,
+    "publishedAt": "2026-09-28T09:20:50"
+  },
+  {
+    "title": "Glow NYC – Community Organization & Events",
+    "href": "https://glownyc.org/",
+    "image": "/assets/Glow-Cultural-Center--E2-80-93-Enriching-Community-Lives-09-28-20-5cb3eb9d.webp",
+    "tags": [
+      "Community Outreach",
+      "Cultural Programs",
+      "NYC Events"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1596,
+        1574,
+        892,
+        1612
+      ],
+      "functionality": [
+        1729,
+        1614
+      ]
+    },
+    "id": 10450,
+    "publishedAt": "2026-09-28T08:54:00"
+  },
+  {
+    "title": "Lorenzo Barberi",
+    "href": "https://lorenzobarberi.com/",
+    "image": "/assets/Lorenzo-Barberi-scaled-3df75a49.webp",
+    "tags": [
+      "Blog",
+      "Branding",
+      "Bricks",
+      "Design Studio",
+      "Lead Generation",
+      "Portfolio",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1319,
+        919,
+        898,
+        1507,
+        1494,
+        913
+      ],
+      "functionality": [
+        1330,
+        1675,
+        1343,
+        848,
+        1668,
+        1641,
+        931,
+        1659
+      ]
+    },
+    "id": 10453,
+    "publishedAt": "2026-09-28T08:52:12"
+  },
+  {
+    "title": "PharmaLex",
+    "href": "https://www.pharmalex.com/",
+    "image": "/assets/PharmaLex-scaled-bee900c8.webp",
+    "tags": [
+      "Biotech",
+      "Pharmaceutical",
+      "WordPress"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        913
+      ],
+      "functionality": [
+        885,
+        1682,
+        1348,
+        1587,
+        860,
+        1659
+      ]
+    },
+    "id": 10451,
+    "publishedAt": "2026-09-28T08:38:10"
+  },
+  {
+    "title": "Girls Gone Strong",
+    "href": "https://www.girlsgonestrong.com/",
+    "image": "/assets/girls-gone-strong-scaled-40a837a0.webp",
+    "tags": [
+      "Coaching",
+      "Education",
+      "Lead Generation",
+      "Yoast SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        888,
+        1562,
+        1102
+      ],
+      "functionality": [
+        1330,
+        1692,
+        1660,
+        1614,
+        1641,
+        1674,
+        992,
+        1473
+      ]
+    },
+    "id": 10447,
+    "publishedAt": "2026-09-28T07:29:03"
+  },
+  {
+    "title": "Born Fitness",
+    "href": "https://www.bornfitness.com",
+    "image": "/assets/born-fitness-scaled-376d4940.webp",
+    "tags": [
+      "Blog",
+      "Coaching",
+      "Gravity Forms",
+      "Subscription Based",
+      "Yoast SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        888,
+        1102
+      ],
+      "functionality": [
+        843,
+        1330,
+        1692,
+        1660,
+        848,
+        1641,
+        879,
+        1682,
+        1348,
+        1575
+      ]
+    },
+    "id": 10444,
+    "publishedAt": "2026-09-28T07:20:44"
+  },
+  {
+    "title": "Nattawan Worachat",
+    "href": "https://nattawan.com/",
+    "image": "/assets/Nattawan-Worachat-scaled-675a29a7.webp",
+    "tags": [
+      "Blog",
+      "Branding",
+      "Next.js Application",
+      "Responsive Design",
+      "SEO",
+      "Speed Optimization"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1319,
+        1494,
+        913
+      ],
+      "functionality": [
+        1330,
+        1675,
+        1668,
+        931,
+        1659
+      ]
+    },
+    "id": 10441,
+    "publishedAt": "2026-09-28T07:20:11"
+  },
+  {
+    "title": "Montana West USA – Wholesale Western Handbags & Fashion",
+    "href": "https://www.montanawestusa.com/",
+    "image": "/assets/Montana-West-USA-Wholesale-Western-Handbags-Fashion-Accessories---24170c5b.webp",
+    "tags": [
+      "Cowgirl Accessories",
+      "Leather Goods",
+      "Western Handbags",
+      "Wholesale Fashion"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1529,
+        1085,
+        1743
+      ],
+      "functionality": [
+        875,
+        1351,
+        1473
+      ]
+    },
+    "id": 10439,
+    "publishedAt": "2026-09-28T07:08:06"
+  },
+  {
+    "title": "Probiótico Ultra by AB-BIOTICS",
+    "href": "https://www.ab-biotics.com/probiotico-ultra/",
+    "image": "/assets/Probiotico-Ultra-by-AB-BIOTICS-scaled-5000ebe6.webp",
+    "tags": [
+      "Bricks",
+      "Event",
+      "Lead Generation"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        919,
+        927,
+        1102,
+        1613,
+        1106
+      ],
+      "functionality": [
+        848,
+        1641
+      ]
+    },
+    "id": 10438,
+    "publishedAt": "2026-09-28T07:02:28"
+  },
+  {
+    "title": "Ally Behavior Centers",
+    "href": "https://allybehavior.com/",
+    "image": "/assets/ABA-Therapy-For-Autism-Over-300-Lives-Changed-09-28-2026_12_42_PM-b352f565.webp",
+    "tags": [
+      "Early Intervention",
+      "Occupational Therapy",
+      "Speech Therapy"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1562,
+        1102
+      ],
+      "functionality": [
+        1330,
+        916,
+        1614,
+        1641
+      ]
+    },
+    "id": 10433,
+    "publishedAt": "2026-09-28T06:43:38"
+  },
+  {
+    "title": "PageFreak",
+    "href": "https://pagefreak.com/",
+    "image": "/assets/PageFreak-scaled-2a88d875.webp",
+    "tags": [
+      "Agency",
+      "Bricks",
+      "Lead Generation",
+      "Portfolio",
+      "Professional Services",
+      "Responsive Design",
+      "SEO",
+      "Speed Optimization"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        1088,
+        919,
+        1106,
+        898,
+        913,
+        926,
+        1478
+      ],
+      "functionality": [
+        1675,
+        1692,
+        1343,
+        848,
+        1641,
+        931,
+        1365,
+        860,
+        1659,
+        847,
+        845
+      ]
+    },
+    "id": 10435,
+    "publishedAt": "2026-09-28T06:39:25"
+  },
+  {
+    "title": "Jason Mavrommatis",
+    "href": "https://jasonblackeye.com/",
+    "image": "/assets/Jason-Mavrommatis-scaled-37559ce7.webp",
+    "tags": [
+      "Blog",
+      "Branding",
+      "Bricks",
+      "Marketing",
+      "Portfolio",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1319,
+        919,
+        874,
+        898,
+        1507,
+        1494,
+        1478
+      ],
+      "functionality": [
+        1645,
+        1330,
+        1675,
+        1668,
+        931,
+        1659
+      ]
+    },
+    "id": 10429,
+    "publishedAt": "2026-09-28T06:26:55"
+  },
+  {
+    "title": "BuyModa – Modafinil Online Pharmacy",
+    "href": "https://www.buymoda.store/",
+    "image": "/assets/Buy-Modafinil-Online-Top-Vendor-Modalert-Waklert-BuyModa-09-28-20-5797126b.webp",
+    "tags": [
+      "Online Pharmacy"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1538,
+        1613
+      ],
+      "functionality": [
+        875,
+        885,
+        1351,
+        1473,
+        1587
+      ]
+    },
+    "id": 10428,
+    "publishedAt": "2026-09-28T06:26:15"
+  },
+  {
+    "title": "Invictus Fitness",
+    "href": "https://invictusfitness.com",
+    "image": "/assets/invictus-fitness-scaled-9b4f6fdf.webp",
+    "tags": [
+      "Blog",
+      "Coaching",
+      "Local Business",
+      "Next.js Application",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1102
+      ],
+      "functionality": [
+        1330,
+        1692,
+        1660,
+        1682,
+        1659,
+        1525
+      ]
+    },
+    "id": 10430,
+    "publishedAt": "2026-09-28T06:22:41"
+  },
+  {
+    "title": "Como Piano Academy",
+    "href": "https://www.comopianoacademy.org/",
+    "image": "/assets/Como-Piano-Academy-scaled-08bf9dac.webp",
+    "tags": [
+      "Bricks",
+      "Education",
+      "Event",
+      "Nonprofit"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        919,
+        1596,
+        1562,
+        1574,
+        1612
+      ],
+      "functionality": [
+        1660,
+        1614,
+        1659
+      ]
+    },
+    "id": 10426,
+    "publishedAt": "2026-09-28T06:17:02"
+  },
+  {
+    "title": "Irinel Traista",
+    "href": "https://irinel.co/",
+    "image": "/assets/Irinel-Traista-1-scaled-b018c09e.webp",
+    "tags": [
+      "Bricks",
+      "Lead Generation",
+      "Portfolio",
+      "Professional Services"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        919,
+        874,
+        898,
+        1494,
+        913,
+        926,
+        1478
+      ],
+      "functionality": [
+        1330,
+        1675,
+        1692,
+        1343,
+        848,
+        1641,
+        1682,
+        931,
+        860,
+        1659,
+        845
+      ]
+    },
+    "id": 10419,
+    "publishedAt": "2026-09-28T05:47:20"
+  },
+  {
+    "title": "Gymshark",
+    "href": "https://www.gymshark.com/",
+    "image": "/assets/gymshark-scaled-64318971.webp",
+    "tags": [
+      "Ecommerce",
+      "Global Brand",
+      "Multi Language",
+      "Next.js Application",
+      "Secure Payments",
+      "User Authentication"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1528,
+        995
+      ],
+      "functionality": [
+        1330,
+        1660,
+        875,
+        879,
+        885,
+        1682,
+        1351,
+        1473,
+        1348,
+        935
+      ]
+    },
+    "id": 10421,
+    "publishedAt": "2026-09-28T05:40:59"
+  },
+  {
+    "title": "Association of Professional Biology – Advancing Applied Biology",
+    "href": "https://professionalbiology.com/",
+    "image": "/assets/Association-of-Professional-Biology-Association-of-Professional-B-4c6889bd.webp",
+    "tags": [
+      "Environmental Conservation",
+      "Job Board",
+      "Nonprofit",
+      "Professional Services"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1562,
+        1612
+      ],
+      "functionality": [
+        1729,
+        1614,
+        1721
+      ]
+    },
+    "id": 10420,
+    "publishedAt": "2026-09-28T05:37:03"
+  },
+  {
+    "title": "Ben Cartwright & Team",
+    "href": "https://www.bencartwrightteam.co.nz/",
+    "image": "/assets/Ben-Cartwright-Team-scaled-6de9953d.webp",
+    "tags": [
+      "Blog",
+      "Lead Generation",
+      "Local Business",
+      "Professional Services",
+      "Real Estate",
+      "Real Estate Lead Gen",
+      "Real State"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1481,
+        913,
+        1640
+      ],
+      "functionality": [
+        1330,
+        1692,
+        1343,
+        848,
+        1668,
+        1641,
+        924,
+        1473
+      ]
+    },
+    "id": 10411,
+    "publishedAt": "2026-09-28T05:23:52"
+  },
+  {
+    "title": "Orangetheory Fitness",
+    "href": "https://www.orangetheory.com/en-us",
+    "image": "/assets/orangetheory-fitness-scaled-ab5f7605.webp",
+    "tags": [
+      "Booking",
+      "Global Brand",
+      "Lead Generation",
+      "Multi Language",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1102
+      ],
+      "functionality": [
+        916,
+        1692,
+        1660,
+        1641,
+        1586,
+        885,
+        1525
+      ]
+    },
+    "id": 10415,
+    "publishedAt": "2026-09-28T05:20:28"
+  },
+  {
+    "title": "Alberta Fire Safety Association – Protecting Communities",
+    "href": "https://albertafire.com/",
+    "image": "/assets/albertafire--E2-80-93-albertafire-09-28-2026_11_13_AM-scaled-bc313fe0.webp",
+    "tags": [
+      "Advocacy",
+      "Fire Safety",
+      "Training"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1596,
+        913
+      ],
+      "functionality": [
+        1614,
+        879,
+        1721,
+        1587,
+        935
+      ]
+    },
+    "id": 10406,
+    "publishedAt": "2026-09-28T05:15:25"
+  },
+  {
+    "title": "Fitness First",
+    "href": "https://www.fitnessfirst.com/",
+    "image": "/assets/fitness-first-3cebaac1.webp",
+    "tags": [
+      "Global Brand",
+      "Lead Generation",
+      "Multi Language",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1102
+      ],
+      "functionality": [
+        1641,
+        1525
+      ]
+    },
+    "id": 10410,
+    "publishedAt": "2026-09-28T05:12:13"
+  },
+  {
+    "title": "Stronglifts",
+    "href": "https://stronglifts.com/",
+    "image": "/assets/stronglifts-scaled-cc126cf7.webp",
+    "tags": [
+      "Conversion Optimization",
+      "Education",
+      "Lead Generation",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1102
+      ],
+      "functionality": [
+        1660,
+        848,
+        1614,
+        1641,
+        1586,
+        1682,
+        1473
+      ]
+    },
+    "id": 10404,
+    "publishedAt": "2026-09-28T05:08:19"
+  },
+  {
+    "title": "Midable",
+    "href": "https://midable.it/",
+    "image": "/assets/Midable--scaled-88351db2.webp",
+    "tags": [
+      "Agency",
+      "Branding",
+      "Bricks",
+      "Business",
+      "Lead Generation",
+      "Local Business",
+      "Marketing",
+      "Portfolio",
+      "Professional Services",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        891,
+        866,
+        1098,
+        919,
+        1087,
+        850,
+        874,
+        898
+      ],
+      "functionality": [
+        1330,
+        1675,
+        1692,
+        1343,
+        1702,
+        873,
+        848,
+        1641,
+        1502,
+        1674,
+        1682,
+        931,
+        1348,
+        860,
+        1659
+      ]
+    },
+    "id": 10394,
+    "publishedAt": "2026-09-28T05:04:50"
+  },
+  {
+    "title": "TXS Restaurant Equipment – Quality Commercial Kitchen Supplies",
+    "href": "https://www.txsrestaurantequipment.com/",
+    "image": "/assets/Quality-Restaurant-Equipment-Texas-3424-Spring-Creek-Dr-Spring-TX-7e4d04ba.webp",
+    "tags": [
+      "Commercial Kitchen",
+      "Refrigeration",
+      "Restaurant Equipment"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        894,
+        949,
+        1294,
+        943
+      ],
+      "functionality": [
+        916,
+        1533,
+        875,
+        1351,
+        1348
+      ]
+    },
+    "id": 10395,
+    "publishedAt": "2026-09-28T05:03:45"
+  },
+  {
+    "title": "Sworkit Health",
+    "href": "https://sworkit.com/",
+    "image": "/assets/sworkit-scaled-d8f7280a.webp",
+    "tags": [
+      "B2B Services",
+      "Lead Generation",
+      "Responsive Design",
+      "SaaS Platform",
+      "Yoast SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1102
+      ],
+      "functionality": [
+        1330,
+        1675,
+        1660,
+        848,
+        1641,
+        1659
+      ]
+    },
+    "id": 10402,
+    "publishedAt": "2026-09-28T05:02:17"
+  },
+  {
+    "title": "CrossFit",
+    "href": "https://www.crossfit.com/",
+    "image": "/assets/CrossFit-scaled-87ceb05a.webp",
+    "tags": [
+      "Education",
+      "Global Brand",
+      "Maps Integration",
+      "Multi Language",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1102
+      ],
+      "functionality": [
+        1660,
+        1614,
+        1350,
+        885,
+        1682,
+        1348
+      ]
+    },
+    "id": 10400,
+    "publishedAt": "2026-09-28T04:56:29"
+  },
+  {
+    "title": "Bodybuilding.com",
+    "href": "https://shop.bodybuilding.com/",
+    "image": "/assets/bodybuilding-com-scaled-24f6ce00.webp",
+    "tags": [
+      "Ecommerce",
+      "Responsive Design",
+      "Secure Payments",
+      "Sports Equipment",
+      "User Authentication"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1102
+      ],
+      "functionality": [
+        875,
+        879,
+        1351,
+        1473,
+        1348,
+        935
+      ]
+    },
+    "id": 10392,
+    "publishedAt": "2026-09-28T04:44:33"
+  },
+  {
+    "title": "Stratascale",
+    "href": "https://www.stratascale.com/",
+    "image": "/assets/Governance-Risk-Compliance--E2-80-93-Stratascale-09-28-2026_10_30-b8377f0e.webp",
+    "tags": [
+      "AI Research",
+      "Cybersecurity",
+      "Threat Intelligence"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1700,
+        967,
+        1701,
+        1478
+      ],
+      "functionality": [
+        1702,
+        1703,
+        1625
+      ]
+    },
+    "id": 10388,
+    "publishedAt": "2026-09-28T04:32:58"
+  },
+  {
+    "title": "Fitness Blender",
+    "href": "https://www.fitnessblender.com/",
+    "image": "/assets/Fitness-Blender-09-28-2026_10_28_AM-scaled-f320c08b.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "Subscription Based",
+      "User Authentication",
+      "User Management",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1102
+      ],
+      "functionality": [
+        875,
+        879,
+        1351,
+        1348,
+        1575,
+        935
+      ]
+    },
+    "id": 10390,
+    "publishedAt": "2026-09-28T04:29:17"
+  },
+  {
+    "title": "Evalis Cert – ISO Certification Body",
+    "href": "https://evaliscert.it/",
+    "image": "/assets/a951529d-9325-468d-bd31-388f5b193180-scaled-6b6e0a26.webp",
+    "tags": [
+      "B2B Services",
+      "Corporate Compliance",
+      "ISO Certification"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        850,
+        933,
+        1676
+      ],
+      "functionality": [
+        1614,
+        1587,
+        1659
+      ]
+    },
+    "id": 10383,
+    "publishedAt": "2026-09-27T11:32:08"
+  },
+  {
+    "title": "R and R Connectivity – IT Services & Structural Cabling",
+    "href": "https://randrconnectivity.com/",
+    "image": "/assets/a1-scaled-6cc6c78b.webp",
+    "tags": [
+      "Computer Repair",
+      "Data Management",
+      "Managed IT Services"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1114,
+        1478
+      ],
+      "functionality": [
+        916,
+        1533,
+        1692,
+        1343,
+        1691
+      ]
+    },
+    "id": 10381,
+    "publishedAt": "2026-09-27T10:29:43"
+  },
+  {
+    "title": "Kingdom Business Leadership Global",
+    "href": "https://kingdombusinessleadershipglobal.com/",
+    "image": "/assets/Kingdom-Business-scaled-294eb690.webp",
+    "tags": [
+      "Book Sales",
+      "Business",
+      "Coaching",
+      "Leadership"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        932,
+        1528
+      ],
+      "functionality": [
+        1533,
+        1343,
+        1682,
+        1351
+      ]
+    },
+    "id": 10379,
+    "publishedAt": "2026-09-27T09:12:46"
+  },
+  {
+    "title": "Full-Service Law Firm Alabama",
+    "href": "https://alabamaoutsidecounsel.com/",
+    "image": "/assets/Alabama-scaled-d7205aa0.webp",
+    "tags": [
+      "Alabama",
+      "Criminal Defense",
+      "Family Law",
+      "Law Firm",
+      "Legal Services"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1676
+      ],
+      "functionality": [
+        843,
+        1330,
+        1675,
+        938,
+        1343,
+        1337,
+        1674
+      ]
+    },
+    "id": 10377,
+    "publishedAt": "2026-09-27T07:24:48"
+  },
+  {
+    "title": "Avocado Homes | Luxury Real Estate & Modern Living in Costa del Sol",
+    "href": "https://www.avocado-homes.com/",
+    "image": "/assets/Avocado-Homes-04-07-2026_05_56_PM-1-scaled-36da668c.webp",
+    "tags": [
+      "Lead Generation",
+      "Property Rental",
+      "Real Estate",
+      "Responsive Design",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1087,
+        1640
+      ],
+      "functionality": [
+        843,
+        848,
+        1350,
+        1348,
+        860,
+        845
+      ]
+    },
+    "id": 10168,
+    "publishedAt": "2026-04-07T12:04:29"
+  },
+  {
+    "title": "Inspiring Villas",
+    "href": "https://www.inspiringvillas.com/",
+    "image": "/assets/Luxury-Villa-Rentals-in-Thailand-Inspiring-Villas-04-07-2026_05_2-6a6a33da.webp",
+    "tags": [
+      "Booking System",
+      "Rental",
+      "Responsive Design",
+      "SEO",
+      "Travel"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1087,
+        995,
+        1640,
+        980
+      ],
+      "functionality": [
+        843,
+        1533,
+        1350,
+        1348,
+        860,
+        845
+      ]
+    },
+    "id": 10166,
+    "publishedAt": "2026-04-07T11:40:50"
+  },
+  {
+    "title": "The Altman Brothers | Ultra-Luxury Real Estate & Iconic Estates",
+    "href": "https://www.thealtmanbrothers.com/",
+    "image": "/assets/The-Altman-Brothers-Los-Angeles-Luxury-Homes-for-Sale-04-07-2026_-37975dc1.webp",
+    "tags": [
+      "IDX Integration",
+      "Luxury",
+      "Property Rental",
+      "Real Estate",
+      "Responsive Design",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1087,
+        1640
+      ],
+      "functionality": [
+        843,
+        848,
+        1350,
+        1348,
+        860,
+        845
+      ]
+    },
+    "id": 10164,
+    "publishedAt": "2026-04-07T10:44:47"
+  },
+  {
+    "title": "Hilton & Hyland | Ultra-Luxury Real Estate & Exclusive Brokerage",
+    "href": "https://hiltonhyland.com/",
+    "image": "/assets/Beverly-Hills-Real-Estate-Agents-Forbes-Global-Properties-Hilton--f649df89.webp",
+    "tags": [
+      "IDX Integration",
+      "Luxury",
+      "Real Estate",
+      "Responsive Design",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        838,
+        1087,
+        1640
+      ],
+      "functionality": [
+        843,
+        848,
+        1668,
+        1350,
+        1348,
+        1530
+      ]
+    },
+    "id": 10162,
+    "publishedAt": "2026-04-07T10:23:25"
+  },
+  {
+    "title": "Sweenor Builders",
+    "href": "https://sweenorbuilders.com/",
+    "image": "/assets/Sweenor-Builders-Custom-Home-Building-Remodeling-Rhode-Island-04--cd442f7b.webp",
+    "tags": [
+      "Construction",
+      "Constructor",
+      "Portfolio",
+      "Responsive Design",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1503,
+        1087,
+        1667,
+        1640
+      ],
+      "functionality": [
+        843,
+        849,
+        848,
+        1668,
+        860,
+        845
+      ]
+    },
+    "id": 10160,
+    "publishedAt": "2026-04-07T09:55:58"
+  },
+  {
+    "title": "Delano Group | Luxury Real Estate & Property Investment Solutions",
+    "href": "https://www.delanogroupre.com/",
+    "image": "/assets/Own-Palm-Desert-California-Real-Estate-Now-Delano-Group-04-07-202-e5baa6cf.webp",
+    "tags": [
+      "Property Rental",
+      "Real Estate",
+      "Responsive Design",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1087,
+        1106,
+        914
+      ],
+      "functionality": [
+        843,
+        848,
+        1350,
+        860,
+        845
+      ]
+    },
+    "id": 10158,
+    "publishedAt": "2026-04-07T09:01:43"
+  },
+  {
+    "title": "Perkins&Will",
+    "href": "https://perkinswill.com/",
+    "image": "/assets/Perkins-Will-04-07-2026_02_28_PM-1-scaled-8c28d2a2.webp",
+    "tags": [
+      "Professional Services",
+      "Responsive Design",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1503,
+        1087,
+        1114
+      ],
+      "functionality": [
+        843,
+        849,
+        848,
+        885,
+        860,
+        847
+      ]
+    },
+    "id": 10156,
+    "publishedAt": "2026-04-07T08:40:26"
+  },
+  {
+    "title": "Forster Jones International",
+    "href": "https://forsterjonesintl.com/",
+    "image": "/assets/Beverly-Hills-Luxury-Real-Estate-Forster-Jones-International-04-0-de111c75.webp",
+    "tags": [
+      "Managed IT Services",
+      "Real State",
+      "Responsive Design",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1665,
+        1114,
+        914
+      ],
+      "functionality": [
+        843,
+        849,
+        848,
+        860,
+        845
+      ]
+    },
+    "id": 10154,
+    "publishedAt": "2026-04-07T08:25:08"
+  },
+  {
+    "title": "Academy of Mine | Enterprise LMS Platform for Training & Certifications",
+    "href": "https://www.academyofmine.com",
+    "image": "/assets/Academy-of-Mine-Customizable-Learning-Management-System-04-04-202-8621215d.webp",
+    "tags": [
+      "B2B Training",
+      "Enterprise LMS",
+      "Responsive Design",
+      "SaaS Platform"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1087,
+        1562,
+        1563,
+        1478
+      ],
+      "functionality": [
+        843,
+        1607,
+        1564,
+        1608,
+        1530,
+        935
+      ]
+    },
+    "id": 10152,
+    "publishedAt": "2026-04-04T20:05:19"
+  },
+  {
+    "title": "Zero Olympiad | Complete Full-stack Platform for Academic Competitions",
+    "href": "https://www.zeroolympiad.com",
+    "image": "/assets/Zero-Olympiad-Cultivating-Global-Leaders-from-Bangladesh-04-04-20-174e9b44.webp",
+    "tags": [
+      "Full Stack",
+      "MERN Stack",
+      "Online Olympiad",
+      "Real-time Database",
+      "Responsive Design",
+      "Zero Olympiad"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1596,
+        1562,
+        1478
+      ],
+      "functionality": [
+        1599,
+        1598,
+        1564,
+        1351,
+        1597,
+        935
+      ]
+    },
+    "id": 10150,
+    "publishedAt": "2026-04-04T19:43:40"
+  },
+  {
+    "title": "eFront | Enterprise-Grade Adaptable Learning Management System (LMS)",
+    "href": "https://www.efrontlearning.com/",
+    "image": "/assets/Learn-Spanish-with-Spanish-Obsessed-04-04-2026_12_49_PM-1-scaled-941ad849.webp",
+    "tags": [
+      "Enterprise Training",
+      "LMS",
+      "Responsive Design",
+      "SaaS Platform",
+      "Skill Management"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1087,
+        1562,
+        1563,
+        1478
+      ],
+      "functionality": [
+        1585,
+        1564,
+        1586,
+        1351,
+        1587,
+        935
+      ]
+    },
+    "id": 10148,
+    "publishedAt": "2026-04-04T19:05:22"
+  },
+  {
+    "title": "Spanish Obsessed | Premium Language Learning Platform & Podcast Hub",
+    "href": "https://www.spanishobsessed.com",
+    "image": "/assets/Learn-Spanish-with-Spanish-Obsessed-04-04-2026_12_49_PM-scaled-d879ae2a.webp",
+    "tags": [
+      "Language Learning",
+      "LMS",
+      "Podcast Integration",
+      "Responsive Design",
+      "Subscription Based"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1562
+      ],
+      "functionality": [
+        1576,
+        1564,
+        1530,
+        1575,
+        935
+      ]
+    },
+    "id": 10146,
+    "publishedAt": "2026-04-04T18:55:38"
+  },
+  {
+    "title": "Agency Mavericks | Premium Coaching & Training for Digital Agencies",
+    "href": "https://www.agencymavericks.com",
+    "image": "/assets/Agency-Mavericks--E2-80-93-Digital-Agency-Web-Design-Training-Cou-3ea7dfa0.webp",
+    "tags": [
+      "Agency Coaching",
+      "LMS",
+      "Marketing Automation",
+      "Responsive Design",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1087,
+        1562,
+        898
+      ],
+      "functionality": [
+        843,
+        916,
+        1564,
+        1530,
+        935
+      ]
+    },
+    "id": 10144,
+    "publishedAt": "2026-04-04T18:45:53"
+  },
+  {
+    "title": "OptinMonster University | Exclusive Training for Conversion Optimization & Lead Gen",
+    "href": "https://optinmonster.com/university",
+    "image": "/assets/OptinMonster-University-Expert-Training-to-Grow-Your-Business-04--2a396d5d.webp",
+    "tags": [
+      "Conversion Optimization",
+      "LMS",
+      "Online Courses",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1562,
+        898,
+        1563
+      ],
+      "functionality": [
+        843,
+        848,
+        1564,
+        1530,
+        935
+      ]
+    },
+    "id": 10142,
+    "publishedAt": "2026-04-04T18:37:37"
+  },
+  {
+    "title": "Al Amin Jewellers | Premium Gold & Diamond Jewellery Store in Bangladesh",
+    "href": "https://www.alaminjewellers.com",
+    "image": "/assets/Al-Amin-Jewellers-Gold-Jewellery-Shop-In-Bangladesh-04-04-2026_10-d0dd06fd.webp",
+    "tags": [
+      "Jewellery Retail",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1560,
+        1481,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10140,
+    "publishedAt": "2026-04-04T16:46:22"
+  },
+  {
+    "title": "Game Ghor | Trusted Online Gaming Store & Digital Top-up Hub in BD",
+    "href": "https://www.gameghor.com",
+    "image": "/assets/Game-Ghor-Best-Online-Gaming-Shop-04-04-2026_10_19_AM-scaled-c8ad93a9.webp",
+    "tags": [
+      "Game Top-up",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1557,
+        1481,
+        943
+      ],
+      "functionality": [
+        875,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10138,
+    "publishedAt": "2026-04-04T16:39:06"
+  },
+  {
+    "title": "Boudin Bakery | San Francisco’s Iconic Sourdough & Gourmet Food Store",
+    "href": "https://boudinbakery.com/%20",
+    "image": "/assets/Home-Boudin-Bakery-04-04-2026_10_03_AM-scaled-c55e8d75.webp",
+    "tags": [
+      "Food Delivery",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        894,
+        1481,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        848,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10136,
+    "publishedAt": "2026-04-04T16:14:02"
+  },
+  {
+    "title": "Elecbrakes | Australia’s Leading Plug & Play Electric Brake Controller",
+    "href": "https://www.elecbrakes.com/",
+    "image": "/assets/Electric-Brake-Controller-Plug-and-Play-Setup-Elecbrakes-04-04-20-f4121f26.webp",
+    "tags": [
+      "Automotive Tech",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1554,
+        995,
+        943,
+        1478
+      ],
+      "functionality": [
+        843,
+        875,
+        885,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10134,
+    "publishedAt": "2026-04-04T16:01:33"
+  },
+  {
+    "title": "MAHALO Skin Care | High-Performance Luxurious Hawaiian Botanicals",
+    "href": "https://mahalo.care/%20",
+    "image": "/assets/Welcome-to-Hawaiian-paradise-of-MAHALO-Skin-Care-MAHALO-Skin-Care-2e860e73.webp",
+    "tags": [
+      "Eco-friendly Beauty",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1538,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10132,
+    "publishedAt": "2026-04-04T15:43:26"
+  },
+  {
+    "title": "ZR SHOP BD | Innovative Household Accessories & DIY Home Decor Shop",
+    "href": "https://zrshopbd.com/",
+    "image": "/assets/Home-ZR-SHOP-BD-04-04-2026_08_43_AM-scaled-7abaf656.webp",
+    "tags": [
+      "Home Decor Store",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1551,
+        1481,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1473,
+        1530,
+        935
+      ]
+    },
+    "id": 10130,
+    "publishedAt": "2026-04-04T15:02:03"
+  },
+  {
+    "title": "Safe Life Technology | Leading Provider of Water Purifiers & Home Safety Solutions in BD",
+    "href": "https://safelifetechnology.com.bd/",
+    "image": "/assets/Safe-Life-Technology-Trusted-Name-in-Water-Filter-Geyser-Industry-3663952a.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "Water Filter Shop",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1536,
+        995,
+        1481,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10128,
+    "publishedAt": "2026-04-04T14:29:24"
+  },
+  {
+    "title": "Abaya and Gown | Premium Modest Fashion & Hijab Brand in BD",
+    "href": "https://abayaandgown.com/",
+    "image": "/assets/Best-Stylish-Abaya-Borka-Hijab-Gown-Online-Shop-Clothing-Store-in-a113ed55.webp",
+    "tags": [
+      "Modest Fashion",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1528,
+        995,
+        1481,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10126,
+    "publishedAt": "2026-04-04T14:23:50"
+  },
+  {
+    "title": "Jeans Fellow | Premium Denim & Casual Wear Brand in BD",
+    "href": "https://jeansfellow.xyz/",
+    "image": "/assets/JeansFellow-Footwear--E2-80-93-Quality-Shoes-Bangladesh-04-04-202-187f880c.webp",
+    "tags": [
+      "Denim Store",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1528,
+        995,
+        1481,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10122,
+    "publishedAt": "2026-04-04T14:07:19"
+  },
+  {
+    "title": "Gorur Ghash | Trendy Lifestyle & Apparel Brand in Bangladesh",
+    "href": "http://gorurghash.com/",
+    "image": "/assets/Home-Gorur-Ghash-04-04-2026_06_57_AM-scaled-326c51cd.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "Streetwear",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1528,
+        995,
+        1481,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10120,
+    "publishedAt": "2026-04-04T13:03:06"
+  },
+  {
+    "title": "Groomly BD | Leading Destination for Authentic Global Skincare in BD",
+    "href": "https://groomlybd.com/",
+    "image": "/assets/Home-Groomly-BD-Authentic-Skincare-in-Bangladesh-04-04-2026_06_49-4641ef48.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "Skincare Retail",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1538,
+        1481,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1473,
+        1530,
+        935
+      ]
+    },
+    "id": 10118,
+    "publishedAt": "2026-04-04T12:54:34"
+  },
+  {
+    "title": "Etel | Most Trusted Mobile Phone Parts & Repair Service in BD",
+    "href": "https://etel.com.bd/",
+    "image": "/assets/Buy-Mobile-Phone-Parts-and-Accessories-in-Bangladesh-Etel-04-04-2-06677932.webp",
+    "tags": [
+      "Mobile Repairing",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1543,
+        1481,
+        943
+      ],
+      "functionality": [
+        843,
+        916,
+        875,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10116,
+    "publishedAt": "2026-04-04T12:42:25"
+  },
+  {
+    "title": "Pristine Shop | Authentic Premium Skincare & Beauty Retailer in BD",
+    "href": "https://www.pristineshop.com.bd/",
+    "image": "/assets/PRISTINE-Fashion-D2C-lifestyle-brand-in-Bangladesh-04-04-2026_06_-12964e21.webp",
+    "tags": [
+      "Beauty Store",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1538,
+        1481,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10114,
+    "publishedAt": "2026-04-04T12:34:43"
+  },
+  {
+    "title": "Dhaka Store Online | Reliable Gadget & Electronics Shop in Bangladesh",
+    "href": "https://dhakastoreonline.com",
+    "image": "/assets/Dhaka-Store-Online-Best-Crockeries-Homeware-Shop-In-Bangladesh-On-132e7c62.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1541,
+        1481,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10112,
+    "publishedAt": "2026-04-04T12:28:02"
+  },
+  {
+    "title": "BPIB | Largest Online Shop for Authentic Branded Perfumes in BD",
+    "href": "https://buyperfumeinbangladesh.com/",
+    "image": "/assets/Buy-Perfume-in-Bangladesh-BPIB-04-04-2026_06_05_AM-scaled-00961d4f.webp",
+    "tags": [
+      "Fragrance Store",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1538,
+        1481,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1473,
+        1530,
+        935
+      ]
+    },
+    "id": 10110,
+    "publishedAt": "2026-04-04T12:16:05"
+  },
+  {
+    "title": "Corporate Spec | UK’s Largest Supplier of Refurbished Designer Office",
+    "href": "https://corporatespec.com/",
+    "image": "/assets/Refurbished-Branded-Office-Chairs-UK-s-Largest-Best-04-04-2026_05-146bed78.webp",
+    "tags": [
+      "Ecommerce",
+      "Furniture Retail",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1536,
+        933,
+        995,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        848,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10108,
+    "publishedAt": "2026-04-04T12:04:03"
+  },
+  {
+    "title": "Lugaro Jewellers | Fine Canadian Diamonds & Luxury Swiss Watches",
+    "href": "https://www.lugaro.com/",
+    "image": "/assets/Lugaro-Jewellers-Jewellery-Swiss-Watches-Rolex-Retailer-04-04-202-eb394f02.webp",
+    "tags": [
+      "Luxury Brand",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1535,
+        943
+      ],
+      "functionality": [
+        843,
+        916,
+        1533,
+        875,
+        1351,
+        1530,
+        935
+      ]
+    },
+    "id": 10106,
+    "publishedAt": "2026-04-04T11:45:10"
+  },
+  {
+    "title": "Melt Chocolates | London’s Most Luxurious Handmade Chocolates",
+    "href": "https://meltchocolates.com/",
+    "image": "/assets/Melt-Chocolates-Luxury-Chocolate-Notting-Hill-London-s-Finest-Cho-b91910dd.webp",
+    "tags": [
+      "Luxury Brand",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        894,
+        943
+      ],
+      "functionality": [
+        843,
+        1533,
+        875,
+        1351,
+        1530
+      ]
+    },
+    "id": 10104,
+    "publishedAt": "2026-04-04T11:32:55"
+  },
+  {
+    "title": "JOCO Cups | Eco-Innovative Reusable Glass Coffee Cups & Vessels",
+    "href": "https://jococups.com/",
+    "image": "/assets/JOCO-Cups-04-04-2026_05_03_AM-scaled-2f500926.webp",
+    "tags": [
+      "Eco-friendly Branding",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        885,
+        1351,
+        1473,
+        1530
+      ]
+    },
+    "id": 10102,
+    "publishedAt": "2026-04-04T11:24:07"
+  },
+  {
+    "title": "Tonal",
+    "href": "https://tonal.com/",
+    "image": "/assets/Tonal-Smart-Home-Gym-Equipment-and-Workout-Programs-04-04-2026_04-a3f21486.webp",
+    "tags": [
+      "Responsive Design",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1102,
+        1114,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1473,
+        860,
+        845,
+        935
+      ]
+    },
+    "id": 10097,
+    "publishedAt": "2026-04-04T10:58:41"
+  },
+  {
+    "title": "NIGHTHAWKS | Progressive Fashion Retailer & Curated Designer Brands",
+    "href": "https://www.nighthawks-fk.com/",
+    "image": "/assets/Home-NIGHTHAWKS-04-04-2026_04_43_AM-scaled-6e236965.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1528,
+        995,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        885,
+        1351,
+        1530
+      ]
+    },
+    "id": 10095,
+    "publishedAt": "2026-04-04T10:51:44"
+  },
+  {
+    "title": "Victoire Boutique",
+    "href": "https://victoireboutique.com/",
+    "image": "/assets/Victoire-Boutique-Ethical-sustainable-independent-Clothing-Store--325ea582.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1529
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1473,
+        860,
+        845,
+        935
+      ]
+    },
+    "id": 10093,
+    "publishedAt": "2026-04-04T10:45:48"
+  },
+  {
+    "title": "AMIRA | Premium Women’s Ethnic Wear & Lifestyle Brand",
+    "href": "https://amirabd.com/",
+    "image": "/assets/Amira-Best-Clothing-and-Lifestyle-Brand-in-Bangladesh-04-04-2026_-f7c477db.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1528,
+        995,
+        1481,
+        898,
+        943
+      ],
+      "functionality": [
+        875,
+        1351,
+        860,
+        845,
+        935
+      ]
+    },
+    "id": 10092,
+    "publishedAt": "2026-04-04T10:41:28"
+  },
+  {
+    "title": "AL HIBA | Classic & Luxury Islamic Lifestyle & Apparel",
+    "href": "https://alhibabd.com/",
+    "image": "/assets/AL-HIBA--E2-80-93--E2-9D-9D-RELIABLE--E2-80-A2-CLASSIC--E2-80-A2--dccaac06.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1528,
+        995,
+        1481,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        848,
+        1351,
+        860,
+        845
+      ]
+    },
+    "id": 10090,
+    "publishedAt": "2026-04-04T09:52:24"
+  },
+  {
+    "title": "Root Science | High-Performance Natural Skincare",
+    "href": "https://www.shoprootscience.com/",
+    "image": "/assets/Root-Science-Skincare-for-the-Modern-Purist-04-04-2026_03_30_AM-s-6e47ecac.webp",
+    "tags": [
+      "Elementor",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1102,
+        898,
+        943
+      ],
+      "functionality": [
+        843,
+        849,
+        875,
+        1351,
+        1473,
+        860,
+        845
+      ]
+    },
+    "id": 10088,
+    "publishedAt": "2026-04-04T09:43:45"
+  },
+  {
+    "title": "Roberto Coin",
+    "href": "https://robertocoin.com/",
+    "image": "/assets/Roberto-Coin-Official-Website-Fine-Italian-Jewellery-04-01-2026_1-6e90697f.webp",
+    "tags": [
+      "Branding",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        995,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        860,
+        845,
+        1525,
+        935
+      ]
+    },
+    "id": 10083,
+    "publishedAt": "2026-04-01T05:49:35"
+  },
+  {
+    "title": "Stripped Beauty",
+    "href": "https://strippedbeauty.com/",
+    "image": "/assets/Stripped-Beauty-C2-AE-Simple-no-BS-vegan-skincare-products-under--fc8c2149.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1102,
+        898,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1473,
+        860,
+        845
+      ]
+    },
+    "id": 10081,
+    "publishedAt": "2026-04-01T05:39:08"
+  },
+  {
+    "title": "OSEA Malibu",
+    "href": "https://oseamalibu.com/",
+    "image": "/assets/OSEA-C2-AE-Malibu-Skincare-from-the-Sea-Vegan-Skincare-Brand-Prod-663d0c9a.webp",
+    "tags": [
+      "Branding",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        995,
+        1102,
+        898,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1473,
+        860,
+        845,
+        935
+      ]
+    },
+    "id": 10079,
+    "publishedAt": "2026-04-01T05:30:55"
+  },
+  {
+    "title": "Sana Jardin London",
+    "href": "https://sanajardin.com/",
+    "image": "/assets/Sana-Jardin-Official-Site-Luxury-Sustainable-Fragrances-Candles---def9da08.webp",
+    "tags": [
+      "Luxury",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        898,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        885,
+        1351,
+        1473,
+        860,
+        845
+      ]
+    },
+    "id": 10077,
+    "publishedAt": "2026-04-01T05:20:12"
+  },
+  {
+    "title": "Björk and Berries",
+    "href": "https://eu.bjorkandberries.com/",
+    "image": "/assets/Bjork-and-Berries--E2-80-93-Bjork-and-Berries-EU-03-31-2026_09_59-c7e602b6.webp",
+    "tags": [
+      "Luxury",
+      "Responsive Design",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        995,
+        898,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        885,
+        1351,
+        1473,
+        860,
+        845
+      ]
+    },
+    "id": 10072,
+    "publishedAt": "2026-03-31T04:06:46"
+  },
+  {
+    "title": "Sodashi",
+    "href": "https://sodashi.com.au/",
+    "image": "/assets/Sodashi-Skincare-Natural-Vegan-Australian-Skincare-03-31-2026_09_-4390b92f.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "Skin Care",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        1102,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1473,
+        860,
+        845
+      ]
+    },
+    "id": 10070,
+    "publishedAt": "2026-03-31T03:50:04"
+  },
+  {
+    "title": "100% PURE | Natural & Organic Skin Care",
+    "href": "https://www.100percentpure.com/",
+    "image": "/assets/100-PURE-Organic-Natural-Beauty-Products-03-31-2026_09_13_AM-1-sc-97421c65.webp",
+    "tags": [
+      "Branding",
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        1102,
+        898,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        1473,
+        860,
+        845,
+        935
+      ]
+    },
+    "id": 10068,
+    "publishedAt": "2026-03-31T03:16:15"
+  },
+  {
+    "title": "Lundberg Family Farms",
+    "href": "https://www.lundberg.com/",
+    "image": "/assets/Rice-obsessed-since-1937-Lundberg-Family-Farms-03-30-2026_06_07_P-2e4eddb3.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        933,
+        995,
+        1514,
+        894
+      ],
+      "functionality": [
+        843,
+        849,
+        875,
+        1350,
+        860,
+        845,
+        1525
+      ]
+    },
+    "id": 10066,
+    "publishedAt": "2026-03-30T12:17:45"
+  },
+  {
+    "title": "Wakami Global",
+    "href": "https://wakamiglobal.com/",
+    "image": "/assets/Wakami-Global-03-30-2026_05_51_PM-1-scaled-cfc25536.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "Social Impact",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        1481,
+        898,
+        943
+      ],
+      "functionality": [
+        843,
+        875,
+        885,
+        1351,
+        860,
+        845
+      ]
+    },
+    "id": 10064,
+    "publishedAt": "2026-03-30T12:05:37"
+  },
+  {
+    "title": "TRUFF",
+    "href": "https://www.truff.com/",
+    "image": "/assets/TRUFF-Truffle-Hot-Sauce-Luxury-Condiments-TRUFF-Truffle-Hot-Sauce-2691dd5c.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        894,
+        943
+      ],
+      "functionality": []
+    },
+    "id": 10062,
+    "publishedAt": "2026-03-30T11:49:37"
+  },
+  {
+    "title": "K-Swiss",
+    "href": "https://kswiss.com/",
+    "image": "/assets/K-Swiss-Tennis-and-Pickleball-Shoes-Apparel-Official-Store--E2-80-8bccd14c.webp",
+    "tags": [
+      "Responsive Design",
+      "Secure Payments",
+      "SEO",
+      "Speed Optimization",
+      "WooCommerce"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        995,
+        943,
+        1522
+      ],
+      "functionality": [
+        843,
+        875,
+        1351,
+        860,
+        845,
+        935
+      ]
+    },
+    "id": 10060,
+    "publishedAt": "2026-03-30T11:28:29"
+  },
+  {
+    "title": "Sonder",
+    "href": "https://www.sonder.com/",
+    "image": "/assets/Sonder-A-better-way-to-stay-07-09-2025_06_36_PM-min-scaled-1-06e4d905.webp",
+    "tags": [
+      "Booking Engine",
+      "Global Brand",
+      "Hospitality Tech",
+      "Next.js Application",
+      "PWA"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1340,
+        1099,
+        1563,
+        1511
+      ],
+      "functionality": [
+        1645,
+        916,
+        1647,
+        1351,
+        1646,
+        935
+      ]
+    },
+    "id": 9110,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "Solar Energy Nerds",
+    "href": "https://solarenergynerds.com/",
+    "image": "/assets/Solar-Energy-Nerds-See-the-cost-of-installing-solar-on-your-home--229efc2d.webp",
+    "tags": [
+      "Affiliate Marketing",
+      "Clean Energy",
+      "Conversion Optimized",
+      "Responsive Design",
+      "Solar Lead Gen"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1116,
+        1654,
+        1106,
+        1481
+      ],
+      "functionality": [
+        843,
+        1330,
+        1597,
+        1530
+      ]
+    },
+    "id": 9108,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "Data Queue",
+    "href": "https://dataqueue.ai/",
+    "image": "/assets/dataqueue-06-28-2025_10_32_PM-1-scaled-1-687757a5.webp",
+    "tags": [
+      "Conversational AI",
+      "Enterprise Security",
+      "No-Code Tool",
+      "SaaS Platform",
+      "Voice AI"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1621,
+        932,
+        1114,
+        1563,
+        1478
+      ],
+      "functionality": [
+        1626,
+        1624,
+        1623,
+        1625,
+        935,
+        1622
+      ]
+    },
+    "id": 9104,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "Julius Financial",
+    "href": "https://juliusfinancial.com/",
+    "image": "/assets/juliusfinancial-06-28-2025_10_30_PM-1-scaled-1-6ca840e2.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1087
+      ],
+      "functionality": []
+    },
+    "id": 9102,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "Snelleit",
+    "href": "https://snelleit.nl/",
+    "image": "/assets/SnelleIT-Directe-Hulp-aan-Huis-of-op-Afstand-06-28-2025_10_26_PM--a91ab6f5.webp",
+    "tags": [
+      "Cloud Solutions",
+      "Cybersecurity",
+      "Dutch Business Site",
+      "Managed IT Services",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        1087,
+        1114,
+        1478
+      ],
+      "functionality": [
+        843,
+        1660,
+        1530,
+        1659
+      ]
+    },
+    "id": 9100,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "Elegant mentions",
+    "href": "https://elegantmentions.com/",
+    "image": "/assets/High-Quality-Link-Building-SEO-Agency-Elegant-Mentions-06-28-2025-69eafa73.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1114
+      ],
+      "functionality": []
+    },
+    "id": 9098,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "AI Med stem society",
+    "href": "https://aimedstemsociety.org/",
+    "image": "/assets/AI-Med-Stem-Society-06-27-2025_11_43_PM-1-scaled-1-e5119ff3.webp",
+    "tags": [
+      "AI Research",
+      "Nonprofit",
+      "Responsive Design",
+      "STEM Education",
+      "Youth Empowerment"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1562,
+        1613,
+        1114,
+        1612,
+        1478
+      ],
+      "functionality": [
+        1330,
+        1614,
+        1530,
+        1615,
+        935
+      ]
+    },
+    "id": 9096,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "Miami toy",
+    "href": "https://miamitoypoodles.com/",
+    "image": "/assets/Healthy-Toy-Poodle-Puppy-in-Miami-For-Sale-06-27-2025_11_41_PM-1-4cc89138.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1108
+      ],
+      "functionality": []
+    },
+    "id": 9094,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "Ottawa",
+    "href": "https://ottawahomesvalue.com/",
+    "image": "/assets/What-s-your-home-worth-06-27-2025_11_23_PM-1-a1b9205f.webp",
+    "tags": [
+      "Conversion Optimized",
+      "Home Valuation Tool",
+      "Real Estate Lead Gen",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        1110,
+        1106,
+        1481,
+        1640
+      ],
+      "functionality": [
+        843,
+        848,
+        1641,
+        1350,
+        1530
+      ]
+    },
+    "id": 9092,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "Barrett",
+    "href": "https://myreversequote.com/",
+    "image": "/assets/Barrett-Financial-Group-06-27-2025_11_16_PM-28852bcd.webp",
+    "tags": [
+      "Conversion Optimized",
+      "Finance Website",
+      "Lead Generation",
+      "Mortgage Funnel",
+      "Responsive Design"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        851,
+        1110,
+        1481
+      ],
+      "functionality": [
+        843,
+        1634,
+        848,
+        1530
+      ]
+    },
+    "id": 9088,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "BOSTON",
+    "href": "https://bostonhomesvalue.com/",
+    "image": "/assets/What-s-your-home-worth-06-27-2025_10_58_PM-62c6c315.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1110
+      ],
+      "functionality": []
+    },
+    "id": 9086,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "Sterling dog trainers",
+    "href": "https://sterlingdogtrainers.com/",
+    "image": "/assets/Dog-Training-In-Sterling-VA-Off-Leash-K-Training-06-27-2025_10_31-487b1f22.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1108
+      ],
+      "functionality": []
+    },
+    "id": 9084,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "e-meilleur-prix",
+    "href": "https://le-meilleur-prix.com/en/",
+    "image": "/assets/Best-Price-Choose-and-Save-on-quality-products-06-27-2025_10_29_P-29df194e.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        995
+      ],
+      "functionality": []
+    },
+    "id": 9082,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "Digitize Flow",
+    "href": "https://digitizeflow.com/",
+    "image": "/assets/Digitize-Flow-Business-Process-Automation-with-Microsoft-06-27-20-c7fafedc.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1087
+      ],
+      "functionality": []
+    },
+    "id": 9080,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "MILKY MOO",
+    "href": "https://megafruttisorvetes.com.br/lp3/",
+    "image": "/assets/Milky-Moo--E2-80-93-Be-a-Franchisee-05-24-2025_10_30_PM-scaled-1-4e66cfa1.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1106
+      ],
+      "functionality": []
+    },
+    "id": 9078,
+    "publishedAt": "2026-03-06T20:14:23"
+  },
+  {
+    "title": "OAKBERRY",
+    "href": "https://megafruttisorvetes.com.br/lp2/",
+    "image": "/assets/OAKBERRRY-05-24-2025_10_26_PM-min-scaled-1-3029bc0c.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1106
+      ],
+      "functionality": []
+    },
+    "id": 9076,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "TRILHAS DA",
+    "href": "https://megafruttisorvetes.com.br/lp1/",
+    "image": "/assets/MegaFrutti-Sorvetes-07-12-2025_09_52_PM-min-1-scaled-1-14d66dec.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1106
+      ],
+      "functionality": []
+    },
+    "id": 9074,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "Onx Diamond",
+    "href": "https://onxdiamond.com/",
+    "image": "/assets/Ana-Sayfa-ONX-Diamond-04-25-2025_05_15_AM-scaled-1-9b22f2db.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        995
+      ],
+      "functionality": []
+    },
+    "id": 9070,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "bhb-habitat",
+    "href": "https://bhb-habitat82.fr/",
+    "image": "/assets/BHB-Habitat-BHB-Habitat-04-25-2025_05_04_AM-scaled-1-e5522f6e.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [],
+      "functionality": []
+    },
+    "id": 9068,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "Cbienêtre",
+    "href": "https://xn--cbientre-sophrologie-02b.fr/#cmsmasters-scroll-top",
+    "image": "/assets/CBIENETRE-04-25-2025_05_01_AM-scaled-1-e0c835d2.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [],
+      "functionality": []
+    },
+    "id": 9066,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "Otana Tours",
+    "href": "https://otanatours.com/",
+    "image": "/assets/Otana-Tours--E2-80-93-Sri-Lanka--E2-80-93-Island-Getaways-04-25-2-43ab83c2.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        980
+      ],
+      "functionality": []
+    },
+    "id": 9063,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "Harbor Halo",
+    "href": "https://harborhalomarketplace.com/",
+    "image": "/assets/harborholo-Coming-Soon-04-25-2025_04_37_AM-scaled-1-0cc615ae.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1085
+      ],
+      "functionality": []
+    },
+    "id": 9059,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "Renovate In Sydney",
+    "href": "https://renovateinsydney.com/",
+    "image": "/assets/Renovateinsydney-No-1-Home-Renovation-Specialists-Sydney-Side-04--bbf46a0b.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 9057,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "Fritzer’s frische",
+    "href": "https://fritzers-frische.de/",
+    "image": "/assets/728168a7-100f-4ceb-8a9d-8dd43e2ddb0c-min-scaled-1-e0c2942f.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        919
+      ],
+      "functionality": []
+    },
+    "id": 9055,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "Sharks Collision Center",
+    "href": "https://sharkscollisioncenters.com/",
+    "image": "/assets/Sharks-Collision-Center-scaled-18f90cfc.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1087
+      ],
+      "functionality": []
+    },
+    "id": 9051,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "JO Digital Marketing",
+    "href": "https://jodigitalmarketi-vx09008a38.live-website.com/",
+    "image": "/assets/JO-Digital-Marketing-scaled-c24180b3.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1087
+      ],
+      "functionality": []
+    },
+    "id": 9049,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "Voice Artist",
+    "href": "https://www.ricardiabramley.de/",
+    "image": "/assets/Voice-Artist-scaled-75d7b3df.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1087
+      ],
+      "functionality": []
+    },
+    "id": 9045,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "Seafood",
+    "href": "https://dutchfish.eu/",
+    "image": "/assets/Seafood-scaled-8012a79a.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1087
+      ],
+      "functionality": []
+    },
+    "id": 9043,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "Mr Lenses",
+    "href": "https://www.mrlenses.com/",
+    "image": "/assets/MR-Lenses-scaled-ff2872d8.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1087
+      ],
+      "functionality": []
+    },
+    "id": 9041,
+    "publishedAt": "2026-03-06T20:13:45"
+  },
+  {
+    "title": "Pacific Wild",
+    "href": "https://pacificwild.org/",
+    "image": "/assets/Pacific-Wild-1-scaled-e22d291c.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        980
+      ],
+      "functionality": []
+    },
+    "id": 9037,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "4one Marketing",
+    "href": "https://4one.ag/",
+    "image": "/assets/4one-Marketing-scaled-7ec6ae0e.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1087
+      ],
+      "functionality": []
+    },
+    "id": 9035,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Gray Coatings",
+    "href": "https://graycoatings.com/",
+    "image": "/assets/Gray-Coatings-scaled-bcef359b.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1084
+      ],
+      "functionality": []
+    },
+    "id": 9033,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Quince Restaurant",
+    "href": "https://www.quincerestaurant.com/",
+    "image": "/assets/Quince-Restaurant-c736737e.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1099
+      ],
+      "functionality": []
+    },
+    "id": 9031,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Eat Pastaria",
+    "href": "https://eatpastaria.com/stlouis/",
+    "image": "/assets/Eat-Pastaria-scaled-973ecfe5.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1099
+      ],
+      "functionality": []
+    },
+    "id": 9029,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Fox in the snow",
+    "href": "https://www.foxinthesnow.com/",
+    "image": "/assets/fox-in-the-snow-d979ed74.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1099
+      ],
+      "functionality": []
+    },
+    "id": 9027,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "4 Rivers smoke house",
+    "href": "https://www.4rsmokehouse.com/",
+    "image": "/assets/4-Rivers-smoke-house-scaled-0faf4d6a.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1099
+      ],
+      "functionality": []
+    },
+    "id": 9025,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Do The North",
+    "href": "https://dothenorth.com/",
+    "image": "/assets/Do-The-North-scaled-cc322bf0.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        980
+      ],
+      "functionality": []
+    },
+    "id": 9023,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Jarve Tornid",
+    "href": "https://www.jarvetornid.ee/",
+    "image": "/assets/Jarve-Tornid-scaled-a14c602a.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1104
+      ],
+      "functionality": []
+    },
+    "id": 9021,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Cuisines Kocher",
+    "href": "https://www.cuisines-kocher.com/",
+    "image": "/assets/Cuisines-Kocher-scaled-ff7715cf.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1104
+      ],
+      "functionality": []
+    },
+    "id": 9019,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Rejuvenating Vegan Spa",
+    "href": "https://rejuvenatingveganspa.com/",
+    "image": "/assets/Rejuvenating-Vegan-Spa-scaled-1e42fded.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1102
+      ],
+      "functionality": []
+    },
+    "id": 9017,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Torgeson Electric",
+    "href": "https://www.torgesonelectric.com/",
+    "image": "/assets/Torgeson-Electric-scaled-72bd7a0e.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1101
+      ],
+      "functionality": []
+    },
+    "id": 9015,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "990 Sells Homes",
+    "href": "https://990sells.com/",
+    "image": "/assets/990-Sells-Homes-scaled-71b31535.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        914
+      ],
+      "functionality": []
+    },
+    "id": 9013,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Thevera Hotel",
+    "href": "https://theverahotel.com/",
+    "image": "/assets/Thevera-Hotel-scaled-644da3c4.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1099
+      ],
+      "functionality": []
+    },
+    "id": 9011,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Geek Seller Product Management",
+    "href": "https://www.geekseller.com/",
+    "image": "/assets/Geek-Seller-Product-Management-scaled-120c41cd.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1098
+      ],
+      "functionality": []
+    },
+    "id": 9009,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Solid Digital Agency",
+    "href": "https://www.soliddigital.com/",
+    "image": "/assets/Solid-Digital-Agency-scaled-dac599c3.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1098
+      ],
+      "functionality": []
+    },
+    "id": 9007,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Alboria Studio",
+    "href": "https://www.alboria.es/",
+    "image": "/assets/Alboria-Studio-scaled-8e93b9a5.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1096
+      ],
+      "functionality": []
+    },
+    "id": 9005,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "CW Service Pros",
+    "href": "https://www.cwservicepros.com/",
+    "image": "/assets/CW-Service-Pros-scaled-bb8f94b8.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 9003,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Herndon Mcfarland Plumbing",
+    "href": "https://www.hmcplumbing.com/",
+    "image": "/assets/Herndon-Mcfarland-Plumbing-scaled-9371f0c1.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 9001,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Absolutely Plumb Happy",
+    "href": "https://absolutelyplumbhappy.com/",
+    "image": "/assets/Absolutely-Plumb-Happy-scaled-aaaf16b8.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 8999,
+    "publishedAt": "2026-03-06T20:12:35"
+  },
+  {
+    "title": "Econo Sewer Cleaning",
+    "href": "https://www.econosewer.com/",
+    "image": "/assets/Econo-Sewer-Cleaning-scaled-7ee23ab0.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 8995,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Mr Rooter Plumbing",
+    "href": "https://www.mrrooter.com/",
+    "image": "/assets/Mr-Rooter-Plumbing-scaled-6482e394.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 8993,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Monroe Plumbing & Heating",
+    "href": "https://www.monroeplumbing.com/",
+    "image": "/assets/Commercial-Plumbing-HVAC-Contractor-Monroe-Plumbing-Heating-scale-f82b6ec1.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 8991,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Atlantis Plumbing",
+    "href": "https://www.atlantisplumbing.com/",
+    "image": "/assets/Atlantis-Plumbing-scaled-6e634438.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 8989,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Tom Drexler Plumbing",
+    "href": "https://tomdrexlerplumbing.com/",
+    "image": "/assets/tom-drexler-plumbing-scaled-a5b0b2bd.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 8987,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Russo Bros Plumbing",
+    "href": "https://www.russobrosplumbing.com/",
+    "image": "/assets/Russo-Bros-Plumbing-scaled-96519549.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 8985,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Brooks Plumbing Heating LLC",
+    "href": "https://brooksplumbingheatingllc.com/",
+    "image": "/assets/Brooks-Plumbing-Heating-LLC-scaled-079448db.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 8983,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "All Valley plumbing tech",
+    "href": "https://allvalleyplumbingtech.com/",
+    "image": "/assets/all-valley-plumbingtech-scaled-f4f032f9.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 8981,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Absolute Services",
+    "href": "https://absoluteservices.net/",
+    "image": "/assets/absolute-services-scaled-f452a80a.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 8979,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "AAA auger Plumbing",
+    "href": "https://www.aaa-auger.com/",
+    "image": "/assets/AAA-auger-Plumbing-scaled-ba68db71.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1094
+      ],
+      "functionality": []
+    },
+    "id": 8977,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Custom Cabinets",
+    "href": "https://customcabinets.net.au/",
+    "image": "/assets/Custom-Cabinets-scaled-7d9ad032.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1092
+      ],
+      "functionality": []
+    },
+    "id": 8973,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Skeedee Design agency",
+    "href": "https://skeedee.com/",
+    "image": "/assets/skeedee-scaled-d7052381.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1088
+      ],
+      "functionality": []
+    },
+    "id": 8969,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Neon Collective",
+    "href": "https://www.neoncollective.one/",
+    "image": "/assets/Branding-Growth-Marketing-Agency--E2-80-A2-Tried-Tested-SaaS-Mark-319d0e66.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        866
+      ],
+      "functionality": []
+    },
+    "id": 8967,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Shipping Containers Buy",
+    "href": "https://www.steelboxco.com/",
+    "image": "/assets/SteelBoxCo-scaled-b5c78fbf.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1087
+      ],
+      "functionality": []
+    },
+    "id": 8965,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Water Damage Business",
+    "href": "https://wint.ai/",
+    "image": "/assets/Automated-Water-Intelligence-and-Leak-Detection-WINT-1-scaled-1aa20369.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1087
+      ],
+      "functionality": []
+    },
+    "id": 8963,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Rent a camper & motorhome",
+    "href": "https://camperboys.com/en/",
+    "image": "/assets/Camper-motorhome-1-scaled-f43449de.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1085
+      ],
+      "functionality": []
+    },
+    "id": 8961,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Painting Services",
+    "href": "https://njseng.com/",
+    "image": "/assets/Njseng--E2-80-93-My-WordPress-Blog-scaled-023ef9bb.webp",
+    "tags": [],
+    "taxonomies": {
+      "industry-type": [
+        1084
+      ],
+      "functionality": []
+    },
+    "id": 8959,
+    "publishedAt": "2026-03-06T20:11:25"
+  },
+  {
+    "title": "Flyaway International",
+    "href": "",
+    "image": "/assets/Fly-Away-International-147e2c6e.webp",
+    "tags": [
+      "Agency",
+      "Booking",
+      "Elementor",
+      "Immigration support",
+      "Wp Rocket",
+      "Yoast SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        990,
+        989,
+        980
+      ],
+      "functionality": [
+        849,
+        916,
+        938,
+        931,
+        860
+      ]
+    },
+    "id": 603,
+    "publishedAt": "2026-02-04T06:23:57"
+  },
+  {
+    "title": "Masterclass",
+    "href": "https://masterclass.drjoperkins.com/home-5/",
+    "image": "/assets/Home-5-masterclass-drjoperkins-com-02-04-2026_11_41_AM-1-scaled-66f9545a.webp",
+    "tags": [
+      "Education"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        991
+      ],
+      "functionality": [
+        992
+      ]
+    },
+    "id": 594,
+    "publishedAt": "2026-02-04T06:21:56"
+  },
+  {
+    "title": "KBS Constructors",
+    "href": "https://kbsci.com/",
+    "image": "/assets/KBS-Constructors-scaled-562d5e9d.webp",
+    "tags": [
+      "Agency",
+      "Constructor",
+      "Elementor",
+      "Marketing",
+      "Wordfence Security"
+    ],
+    "taxonomies": {
+      "industry-type": [],
+      "functionality": [
+        987
+      ]
+    },
+    "id": 601,
+    "publishedAt": "2026-02-04T06:09:28"
+  },
+  {
+    "title": "Viet Long Housing",
+    "href": "",
+    "image": "/assets/viet-long-housing-scaled-02d550c9.webp",
+    "tags": [
+      "Agency",
+      "Booking",
+      "ChatBot",
+      "Marketing",
+      "Real State",
+      "Wp Residence",
+      "Wp Rocket"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        932,
+        933,
+        893,
+        914
+      ],
+      "functionality": [
+        916,
+        938,
+        924,
+        860
+      ]
+    },
+    "id": 590,
+    "publishedAt": "2026-02-04T05:55:05"
+  },
+  {
+    "title": "Dothan Law Firm",
+    "href": "https://dothanlawfirm.com/",
+    "image": "/assets/Experienced-Lawyers-in-Dothan-AL-Dothan-Law-Firm-06-28-2025_09_48-c1882ab8.webp",
+    "tags": [
+      "Agency",
+      "Elementor",
+      "law & advice",
+      "SEO",
+      "Wordfence Security",
+      "Wp Rocket"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        864,
+        962,
+        865
+      ],
+      "functionality": [
+        849,
+        916,
+        971,
+        931
+      ]
+    },
+    "id": 595,
+    "publishedAt": "2026-02-04T05:52:57"
+  },
+  {
+    "title": "Serapa safaris",
+    "href": "https://serapasafaris.com/",
+    "image": "/assets/Serapa-Safaris-7fb1852d.webp",
+    "tags": [
+      "Multi Language",
+      "Safari / Hunting",
+      "SEO",
+      "Tourism",
+      "WPBakery"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        980
+      ],
+      "functionality": [
+        843,
+        938,
+        885
+      ]
+    },
+    "id": 597,
+    "publishedAt": "2026-02-04T05:48:25"
+  },
+  {
+    "title": "Alabama Outside Counsel",
+    "href": "https://alabamaoutsidecounsel.com/",
+    "image": "/assets/Top-Alabama-Business-Criminal-Defense-Law-Firm-06-28-2025_09_45_P-75d6079a.webp",
+    "tags": [
+      "Agency",
+      "Elementor",
+      "law & advice",
+      "SEO",
+      "Wp Rocket"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        864,
+        962,
+        865
+      ],
+      "functionality": [
+        849,
+        971,
+        931
+      ]
+    },
+    "id": 592,
+    "publishedAt": "2026-02-04T05:44:39"
+  },
+  {
+    "title": "Blitzalgo",
+    "href": "https://blitzalgo.com/",
+    "image": "/assets/BLITZ-Algo-02-04-2026_11_24_AM-1-scaled-ee9da1ed.webp",
+    "tags": [
+      "Financial Technology"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        967
+      ],
+      "functionality": [
+        966
+      ]
+    },
+    "id": 588,
+    "publishedAt": "2026-02-04T05:36:06"
+  },
+  {
+    "title": "Federal Wire Fraud",
+    "href": "https://federalwirefraud.com/",
+    "image": "/assets/Alabama-Federal-Wire-Fraud-Charge-Lawyer-Get-Legal-Help-Now-06-28-55ae27db.webp",
+    "tags": [
+      "Agency",
+      "Booking",
+      "Elementor",
+      "law & advice",
+      "Portfolio",
+      "SEO",
+      "Speed Optimization",
+      "Wp Rocket"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        864,
+        962,
+        865
+      ],
+      "functionality": [
+        849,
+        931
+      ]
+    },
+    "id": 587,
+    "publishedAt": "2026-02-04T05:29:54"
+  },
+  {
+    "title": "Prone Perty",
+    "href": "https://proneperty.com/",
+    "image": "/assets/Property--E2-80-93-Prone-Per-Ty-scaled-036e3cea.webp",
+    "tags": [
+      "Agency",
+      "Booking",
+      "Multi Language",
+      "Real State",
+      "User Authentication"
+    ],
+    "taxonomies": {
+      "industry-type": [],
+      "functionality": [
+        843,
+        916,
+        848,
+        879,
+        885,
+        924,
+        935
+      ]
+    },
+    "id": 585,
+    "publishedAt": "2026-02-04T05:12:15"
+  },
+  {
+    "title": "Car Park Hero",
+    "href": "https://www.carparkhero.com/",
+    "image": "/assets/Car-Park-Hero-scaled-c41b692e.webp",
+    "tags": [
+      "Booking",
+      "ChatBot",
+      "Classic Car Parts",
+      "Divi",
+      "Multi Language",
+      "Real State",
+      "User Authentication",
+      "User Management",
+      "Wordfence Security",
+      "WPForms"
+    ],
+    "taxonomies": {
+      "industry-type": [],
+      "functionality": [
+        843,
+        916,
+        938,
+        879,
+        885
+      ]
+    },
+    "id": 583,
+    "publishedAt": "2026-02-03T05:37:57"
+  },
+  {
+    "title": "City Runner",
+    "href": "",
+    "image": "/assets/City-Runner-scaled-a458c965.webp",
+    "tags": [
+      "Ecommerce",
+      "Elementor",
+      "hebrew language Website"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        932,
+        943
+      ],
+      "functionality": [
+        875
+      ]
+    },
+    "id": 536,
+    "publishedAt": "2026-02-02T06:27:19"
+  },
+  {
+    "title": "Penta Properties",
+    "href": "https://www.penta.com.au/",
+    "image": "/assets/Penta-Properties-scaled-da87e2bb.webp",
+    "tags": [
+      "Agency",
+      "Booking",
+      "Marketing",
+      "Real State",
+      "SEO",
+      "User Management"
+    ],
+    "taxonomies": {
+      "industry-type": [],
+      "functionality": [
+        916,
+        924,
+        860
+      ]
+    },
+    "id": 435,
+    "publishedAt": "2026-02-02T06:09:46"
+  },
+  {
+    "title": "Farbr",
+    "href": "https://farbr.co/",
+    "image": "/assets/Mikelist-Simply-create-content-02-02-2026_11_06_AM-1-scaled-8da8153b.webp",
+    "tags": [
+      "Agency",
+      "Booking",
+      "Divi",
+      "Elementor",
+      "Portfolio",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        891,
+        932,
+        893,
+        943
+      ],
+      "functionality": [
+        843,
+        931,
+        860,
+        845,
+        935
+      ]
+    },
+    "id": 578,
+    "publishedAt": "2026-02-02T06:06:23"
+  },
+  {
+    "title": "Natkam",
+    "href": "https://natkam.cat/bienvenidos-natkam-campamentos/?_gl=1*1vmk5aj*_ga*NDAwNDkxMjA2LjE3NzAwMDcyNTI.*_ga_EH2J6E4F27*czE3NzAwMTA4MTQkbzIkZzEkdDE3NzAwMTExMzkkajYwJGwwJGgw",
+    "image": "/assets/Campaments-d-estiu-Natkam-Viu-un-estiu-diferent-02-02-2026_10_49_-0ca21446.webp",
+    "tags": [
+      "Divi",
+      "Elementor",
+      "Event",
+      "SEO",
+      "Speed Optimization"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        892
+      ],
+      "functionality": [
+        849,
+        908,
+        885,
+        931,
+        860,
+        845
+      ]
+    },
+    "id": 495,
+    "publishedAt": "2026-02-02T05:46:12"
+  },
+  {
+    "title": "Olivbaserade",
+    "href": "",
+    "image": "/assets/Olivbaserade-scaled-368e0365.webp",
+    "tags": [
+      "Ecommerce",
+      "Elementor"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        949,
+        943
+      ],
+      "functionality": [
+        916,
+        875
+      ]
+    },
+    "id": 449,
+    "publishedAt": "2026-02-02T05:23:00"
+  },
+  {
+    "title": "Jamco",
+    "href": "https://jamcosuspension.com/",
+    "image": "/assets/Jamco-scaled-f3de8ac9.webp",
+    "tags": [
+      "Classic Car Parts",
+      "Ecommerce",
+      "Elementor"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        945
+      ],
+      "functionality": [
+        875
+      ]
+    },
+    "id": 436,
+    "publishedAt": "2026-02-02T05:01:57"
+  },
+  {
+    "title": "Avartek Sourcing",
+    "href": "https://avarteksourcing.co.uk/",
+    "image": "/assets/China-Sourcing-and-Product-Procurement-Services-Avartek-sourcing--966fac9b.webp",
+    "tags": [
+      "ChatBot",
+      "Elementor",
+      "SEO",
+      "User Management"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        932,
+        933
+      ],
+      "functionality": [
+        849,
+        938,
+        848,
+        935
+      ]
+    },
+    "id": 431,
+    "publishedAt": "2026-02-01T13:32:38"
+  },
+  {
+    "title": "Sinanisler",
+    "href": "",
+    "image": "/assets/Sinanisler-00dd20dd.webp",
+    "tags": [
+      "Agency",
+      "Branding",
+      "Bricks",
+      "Portfolio"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        919
+      ],
+      "functionality": [
+        848,
+        931
+      ]
+    },
+    "id": 428,
+    "publishedAt": "2026-01-31T11:12:49"
+  },
+  {
+    "title": "Stinag",
+    "href": "https://www.stinag-ag.de/",
+    "image": "/assets/Stinag-ffbbedb6.webp",
+    "tags": [
+      "Agency",
+      "Bricks",
+      "Real State"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        914
+      ],
+      "functionality": []
+    },
+    "id": 426,
+    "publishedAt": "2026-01-31T11:05:35"
+  },
+  {
+    "title": "Waggonfuerdemokratie",
+    "href": "https://waggonfuerdemokratie.de/",
+    "image": "/assets/Waggonfuerdemokratie-bbbbcf5b.webp",
+    "tags": [
+      "Bricks",
+      "Political"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        919,
+        929,
+        927
+      ],
+      "functionality": [
+        843,
+        848
+      ]
+    },
+    "id": 424,
+    "publishedAt": "2026-01-31T10:02:44"
+  },
+  {
+    "title": "Sensified",
+    "href": "https://sensified.de/",
+    "image": "/assets/5888997c-2a25-45f2-859b-a80e1eb57c59-min-scaled-1-ba2cd82e.webp",
+    "tags": [
+      "Agency",
+      "Bricks",
+      "Marketing"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        850,
+        926
+      ],
+      "functionality": [
+        849,
+        848,
+        885,
+        860
+      ]
+    },
+    "id": 420,
+    "publishedAt": "2026-01-31T05:48:35"
+  },
+  {
+    "title": "Fritzer’s frische",
+    "href": "",
+    "image": "/assets/728168a7-100f-4ceb-8a9d-8dd43e2ddb0c-min-scaled-1-f687839e.webp",
+    "tags": [
+      "Agency",
+      "Bricks",
+      "Marketing",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        919,
+        894,
+        920
+      ],
+      "functionality": [
+        843,
+        916,
+        848
+      ]
+    },
+    "id": 418,
+    "publishedAt": "2026-01-31T05:16:56"
+  },
+  {
+    "title": "vesta",
+    "href": "https://vesta-consult.de/",
+    "image": "/assets/c3c5e0b8-9b3c-440f-8e2d-ba379c03eb17-scaled-1-e3b2bb10.webp",
+    "tags": [
+      "Agency",
+      "Bricks",
+      "Real State"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        919,
+        850,
+        914
+      ],
+      "functionality": [
+        843,
+        848,
+        924
+      ]
+    },
+    "id": 416,
+    "publishedAt": "2026-01-31T05:05:14"
+  },
+  {
+    "title": "Wipe Up",
+    "href": "https://wipe-up.de/",
+    "image": "/assets/Wipe-Up-4161af2f.webp",
+    "tags": [
+      "Agency",
+      "Bricks"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        919
+      ],
+      "functionality": [
+        916,
+        923,
+        848
+      ]
+    },
+    "id": 413,
+    "publishedAt": "2026-01-29T16:25:32"
+  },
+  {
+    "title": "Dinner In The Sky",
+    "href": "https://www.dinnerinthesky.de/",
+    "image": "/assets/d797a535-1396-4dab-a090-a0eed5a01d2d-min-scaled-1-b20364fd.webp",
+    "tags": [
+      "Bricks",
+      "Restaurant",
+      "SEO",
+      "Tourism"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        919,
+        894,
+        893,
+        920
+      ],
+      "functionality": [
+        843,
+        849,
+        885,
+        845
+      ]
+    },
+    "id": 409,
+    "publishedAt": "2026-01-29T16:00:33"
+  },
+  {
+    "title": "Emporium Partners",
+    "href": "https://emporiumpartners.com/",
+    "image": "/assets/emporium-partners-1eeee08b.webp",
+    "tags": [
+      "Agency",
+      "Bricks"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        919
+      ],
+      "functionality": [
+        843,
+        849,
+        848,
+        845
+      ]
+    },
+    "id": 407,
+    "publishedAt": "2026-01-29T15:45:39"
+  },
+  {
+    "title": "Business Advisor Agency",
+    "href": "https://ethumgroup.com/",
+    "image": "/assets/Ethum-Group-scaled-5ec1435e.webp",
+    "tags": [
+      "Agency",
+      "Ecommerce",
+      "Elementor"
+    ],
+    "taxonomies": {
+      "industry-type": [],
+      "functionality": [
+        849,
+        875,
+        879
+      ]
+    },
+    "id": 398,
+    "publishedAt": "2026-01-29T13:50:44"
+  },
+  {
+    "title": "Holiday Stays",
+    "href": "https://www.holidaystays.com/",
+    "image": "/assets/Holiday-Stays-scaled-86104a93.webp",
+    "tags": [
+      "Booking",
+      "Divi",
+      "Tourism"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        914
+      ],
+      "functionality": [
+        843,
+        916
+      ]
+    },
+    "id": 402,
+    "publishedAt": "2026-01-29T13:22:41"
+  },
+  {
+    "title": "Innoki Agency",
+    "href": "https://innoki.de/",
+    "image": "/assets/INNOK-scaled-21fd624d.webp",
+    "tags": [
+      "Agency",
+      "Elementor",
+      "SEO",
+      "Speed Optimization"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        888,
+        850,
+        913
+      ],
+      "functionality": [
+        843,
+        849,
+        885,
+        860
+      ]
+    },
+    "id": 396,
+    "publishedAt": "2026-01-29T12:54:08"
+  },
+  {
+    "title": "Boutique Digital Agency",
+    "href": "https://r11.solutions/",
+    "image": "/assets/Boutique-Digital-Agency-scaled-e70c1212.webp",
+    "tags": [
+      "Agency",
+      "Design Studio",
+      "Marketing",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        874
+      ],
+      "functionality": [
+        843,
+        849,
+        873,
+        848,
+        847,
+        845
+      ]
+    },
+    "id": 392,
+    "publishedAt": "2026-01-29T11:46:00"
+  },
+  {
+    "title": "Workiz Agency",
+    "href": "https://www.workiz.com/",
+    "image": "/assets/Workiz-Agency-scaled-e46f5e30.webp",
+    "tags": [
+      "Agency",
+      "SEO",
+      "Speed Optimization"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866
+      ],
+      "functionality": [
+        849,
+        908,
+        879,
+        860,
+        845
+      ]
+    },
+    "id": 390,
+    "publishedAt": "2026-01-29T11:35:58"
+  },
+  {
+    "title": "Opti Monk",
+    "href": "https://www.optimonk.com/",
+    "image": "/assets/Opti-Monk-scaled-0dcac887.webp",
+    "tags": [
+      "Agency",
+      "Marketing"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        874
+      ],
+      "functionality": [
+        848,
+        879,
+        876
+      ]
+    },
+    "id": 388,
+    "publishedAt": "2026-01-29T10:20:20"
+  },
+  {
+    "title": "Auglýsingastofa & veflausnir",
+    "href": "https://aldeilis.is/",
+    "image": "/assets/Auglysingastofa-scaled-7e756007.webp",
+    "tags": [
+      "Agency",
+      "Branding",
+      "Elementor",
+      "SEO",
+      "Wordfence Security"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        891,
+        866,
+        898
+      ],
+      "functionality": [
+        843,
+        848,
+        860,
+        845
+      ]
+    },
+    "id": 386,
+    "publishedAt": "2026-01-29T09:57:10"
+  },
+  {
+    "title": "Rebel",
+    "href": "https://www.rebel.no/",
+    "image": "/assets/Rebel-scaled-f11f276b.webp",
+    "tags": [
+      "Agency",
+      "Branding",
+      "Event Management",
+      "Tourism"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        892,
+        894,
+        893
+      ],
+      "functionality": [
+        849,
+        848,
+        879,
+        885
+      ]
+    },
+    "id": 384,
+    "publishedAt": "2026-01-29T09:43:49"
+  },
+  {
+    "title": "Creative agency dube",
+    "href": "https://dd-design.de/",
+    "image": "/assets/Creative-agency-dube-scaled-66d61162.webp",
+    "tags": [
+      "Agency",
+      "Branding",
+      "Elementor"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        891,
+        866
+      ],
+      "functionality": [
+        848,
+        860
+      ]
+    },
+    "id": 382,
+    "publishedAt": "2026-01-29T09:27:12"
+  },
+  {
+    "title": "Agency Mavericks",
+    "href": "https://www.agencymavericks.com/",
+    "image": "/assets/Agency-Mavericks1-scaled-4dd861e2.webp",
+    "tags": [
+      "Agency",
+      "Elementor",
+      "SEO",
+      "User Authentication",
+      "Wordfence Security"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        888,
+        850
+      ],
+      "functionality": [
+        849,
+        848,
+        879,
+        885
+      ]
+    },
+    "id": 380,
+    "publishedAt": "2026-01-29T09:10:33"
+  },
+  {
+    "title": "GB Design Studio",
+    "href": "https://gbdesignstudio.co.uk/",
+    "image": "/assets/GB-Design-Studio-scaled-aaee7b34.webp",
+    "tags": [
+      "Agency",
+      "Design Studio",
+      "Elementor"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866
+      ],
+      "functionality": [
+        849,
+        848,
+        860
+      ]
+    },
+    "id": 378,
+    "publishedAt": "2026-01-29T07:20:15"
+  },
+  {
+    "title": "Solid Digital",
+    "href": "https://www.soliddigital.com/",
+    "image": "/assets/Solid-Digital-scaled-c977a904.webp",
+    "tags": [
+      "Agency",
+      "Elementor",
+      "SEO"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866
+      ],
+      "functionality": [
+        873
+      ]
+    },
+    "id": 374,
+    "publishedAt": "2026-01-29T07:02:21"
+  },
+  {
+    "title": "Geek Seller",
+    "href": "https://www.geekseller.com/",
+    "image": "/assets/Geek-Seller-scaled-8daeb35c.webp",
+    "tags": [
+      "Ecommerce",
+      "User Authentication"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866
+      ],
+      "functionality": [
+        849,
+        875,
+        879,
+        876
+      ]
+    },
+    "id": 372,
+    "publishedAt": "2026-01-29T06:03:25"
+  },
+  {
+    "title": "Teads",
+    "href": "https://www.teads.com/",
+    "image": "/assets/Teads-scaled-ea266a56.webp",
+    "tags": [
+      "Bricks",
+      "Multi Language",
+      "User Authentication"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        866,
+        874
+      ],
+      "functionality": [
+        849,
+        873,
+        879,
+        885
+      ]
+    },
+    "id": 370,
+    "publishedAt": "2026-01-28T18:14:08"
+  },
+  {
+    "title": "Family Law",
+    "href": "https://grmfamilylaw.com/",
+    "image": "/assets/Family-Law-scaled-6a068e34.webp",
+    "tags": [
+      "Elementor",
+      "Gravity Forms",
+      "SEO",
+      "Wordfence Security"
+    ],
+    "taxonomies": {
+      "industry-type": [
+        838,
+        850,
+        864,
+        865
+      ],
+      "functionality": [
+        849,
+        848,
+        860,
+        847
+      ]
+    },
+    "id": 367,
+    "publishedAt": "2026-01-28T16:13:32"
+  }
+]
