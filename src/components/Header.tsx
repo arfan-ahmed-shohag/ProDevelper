@@ -108,7 +108,7 @@ export function SiteHeader() {
     <>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-100002 focus:bg-white focus:p-4 focus:text-[#183835]"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-100002 focus:bg-white focus:p-4 focus:text-brand-dark"
       >
         Skip to content
       </a>
@@ -190,7 +190,7 @@ export function SiteHeader() {
               <Link
                 href="/client-feedback/"
                 onClick={close}
-                className="group flex items-center justify-between bg-white md:bg-[#769f56] text-[#183835] px-6 py-5 rounded-2xl transition-all duration-300 shadow-lg shadow-[#769f56]/20 hover:bg-[#769f56] md:hover:bg-white hover:text-white md:hover:text-[#183835] hover:-translate-y-1 active:scale-95"
+                className="group flex items-center justify-between bg-white md:bg-brand-green text-brand-dark px-6 py-5 rounded-2xl transition-all duration-300 shadow-lg shadow-brand-green/20 hover:bg-brand-green md:hover:bg-white hover:text-white md:hover:text-brand-dark hover:-translate-y-1 active:scale-95"
               >
                 <div className="flex flex-col items-start">
                   <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-70 leading-none mb-1">
@@ -200,7 +200,7 @@ export function SiteHeader() {
                     Client Feedback
                   </span>
                 </div>
-                <div className="w-10 h-10 rounded-xl bg-[#183835]/10 flex items-center justify-center group-hover:bg-[#183835] group-hover:text-white md:group-hover:text-[#769f56] transition-colors duration-300">
+                <div className="w-10 h-10 rounded-xl bg-brand-dark/10 flex items-center justify-center group-hover:bg-brand-dark group-hover:text-white md:group-hover:text-brand-green transition-colors duration-300">
                   <svg
                     width="20"
                     height="20"
@@ -231,7 +231,7 @@ export function SiteHeader() {
         ref={dock}
         id="bottom-mobile-menu"
         aria-label="Quick navigation"
-        className="fixed bottom-0 left-0 w-full bg-[#183835] border-t border-white/5 lg:hidden z-[9999] will-change-transform"
+        className="fixed bottom-0 left-0 w-full bg-brand-dark border-t border-white/5 lg:hidden z-[9999] will-change-transform"
       >
         <div className="relative z-10 flex items-center justify-between py-5 px-4">
           {[
@@ -242,7 +242,7 @@ export function SiteHeader() {
             <Link
               key={href}
               href={href}
-              className="flex-1 flex flex-col items-center gap-1.5 text-white/60 hover:text-[#769f56] transition-all"
+              className="flex-1 flex flex-col items-center gap-1.5 text-white/60 hover:text-brand-green transition-all"
             >
               <NavigationIcon name={icon} />
               <span className="text-[10px] font-black uppercase tracking-widest">
@@ -253,7 +253,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setMenuOpen(true)}
-            className="flex-1 flex flex-col items-center gap-1.5 text-white/60 hover:text-[#769f56] transition-all outline-none"
+            className="flex-1 flex flex-col items-center gap-1.5 text-white/60 hover:text-brand-green transition-all outline-none"
           >
             <NavigationIcon name="bars" />
             <span className="text-[10px] font-black uppercase tracking-widest">
