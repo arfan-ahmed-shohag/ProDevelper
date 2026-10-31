@@ -1,5 +1,6 @@
 import StatsSection from "@/components/home/StatsSection";
 import TechnologySection from "@/components/home/TechnologySection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
 import PageHero from "@/components/PageHero";
 import { Metadata } from "next";
 
@@ -29,6 +30,7 @@ export default function AboutUsPage() {
             />
             <TechnologySection />
             <StatsSection />
+            <TestimonialsSection />
         </>
     );
 }
