@@ -34,8 +34,8 @@ export default function PageHero({
     <section
       className={`pd_reveal hero-bg relative min-h-[50vh] lg:min-h-[60vh] flex items-center overflow-hidden pt-28 pb-16 ${className}`}
     >
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-light/5 rounded-full blur-[120px] -z-10" />
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-brand-light/5 rounded-full blur-[100px] -z-10" />
+      <div className="absolute top-0 right-0 w-125 h-125 bg-brand-light/5 rounded-full blur-[120px] -z-10" />
+      <div className="absolute bottom-0 left-0 w-75 h-75 bg-brand-light/5 rounded-full blur-[100px] -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-16 py-10 lg:py-16 w-full text-center">
         <div className="inline-flex items-center gap-2 bg-brand-light/10 px-4 py-2 rounded-full border border-brand-light/20 mb-8">
