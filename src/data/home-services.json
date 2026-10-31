@@ -1,0 +1,38 @@
+[
+  {
+    "title": "WordPress Website Development",
+    "href": "/service/wordpress-website-development/",
+    "description": "WordPress is a powerful platform for building modern and flexible websites. I develop fast, secure,...",
+    "image": "/assets/download-Photoroom-88a8218a.webp"
+  },
+  {
+    "title": "Shopify Website Development",
+    "href": "/service/shopify-website-development/",
+    "description": "From planning to launch, I follow a structured process to build Shopify stores that are...",
+    "image": "/assets/shopify-ed3ed411.webp"
+  },
+  {
+    "title": "Webflow Website Development",
+    "href": "/service/webflow-website-development/",
+    "description": "Webflow is a powerful platform for building modern and visually engaging websites. I develop responsive...",
+    "image": "/assets/webflow_logo_icon_169218-db531753.webp"
+  },
+  {
+    "title": "Wix Website Development",
+    "href": "/service/wix-website-development/",
+    "description": "Wix is a flexible platform for creating modern and visually appealing websites. I build professional...",
+    "image": "/assets/wix-ad656978.webp"
+  },
+  {
+    "title": "Squarespace Website Development",
+    "href": "/service/squarespace-website-development/",
+    "description": "Squarespace is a powerful platform for creating elegant and visually engaging websites. I build professional...",
+    "image": "/assets/squarespace-4e532ee3.webp"
+  },
+  {
+    "title": "Full Stack Web Application Development (Next.js)",
+    "href": "/service/full-stack-web-application-development-next-js/",
+    "description": "Next.js is one of the most powerful frameworks for building modern web applications. I develop...",
+    "image": "/assets/Adobe-Express-file-2-1-7008b355.webp"
+  }
+]

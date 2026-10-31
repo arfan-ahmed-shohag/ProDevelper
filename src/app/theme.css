@@ -1,0 +1,180 @@
+/* Global theme. Edit this file to change the site's colors and font families.
+ * Colors use RGB channels so Tailwind opacity utilities (e.g. bg-brand-green/20)
+ * and CSS gradients/shadows share exactly the same palette.
+ * New font files can be registered below with @font-face.
+ * Critical faces are preloaded in app/layout.tsx. Block briefly while a face
+ * loads so an Arial Black fallback cannot flash before the intended weight.
+ */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(/fonts/jakarta-0.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(/fonts/jakarta-1.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(/fonts/jakarta-2.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(/fonts/jakarta-3.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-display: block;
+  src: url(/fonts/jakarta-4.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(/fonts/inter-0.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(/fonts/inter-1.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(/fonts/inter-2.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(/fonts/inter-3.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: block;
+  src: url(/fonts/inter-4.woff2) format("woff2");
+}
+
+:root {
+  /* Font roles preserve the existing typography across the site. */
+  --font-body: "Plus Jakarta Sans", Arial, sans-serif;
+  --font-ui: "Inter", Arial, sans-serif;
+  --font-article: "Segoe UI", Arial, sans-serif;
+  --font-outline: Arial, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  --font-code: "Courier New", Courier, monospace;
+  --font-sans: var(--font-body);
+
+  /* Brand colors, surfaces, text and status colors. */
+  --color-brand-green: 118 159 86; /* #769f56 */
+  --color-brand-light: 142 180 113; /* #8eb471 */
+  --color-brand-dark: 24 56 53; /* #183835 */
+  --color-brand-hover: 84 125 51; /* #547d33 */
+  --color-brand-nav-hover: 117 159 85; /* #759f55 */
+  --color-brand-muted: 122 156 97; /* #7a9c61 */
+  --color-brand-soft: 137 174 109; /* #89ae6d */
+  --color-brand-success: 110 167 84; /* #6ea754 */
+  --color-brand-gradient: 93 122 70; /* #5d7a46 */
+  --color-brand-deep: 18 40 32; /* #122820 */
+  --color-brand-deepest: 13 33 31; /* #0d211f */
+  --color-brand-glow: 90 143 50; /* #5a8f32 */
+  --color-brand-surface: 240 244 236; /* #f0f4ec */
+  --color-brand-surface-soft: 244 247 245; /* #f4f7f5 */
+  --color-brand-surface-muted: 240 245 242; /* #f0f5f2 */
+  --color-brand-border: 226 237 231; /* #e2ede7 */
+  --color-article-heading: 26 42 108; /* #1a2a6c */
+  --color-article-text: 51 51 51; /* #333333 */
+  --color-surface: 253 253 253; /* #fdfdfd */
+  --color-surface-border: 238 242 246; /* #eef2f6 */
+  --color-surface-divider: 238 238 238; /* #eeeeee */
+  --color-surface-muted: 234 234 234; /* #eaeaea */
+  --color-button-neutral: 50 55 60; /* #32373c */
+  --color-rating: 255 226 52; /* #ffe234 */
+  --color-skeleton-base: 246 247 248; /* #f6f7f8 */
+  --color-skeleton-shimmer: 237 238 241; /* #edeef1 */
+  --color-success: 76 175 80; /* #4caf50 */
+  --color-success-glow: 39 234 88; /* #27ea58 */
+  --color-whatsapp: 40 166 80; /* #28a650 */
+  --color-legacy-indigo: 76 81 191; /* #4c51bf */
+  --color-legacy-text: 45 55 72; /* #2d3748 */
+  --color-legacy-muted: 113 128 150; /* #718096 */
+  --color-overlay: 19 18 18; /* #131212 */
+  --color-feedback-purple: 152 123 151; /* #987b97 */
+  --color-white: 255 255 255; /* #ffffff */
+  --color-black: 0 0 0; /* #000000 */
+  --color-slate-50: 248 250 252; /* #f8fafc */
+  --color-slate-100: 241 245 249; /* #f1f5f9 */
+  --color-slate-200: 226 232 240; /* #e2e8f0 */
+  --color-slate-300: 203 213 225; /* #cbd5e1 */
+  --color-slate-400: 148 163 184; /* #94a3b8 */
+  --color-slate-500: 100 116 139; /* #64748b */
+  --color-slate-600: 71 85 105; /* #475569 */
+  --color-slate-700: 51 65 85; /* #334155 */
+  --color-slate-800: 30 41 59; /* #1e293b */
+  --color-slate-900: 15 23 42; /* #0f172a */
+  --color-slate-950: 2 6 23; /* #020617 */
+  --color-gray-50: 249 250 251; /* #f9fafb */
+  --color-gray-100: 243 244 246; /* #f3f4f6 */
+  --color-gray-200: 229 231 235; /* #e5e7eb */
+  --color-gray-300: 209 213 219; /* #d1d5db */
+  --color-gray-400: 156 163 175; /* #9ca3af */
+  --color-gray-500: 107 114 128; /* #6b7280 */
+  --color-gray-600: 75 85 99; /* #4b5563 */
+  --color-gray-700: 55 65 81; /* #374151 */
+  --color-gray-800: 31 41 55; /* #1f2937 */
+  --color-gray-900: 17 24 39; /* #111827 */
+  --color-gray-950: 3 7 18; /* #030712 */
+  --color-red-50: 254 242 242; /* #fef2f2 */
+  --color-red-500: 239 68 68; /* #ef4444 */
+  --color-yellow-500: 234 179 8; /* #eab308 */
+  --color-green-50: 240 253 244; /* #f0fdf4 */
+  --color-green-500: 34 197 94; /* #22c55e */
+  --color-green-700: 21 128 61; /* #15803d */
+  --color-blue-500: 59 130 246; /* #3b82f6 */
+  --color-blue-700: 29 78 216; /* #1d4ed8 */
+  --color-emerald-900: 6 78 59; /* #064e3b */
+  --color-amber-500: 245 158 11; /* #f59e0b */
+
+  /* Semantic aliases and compatibility with the existing brand CSS. */
+  --color-primary: var(--color-brand-green);
+  --color-secondary: var(--color-gray-500);
+  --color-background: var(--color-gray-50);
+  --color-dark-bg: var(--color-gray-900);
+  --brand-green: rgb(var(--color-brand-green));
+  --brand-green-hover: rgb(var(--color-brand-hover));
+  --brand-dark: rgb(var(--color-brand-dark));
+  --brand-white: rgb(var(--color-white));
+  --brand-black: rgb(var(--color-black));
+}

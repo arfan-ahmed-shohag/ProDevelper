@@ -1,0 +1,187 @@
+{
+  "/": {
+    "title": "Prodeveloper_2",
+    "description": "",
+    "route": "/"
+  },
+  "/about-us/": {
+    "title": "About Us",
+    "description": "",
+    "route": "/about-us/"
+  },
+  "/services/": {
+    "title": "Services",
+    "description": "",
+    "route": "/services/"
+  },
+  "/project-showcase/": {
+    "title": "Project Showcase",
+    "description": "",
+    "route": "/project-showcase/"
+  },
+  "/demo-showcase/": {
+    "title": "Demo Showcase",
+    "description": "",
+    "route": "/demo-showcase/"
+  },
+  "/blog/": {
+    "title": "Blog",
+    "description": "",
+    "route": "/blog/"
+  },
+  "/faq/": {
+    "title": "FAQ",
+    "description": "",
+    "route": "/faq/"
+  },
+  "/client-feedback/": {
+    "title": "Client Feedback",
+    "description": "",
+    "route": "/client-feedback/"
+  },
+  "/privacy-policy/": {
+    "title": "Privacy Policy",
+    "description": "",
+    "route": "/privacy-policy/"
+  },
+  "/terms-and-conditions/": {
+    "title": "Terms-And-Conditions",
+    "description": "",
+    "route": "/terms-and-conditions/"
+  },
+  "/ai-chatbots-for-business-revolutionizing-customer-engagement/": {
+    "title": "AI Chatbots for Business: Revolutionizing Customer Engagement",
+    "description": "",
+    "route": "/ai-chatbots-for-business-revolutionizing-customer-engagement/"
+  },
+  "/github-copilot-for-devs-your-ai-pair-programmer-for-premium-development/": {
+    "title": "GitHub Copilot for Devs: Your AI Pair Programmer for Premium Development",
+    "description": "",
+    "route": "/github-copilot-for-devs-your-ai-pair-programmer-for-premium-development/"
+  },
+  "/service/ai-integration-workflow-automation/": {
+    "title": "AI Integration & Workflow Automation",
+    "description": "",
+    "route": "/service/ai-integration-workflow-automation/"
+  },
+  "/service/api-integration-automation/": {
+    "title": "API Integration & Automation",
+    "description": "",
+    "route": "/service/api-integration-automation/"
+  },
+  "/service/bigcommerce-website-development/": {
+    "title": "BigCommerce Website Development",
+    "description": "",
+    "route": "/service/bigcommerce-website-development/"
+  },
+  "/service/bluehost-website-builder-development/": {
+    "title": "Bluehost Website Builder Development",
+    "description": "",
+    "route": "/service/bluehost-website-builder-development/"
+  },
+  "/service/contentful-cms-development/": {
+    "title": "Contentful CMS Development",
+    "description": "",
+    "route": "/service/contentful-cms-development/"
+  },
+  "/service/framer-website-development/": {
+    "title": "Framer Website Development",
+    "description": "",
+    "route": "/service/framer-website-development/"
+  },
+  "/service/full-stack-web-application-development-next-js/": {
+    "title": "Full Stack Web Application Development (Next.js)",
+    "description": "",
+    "route": "/service/full-stack-web-application-development-next-js/"
+  },
+  "/service/godaddy-website-builder-development/": {
+    "title": "GoDaddy Website Builder Development",
+    "description": "",
+    "route": "/service/godaddy-website-builder-development/"
+  },
+  "/service/hostinger-website-builder-development/": {
+    "title": "Hostinger Website Builder Development",
+    "description": "",
+    "route": "/service/hostinger-website-builder-development/"
+  },
+  "/service/hubspot-crm-integration/": {
+    "title": "HubSpot CRM Integration",
+    "description": "",
+    "route": "/service/hubspot-crm-integration/"
+  },
+  "/service/opencart-website-development/": {
+    "title": "OpenCart Website Development",
+    "description": "",
+    "route": "/service/opencart-website-development/"
+  },
+  "/service/prestashop-website-development/": {
+    "title": "PrestaShop Website Development",
+    "description": "",
+    "route": "/service/prestashop-website-development/"
+  },
+  "/service/shopify-website-development/": {
+    "title": "Shopify Website Development",
+    "description": "",
+    "route": "/service/shopify-website-development/"
+  },
+  "/service/squarespace-website-development/": {
+    "title": "Squarespace Website Development",
+    "description": "",
+    "route": "/service/squarespace-website-development/"
+  },
+  "/service/webflow-website-development/": {
+    "title": "Webflow Website Development",
+    "description": "",
+    "route": "/service/webflow-website-development/"
+  },
+  "/service/website-maintenance-technical-support/": {
+    "title": "Website Maintenance & Technical Support",
+    "description": "",
+    "route": "/service/website-maintenance-technical-support/"
+  },
+  "/service/website-security-protection/": {
+    "title": "Website Security & Protection",
+    "description": "",
+    "route": "/service/website-security-protection/"
+  },
+  "/service/website-speed-optimization/": {
+    "title": "Website Speed Optimization",
+    "description": "",
+    "route": "/service/website-speed-optimization/"
+  },
+  "/service/wix-website-development/": {
+    "title": "Wix Website Development",
+    "description": "",
+    "route": "/service/wix-website-development/"
+  },
+  "/service/wordpress-customization-enhancement/": {
+    "title": "WordPress Customization & Enhancement",
+    "description": "",
+    "route": "/service/wordpress-customization-enhancement/"
+  },
+  "/service/wordpress-website-development/": {
+    "title": "WordPress Website Development",
+    "description": "",
+    "route": "/service/wordpress-website-development/"
+  },
+  "/service/zoho-crm-integration/": {
+    "title": "Zoho CRM Integration",
+    "description": "",
+    "route": "/service/zoho-crm-integration/"
+  },
+  "/the-future-of-no-code-vs-ai-a-new-era-of-web-development/": {
+    "title": "The Future of No-code vs. AI: A New Era of Web Development",
+    "description": "",
+    "route": "/the-future-of-no-code-vs-ai-a-new-era-of-web-development/"
+  },
+  "/the-revolution-of-ai-in-ui-ux-and-automated-testing/": {
+    "title": "The Revolution of AI in UI/UX and Automated Testing",
+    "description": "",
+    "route": "/the-revolution-of-ai-in-ui-ux-and-automated-testing/"
+  },
+  "/v0-dev-review-the-future-of-generative-ui-for-web-developers/": {
+    "title": "v0.dev Review: The Future of Generative UI for Web Developers",
+    "description": "",
+    "route": "/v0-dev-review-the-future-of-generative-ui-for-web-developers/"
+  }
+}
