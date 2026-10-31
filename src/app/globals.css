@@ -1,11 +1,9 @@
+@import "tailwindcss";
 @import "./theme.css";
 @import "./brand.css";
 @import "./source-interactions.css";
 @import "./source-animations.css";
 @import "lenis/dist/lenis.css";
-
-@import "tailwindcss";
-@tailwind utilities;
 
 /* This rule follows the utilities in the supplied page's footer styles. */
 .footer-white-logo {
@@ -17,8 +15,8 @@ html {
 }
 body {
   margin: 0;
-  background: rgb(var(--color-gray-50));
-  color: rgb(var(--color-white));
+  background: rgb(var(--rgb-gray-50));
+  color: rgb(var(--rgb-slate-900));
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
@@ -33,25 +31,24 @@ summary {
   -webkit-tap-highlight-color: transparent;
 }
 :focus-visible {
-  outline: 2px solid rgb(var(--color-blue-700));
+  outline: 2px solid rgb(var(--rgb-blue-700));
   outline-offset: 3px;
 }
 ::selection {
-  background: rgb(var(--color-brand-light));
-  color: rgb(var(--color-white));
+  background: rgb(var(--rgb-brand-light));
+  color: rgb(var(--rgb-white));
 }
 .logo-on-light {
-  filter: brightness(0) saturate(100%) invert(57%) sepia(10%) saturate(1615%)
-    hue-rotate(51deg) brightness(99%) contrast(85%);
+  filter: var(--logo-on-light-filter);
 }
 .outline-heading {
   color: transparent;
-  -webkit-text-stroke: 1.5px rgb(var(--color-brand-green) / 0.7);
+  -webkit-text-stroke: 1.5px rgb(var(--rgb-brand-green) / 0.7);
   font-family: var(--font-outline);
 }
 .hero-bg,
 .footer-bg {
-  background-color: rgb(var(--color-brand-dark));
+  background-color: rgb(var(--rgb-brand-dark));
 }
 .pd_reveal {
   opacity: 1;
@@ -62,9 +59,6 @@ summary {
   min-height: 0;
 }
 
-body:has(.not-found-page) .pd_header:not(.pd_sticky) {
-  background: rgb(var(--color-brand-dark)) !important;
-}
 summary::-webkit-details-marker {
   display: none;
 }
@@ -80,14 +74,14 @@ details.faq-card > .faq-body {
   overflow: visible;
 }
 details.faq-item[open] {
-  border-color: rgb(var(--color-brand-light));
+  border-color: rgb(var(--rgb-brand-light));
 }
 details[open] .icon-line-vertical {
   transform: rotate(90deg);
   opacity: 0;
 }
 details[open] > .faq-trigger {
-  color: rgb(var(--color-brand-green));
+  color: rgb(var(--rgb-brand-green));
 }
 .project-preview {
   container-type: inline-size;
@@ -140,12 +134,12 @@ details[open] > .faq-trigger {
   padding: 20px;
   font-family: var(--font-article);
   line-height: 1.8;
-  color: rgb(var(--color-article-text));
+  color: rgb(var(--rgb-article-text));
 }
 .cms-rich-text h1,
 .cms-rich-text h2,
 .cms-rich-text h3 {
-  color: rgb(var(--color-article-heading));
+  color: rgb(var(--rgb-article-heading));
   font: inherit;
   margin-bottom: 15px;
 }
@@ -179,19 +173,19 @@ details[open] > .faq-trigger {
   list-style: decimal;
 }
 .cms-rich-text a {
-  color: rgb(var(--color-blue-700));
+  color: rgb(var(--rgb-blue-700));
   text-decoration: underline;
 }
 .cms-rich-text blockquote {
   margin: 1rem 0;
   padding: 1rem;
-  border-left: 4px solid rgb(var(--color-brand-green));
-  background: rgb(var(--color-brand-surface));
+  border-left: 4px solid rgb(var(--rgb-brand-green));
+  background: rgb(var(--rgb-brand-surface));
 }
 .cms-rich-text pre {
   padding: 1rem;
   overflow-x: auto;
-  background: rgb(var(--color-slate-100));
+  background: rgb(var(--rgb-slate-100));
   border-radius: 0.75rem;
 }
 .cms-rich-text table {
@@ -201,7 +195,7 @@ details[open] > .faq-trigger {
 .cms-rich-text th,
 .cms-rich-text td {
   padding: 0.75rem;
-  border: 1px solid rgb(var(--color-slate-200));
+  border: 1px solid rgb(var(--rgb-slate-200));
 }
 @media (prefers-reduced-motion: reduce) {
   #satisfaction-path {
