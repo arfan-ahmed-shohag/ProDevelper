@@ -158,7 +158,7 @@ export function Dashboard() {
   }, []);
   return (
     <div
-      className="relative h-100 lg:h-[450px] md:pt-20"
+      className="relative h-100 lg:h-112.5 md:pt-20"
       id="dashboard-container"
       ref={rootRef}
     >
