@@ -15,7 +15,11 @@ export default function SelectedWorkCard({
   const href = getProjectWebsiteUrl(project);
   const media = project._embedded?.["wp:featuredmedia"]?.[0];
   const image = project.project_data?.featured_image || media?.source_url;
-  const tags = project.tag_list ?? [];
+  const demoTags = project._embedded?.["wp:term"]
+    ?.flat()
+    .filter((term) => term.taxonomy === "demo-tags")
+    .map((term) => term.name);
+  const tags = project.tag_list ?? (showcase ? demoTags : undefined) ?? [];
 
   return (
     <div className="portfolio-item group relative flex flex-col">
