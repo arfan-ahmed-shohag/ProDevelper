@@ -302,13 +302,14 @@ export default function ShowcaseGallery({
   useEffect(() => {
     let disposed = false;
     catalogRef.current = null;
-    setLoading(true);
-    setError("");
     const cached = readBrowserCatalog(kind);
+    let cachedApplyTimer: number | undefined;
     if (cached) {
       catalogRef.current = cached.projects;
       catalogPromiseRef.current = Promise.resolve(cached.projects);
-      applyCatalog(cached.projects);
+      cachedApplyTimer = window.setTimeout(() => {
+        if (!disposed) applyCatalog(cached.projects);
+      }, 0);
     }
 
     const shouldRefresh = !cached || Date.now() - cached.createdAt > browserCatalogRefreshAfter;
@@ -344,6 +345,7 @@ export default function ShowcaseGallery({
 
     return () => {
       disposed = true;
+      if (cachedApplyTimer !== undefined) window.clearTimeout(cachedApplyTimer);
       if (refreshTimer !== undefined) window.clearTimeout(refreshTimer);
     };
   }, [applyCatalog, kind]);
