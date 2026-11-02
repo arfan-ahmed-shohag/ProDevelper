@@ -3,18 +3,21 @@
 import { useState } from "react";
 import type { ServiceCardData } from "@/lib/service-card";
 import { ServiceGrid } from "./ServiceGrid";
+import { ServiceGridSkeletonCard } from "./ServiceGridSkeleton";
 
 export default function ServiceGridList({
   services,
   initialCount,
   batchSize = 12,
   cardLinkLabel,
+  placeholderCount = 0,
   loadMoreLabel = "Load More Services",
 }: {
   services: ServiceCardData[];
   initialCount: number;
   batchSize?: number;
   cardLinkLabel: string;
+  placeholderCount?: number;
   loadMoreLabel?: string;
 }) {
   const [visibleCount, setVisibleCount] = useState(() =>
@@ -34,6 +37,9 @@ export default function ServiceGridList({
             index={index}
             cardLinkLabel={cardLinkLabel}
           />
+        ))}
+        {Array.from({ length: placeholderCount }, (_, index) => (
+          <ServiceGridSkeletonCard key={`placeholder-${index}`} />
         ))}
       </div>
       {visibleCount < services.length && (

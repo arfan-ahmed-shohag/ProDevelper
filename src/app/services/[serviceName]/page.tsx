@@ -11,12 +11,18 @@ import {
   getServicePath,
   serviceDetailLayout,
 } from "@/lib/service-details";
-import { getServiceDetail } from "@/services/services";
+import { getAllServices, getServiceDetail } from "@/services/services";
 import { plainText } from "@/lib/plain-text";
+import { oneMonthCachePolicy } from "@/lib/cache-policy";
 
 type ServicePageProps = {
   params: Promise<{ serviceName: string }>;
 };
+
+export async function generateStaticParams() {
+  const services = await getAllServices();
+  return services.map((service) => ({ serviceName: service.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -38,7 +44,7 @@ export async function generateMetadata({
 
 async function CachedServiceContent({ serviceName }: { serviceName: string }) {
   "use cache";
-  cacheLife({ stale: 60, revalidate: 60, expire: 2678400 });
+  cacheLife(oneMonthCachePolicy);
 
   const service = await getServiceDetail(serviceName);
   if (!service) return null;

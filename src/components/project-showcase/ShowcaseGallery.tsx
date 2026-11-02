@@ -171,6 +171,7 @@ export default function ShowcaseGallery({
   const searchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const requestId = useRef(0);
   const [projects, setProjects] = useState(initialProjects);
+  const [snapshotImageById, setSnapshotImageById] = useState<Record<number, string>>({});
   const [total, setTotal] = useState(initialTotal);
   const [totalPages, setTotalPages] = useState(initialTotalPages);
   const [currentPage, setCurrentPage] = useState(1);
@@ -316,16 +317,24 @@ export default function ShowcaseGallery({
       catalogRef.current = cached.projects;
     }
 
-    const catalogPromise = cached
-      ? Promise.resolve(cached.projects)
-      : loadShowcaseSnapshot(kind)
-          .then((snapshot) => {
-            if (disposed) return null;
-            writeBrowserCatalog(kind, snapshot, "snapshot");
-            applyCatalog(snapshot);
-            return snapshot;
-          })
-          .catch(() => null);
+    const snapshotPromise = loadShowcaseSnapshot(kind)
+      .then((snapshot) => {
+        if (disposed) return null;
+        const fallbackImages: Record<number, string> = {};
+        for (const project of snapshot) {
+          const image = project.project_data?.featured_image;
+          if (image) fallbackImages[project.id] = image;
+        }
+        setSnapshotImageById(fallbackImages);
+
+        if (!cached) {
+          writeBrowserCatalog(kind, snapshot, "snapshot");
+          applyCatalog(snapshot);
+        }
+        return snapshot;
+      })
+      .catch(() => null);
+    const catalogPromise = cached ? Promise.resolve(cached.projects) : snapshotPromise;
     catalogPromiseRef.current = catalogPromise;
 
     const shouldRefresh =
@@ -731,7 +740,11 @@ export default function ShowcaseGallery({
                       className="content-enter"
                       style={{ animationDelay: `${(index % 10) * 0.1}s` }}
                     >
-                      <SelectedWorkCard project={project} variant="showcase" />
+                      <SelectedWorkCard
+                        project={project}
+                        variant="showcase"
+                        fallbackImage={snapshotImageById[project.id]}
+                      />
                     </article>
                   ))}
               {loadingMore && Array.from({ length: 10 }, (_, index) => <ShowcaseCardSkeleton key={`more-${index}`} />)}

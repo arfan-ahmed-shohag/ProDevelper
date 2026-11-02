@@ -247,7 +247,7 @@ export const featuredProjects = async (): Promise<ProjectResponse[]> => {
   cacheLife(oneMonthCachePolicy);
 
   const res = await fetch(
-    `${process.env.NEXT_BASE_URL}/p-showcase?project-categories=134&per_page=4&_embed=wp:featuredmedia`,
+    `${process.env.NEXT_BASE_URL}/p-showcase?project-categories=134&per_page=4&_embed=wp:featuredmedia&_fields=id,title,link,project_data,tag_list,_embedded`,
   );
   if (!res.ok) {
     throw new Error("Failed to fetch featured projects");

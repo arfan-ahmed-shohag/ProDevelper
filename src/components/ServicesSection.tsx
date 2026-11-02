@@ -1,16 +1,12 @@
 import Link from "next/link";
-import { Suspense } from "react";
 import serviceData from "@/data/services.json";
-import ServiceGridList from "./ServiceGridList";
-import { featuredServices } from "@/services/services";
-import ServiceGridSkeleton from "./ServiceGridSkeleton";
-import { toServiceCard } from "@/lib/service-card";
-import type { ServiceResponse } from "@/services/services";
+import type { ServiceCardData } from "@/lib/service-card";
+import CachedServiceCards, { type ServiceCardSource } from "./CachedServiceCards";
 
 type ServicesSectionProps = {
-  services?: ServiceResponse[];
+  initialServices: ServiceCardData[];
+  source: ServiceCardSource;
   initialCount?: number;
-  loading?: boolean;
   viewAll?: {
     href: string;
     title: string;
@@ -19,29 +15,11 @@ type ServicesSectionProps = {
   };
 };
 
-async function ServiceCards({
-  services,
-  initialCount,
-}: {
-  services?: ServiceResponse[];
-  initialCount: number;
-}) {
-  const serviceItems = services ?? (await featuredServices());
-
-  return (
-    <ServiceGridList
-      services={serviceItems.map(toServiceCard)}
-      initialCount={initialCount}
-      cardLinkLabel={serviceData.cardLinkLabel}
-    />
-  );
-}
-
 export default function ServicesSection({
   viewAll,
-  services,
+  initialServices,
+  source,
   initialCount = 6,
-  loading = false,
 }: ServicesSectionProps) {
   return (
     <section
@@ -92,13 +70,12 @@ export default function ServicesSection({
           </p>
         </div>
 
-        {loading ? (
-          <ServiceGridSkeleton count={initialCount} />
-        ) : (
-          <Suspense fallback={<ServiceGridSkeleton count={initialCount} />}>
-            <ServiceCards services={services} initialCount={initialCount} />
-          </Suspense>
-        )}
+        <CachedServiceCards
+          initialServices={initialServices}
+          initialCount={initialCount}
+          source={source}
+          cardLinkLabel={serviceData.cardLinkLabel}
+        />
 
         {viewAll && (
           <div className="md:mt-40 mt-10 text-center relative z-10">

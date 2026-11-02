@@ -1,8 +1,9 @@
 import { cache, Suspense, type CSSProperties } from "react";
 import Link from "next/link";
-import { latestFeedback } from "@/services/feedback";
-import FeedbackCard from "./FeedbackCard";
-import FeedbackSkeleton, { FeedbackSummarySkeleton } from "./FeedbackSkeleton";
+import { latestFeedback, type FeedbackResponse } from "@/services/feedback";
+import homeFeedback from "@/data/home-feedback.json";
+import CachedFeedbackCards from "./CachedFeedbackCards";
+import { FeedbackSummarySkeleton } from "./FeedbackSkeleton";
 
 // Share one response between the rating summary and cards in this render.
 const getFeedback = cache(latestFeedback);
@@ -47,17 +48,14 @@ async function FeedbackSummary() {
   );
 }
 
-async function FeedbackCards() {
-  const { items } = await getFeedback();
-
-  return (
-    <div id="feedback-grid" className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-      {items.map((feedback, index) => (
-        <FeedbackCard key={feedback.id} feedback={feedback} index={index} />
-      ))}
-    </div>
-  );
-}
+const fallbackFeedback: FeedbackResponse[] = homeFeedback.map((item, index) => ({
+  id: index + 1,
+  title: { rendered: item.name },
+  content: { rendered: item.quote },
+  _embedded: item.avatar
+    ? { "wp:featuredmedia": [{ source_url: item.avatar }] }
+    : undefined,
+}));
 
 export default function TestimonialsSection() {
   return (
@@ -111,9 +109,7 @@ export default function TestimonialsSection() {
           </Suspense>
         </div>
 
-        <Suspense fallback={<FeedbackSkeleton />}>
-          <FeedbackCards />
-        </Suspense>
+        <CachedFeedbackCards fallback={{ items: fallbackFeedback, total: 0 }} />
 
         <div className="mt-40 text-center relative z-10">
           <Link href="/client-feedback" className="inline-block group">

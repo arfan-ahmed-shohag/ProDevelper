@@ -6,6 +6,7 @@ import StatsSection from "@/components/home/StatsSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import { Metadata } from "next";
 import serviceData from "@/data/services.json";
+import homeServices from "@/data/home-services.json";
 import { cacheLife } from "next/cache";
 import { oneMonthCachePolicy } from "@/lib/cache-policy";
 
@@ -19,6 +20,8 @@ export default async function Home () {
     <>
       <Hero />
       <ServicesSection
+        initialServices={homeServices}
+        source="featured"
         viewAll={serviceData.home.viewAll}
       />
       <SelectedWorks />

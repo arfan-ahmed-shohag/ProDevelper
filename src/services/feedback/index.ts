@@ -1,6 +1,7 @@
 "use server";
 
 import { cacheLife } from "next/cache";
+import { oneMonthCachePolicy } from "@/lib/cache-policy";
 
 export type FeedbackResponse = {
   id: number;
@@ -17,7 +18,7 @@ export const latestFeedback = async (): Promise<{
   total: number;
 }> => {
   "use cache";
-  cacheLife({ stale: 60, revalidate: 60, expire: 2678400 });
+  cacheLife(oneMonthCachePolicy);
 
   const res = await fetch(
     `${process.env.NEXT_BASE_URL}/c-feedback?per_page=9&orderby=date&order=desc&_embed=wp:featuredmedia`,

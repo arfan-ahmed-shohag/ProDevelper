@@ -1,6 +1,8 @@
 "use server"
 
 import { cacheLife } from "next/cache";
+import { oneMonthCachePolicy } from "@/lib/cache-policy";
+import { toServiceCard, type ServiceCardData } from "@/lib/service-card";
 
 export type ServiceProcessStep = {
     title: string;
@@ -26,7 +28,7 @@ export type ServiceResponse = {
 
 export const featuredServices = async (): Promise<ServiceResponse[]> => {
     "use cache";
-    cacheLife({ stale: 60, revalidate: 60, expire: 2678400 });
+    cacheLife(oneMonthCachePolicy);
 
     const res = await fetch(`${process.env.NEXT_BASE_URL}/service?services-categories=118&per_page=6&orderby=date&order=desc`);
     if (!res.ok) {
@@ -38,9 +40,11 @@ export const featuredServices = async (): Promise<ServiceResponse[]> => {
 
 export const getAllServices = async (): Promise<ServiceResponse[]> => {
     "use cache";
-    cacheLife({ stale: 60, revalidate: 60, expire: 2678400 });
+    cacheLife(oneMonthCachePolicy);
 
-    const res = await fetch(`${process.env.NEXT_BASE_URL}/service?per_page=100`);
+    const res = await fetch(
+        `${process.env.NEXT_BASE_URL}/service?per_page=100&_fields=slug,title,content,service_data`,
+    );
     if (!res.ok) {
         throw new Error("Failed to fetch services");
     }
@@ -50,13 +54,20 @@ export const getAllServices = async (): Promise<ServiceResponse[]> => {
 
 export const getServiceDetail = async (serviceSlug: string): Promise<ServiceResponse | null> => {
     "use cache";
-    cacheLife({ stale: 60, revalidate: 60, expire: 2678400 });
+    cacheLife(oneMonthCachePolicy);
 
-    const res = await fetch(`${process.env.NEXT_BASE_URL}/service?slug=${encodeURIComponent(serviceSlug)}`);
-    if (!res.ok) {
-        throw new Error("Failed to fetch service details");
-    }
-
-    const services: ServiceResponse[] = await res.json();
-    return services[0] ?? null;
+    const services = await getAllServices();
+    return services.find((service) => service.slug === serviceSlug) ?? null;
 }
+
+export const getFeaturedServiceCards = async (): Promise<ServiceCardData[]> => {
+    "use cache";
+    cacheLife(oneMonthCachePolicy);
+    return (await featuredServices()).map(toServiceCard);
+};
+
+export const getAllServiceCards = async (): Promise<ServiceCardData[]> => {
+    "use cache";
+    cacheLife(oneMonthCachePolicy);
+    return (await getAllServices()).map(toServiceCard);
+};
