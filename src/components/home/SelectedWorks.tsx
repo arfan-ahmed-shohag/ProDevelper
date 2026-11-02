@@ -1,16 +1,23 @@
-import items from "@/data/projects.json";
-import featuredIds from "@/data/featured-projects.json";
-import Image from "next/image";
+import { featuredProjects } from "@/services/projects";
 import { SelectedWorksGrid } from "./SelectedWorksGrid";
-import type { CSSProperties } from "react";
+import { Suspense, type CSSProperties } from "react";
 import Link from "next/link";
-type Project = (typeof items)[number];
+import SelectedWorkCard from "./SelectedWorkCard";
+import SelectedWorksSkeleton from "./SelectedWorksSkeleton";
+
+async function ProjectCards() {
+  const projects = await featuredProjects();
+
+  return (
+    <SelectedWorksGrid>
+      {projects.map((project) => (
+        <SelectedWorkCard key={project.id} project={project} />
+      ))}
+    </SelectedWorksGrid>
+  );
+}
 
 export default function SelectedWorks() {
-  const projects = featuredIds
-    .map((id) => items.find((project) => project.id === id))
-    .filter((project): project is Project => Boolean(project));
-
   return (
     <section
       id="portfolio"
@@ -69,82 +76,9 @@ export default function SelectedWorks() {
           </h2>
         </div>
 
-        <SelectedWorksGrid>
-          {projects.map((project) => (
-            <div
-              key={project.id || project.href}
-              className="portfolio-item group relative flex flex-col"
-            >
-              <div className="relative aspect-4/5 overflow-hidden rounded-[2.5rem] bg-white/5 p-4 shadow-2xl transition-all duration-700 group-hover:-translate-y-4 border border-white/10 group-hover:border-brand-green/30">
-                <div className="image-box relative w-full h-full overflow-hidden rounded-[1.8rem] bg-brand-deepest">
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    className="block w-full h-full"
-                    rel="noopener noreferrer"
-                  >
-                    <Image
-                      width={890}
-                      height={2560}
-                      src={project.image}
-                      sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 600px"
-                      alt={project.title}
-                      className="scroll-img w-full h-auto object-top transition-transform duration-[8s] ease-in-out"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
-
-              <div className="mt-10 space-y-4 px-4">
-                <div className="flex justify-between items-center gap-4 group/title">
-                  <a
-                    className="min-w-0 flex-1"
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <h3 className="text-3xl md:text-4xl font-black text-white tracking-tighter transition-all group-hover:text-brand-green">
-                      {project.title}
-                    </h3>
-                  </a>
-
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    className="w-12 h-12 shrink-0 rounded-full border border-white/10 flex items-center justify-center transition-all text-white group-hover/title:bg-brand-green group-hover/title:border-brand-green"
-                    rel="noopener noreferrer"
-                  >
-                    <svg
-                      className="w-5 h-5 -rotate-45 transition-colors"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2.5"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      ></path>
-                    </svg>
-                  </a>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.slice(0, 4).map((label) => (
-                    <span
-                      key={label}
-                      className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 bg-white/5 text-slate-300 rounded-lg border border-white/10 group-hover:border-brand-green/40 transition-all"
-                    >
-                      {label}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </SelectedWorksGrid>
+        <Suspense fallback={<SelectedWorksSkeleton />}>
+          <ProjectCards />
+        </Suspense>
 
         <div className="mt-16 md:mt-40 text-center relative z-10">
           <Link href="/project-showcase" className="inline-block group">

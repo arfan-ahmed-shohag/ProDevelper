@@ -1,19 +1,23 @@
-import Image from "next/image";
-import {
-  serviceDetailLayout,
-  type ServiceProcessStep,
-} from "@/lib/service-details";
+import { serviceDetailLayout } from "@/lib/service-details";
+import { plainText } from "@/lib/plain-text";
+import type { ServiceProcessStep } from "@/services/services";
+import Skeleton from "@/components/Skeleton";
 
 export default function ServiceProcess({
   steps,
+  loading = false,
 }: {
   steps: readonly ServiceProcessStep[];
+  loading?: boolean;
 }) {
   const content = serviceDetailLayout.process;
 
   return (
     <section
       id="process"
+      role={loading ? "status" : undefined}
+      aria-label={loading ? "Loading service workflow" : undefined}
+      aria-busy={loading || undefined}
       className="relative py-24 lg:py-40 px-6 overflow-hidden bg-white"
     >
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -62,49 +66,58 @@ export default function ServiceProcess({
 
           {steps.map((step, index) => (
             <div
-              key={`${step.number}-${index}`}
+              key={`${step.title}-${index}`}
               className={`step-container relative flex flex-col md:flex-row items-center justify-between mb-24 md:mb-32 w-full group ${
-                step.reverse ? "md:flex-row-reverse" : ""
+                index % 2 === 1 ? "md:flex-row-reverse" : ""
               }`}
             >
               <div className="w-full md:w-[45%] flex items-center justify-center mb-10 md:mb-0">
-                <div className="relative z-10 transition-transform duration-700 group-hover:scale-105">
-                  <Image
-                    src={step.image.src}
-                    alt={step.image.alt}
-                    width={step.image.width}
-                    height={step.image.height}
-                    style={{
-                      aspectRatio: `${step.image.width} / ${step.image.height}`,
-                    }}
-                    sizes="(max-width: 768px) 100vw, 500px"
-                    loading="lazy"
-                    className="w-full h-auto md:w-[500px] md:h-auto object-contain drop-shadow-2xl"
-                  />
+                <div className={`relative z-10 transition-transform duration-700 group-hover:scale-105 ${loading ? "w-full max-w-[500px]" : ""}`}>
+                  {loading ? (
+                    <Skeleton className="aspect-[3/2] w-full rounded-[2.5rem]" />
+                  ) : step.image && (
+                    // The API supplies image URLs without intrinsic dimensions.
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={step.image}
+                      alt={plainText(step.title)}
+                      width={500}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-auto md:w-[500px] md:h-auto object-contain drop-shadow-2xl"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-brand-green/10 blur-[60px] -z-10 rounded-full" />
                 </div>
               </div>
 
               <div className="central-dot absolute left-1/2 -translate-x-1/2 w-16 h-16 bg-white border-4 border-brand-surface rounded-full z-20 flex items-center justify-center shadow-lg transition-all duration-500 group-hover:border-brand-green group-hover:scale-110 hidden md:flex">
                 <span className="text-brand-dark font-black text-lg">
-                  {step.number}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
 
               <div
                 className={`w-full md:w-[45%] text-center md:text-left ${
-                  step.reverse ? "md:pr-16" : "md:pl-16"
+                  index % 2 === 1 ? "md:pr-16" : "md:pl-16"
                 }`}
               >
                 <div className="step-card bg-white border border-slate-100 p-8 md:p-12 rounded-[2.5rem] shadow-[0_10px_40px_-10px_rgb(var(--rgb-black)/0.05)] transition-all duration-500 hover:shadow-2xl hover:border-brand-green/30 hover:-translate-y-2">
                   <span className="md:hidden inline-block text-brand-green font-black text-2xl mb-4">
-                    {step.number}.
+                    {String(index + 1).padStart(2, "0")}.
                   </span>
                   <h3 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 group-hover:text-brand-green transition-colors">
-                    {step.title}
+                    {loading ? <Skeleton className="h-9 w-3/4 mx-auto md:mx-0" /> : plainText(step.title)}
                   </h3>
                   <p className="text-slate-500 text-base md:text-lg leading-relaxed md:leading-7 font-medium">
-                    {step.description}
+                    {loading ? (
+                      <span className="block space-y-3 py-1">
+                        <Skeleton className="h-4 w-full" />
+                        <Skeleton className="h-4 w-full" />
+                        <Skeleton className="h-4 w-11/12" />
+                        <Skeleton className="h-4 w-2/3" />
+                      </span>
+                    ) : plainText(step.text)}
                   </p>
                 </div>
               </div>
@@ -113,5 +126,14 @@ export default function ServiceProcess({
         </div>
       </div>
     </section>
+  );
+}
+
+export function ServiceProcessSkeleton() {
+  return (
+    <ServiceProcess
+      loading
+      steps={Array.from({ length: 6 }, () => ({ title: "", text: "" }))}
+    />
   );
 }

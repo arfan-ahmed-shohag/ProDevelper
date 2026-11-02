@@ -1,7 +1,64 @@
-import feedback from "@/data/feedback.json";
-import Image from "next/image";
-import type { CSSProperties } from "react";
+import { cache, Suspense, type CSSProperties } from "react";
 import Link from "next/link";
+import { latestFeedback } from "@/services/feedback";
+import FeedbackCard from "./FeedbackCard";
+import FeedbackSkeleton, { FeedbackSummarySkeleton } from "./FeedbackSkeleton";
+
+// Share one response between the rating summary and cards in this render.
+const getFeedback = cache(latestFeedback);
+
+async function FeedbackSummary() {
+  const { items, total } = await getFeedback();
+  const ratings = items
+    .map((item) => Number(item.rating))
+    .filter((rating) => Number.isFinite(rating) && rating > 0 && rating <= 5);
+  if (ratings.length === 0) return null;
+  const average = (
+    ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length
+  ).toFixed(1);
+  const stars = Math.round(Number(average));
+
+  return (
+    <div className="hidden lg:flex items-center gap-6 p-6 bg-slate-50 rounded-[2.5rem] border border-slate-100 shadow-sm">
+      <div className="flex -space-x-3">
+        <div className="w-12 h-12 rounded-full border-4 border-white bg-slate-200 shadow-sm"></div>
+
+        <div className="w-12 h-12 rounded-full border-4 border-white bg-brand-dark flex items-center justify-center text-brand-green text-[10px] font-bold">
+          {average}
+        </div>
+      </div>
+
+      <div>
+        <div className="flex text-brand-green text-[10px] mb-1" aria-label={`${average} out of 5 stars for recent reviews`}>
+          <span aria-hidden="true">
+            {"\u2605".repeat(stars)}{"\u2606".repeat(5 - stars)}
+          </span>
+        </div>
+
+        <p className="text-slate-900 font-black text-sm leading-none tracking-tight">
+          {"Recent Client Rating"}
+        </p>
+
+        <p className="text-slate-400 text-[9px] font-bold uppercase tracking-widest mt-1 text-nowrap">
+          {`Latest ${items.length} of ${total} Reviews`}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+async function FeedbackCards() {
+  const { items } = await getFeedback();
+
+  return (
+    <div id="feedback-grid" className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+      {items.map((feedback, index) => (
+        <FeedbackCard key={feedback.id} feedback={feedback} index={index} />
+      ))}
+    </div>
+  );
+}
+
 export default function TestimonialsSection() {
   return (
     <section
@@ -21,7 +78,7 @@ export default function TestimonialsSection() {
           }
         ></div>
 
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-green/5 rounded-full blur-[120px]"></div>
+        <div className="absolute top-0 right-0 w-125 h-125 bg-brand-green/5 rounded-full blur-[120px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -49,84 +106,14 @@ export default function TestimonialsSection() {
             </h2>
           </div>
 
-          <div className="hidden lg:flex items-center gap-6 p-6 bg-slate-50 rounded-[2.5rem] border border-slate-100 shadow-sm">
-            <div className="flex -space-x-3">
-              <div className="w-12 h-12 rounded-full border-4 border-white bg-slate-200 shadow-sm"></div>
-
-              <div className="w-12 h-12 rounded-full border-4 border-white bg-brand-dark flex items-center justify-center text-brand-green text-[10px] font-bold">
-                {"4.9"}
-              </div>
-            </div>
-
-            <div>
-              <div className="flex text-brand-green text-[10px] mb-1">
-                {"★★★★★"}
-              </div>
-
-              <p className="text-slate-900 font-black text-sm leading-none tracking-tight">
-                {"Avg. Client Rating"}
-              </p>
-
-              <p className="text-slate-400 text-[9px] font-bold uppercase tracking-widest mt-1 text-nowrap">
-                {`Based on ${feedback.length}+ Reviews`}
-              </p>
-            </div>
-          </div>
+          <Suspense fallback={<FeedbackSummarySkeleton />}>
+            <FeedbackSummary />
+          </Suspense>
         </div>
 
-        <div
-          id="feedback-grid"
-          className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"
-        >
-          {feedback.slice(0, 9).map((item, index) => (
-            <div
-              key={`${item.name}-${index}`}
-              className="feedback-item break-inside-avoid relative bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-[0_15px_40px_-15px_rgb(var(--rgb-black)_/_0.05)] transition-all duration-500 hover:shadow-2xl hover:border-brand-green/30 group mb-8"
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 shrink-0 rounded-2xl overflow-hidden shadow-sm ring-1 ring-slate-100">
-                  {item.avatar ? (
-                    <Image
-                      width={100}
-                      height={100}
-                      src={item.avatar}
-                      sizes="48px"
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                      alt={item.name}
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div
-                      className="w-full h-full flex items-center justify-center text-white font-black text-lg"
-                      style={{
-                        background:
-                          item.color?.replaceAll("--color-", "--rgb-") || "rgb(var(--rgb-brand-green))",
-                      }}
-                    >
-                      {item.name.charAt(0).toUpperCase()}
-                    </div>
-                  )}
-                </div>
-
-                <div>
-                  <h4 className="font-black text-slate-900 text-[15px] leading-none mb-1">
-                    {item.name}
-                  </h4>
-
-                  <p className="text-slate-400 text-[9px] font-bold uppercase tracking-widest">
-                    {item.role}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex text-rating text-[16px] gap-0.5 mb-5">
-                {" ★★★★★ "}
-              </div>
-
-              <p className="text-slate-600 text-[15px] leading-relaxed font-medium group-hover:text-slate-900 transition-colors">{` "${item.quote}" `}</p>
-            </div>
-          ))}
-        </div>
+        <Suspense fallback={<FeedbackSkeleton />}>
+          <FeedbackCards />
+        </Suspense>
 
         <div className="mt-40 text-center relative z-10">
           <Link href="/client-feedback" className="inline-block group">

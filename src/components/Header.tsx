@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Suspense } from "react";
 import { useEffect, useRef, useState } from "react";
 import branding from "../data/branding.json";
 import { NavigationIcon } from "./navigation-icons";
@@ -17,16 +18,55 @@ const navigation = [
   ["FAQ", "/faq/"],
 ];
 
-export function SiteHeader() {
+function NavigationList({
+  pathname,
+  mobile = false,
+  onNavigate,
+}: {
+  pathname: string;
+  mobile?: boolean;
+  onNavigate?: () => void;
+}) {
+  const active = (href: string) =>
+    pathname.replace(/\/$/, "") === href.replace(/\/$/, "");
+
+  return navigation.map(([label, href]) => (
+    <li key={href} className={active(href) ? "current-menu-item" : ""}>
+      <Link
+        href={href}
+        onClick={mobile ? onNavigate : undefined}
+        aria-current={active(href) ? "page" : undefined}
+      >
+        {label}
+      </Link>
+    </li>
+  ));
+}
+
+function ActiveNavigation({
+  mobile = false,
+  onNavigate,
+}: {
+  mobile?: boolean;
+  onNavigate?: () => void;
+}) {
   const pathname = usePathname();
+  return (
+    <NavigationList
+      pathname={pathname}
+      mobile={mobile}
+      onNavigate={onNavigate}
+    />
+  );
+}
+
+export function SiteHeader() {
   const [headerState, setHeaderState] = useState("is-top");
   const [menuOpen, setMenuOpen] = useState(false);
   const panel = useRef<HTMLDivElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
   const dock = useRef<HTMLElement>(null);
   const close = () => setMenuOpen(false);
-  const active = (href: string) =>
-    pathname.replace(/\/$/, "") === href.replace(/\/$/, "");
 
   useEffect(() => {
     const update = () =>
@@ -91,19 +131,6 @@ export function SiteHeader() {
     };
   }, [menuOpen]);
 
-  const links = (mobile = false) =>
-    navigation.map(([label, href]) => (
-      <li key={href} className={active(href) ? "current-menu-item" : ""}>
-        <Link
-          href={href}
-          onClick={mobile ? close : undefined}
-          aria-current={active(href) ? "page" : undefined}
-        >
-          {label}
-        </Link>
-      </li>
-    ));
-
   return (
     <>
       <a
@@ -127,7 +154,9 @@ export function SiteHeader() {
             </div>
             <nav className="pd_nav_desktop" aria-label="Main navigation">
               <ul id="menu-menu-1" className="navigation">
-                {links()}
+                <Suspense fallback={<NavigationList pathname="" />}>
+                  <ActiveNavigation />
+                </Suspense>
               </ul>
             </nav>
             <div className="pd_right">
@@ -166,7 +195,7 @@ export function SiteHeader() {
             <div className="pd_side_top">
               <div className="pd_logo">
                 <Link href="/" onClick={close}>
-                  <img
+                  <Image
                     src={branding.logo}
                     alt="Prodeveloper2 home"
                     width="1087"
@@ -184,7 +213,19 @@ export function SiteHeader() {
               </button>
             </div>
             <nav className="pd_side_nav" aria-label="Mobile navigation">
-              <ul className="pd_side_links navigation">{links(true)}</ul>
+              <ul className="pd_side_links navigation">
+                <Suspense
+                  fallback={
+                    <NavigationList
+                      pathname=""
+                      mobile
+                      onNavigate={close}
+                    />
+                  }
+                >
+                  <ActiveNavigation mobile onNavigate={close} />
+                </Suspense>
+              </ul>
             </nav>
             <div className="mt-8">
               <Link
@@ -231,7 +272,7 @@ export function SiteHeader() {
         ref={dock}
         id="bottom-mobile-menu"
         aria-label="Quick navigation"
-        className="fixed bottom-0 left-0 w-full bg-brand-dark border-t border-white/5 lg:hidden z-[9999] will-change-transform"
+        className="fixed bottom-0 left-0 w-full bg-brand-dark border-t border-white/5 lg:hidden z-9999 will-change-transform"
       >
         <div className="relative z-10 flex items-center justify-between py-5 px-4">
           {[
