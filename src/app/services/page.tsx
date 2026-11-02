@@ -3,6 +3,7 @@ import ServicesSection from "@/components/ServicesSection";
 import { getAllServices } from "@/services/services";
 import { Suspense } from "react";
 import { Metadata } from "next";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -39,6 +40,7 @@ export default function ServicesPage() {
       <Suspense fallback={<ServicesSection initialCount={12} loading />}>
         <ServicesCatalog />
       </Suspense>
+      <TestimonialsSection />
     </>
   );
 }

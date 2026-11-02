@@ -15,7 +15,7 @@ export type PageHeroProps = {
   description: ReactNode;
   stats?: readonly PageHeroStat[];
   statsVariant?: "metrics" | "features";
-  variant?: "default" | "service";
+  variant?: "default" | "service" | "showcase";
   badgePulse?: boolean;
   className?: string;
 };
@@ -35,6 +35,7 @@ export default function PageHero({
   className = "",
 }: PageHeroProps) {
   const isService = variant === "service";
+  const isShowcase = variant === "showcase";
 
   return (
     <section
@@ -60,7 +61,11 @@ export default function PageHero({
             </h1>
           </div>
         ) : (
-          <h1 className="text-5xl lg:text-7xl 2xl:text-8xl font-black text-white leading-[0.9] lg:leading-none tracking-tighter mb-8">
+          <h1
+            className={`text-5xl lg:text-7xl 2xl:text-8xl font-black text-white tracking-tighter mb-8 ${
+              isShowcase ? "leading-[0.9]" : "leading-[0.9] lg:leading-none"
+            }`}
+          >
             {title}
             {highlight && (
               <>
@@ -88,7 +93,11 @@ export default function PageHero({
             <p>{description}</p>
           </div>
         ) : (
-          <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed md:leading-7 mb-12">
+          <p
+            className={`text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12 ${
+              isShowcase ? "text-white/60" : "text-white/80 md:leading-7"
+            }`}
+          >
             {description}
           </p>
         )}
@@ -106,7 +115,11 @@ export default function PageHero({
                 key={stat.label}
                 className="text-center md:border-r border-white/5 last:border-0"
               >
-                <h4 className="text-3xl font-black text-brand-light">
+                <h4
+                  className={`text-3xl font-black text-brand-light${
+                    isShowcase ? " uppercase tracking-tighter" : ""
+                  }`}
+                >
                   {stat.value}
                 </h4>
                 <p

@@ -13,7 +13,7 @@ export default function FeedbackSkeleton() {
         <div
           key={index}
           aria-hidden="true"
-          className="break-inside-avoid relative bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-[0_15px_40px_-15px_rgb(var(--rgb-black)_/_0.05)] mb-8"
+          className="break-inside-avoid relative bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-[0_15px_40px_-15px_rgb(var(--rgb-black)/0.05)] mb-8"
         >
           <div className="flex items-center gap-4 mb-6">
             <Skeleton className="size-12 shrink-0 rounded-2xl" />
