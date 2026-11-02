@@ -8,7 +8,7 @@ export type ServiceProcessStep = {
     image?: string | null;
 };
 
-type ServiceResponse = {
+export type ServiceResponse = {
     slug: string;
     title: { rendered: string };
     content: { rendered: string };
@@ -31,6 +31,18 @@ export const featuredServices = async (): Promise<ServiceResponse[]> => {
     const res = await fetch(`${process.env.NEXT_BASE_URL}/service?services-categories=118&per_page=6&orderby=date&order=desc`);
     if (!res.ok) {
         throw new Error("Failed to fetch featured services");
+    }
+
+    return res.json();
+}
+
+export const getAllServices = async (): Promise<ServiceResponse[]> => {
+    "use cache";
+    cacheLife({ stale: 60, revalidate: 60, expire: 2678400 });
+
+    const res = await fetch(`${process.env.NEXT_BASE_URL}/service?per_page=100`);
+    if (!res.ok) {
+        throw new Error("Failed to fetch services");
     }
 
     return res.json();

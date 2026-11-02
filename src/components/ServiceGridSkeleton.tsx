@@ -1,6 +1,6 @@
 import Skeleton from "./Skeleton";
 
-export default function ServiceGridSkeleton() {
+export default function ServiceGridSkeleton({ count = 6 }: { count?: number }) {
   return (
     <div
       id="service-grid"
@@ -9,7 +9,7 @@ export default function ServiceGridSkeleton() {
       aria-busy="true"
       className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
     >
-      {Array.from({ length: 6 }, (_, index) => (
+      {Array.from({ length: count }, (_, index) => (
         <div
           key={index}
           aria-hidden="true"
