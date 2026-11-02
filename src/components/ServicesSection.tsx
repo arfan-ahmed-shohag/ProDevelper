@@ -1,25 +1,45 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import serviceData from "@/data/services.json";
 import { ServiceGrid } from "./ServiceGrid";
+import { featuredServices } from "@/services/services";
+import ServiceGridSkeleton from "./ServiceGridSkeleton";
 
 type ServicesSectionProps = {
-  variant?: "home" | "catalog";
+  viewAll?: {
+    href: string;
+    title: string;
+    outline: string;
+    label: string;
+  };
 };
 
-export default function ServicesSection({
-  variant = "catalog",
-}: ServicesSectionProps) {
-  const isHome = variant === "home";
-  const services = isHome
-    ? serviceData.items.slice(0, serviceData.home.limit)
-    : serviceData.items;
+async function ServiceCards() {
+  const services = await featuredServices();
 
+  return (
+    services.length > 0 && (
+      <div id="service-grid" className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {services.map((service, index) => (
+          <ServiceGrid
+            key={service.slug}
+            service={service}
+            index={index}
+            cardLinkLabel={serviceData.cardLinkLabel}
+          />
+        ))}
+      </div>
+    )
+  );
+}
+
+export default function ServicesSection({
+  viewAll,
+}: ServicesSectionProps) {
   return (
     <section
       id="services"
-      className={`relative px-6 overflow-hidden ${
-        isHome ? "pd_reveal py-16 md:py-24 lg:py-40" : "py-24 lg:py-40"
-      }`}
+      className="relative px-6 overflow-hidden py-16 md:py-24 lg:py-40"
     >
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div
@@ -40,9 +60,7 @@ export default function ServicesSection({
 
       <div className="max-w-7xl mx-auto relative">
         <div
-          className={`flex flex-col items-center text-center ${
-            isHome ? "mb-20 md:mb-32" : "mb-32"
-          }`}
+          className="flex flex-col items-center text-center mb-20 md:mb-32"
         >
           <span className="text-brand-dark font-bold uppercase tracking-[0.6em] text-[10px] mb-8 block opacity-80">
             {serviceData.badge}
@@ -67,24 +85,18 @@ export default function ServicesSection({
           </p>
         </div>
 
-        <ServiceGrid
-          id="service-grid"
-          services={services}
-          initialCount={isHome ? services.length : serviceData.catalog.initialCount}
-          showLoadMore={!isHome}
-          loadMoreCount={serviceData.catalog.batchSize}
-          loadMoreLabel={serviceData.catalog.loadMoreLabel}
-          cardLinkLabel={serviceData.cardLinkLabel}
-        />
+        <Suspense fallback={<ServiceGridSkeleton />}>
+          <ServiceCards />
+        </Suspense>
 
-        {isHome && (
+        {viewAll && (
           <div className="md:mt-40 mt-10 text-center relative z-10">
             <Link
-              href={serviceData.home.viewAll.href}
+              href={viewAll.href}
               className="inline-block group"
             >
               <h4 className="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter mb-4 transition-all duration-500 group-hover:-translate-y-2">
-                {serviceData.home.viewAll.title}{" "}
+                {viewAll.title}{" "}
                 <span
                   className="text-transparent"
                   style={{
@@ -92,13 +104,13 @@ export default function ServicesSection({
                     fontFamily: "var(--font-outline)",
                   }}
                 >
-                  {serviceData.home.viewAll.outline}
+                  {viewAll.outline}
                 </span>
               </h4>
 
               <div className="relative h-1.5 w-24 bg-brand-green mx-auto transition-all duration-500 group-hover:w-full rounded-full" />
               <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.5em] text-brand-dark opacity-50 group-hover:opacity-100 transition-opacity">
-                {serviceData.home.viewAll.label}
+                {viewAll.label}
               </p>
             </Link>
           </div>

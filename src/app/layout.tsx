@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/Header";
 import SiteFooter from "@/components/Footer";
 import branding from "../data/branding.json";
+import BrowserCache from "@/components/BrowserCache";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         {children}
         <SiteFooter />
+        <BrowserCache />
       </body>
     </html>
   );
