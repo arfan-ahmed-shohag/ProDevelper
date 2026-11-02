@@ -62,14 +62,17 @@ export function useBrowserDataCache<T>(
 
   useEffect(() => {
     let active = true;
+    let freshDataLoaded = false;
     let updatedAt = 0;
     let lastRefreshAt = 0;
+    let cachedDataTimer: number | undefined;
 
     const refresh = () => {
       lastRefreshAt = Date.now();
       void loadOnce(key, load)
         .then((freshData) => {
           if (!active) return;
+          freshDataLoaded = true;
           setData(freshData);
           if (useCachedData) writeBrowserDataCache(key, freshData);
         })
@@ -90,7 +93,9 @@ export function useBrowserDataCache<T>(
     const cached = useCachedData ? readBrowserDataCache<T>(key) : null;
     if (cached) {
       updatedAt = cached.updatedAt;
-      setData(cached.data);
+      cachedDataTimer = window.setTimeout(() => {
+        if (active && !freshDataLoaded) setData(cached.data);
+      }, 0);
     }
 
     if (!updatedAt || Date.now() - updatedAt >= refreshAfter) refresh();
@@ -102,6 +107,7 @@ export function useBrowserDataCache<T>(
 
     return () => {
       active = false;
+      if (cachedDataTimer !== undefined) window.clearTimeout(cachedDataTimer);
       if (refreshOnFocus) {
         window.removeEventListener("focus", refreshWhenVisible);
         document.removeEventListener("visibilitychange", refreshWhenVisible);
