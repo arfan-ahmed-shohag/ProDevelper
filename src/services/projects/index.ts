@@ -2,9 +2,15 @@
 
 import { cacheLife } from "next/cache";
 import { oneMonthCachePolicy } from "@/lib/cache-policy";
-import { plainText } from "@/lib/plain-text";
+import { buildShowcaseFilterGroups } from "@/lib/showcase-catalog";
 
 const pageSize = 10;
+const requestTimeoutMs = 8000;
+export type ShowcaseKind = "projects" | "demos";
+const showcaseEndpoint: Record<ShowcaseKind, string> = {
+  projects: "p-showcase",
+  demos: "d-showcase",
+};
 
 type ProjectTerm = { id: number; name: string; slug: string; taxonomy: string };
 type ProjectMedia = {
@@ -20,6 +26,7 @@ export type ProjectResponse = {
   link: string;
   "industry-type"?: number[];
   functionality?: number[];
+  "demo-tags"?: number[];
   tag_list?: string[];
   acf?: Record<string, unknown>;
   project_data?: {
@@ -57,6 +64,32 @@ function apiUrl(path: string, params?: URLSearchParams) {
   return `${baseUrl}/${path}${params?.size ? `?${params}` : ""}`;
 }
 
+async function fetchWordPress(url: string, errorMessage: string) {
+  let lastError: unknown;
+
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    let response: Response;
+    try {
+      response = await fetch(url, { signal: AbortSignal.timeout(requestTimeoutMs) });
+    } catch (error) {
+      lastError = error;
+      if (attempt === 0) {
+        await new Promise((resolve) => setTimeout(resolve, 250));
+        continue;
+      }
+      break;
+    }
+
+    if (response.ok) return response;
+
+    lastError = new Error(`${errorMessage} (${response.status})`);
+    if (response.status < 500 && response.status !== 429) break;
+    if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 250));
+  }
+
+  throw lastError instanceof Error ? lastError : new Error(errorMessage);
+}
+
 async function fetchPagedCollection<T>(
   path: string,
   params: URLSearchParams,
@@ -64,8 +97,7 @@ async function fetchPagedCollection<T>(
 ) {
   const firstParams = new URLSearchParams(params);
   firstParams.set("page", "1");
-  const firstResponse = await fetch(apiUrl(path, firstParams));
-  if (!firstResponse.ok) throw new Error(errorMessage);
+  const firstResponse = await fetchWordPress(apiUrl(path, firstParams), errorMessage);
 
   const firstPage = (await firstResponse.json()) as T[];
   const totalPages = Number(firstResponse.headers.get("X-WP-TotalPages") || 1);
@@ -73,8 +105,7 @@ async function fetchPagedCollection<T>(
     Array.from({ length: Math.max(0, totalPages - 1) }, async (_, index) => {
       const pageParams = new URLSearchParams(firstParams);
       pageParams.set("page", String(index + 2));
-      const response = await fetch(apiUrl(path, pageParams));
-      if (!response.ok) throw new Error(errorMessage);
+      const response = await fetchWordPress(apiUrl(path, pageParams), errorMessage);
       return (await response.json()) as T[];
     }),
   );
@@ -82,40 +113,66 @@ async function fetchPagedCollection<T>(
   return [...firstPage, ...remainingPages.flat()];
 }
 
-async function fetchTaxonomy(taxonomy: ShowcaseFilterGroup["taxonomy"]) {
-  const terms = await fetchPagedCollection<{
-    id: number;
-    name: string;
-    slug: string;
-    count?: number;
-  }>(
-    taxonomy,
-    new URLSearchParams({ per_page: "100", hide_empty: "true" }),
-    `Failed to fetch ${taxonomy} filters`,
-  );
-
-  return terms
-    .filter((term) => (term.count ?? 0) > 0)
-    .map((term) => ({
-      id: term.id,
-      label: term.name,
-      slug: term.slug,
-      count: term.count ?? 0,
-    }));
-}
-
-export async function getProjectShowcaseFilters(): Promise<ShowcaseFilterGroup[]> {
+export async function getShowcaseCatalog(kind: ShowcaseKind): Promise<ProjectResponse[]> {
   "use cache";
   cacheLife(oneMonthCachePolicy);
 
-  const [industryOptions, functionalityOptions] = await Promise.all([
-    fetchTaxonomy("industry-type"),
-    fetchTaxonomy("functionality"),
-  ]);
-  return [
-    { taxonomy: "industry-type", name: "Industry", options: industryOptions },
-    { taxonomy: "functionality", name: "Functionality", options: functionalityOptions },
-  ];
+  const params = new URLSearchParams({
+    per_page: "100",
+    orderby: "date",
+    order: "desc",
+    _embed: "wp:featuredmedia,wp:term",
+    _fields:
+      "id,slug,date,title,link,industry-type,functionality,demo-tags,tag_list,project_data,_embedded",
+  });
+
+  const posts = await fetchPagedCollection<ProjectResponse>(
+    showcaseEndpoint[kind],
+    params,
+    `Failed to fetch ${kind} catalog`,
+  );
+
+  return posts.map((post) => ({
+    id: post.id,
+    slug: post.slug,
+    date: post.date,
+    title: post.title,
+    link: post.link,
+    "industry-type": post["industry-type"] ?? [],
+    functionality: post.functionality ?? [],
+    "demo-tags": post["demo-tags"] ?? [],
+    tag_list: post.tag_list ?? [],
+    project_data: post.project_data
+      ? {
+          website_link: post.project_data.website_link,
+          featured_image: post.project_data.featured_image,
+        }
+      : undefined,
+    _embedded: {
+      "wp:featuredmedia": (post._embedded?.["wp:featuredmedia"] ?? []).map((media) => ({
+        source_url: media.source_url,
+        media_details: media.media_details
+          ? {
+              width: media.media_details.width,
+              height: media.media_details.height,
+            }
+          : undefined,
+      })),
+      "wp:term": (post._embedded?.["wp:term"] ?? []).map((group) =>
+        group.map(({ id, name, slug, taxonomy }) => ({ id, name, slug, taxonomy })),
+      ),
+    },
+  }));
+}
+
+export async function getShowcaseFilters(kind: ShowcaseKind): Promise<ShowcaseFilterGroup[]> {
+  "use cache";
+  cacheLife(oneMonthCachePolicy);
+  return buildShowcaseFilterGroups(kind, await getShowcaseCatalog(kind));
+}
+
+export async function getProjectShowcaseFilters() {
+  return getShowcaseFilters("projects");
 }
 
 function parseFilterIds(filters: string) {
@@ -134,21 +191,26 @@ function parseFilterIds(filters: string) {
 }
 
 async function fetchProjectPage(
+  kind: ShowcaseKind,
   page: number,
   selected: { taxonomy: ShowcaseFilterGroup["taxonomy"]; id: number }[],
+  search = "",
 ): Promise<ProjectShowcaseResult> {
   const params = new URLSearchParams({
     per_page: String(pageSize),
     page: String(page),
     orderby: "date",
     order: "desc",
-    _embed: "wp:featuredmedia",
+    _embed: "wp:featuredmedia,wp:term",
     _fields: "id,title,link,industry-type,functionality,tag_list,project_data,acf,_links,_embedded",
   });
+  if (search) params.set("search", search);
   for (const filter of selected) params.append(`${filter.taxonomy}[]`, String(filter.id));
 
-  const response = await fetch(apiUrl("p-showcase", params));
-  if (!response.ok) throw new Error("Failed to fetch project showcase");
+  const response = await fetchWordPress(
+    apiUrl(showcaseEndpoint[kind], params),
+    `Failed to fetch ${kind} showcase`,
+  );
   const projects = (await response.json()) as ProjectResponse[];
   return {
     projects,
@@ -157,58 +219,8 @@ async function fetchProjectPage(
   };
 }
 
-async function fetchProjectSearchIndex() {
-  const params = new URLSearchParams({
-    per_page: "100",
-    orderby: "date",
-    order: "desc",
-    _embed: "wp:featuredmedia,wp:term",
-    _fields: "id,title,link,industry-type,functionality,tag_list,project_data,acf,_links,_embedded",
-  });
-  return fetchPagedCollection<ProjectResponse>(
-    "p-showcase",
-    params,
-    "Failed to search project showcase",
-  );
-}
-
-async function getProjectSearchIndex() {
-  "use cache";
-  cacheLife(oneMonthCachePolicy);
-  return fetchProjectSearchIndex();
-}
-
-export async function warmProjectShowcaseSearchIndex() {
-  "use cache";
-  cacheLife(oneMonthCachePolicy);
-  await getProjectSearchIndex();
-  return true;
-}
-
-function projectMatchesSearch(project: ProjectResponse, query: string) {
-  const terms = project._embedded?.["wp:term"]?.flat() ?? [];
-  const searchable = [
-    plainText(project.title.rendered),
-    ...terms.flatMap((term) => [term.name, term.slug]),
-  ]
-    .join(" ")
-    .toLocaleLowerCase();
-  return searchable.includes(query);
-}
-
-function projectMatchesFilters(project: ProjectResponse, selected: { taxonomy: string; id: number }[]) {
-  const taxonomies = [...new Set(selected.map((filter) => filter.taxonomy))];
-  return taxonomies.every((taxonomy) => {
-    const ids = selected
-      .filter((filter) => filter.taxonomy === taxonomy)
-      .map((filter) => filter.id);
-    const projectIds =
-      taxonomy === "industry-type" ? project["industry-type"] : project.functionality;
-    return ids.some((id) => projectIds?.includes(id));
-  });
-}
-
-export async function getProjectShowcaseResults(
+export async function getShowcaseResults(
+  kind: ShowcaseKind,
   page = 1,
   search = "",
   filters = "",
@@ -217,20 +229,17 @@ export async function getProjectShowcaseResults(
   cacheLife(oneMonthCachePolicy);
 
   const normalizedPage = Math.max(1, Math.floor(page));
-  const query = search.trim().toLocaleLowerCase();
+  const query = search.trim();
   const selected = parseFilterIds(filters);
-  if (!query) return fetchProjectPage(normalizedPage, selected);
+  return fetchProjectPage(kind, normalizedPage, selected, query);
+}
 
-  const projects = await getProjectSearchIndex();
-  const matches = projects.filter(
-    (project) => projectMatchesSearch(project, query) && projectMatchesFilters(project, selected),
-  );
-  const totalPages = Math.ceil(matches.length / pageSize);
-  return {
-    projects: matches.slice((normalizedPage - 1) * pageSize, normalizedPage * pageSize),
-    total: matches.length,
-    totalPages,
-  };
+export async function getProjectShowcaseResults(
+  page = 1,
+  search = "",
+  filters = "",
+): Promise<ProjectShowcaseResult> {
+  return getShowcaseResults("projects", page, search, filters);
 }
 
 export const featuredProjects = async (): Promise<ProjectResponse[]> => {

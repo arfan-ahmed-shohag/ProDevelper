@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
-import { cacheLife } from "next/cache";
 import PageHero from "@/components/PageHero";
-import ProjectShowcase from "@/components/project-showcase/ProjectShowcase";
-import { oneMonthCachePolicy } from "@/lib/cache-policy";
-import {
-  getProjectShowcaseFilters,
-  getProjectShowcaseResults,
-} from "@/services/projects";
+import ShowcaseGallery from "@/components/project-showcase/ShowcaseGallery";
+import { getShowcaseFallback } from "@/lib/showcase-fallback";
 
 export const metadata: Metadata = {
   title: "Project Showcase",
@@ -15,14 +10,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/project-showcase/" },
 };
 
-export default async function ProjectShowcasePage() {
-  "use cache";
-  cacheLife(oneMonthCachePolicy);
-
-  const [groups, results] = await Promise.all([
-    getProjectShowcaseFilters(),
-    getProjectShowcaseResults(1, "", ""),
-  ]);
+export default function ProjectShowcasePage() {
+  const fallback = getShowcaseFallback("projects");
 
   return (
     <>
@@ -39,11 +28,12 @@ export default async function ProjectShowcasePage() {
           { value: "Scalable", label: "Performance" },
         ]}
       />
-      <ProjectShowcase
-        groups={groups}
-        initialProjects={results.projects}
-        initialTotal={results.total}
-        initialTotalPages={results.totalPages}
+      <ShowcaseGallery
+        kind="projects"
+        groups={fallback.groups}
+        initialProjects={fallback.results.projects}
+        initialTotal={fallback.results.total}
+        initialTotalPages={fallback.results.totalPages}
       />
     </>
   );
