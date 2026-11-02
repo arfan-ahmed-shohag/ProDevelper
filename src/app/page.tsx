@@ -7,12 +7,13 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import { Metadata } from "next";
 import serviceData from "@/data/services.json";
 import { cacheLife } from "next/cache";
+import { oneMonthCachePolicy } from "@/lib/cache-policy";
 
 export const metadata: Metadata = { title: { absolute: "Prodeveloper_2" } };
 
 export default async function Home () {
   "use cache";
-  cacheLife({ stale: 2592000, revalidate: 60, expire: 2678400 });
+  cacheLife(oneMonthCachePolicy);
 
   return (
     <>

@@ -2,7 +2,17 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 
-export function SelectedWorksGrid({ children }: { children: ReactNode }) {
+export function SelectedWorksGrid({
+  children,
+  id,
+  className = "grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-32",
+  refreshKey,
+}: {
+  children: ReactNode;
+  id?: string;
+  className?: string;
+  refreshKey?: string | number;
+}) {
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -53,13 +63,10 @@ export function SelectedWorksGrid({ children }: { children: ReactNode }) {
     });
 
     return () => cleanups.forEach((cleanup) => cleanup());
-  }, []);
+  }, [refreshKey]);
 
   return (
-    <div
-      ref={rootRef}
-      className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-32"
-    >
+    <div id={id} ref={rootRef} className={className}>
       {children}
     </div>
   );
