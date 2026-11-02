@@ -26,15 +26,22 @@ export function Collapse({
     const element = rootRef.current;
     if (!element) return;
 
-    const tween = gsap.to(element, {
-      height: open ? "auto" : 0,
-      opacity: open ? 1 : 0,
-      duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? 0
-        : duration,
-      ease: "sine.inOut",
-      overwrite: true,
-    });
+    gsap.killTweensOf(element);
+    const currentHeight = element.getBoundingClientRect().height;
+    const currentOpacity = Number.parseFloat(getComputedStyle(element).opacity);
+    const tween = gsap.fromTo(
+      element,
+      { height: currentHeight, opacity: Number.isFinite(currentOpacity) ? currentOpacity : 0 },
+      {
+        height: open ? "auto" : 0,
+        opacity: open ? 1 : 0,
+        duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? 0
+          : duration,
+        ease: "sine.inOut",
+        overwrite: true,
+      },
+    );
 
     return () => {
       tween.kill();

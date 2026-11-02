@@ -8,7 +8,6 @@ import {
   buildShowcaseFilterGroups,
   filterShowcaseCatalog,
 } from "@/lib/showcase-catalog";
-import { loadShowcaseSnapshot } from "@/lib/showcase-snapshot";
 import {
   parseShowcaseFilters,
   serializeShowcaseFilterIds,
@@ -27,10 +26,10 @@ import {
 } from "@/services/projects";
 import { ShowcaseCardSkeleton } from "./ShowcaseGallerySkeleton";
 
-const browserCachePrefix = "showcase-results-v2:";
+const browserCachePrefix = "showcase-results-v3:";
 const browserCacheLifetime = 30 * 24 * 60 * 60 * 1000;
 const browserCacheLimit = 8;
-const browserCatalogPrefix = "showcase-catalog-v2:";
+const browserCatalogPrefix = "showcase-catalog-v4:";
 const browserCatalogLifetime = 30 * 24 * 60 * 60 * 1000;
 const browserCatalogRefreshAfter = 5 * 60 * 1000;
 const showcasePageSize = 10;
@@ -43,7 +42,6 @@ type BrowserCacheEntry = {
 
 type BrowserCatalogEntry = {
   createdAt: number;
-  source: "snapshot" | "wordpress";
   projects: ProjectResponse[];
 };
 
@@ -127,12 +125,11 @@ function readBrowserCatalog(kind: ShowcaseKind): BrowserCatalogEntry | null {
 function writeBrowserCatalog(
   kind: ShowcaseKind,
   projects: ProjectResponse[],
-  source: BrowserCatalogEntry["source"],
 ) {
   try {
     window.localStorage.setItem(
       browserCatalogKey(kind),
-      JSON.stringify({ createdAt: Date.now(), source, projects } satisfies BrowserCatalogEntry),
+      JSON.stringify({ createdAt: Date.now(), projects } satisfies BrowserCatalogEntry),
     );
   } catch {
     // Keep the in-memory catalog available if browser storage is full.
@@ -141,25 +138,17 @@ function writeBrowserCatalog(
 
 type ShowcaseGalleryProps = {
   kind: ShowcaseKind;
-  groups: ShowcaseFilterGroup[];
-  initialProjects?: ProjectResponse[];
-  initialTotal?: number;
-  initialTotalPages?: number;
   initialSearch?: string;
   initialSelected?: ShowcaseSelection[];
 };
 
 export default function ShowcaseGallery({
   kind,
-  groups,
-  initialProjects = [],
-  initialTotal = 0,
-  initialTotalPages = 0,
   initialSearch = "",
   initialSelected = [],
 }: ShowcaseGalleryProps) {
-  const [filterGroups, setFilterGroups] = useState(groups);
-  const filterGroupsRef = useRef(groups);
+  const [filterGroups, setFilterGroups] = useState<ShowcaseFilterGroup[]>([]);
+  const filterGroupsRef = useRef<ShowcaseFilterGroup[]>([]);
   const [search, setSearch] = useState(initialSearch);
   const [appliedSearch, setAppliedSearch] = useState(initialSearch);
   const [selected, setSelected] = useState(initialSelected);
@@ -170,29 +159,32 @@ export default function ShowcaseGallery({
   const catalogPromiseRef = useRef<Promise<ProjectResponse[] | null> | null>(null);
   const searchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const requestId = useRef(0);
-  const [projects, setProjects] = useState(initialProjects);
-  const [total, setTotal] = useState(initialTotal);
-  const [totalPages, setTotalPages] = useState(initialTotalPages);
+  const [projects, setProjects] = useState<ProjectResponse[]>([]);
+  const [total, setTotal] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState("");
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [filterButtonShown, setFilterButtonShown] = useState(true);
-  const [openGroups, setOpenGroups] = useState(() =>
-    groups.map((group) => group.taxonomy),
-  );
+  const [openGroups, setOpenGroups] = useState<string[]>([]);
 
   const applyCatalog = useCallback(
     (catalog: ProjectResponse[]) => {
       catalogRef.current = catalog;
       const nextGroups = buildShowcaseFilterGroups(kind, catalog);
-      if (nextGroups.some((group) => group.options.length > 0)) {
-        filterGroupsRef.current = nextGroups;
-        setFilterGroups(nextGroups);
-        setOpenGroups((current) =>
-          current.length ? current : nextGroups.map((group) => group.taxonomy),
-        );
+      filterGroupsRef.current = nextGroups;
+      setFilterGroups(nextGroups);
+      setOpenGroups((current) =>
+        current.length ? current : nextGroups.map((group) => group.taxonomy),
+      );
+
+      const urlFilters = new URLSearchParams(window.location.search).get("filters");
+      if (urlFilters) {
+        const urlSelection = parseShowcaseFilters(urlFilters, nextGroups);
+        selectedRef.current = urlSelection;
+        setSelected(urlSelection);
       }
 
       requestId.current += 1;
@@ -310,61 +302,53 @@ export default function ShowcaseGallery({
   useEffect(() => {
     let disposed = false;
     catalogRef.current = null;
-    filterGroupsRef.current = groups;
     const cached = readBrowserCatalog(kind);
+    let cachedApplyTimer: number | undefined;
     if (cached) {
       catalogRef.current = cached.projects;
-    }
-
-    const catalogPromise = cached
-      ? Promise.resolve(cached.projects)
-      : loadShowcaseSnapshot(kind)
-          .then((snapshot) => {
-            if (disposed) return null;
-            writeBrowserCatalog(kind, snapshot, "snapshot");
-            applyCatalog(snapshot);
-            return snapshot;
-          })
-          .catch(() => null);
-    catalogPromiseRef.current = catalogPromise;
-
-    const shouldRefresh =
-      !cached ||
-      cached.source !== "wordpress" ||
-      Date.now() - cached.createdAt > browserCatalogRefreshAfter;
-    let refreshTimer: number | undefined;
-    let cachedApplyTimer: number | undefined;
-
-    if (cached) {
+      catalogPromiseRef.current = Promise.resolve(cached.projects);
       cachedApplyTimer = window.setTimeout(() => {
         if (!disposed) applyCatalog(cached.projects);
       }, 0);
     }
 
+    const shouldRefresh = !cached || Date.now() - cached.createdAt > browserCatalogRefreshAfter;
+    let refreshTimer: number | undefined;
+
     if (shouldRefresh) {
-      refreshTimer = window.setTimeout(() => {
+      const catalogPromise = getShowcaseCatalog(kind);
+      catalogPromiseRef.current = catalogPromise;
+      const startRefresh = () => {
         void catalogPromise
-          .then((snapshot) => {
-            if (!snapshot || disposed) return null;
-            return getShowcaseCatalog(kind);
-          })
           .then((nextCatalog) => {
-            if (!nextCatalog || disposed) return;
-            writeBrowserCatalog(kind, nextCatalog, "wordpress");
+            if (disposed) return;
+            writeBrowserCatalog(kind, nextCatalog);
             applyCatalog(nextCatalog);
           })
-          .catch(() => {
-            // Keep the bundled or browser-cached catalog if WordPress is temporarily unavailable.
+          .catch((reason: unknown) => {
+            if (disposed || cached) return;
+            setError(
+              reason instanceof Error
+                ? reason.message
+                : "Showcase items could not be loaded. Please try again.",
+            );
+            setLoading(false);
           });
-      }, cached ? 250 : 900);
+      };
+
+      if (cached) {
+        refreshTimer = window.setTimeout(startRefresh, 250);
+      } else {
+        startRefresh();
+      }
     }
 
     return () => {
       disposed = true;
-      if (refreshTimer !== undefined) window.clearTimeout(refreshTimer);
       if (cachedApplyTimer !== undefined) window.clearTimeout(cachedApplyTimer);
+      if (refreshTimer !== undefined) window.clearTimeout(refreshTimer);
     };
-  }, [applyCatalog, groups, kind]);
+  }, [applyCatalog, kind]);
 
   const updateUrl = (query: string, selection: ShowcaseSelection[]) => {
     const params = new URLSearchParams();
@@ -456,19 +440,9 @@ export default function ShowcaseGallery({
         setProjects([]);
         setTotal(0);
         setTotalPages(0);
-      } else if (initialProjects.length) {
-        const initialResult = {
-          projects: initialProjects,
-          total: initialTotal,
-          totalPages: initialTotalPages,
-        };
-        setProjects(initialProjects);
-        setTotal(initialTotal);
-        setTotalPages(initialTotalPages);
-        writeBrowserResult(cacheKey, initialResult);
       }
 
-      if (query || filters || loadDefaultState || initialProjects.length) {
+      if (query || filters || loadDefaultState) {
         void loadResults(query, nextSelection, 1, false);
       }
     };
@@ -477,7 +451,7 @@ export default function ShowcaseGallery({
     syncFromUrl(false);
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
-  }, [initialProjects, initialTotal, initialTotalPages, loadResults, kind]);
+  }, [loadResults, kind]);
 
   useEffect(
     () => () => {
@@ -516,14 +490,14 @@ export default function ShowcaseGallery({
             backgroundSize: "50px 50px",
           }}
         />
-        <div className="absolute right-0 top-0 h-[600px] w-[600px] rounded-full bg-brand-green/5 blur-[120px]" />
+        <div className="absolute right-0 top-0 h-150 w-150 rounded-full bg-brand-green/5 blur-[120px]" />
         <div className="absolute inset-0">
-          <div className="absolute -left-[5%] -top-[10%] h-[40%] w-[30%] rounded-full bg-brand-dark/5 blur-[120px]" />
-          <div className="absolute -right-[5%] top-[20%] h-[35%] w-[25%] rounded-full bg-brand-dark/5 blur-[100px]" />
+          <div className="absolute left-[-5%] top-[-10%] h-[40%] w-[30%] rounded-full bg-brand-dark/5 blur-[120px]" />
+          <div className="absolute right-[-5%] top-[20%] h-[35%] w-[25%] rounded-full bg-brand-dark/5 blur-[100px]" />
         </div>
       </div>
 
-      <div className="fixed left-0 top-1/2 z-[99999] -translate-y-1/2 lg:hidden">
+      <div className="fixed left-0 top-1/2 z-99999 -translate-y-1/2 lg:hidden">
         <button
           id="openFilterMobile"
           type="button"
@@ -650,7 +624,7 @@ export default function ShowcaseGallery({
                           </svg>
                         </button>
                         <Collapse open={expanded} id={menuId}>
-                          <div className="sub-menu custom-scrollbar mt-2 ml-2 max-h-[320px] space-y-1 overflow-y-auto pr-2" data-lenis-prevent>
+                          <div className="sub-menu custom-scrollbar mt-2 ml-2 max-h-80 space-y-1 overflow-y-auto pr-2" data-lenis-prevent>
                             {group.options.map((option) => {
                               const checked = selected.some(
                                 (item) => item.taxonomy === group.taxonomy && item.id === option.id,
@@ -721,7 +695,7 @@ export default function ShowcaseGallery({
             <SelectedWorksGrid
               id="project-grid-container"
               refreshKey={projects.map((project) => project.id).join(",")}
-              className="grid min-h-[500px] grid-cols-1 gap-8 md:grid-cols-2"
+              className="grid min-h-125 grid-cols-1 gap-8 md:grid-cols-2"
             >
               {loading && !loadingMore
                 ? Array.from({ length: 10 }, (_, index) => <ShowcaseCardSkeleton key={`loading-${index}`} />)
@@ -731,7 +705,10 @@ export default function ShowcaseGallery({
                       className="content-enter"
                       style={{ animationDelay: `${(index % 10) * 0.1}s` }}
                     >
-                      <SelectedWorkCard project={project} variant="showcase" />
+                      <SelectedWorkCard
+                        project={project}
+                        variant="showcase"
+                      />
                     </article>
                   ))}
               {loadingMore && Array.from({ length: 10 }, (_, index) => <ShowcaseCardSkeleton key={`more-${index}`} />)}

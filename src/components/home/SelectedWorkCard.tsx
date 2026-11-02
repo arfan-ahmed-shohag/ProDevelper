@@ -2,6 +2,7 @@ import Image from "next/image";
 import { plainText } from "@/lib/plain-text";
 import { getProjectWebsiteUrl } from "@/lib/project-card";
 import type { ProjectResponse } from "@/services/projects";
+import { ShowcaseCardImage } from "./ShowcaseCardImage";
 
 export default function SelectedWorkCard({
   project,
@@ -37,16 +38,26 @@ export default function SelectedWorkCard({
             className="block w-full h-full"
             rel="noopener noreferrer"
           >
-            {image && (
-              <Image
+            {showcase ? (
+              <ShowcaseCardImage
+                key={project.id}
+                sources={[project.project_data?.featured_image, media?.source_url]}
                 width={media?.media_details?.width ?? 890}
                 height={media?.media_details?.height ?? 2560}
-                src={image}
-                sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 600px"
                 alt={title}
-                className="scroll-img w-full h-auto object-top transition-transform duration-[8s] ease-in-out"
-                loading="lazy"
               />
+            ) : (
+              image && (
+                <Image
+                  width={media?.media_details?.width ?? 890}
+                  height={media?.media_details?.height ?? 2560}
+                  src={image}
+                  sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 600px"
+                  alt={title}
+                  className="scroll-img w-full h-auto object-top transition-transform duration-[8s] ease-in-out"
+                  loading="lazy"
+                />
+              )
             )}
           </a>
         </div>

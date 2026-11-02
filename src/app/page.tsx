@@ -19,6 +19,9 @@ export default async function Home () {
     <>
       <Hero />
       <ServicesSection
+        initialServices={[]}
+        source="featured"
+        useCachedData={false}
         viewAll={serviceData.home.viewAll}
       />
       <SelectedWorks />

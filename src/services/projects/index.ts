@@ -123,7 +123,7 @@ export async function getShowcaseCatalog(kind: ShowcaseKind): Promise<ProjectRes
     order: "desc",
     _embed: "wp:featuredmedia,wp:term",
     _fields:
-      "id,slug,date,title,link,industry-type,functionality,demo-tags,tag_list,project_data,_embedded",
+      "id,slug,date,title,link,industry-type,functionality,demo-tags,tag_list,project_data,_links,_embedded",
   });
 
   const posts = await fetchPagedCollection<ProjectResponse>(
@@ -247,7 +247,7 @@ export const featuredProjects = async (): Promise<ProjectResponse[]> => {
   cacheLife(oneMonthCachePolicy);
 
   const res = await fetch(
-    `${process.env.NEXT_BASE_URL}/p-showcase?project-categories=134&per_page=4&_embed=wp:featuredmedia`,
+    `${process.env.NEXT_BASE_URL}/p-showcase?project-categories=134&per_page=4&_embed=wp:featuredmedia&_fields=id,title,link,project_data,tag_list,_embedded`,
   );
   if (!res.ok) {
     throw new Error("Failed to fetch featured projects");

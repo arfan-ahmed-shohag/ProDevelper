@@ -1,21 +1,6 @@
-import { featuredProjects } from "@/services/projects";
-import { SelectedWorksGrid } from "./SelectedWorksGrid";
-import { Suspense, type CSSProperties } from "react";
+import type { CSSProperties } from "react";
 import Link from "next/link";
-import SelectedWorkCard from "./SelectedWorkCard";
-import SelectedWorksSkeleton from "./SelectedWorksSkeleton";
-
-async function ProjectCards() {
-  const projects = await featuredProjects();
-
-  return (
-    <SelectedWorksGrid>
-      {projects.map((project) => (
-        <SelectedWorkCard key={project.id} project={project} />
-      ))}
-    </SelectedWorksGrid>
-  );
-}
+import CachedFeaturedProjects from "./CachedFeaturedProjects";
 
 export default function SelectedWorks() {
   return (
@@ -76,9 +61,7 @@ export default function SelectedWorks() {
           </h2>
         </div>
 
-        <Suspense fallback={<SelectedWorksSkeleton />}>
-          <ProjectCards />
-        </Suspense>
+        <CachedFeaturedProjects />
 
         <div className="mt-16 md:mt-40 text-center relative z-10">
           <Link href="/project-showcase" className="inline-block group">

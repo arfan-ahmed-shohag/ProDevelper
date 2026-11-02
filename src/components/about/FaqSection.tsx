@@ -1,48 +1,8 @@
 import type { CSSProperties } from "react";
 import { Accordion, type AccordionItem } from "@/components/Accordion";
+import { faqItems as sharedFaqItems } from "@/data/faqs";
 
-const faqItems = [
-  {
-    "id": "about-faq-1",
-    "question": "What services do you offer?",
-    "answer": "We offer a variety of services including website design, development, WordPress customization, SEO, advanced security, speed optimization, and ongoing website maintenance."
-  },
-  {
-    "id": "about-faq-2",
-    "question": "What industries do you specialize in?",
-    "answer": "We work with a variety of industries, including E-commerce, Real Estate, Retail, Business, Education, Finance, Travel, and Logistics."
-  },
-  {
-    "id": "about-faq-3",
-    "question": "What industries do you specialize in?",
-    "answer": "We work with a variety of industries, including E-commerce, Real Estate, Retail, Business, Education, Finance, Travel, and Logistics."
-  },
-  {
-    "id": "about-faq-4",
-    "question": "What industries do you specialize in?",
-    "answer": "We work with a variety of industries, including E-commerce, Real Estate, Retail, Business, Education, Finance, Travel, and Logistics."
-  },
-  {
-    "id": "about-faq-5",
-    "question": "Is my website secure?",
-    "answer": "Yes, we implement advanced security protocols, including SSL integration, brute-force protection, and regular security updates."
-  },
-  {
-    "id": "about-faq-6",
-    "question": "How long will my project take?",
-    "answer": "Timeline depends on project scope. A basic site might take 5-7 days, while a complex e-commerce site can take 2-4 weeks."
-  },
-  {
-    "id": "about-faq-7",
-    "question": "How long will my project take?",
-    "answer": "Timeline depends on project scope. A basic site might take 5-7 days, while a complex e-commerce site can take 2-4 weeks."
-  },
-  {
-    "id": "about-faq-8",
-    "question": "How long will my project take?",
-    "answer": "Timeline depends on project scope. A basic site might take 5-7 days, while a complex e-commerce site can take 2-4 weeks."
-  }
-] satisfies readonly AccordionItem[];
+const faqItems = sharedFaqItems.slice(0, 8) satisfies readonly AccordionItem[];
 
 export default function FaqSection() {
   return (

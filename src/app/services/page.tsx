@@ -1,7 +1,5 @@
 import PageHero from "@/components/PageHero";
 import ServicesSection from "@/components/ServicesSection";
-import { getAllServices } from "@/services/services";
-import { Suspense } from "react";
 import { Metadata } from "next";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 
@@ -10,11 +8,6 @@ export const metadata: Metadata = {
   description: "",
   alternates: { canonical: "/services/" },
 };
-
-async function ServicesCatalog() {
-  const services = await getAllServices();
-  return <ServicesSection services={services} initialCount={12} />;
-}
 
 export default function ServicesPage() {
   return (
@@ -37,9 +30,11 @@ export default function ServicesPage() {
           },
         ]}
       />
-      <Suspense fallback={<ServicesSection initialCount={12} loading />}>
-        <ServicesCatalog />
-      </Suspense>
+      <ServicesSection
+        initialServices={[]}
+        source="all"
+        initialCount={12}
+      />
       <TestimonialsSection />
     </>
   );

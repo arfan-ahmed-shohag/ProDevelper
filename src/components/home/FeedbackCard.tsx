@@ -13,14 +13,19 @@ const avatarColors = [
 export default function FeedbackCard({
   feedback,
   index,
+  defaultRating = 0,
 }: {
   feedback: FeedbackResponse;
   index: number;
+  defaultRating?: number;
 }) {
   const name = plainText(feedback.title.rendered);
   const quote = plainText(feedback.content.rendered);
   const avatar = feedback._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
-  const rating = Math.max(0, Math.min(5, Number(feedback.rating) || 0));
+  const rating = Math.max(
+    0,
+    Math.min(5, Number(feedback.rating) || defaultRating),
+  );
 
   return (
     <div className="feedback-item break-inside-avoid relative bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-[0_15px_40px_-15px_rgb(var(--rgb-black)/0.05)] transition-all duration-500 hover:shadow-2xl hover:border-brand-green/30 group mb-8">
