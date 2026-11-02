@@ -11,6 +11,36 @@ type CacheEntry<T> = {
   data: T;
 };
 
+export function readBrowserDataCache<T>(key: string): CacheEntry<T> | null {
+  try {
+    const raw = window.localStorage.getItem(key);
+    if (!raw) return null;
+
+    const entry = JSON.parse(raw) as CacheEntry<T>;
+    if (
+      !Number.isFinite(entry.updatedAt) ||
+      Date.now() - entry.updatedAt > browserCacheLifetime
+    ) {
+      window.localStorage.removeItem(key);
+      return null;
+    }
+    return entry;
+  } catch {
+    return null;
+  }
+}
+
+export function writeBrowserDataCache<T>(key: string, data: T) {
+  try {
+    window.localStorage.setItem(
+      key,
+      JSON.stringify({ updatedAt: Date.now(), data } satisfies CacheEntry<T>),
+    );
+  } catch {
+    // Keep the data in memory if browser storage is unavailable or full.
+  }
+}
+
 function loadOnce<T>(key: string, load: () => Promise<T>) {
   const existing = pendingRequests.get(key);
   if (existing) return existing as Promise<T>;
@@ -22,60 +52,62 @@ function loadOnce<T>(key: string, load: () => Promise<T>) {
 
 export function useBrowserDataCache<T>(
   key: string,
-  fallback: T,
+  initialData: T,
   load: () => Promise<T>,
+  refreshAfter = browserRefreshAfter,
+  refreshOnFocus = false,
+  useCachedData = true,
 ) {
-  const [data, setData] = useState(fallback);
+  const [data, setData] = useState(initialData);
 
   useEffect(() => {
     let active = true;
     let updatedAt = 0;
+    let lastRefreshAt = 0;
 
-    try {
-      const raw = window.localStorage.getItem(key);
-      if (raw) {
-        const entry = JSON.parse(raw) as CacheEntry<T>;
-        if (
-          Number.isFinite(entry.updatedAt) &&
-          Date.now() - entry.updatedAt <= browserCacheLifetime
-        ) {
-          updatedAt = entry.updatedAt;
-          setData(entry.data);
-        } else {
-          window.localStorage.removeItem(key);
-        }
+    const refresh = () => {
+      lastRefreshAt = Date.now();
+      void loadOnce(key, load)
+        .then((freshData) => {
+          if (!active) return;
+          setData(freshData);
+          if (useCachedData) writeBrowserDataCache(key, freshData);
+        })
+        .catch(() => {
+          // Keep showing any data already available if the API is temporarily unavailable.
+        });
+    };
+
+    const refreshWhenVisible = () => {
+      if (
+        document.visibilityState === "visible" &&
+        Date.now() - lastRefreshAt > 1000
+      ) {
+        refresh();
       }
-    } catch {
-      // Continue with the bundled fallback if browser storage is unavailable.
+    };
+
+    const cached = useCachedData ? readBrowserDataCache<T>(key) : null;
+    if (cached) {
+      updatedAt = cached.updatedAt;
+      setData(cached.data);
     }
 
-    if (updatedAt && Date.now() - updatedAt < browserRefreshAfter) {
-      return () => {
-        active = false;
-      };
-    }
+    if (!updatedAt || Date.now() - updatedAt >= refreshAfter) refresh();
 
-    void loadOnce(key, load)
-      .then((freshData) => {
-        if (!active) return;
-        setData(freshData);
-        try {
-          window.localStorage.setItem(
-            key,
-            JSON.stringify({ updatedAt: Date.now(), data: freshData } satisfies CacheEntry<T>),
-          );
-        } catch {
-          // Keep fresh data in memory when browser storage is full.
-        }
-      })
-      .catch(() => {
-        // Keep showing cached or bundled data if the API is temporarily unavailable.
-      });
+    if (refreshOnFocus) {
+      window.addEventListener("focus", refreshWhenVisible);
+      document.addEventListener("visibilitychange", refreshWhenVisible);
+    }
 
     return () => {
       active = false;
+      if (refreshOnFocus) {
+        window.removeEventListener("focus", refreshWhenVisible);
+        document.removeEventListener("visibilitychange", refreshWhenVisible);
+      }
     };
-  }, [key, load]);
+  }, [key, load, refreshAfter, refreshOnFocus, useCachedData]);
 
   return data;
 }

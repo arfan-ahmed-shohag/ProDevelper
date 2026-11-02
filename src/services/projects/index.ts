@@ -123,7 +123,7 @@ export async function getShowcaseCatalog(kind: ShowcaseKind): Promise<ProjectRes
     order: "desc",
     _embed: "wp:featuredmedia,wp:term",
     _fields:
-      "id,slug,date,title,link,industry-type,functionality,demo-tags,tag_list,project_data,_embedded",
+      "id,slug,date,title,link,industry-type,functionality,demo-tags,tag_list,project_data,_links,_embedded",
   });
 
   const posts = await fetchPagedCollection<ProjectResponse>(

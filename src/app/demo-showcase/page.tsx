@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import ShowcaseGallery from "@/components/project-showcase/ShowcaseGallery";
-import { getShowcaseFallback } from "@/lib/showcase-fallback";
 
 export const metadata: Metadata = {
   title: "Demo Showcase",
@@ -11,8 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default function DemoShowcasePage() {
-  const fallback = getShowcaseFallback("demos");
-
   return (
     <>
       <PageHero
@@ -35,13 +32,7 @@ export default function DemoShowcasePage() {
           { value: "SEO", label: "Ready Designs" },
         ]}
       />
-      <ShowcaseGallery
-        kind="demos"
-        groups={fallback.groups}
-        initialProjects={fallback.results.projects}
-        initialTotal={fallback.results.total}
-        initialTotalPages={fallback.results.totalPages}
-      />
+      <ShowcaseGallery kind="demos" />
     </>
   );
 }

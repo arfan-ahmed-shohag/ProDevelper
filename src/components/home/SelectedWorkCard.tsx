@@ -7,11 +7,9 @@ import { ShowcaseCardImage } from "./ShowcaseCardImage";
 export default function SelectedWorkCard({
   project,
   variant = "home",
-  fallbackImage,
 }: {
   project: ProjectResponse;
   variant?: "home" | "showcase";
-  fallbackImage?: string;
 }) {
   const showcase = variant === "showcase";
   const title = plainText(project.title.rendered);
@@ -43,7 +41,7 @@ export default function SelectedWorkCard({
             {showcase ? (
               <ShowcaseCardImage
                 key={project.id}
-                sources={[project.project_data?.featured_image, media?.source_url, fallbackImage]}
+                sources={[project.project_data?.featured_image, media?.source_url]}
                 width={media?.media_details?.width ?? 890}
                 height={media?.media_details?.height ?? 2560}
                 alt={title}

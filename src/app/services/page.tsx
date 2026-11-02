@@ -1,6 +1,5 @@
 import PageHero from "@/components/PageHero";
 import ServicesSection from "@/components/ServicesSection";
-import homeServices from "@/data/home-services.json";
 import { Metadata } from "next";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 
@@ -32,7 +31,7 @@ export default function ServicesPage() {
         ]}
       />
       <ServicesSection
-        initialServices={homeServices}
+        initialServices={[]}
         source="all"
         initialCount={12}
       />

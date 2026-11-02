@@ -1,7 +1,6 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import CachedFeaturedProjects from "./CachedFeaturedProjects";
-import { getFeaturedProjectSnapshot } from "@/lib/home-snapshot";
 
 export default function SelectedWorks() {
   return (
@@ -62,7 +61,7 @@ export default function SelectedWorks() {
           </h2>
         </div>
 
-        <CachedFeaturedProjects fallback={getFeaturedProjectSnapshot()} />
+        <CachedFeaturedProjects />
 
         <div className="mt-16 md:mt-40 text-center relative z-10">
           <Link href="/project-showcase" className="inline-block group">

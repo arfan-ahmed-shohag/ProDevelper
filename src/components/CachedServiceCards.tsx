@@ -15,17 +15,22 @@ export default function CachedServiceCards({
   initialCount,
   source,
   cardLinkLabel,
+  useCachedData = true,
 }: {
   initialServices: ServiceCardData[];
   initialCount: number;
   source: ServiceCardSource;
   cardLinkLabel: string;
+  useCachedData?: boolean;
 }) {
   const loader = source === "all" ? getAllServiceCards : getFeaturedServiceCards;
   const services = useBrowserDataCache(
     `service-cards-${source}-v1`,
     initialServices,
     loader,
+    useCachedData ? undefined : 0,
+    false,
+    useCachedData,
   );
 
   return (

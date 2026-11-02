@@ -6,6 +6,7 @@ import CachedServiceCards, { type ServiceCardSource } from "./CachedServiceCards
 type ServicesSectionProps = {
   initialServices: ServiceCardData[];
   source: ServiceCardSource;
+  useCachedData?: boolean;
   initialCount?: number;
   viewAll?: {
     href: string;
@@ -19,6 +20,7 @@ export default function ServicesSection({
   viewAll,
   initialServices,
   source,
+  useCachedData = true,
   initialCount = 6,
 }: ServicesSectionProps) {
   return (
@@ -75,6 +77,7 @@ export default function ServicesSection({
           initialCount={initialCount}
           source={source}
           cardLinkLabel={serviceData.cardLinkLabel}
+          useCachedData={useCachedData}
         />
 
         {viewAll && (

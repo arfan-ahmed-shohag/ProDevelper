@@ -1,21 +1,22 @@
 "use client";
 
-import { featuredProjects } from "@/services/projects";
+import { featuredProjects, type ProjectResponse } from "@/services/projects";
 import { useBrowserDataCache } from "@/lib/use-browser-data-cache";
 import SelectedWorkCard from "./SelectedWorkCard";
 import { SelectedWorksGrid } from "./SelectedWorksGrid";
-import type { ProjectResponse } from "@/services/projects";
+import SelectedWorksSkeleton from "./SelectedWorksSkeleton";
 
-export default function CachedFeaturedProjects({
-  fallback,
-}: {
-  fallback: ProjectResponse[];
-}) {
-  const projects = useBrowserDataCache(
+export default function CachedFeaturedProjects() {
+  const projects = useBrowserDataCache<ProjectResponse[]>(
     "home-featured-projects-v1",
-    fallback,
+    [],
     featuredProjects,
+    0,
+    false,
+    false,
   );
+
+  if (projects.length === 0) return <SelectedWorksSkeleton />;
 
   return (
     <SelectedWorksGrid refreshKey={projects.map((project) => project.id).join(",")}>
