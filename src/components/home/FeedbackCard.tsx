@@ -23,7 +23,7 @@ export default function FeedbackCard({
   const rating = Math.max(0, Math.min(5, Number(feedback.rating) || 0));
 
   return (
-    <div className="feedback-item break-inside-avoid relative bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-[0_15px_40px_-15px_rgb(var(--rgb-black)_/_0.05)] transition-all duration-500 hover:shadow-2xl hover:border-brand-green/30 group mb-8">
+    <div className="feedback-item break-inside-avoid relative bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-[0_15px_40px_-15px_rgb(var(--rgb-black)/0.05)] transition-all duration-500 hover:shadow-2xl hover:border-brand-green/30 group mb-8">
       <div className="flex items-center gap-4 mb-6">
         <div className="w-12 h-12 shrink-0 rounded-2xl overflow-hidden shadow-sm ring-1 ring-slate-100">
           {avatar ? (
@@ -46,7 +46,7 @@ export default function FeedbackCard({
           )}
         </div>
         <div className="min-w-0">
-          <h4 className="font-black text-slate-900 text-[15px] leading-none mb-1 break-words">
+          <h4 className="font-black text-slate-900 text-[15px] leading-none mb-1 wrap-break-word">
             {name}
           </h4>
           <p className="text-slate-400 text-[9px] font-bold uppercase tracking-widest">

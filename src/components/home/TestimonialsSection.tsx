@@ -78,7 +78,7 @@ export default function TestimonialsSection() {
           }
         ></div>
 
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-green/5 rounded-full blur-[120px]"></div>
+        <div className="absolute top-0 right-0 w-125 h-125 bg-brand-green/5 rounded-full blur-[120px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
