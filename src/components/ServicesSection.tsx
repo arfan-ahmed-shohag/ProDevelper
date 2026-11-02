@@ -1,11 +1,16 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import serviceData from "@/data/services.json";
-import { ServiceGrid } from "./ServiceGrid";
+import ServiceGridList from "./ServiceGridList";
 import { featuredServices } from "@/services/services";
 import ServiceGridSkeleton from "./ServiceGridSkeleton";
+import { toServiceCard } from "@/lib/service-card";
+import type { ServiceResponse } from "@/services/services";
 
 type ServicesSectionProps = {
+  services?: ServiceResponse[];
+  initialCount?: number;
+  loading?: boolean;
   viewAll?: {
     href: string;
     title: string;
@@ -14,27 +19,29 @@ type ServicesSectionProps = {
   };
 };
 
-async function ServiceCards() {
-  const services = await featuredServices();
+async function ServiceCards({
+  services,
+  initialCount,
+}: {
+  services?: ServiceResponse[];
+  initialCount: number;
+}) {
+  const serviceItems = services ?? (await featuredServices());
 
   return (
-    services.length > 0 && (
-      <div id="service-grid" className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, index) => (
-          <ServiceGrid
-            key={service.slug}
-            service={service}
-            index={index}
-            cardLinkLabel={serviceData.cardLinkLabel}
-          />
-        ))}
-      </div>
-    )
+    <ServiceGridList
+      services={serviceItems.map(toServiceCard)}
+      initialCount={initialCount}
+      cardLinkLabel={serviceData.cardLinkLabel}
+    />
   );
 }
 
 export default function ServicesSection({
   viewAll,
+  services,
+  initialCount = 6,
+  loading = false,
 }: ServicesSectionProps) {
   return (
     <section
@@ -85,9 +92,13 @@ export default function ServicesSection({
           </p>
         </div>
 
-        <Suspense fallback={<ServiceGridSkeleton />}>
-          <ServiceCards />
-        </Suspense>
+        {loading ? (
+          <ServiceGridSkeleton count={initialCount} />
+        ) : (
+          <Suspense fallback={<ServiceGridSkeleton count={initialCount} />}>
+            <ServiceCards services={services} initialCount={initialCount} />
+          </Suspense>
+        )}
 
         {viewAll && (
           <div className="md:mt-40 mt-10 text-center relative z-10">
