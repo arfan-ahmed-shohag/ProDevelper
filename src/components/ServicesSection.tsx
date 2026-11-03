@@ -2,6 +2,7 @@ import Link from "next/link";
 import serviceData from "@/data/services.json";
 import type { ServiceCardData } from "@/lib/service-card";
 import CachedServiceCards, { type ServiceCardSource } from "./CachedServiceCards";
+import ServiceGridList from "./ServiceGridList";
 
 type ServicesSectionProps = {
   initialServices: ServiceCardData[];
@@ -72,13 +73,18 @@ export default function ServicesSection({
           </p>
         </div>
 
-        <CachedServiceCards
+        {useCachedData ? <CachedServiceCards
           initialServices={initialServices}
           initialCount={initialCount}
           source={source}
           cardLinkLabel={serviceData.cardLinkLabel}
           useCachedData={useCachedData}
-        />
+        /> : <ServiceGridList
+          services={initialServices}
+          initialCount={initialCount}
+          cardLinkLabel={serviceData.cardLinkLabel}
+          placeholderCount={initialServices.length ? 0 : initialCount}
+        />}
 
         {viewAll && (
           <div className="md:mt-40 mt-10 text-center relative z-10">

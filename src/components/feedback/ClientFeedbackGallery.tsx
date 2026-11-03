@@ -4,46 +4,31 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import {
   getFeedbackPage,
-  getFreshFeedbackPage,
   type FeedbackPageResult,
 } from "@/services/feedback";
 import { feedbackPageSize } from "@/lib/feedback";
 import {
   readBrowserDataCache,
-  useBrowserDataCache,
   writeBrowserDataCache,
 } from "@/lib/use-browser-data-cache";
 import FeedbackCard from "@/components/home/FeedbackCard";
 import FeedbackSkeleton, { FeedbackCardSkeleton } from "@/components/home/FeedbackSkeleton";
 
 type CachedFeedbackCatalog = FeedbackPageResult & { loadedPages: number };
-const emptyFeedbackPage: FeedbackPageResult = {
-  items: [],
-  page: 1,
-  total: 0,
-  totalPages: 0,
-};
-
-const firstPageCacheKey = "client-feedback-page-1-v3";
 const refreshAfter = 5 * 60 * 1000;
 
 function pageCacheKey(page: number) {
   return `client-feedback-page-${page}-v3`;
 }
 
-export default function ClientFeedbackGallery() {
-  const loadFirstPage = useCallback(() => getFreshFeedbackPage(), []);
-  const firstPage = useBrowserDataCache(
-    firstPageCacheKey,
-    emptyFeedbackPage,
-    loadFirstPage,
-    0,
-    true,
-    false,
-  );
+export default function ClientFeedbackGallery({
+  initialData,
+}: {
+  initialData: FeedbackPageResult;
+}) {
   const [catalog, setCatalog] = useState<CachedFeedbackCatalog>({
-    ...emptyFeedbackPage,
-    loadedPages: 0,
+    ...initialData,
+    loadedPages: initialData.items.length ? 1 : 0,
   });
   const catalogRef = useRef(catalog);
   const pageRequestsRef = useRef(new Map<number, Promise<FeedbackPageResult>>());
@@ -69,24 +54,6 @@ export default function ClientFeedbackGallery() {
     pageRequestsRef.current.set(page, request);
     return request;
   }, []);
-
-  useEffect(() => {
-    if (firstPage === emptyFeedbackPage) return;
-
-    const current = catalogRef.current;
-    const next: CachedFeedbackCatalog = {
-      ...current,
-      items:
-        current.items.length > firstPage.items.length
-          ? [...firstPage.items, ...current.items.slice(firstPage.items.length)]
-          : firstPage.items,
-      page: 1,
-      total: firstPage.total,
-      totalPages: firstPage.totalPages,
-      loadedPages: Math.max(1, current.loadedPages),
-    };
-    commitCatalog(next);
-  }, [commitCatalog, firstPage]);
 
   useEffect(() => {
     const nextPage = catalog.loadedPages + 1;

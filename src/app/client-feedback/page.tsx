@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import ClientFeedbackGallery from "@/components/feedback/ClientFeedbackGallery";
+import { getFeedbackPage } from "@/services/feedback";
 
 export const metadata: Metadata = {
   title: "Client Feedback",
@@ -9,7 +10,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/client-feedback/" },
 };
 
-export default function ClientFeedbackPage() {
+export default async function ClientFeedbackPage() {
+  const initialData = await getFeedbackPage(1);
+
   return (
     <>
       <PageHero
@@ -26,7 +29,7 @@ export default function ClientFeedbackPage() {
           { value: "250%", label: "Growth Boost" },
         ]}
       />
-      <ClientFeedbackGallery />
+      <ClientFeedbackGallery initialData={initialData} />
     </>
   );
 }

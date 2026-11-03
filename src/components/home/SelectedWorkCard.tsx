@@ -7,20 +7,27 @@ import { ShowcaseCardImage } from "./ShowcaseCardImage";
 export default function SelectedWorkCard({
   project,
   variant = "home",
+  demoTagNames,
 }: {
   project: ProjectResponse;
   variant?: "home" | "showcase";
+  demoTagNames?: Record<number, string>;
 }) {
   const showcase = variant === "showcase";
   const title = plainText(project.title.rendered);
   const href = getProjectWebsiteUrl(project);
   const media = project._embedded?.["wp:featuredmedia"]?.[0];
   const image = project.project_data?.featured_image || media?.source_url;
-  const demoTags = project._embedded?.["wp:term"]
+  const embeddedDemoTags = project._embedded?.["wp:term"]
     ?.flat()
     .filter((term) => term.taxonomy === "demo-tags")
     .map((term) => term.name);
-  const tags = project.tag_list ?? (showcase ? demoTags : undefined) ?? [];
+  const mappedDemoTags = project["demo-tags"]
+    ?.map((id) => demoTagNames?.[id])
+    .filter((label): label is string => Boolean(label));
+  const tags = project.tag_list ??
+    (showcase ? mappedDemoTags ?? embeddedDemoTags : undefined) ??
+    [];
 
   return (
     <div className="portfolio-item group relative flex flex-col">
@@ -85,6 +92,7 @@ export default function SelectedWorkCard({
           <a
             href={href}
             target="_blank"
+            aria-label={`Visit ${title}`}
             className={`w-12 h-12 shrink-0 rounded-full border flex items-center justify-center transition-all group-hover/title:bg-brand-green group-hover/title:border-brand-green ${
               showcase ? "border-slate-200 text-slate-900 group-hover/title:text-white" : "border-white/10 text-white"
             }`}

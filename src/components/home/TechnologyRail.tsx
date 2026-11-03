@@ -31,6 +31,14 @@ export function TechnologyRail({
       startX = 0,
       pointerX = 0,
       frame = 0;
+    let visible = false;
+    const schedule = () => {
+      cancelAnimationFrame(frame);
+      if (visible && !document.hidden && !motion.matches && !dragging && !hovered) {
+        lastTime = performance.now();
+        frame = requestAnimationFrame(tick);
+      }
+    };
     const normalize = () => {
       if (!width) return;
       while (x <= -width) x += width;
@@ -56,13 +64,16 @@ export function TechnologyRail({
     };
     const enter = () => {
       hovered = true;
+      schedule();
     };
     const leave = () => {
       if (!dragging) hovered = false;
+      schedule();
     };
     const down = (event: PointerEvent) => {
       if (event.button !== 0) return;
       dragging = true;
+      schedule();
       startX = x;
       pointerX = event.clientX;
       track.classList.add("is-dragging");
@@ -84,9 +95,16 @@ export function TechnologyRail({
       if (track.hasPointerCapture(event.pointerId))
         track.releasePointerCapture(event.pointerId);
       if (!track.matches(":hover")) hovered = false;
+      schedule();
     };
     measure();
-    frame = requestAnimationFrame(tick);
+    const visibility = new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      schedule();
+    });
+    visibility.observe(track);
+    document.addEventListener("visibilitychange", schedule);
+    motion.addEventListener("change", schedule);
     const observer = new ResizeObserver(measure);
     observer.observe(track);
     track.addEventListener("mouseenter", enter);
@@ -99,6 +117,9 @@ export function TechnologyRail({
     return () => {
       cancelAnimationFrame(frame);
       observer.disconnect();
+      visibility.disconnect();
+      document.removeEventListener("visibilitychange", schedule);
+      motion.removeEventListener("change", schedule);
       track.removeEventListener("mouseenter", enter);
       track.removeEventListener("mouseleave", leave);
       track.removeEventListener("pointerdown", down);

@@ -5,6 +5,7 @@ import PageHero from "@/components/PageHero";
 import WhyChooseUs from "@/components/about/WhyChooseUs";
 import FaqSection from "@/components/about/FaqSection";
 import { Metadata } from "next";
+import { getLatestFeedback } from "@/services/feedback";
 
 export const metadata: Metadata = {
     title: { absolute: "About Us – Prodeveloper_2" },
@@ -12,7 +13,9 @@ export const metadata: Metadata = {
     alternates: { canonical: "/about-us/" },
 };
 
-export default function AboutUsPage() {
+export default async function AboutUsPage() {
+    const feedback = await getLatestFeedback();
+
     return (
         <>
             <PageHero
@@ -32,7 +35,7 @@ export default function AboutUsPage() {
             />
             <TechnologySection />
             <StatsSection />
-            <TestimonialsSection />
+            <TestimonialsSection initialData={feedback} />
             <WhyChooseUs />
             <FaqSection />
         </>

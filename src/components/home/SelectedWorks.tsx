@@ -1,8 +1,11 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
-import CachedFeaturedProjects from "./CachedFeaturedProjects";
+import type { ProjectResponse } from "@/services/projects";
+import SelectedWorkCard from "./SelectedWorkCard";
+import { SelectedWorksGrid } from "./SelectedWorksGrid";
+import SelectedWorksSkeleton from "./SelectedWorksSkeleton";
 
-export default function SelectedWorks() {
+export default function SelectedWorks({ projects }: { projects: ProjectResponse[] }) {
   return (
     <section
       id="portfolio"
@@ -61,7 +64,15 @@ export default function SelectedWorks() {
           </h2>
         </div>
 
-        <CachedFeaturedProjects />
+        {projects.length === 0 ? (
+          <SelectedWorksSkeleton />
+        ) : (
+          <SelectedWorksGrid refreshKey={projects.map((project) => project.id).join(",")}>
+            {projects.map((project) => (
+              <SelectedWorkCard key={project.id} project={project} />
+            ))}
+          </SelectedWorksGrid>
+        )}
 
         <div className="mt-16 md:mt-40 text-center relative z-10">
           <Link href="/project-showcase" className="inline-block group">

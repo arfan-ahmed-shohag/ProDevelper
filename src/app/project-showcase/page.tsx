@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import PageHero from "@/components/PageHero";
-import ShowcaseGallery from "@/components/project-showcase/ShowcaseGallery";
+import ShowcasePageContent from "@/components/project-showcase/ShowcasePageContent";
+import ShowcaseGallerySkeleton from "@/components/project-showcase/ShowcaseGallerySkeleton";
+import type { ShowcaseSearchParams } from "@/components/project-showcase/ShowcasePageContent";
 
 export const metadata: Metadata = {
   title: "Project Showcase",
@@ -9,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/project-showcase/" },
 };
 
-export default function ProjectShowcasePage() {
+export default function ProjectShowcasePage({ searchParams }: { searchParams: ShowcaseSearchParams }) {
   return (
     <>
       <PageHero
@@ -25,7 +28,9 @@ export default function ProjectShowcasePage() {
           { value: "Scalable", label: "Performance" },
         ]}
       />
-      <ShowcaseGallery kind="projects" />
+      <Suspense fallback={<ShowcaseGallerySkeleton />}>
+        <ShowcasePageContent kind="projects" searchParams={searchParams} />
+      </Suspense>
     </>
   );
 }

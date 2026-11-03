@@ -1,19 +1,35 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SiteHeader } from "@/components/Header";
 import SiteFooter from "@/components/Footer";
 import branding from "../data/branding.json";
 import BrowserCache from "@/components/BrowserCache";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const jakarta = localFont({
+  src: [
+    { path: "../../public/fonts/jakarta-0.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/jakarta-1.woff2", weight: "500", style: "normal" },
+    { path: "../../public/fonts/jakarta-2.woff2", weight: "600", style: "normal" },
+    { path: "../../public/fonts/jakarta-3.woff2", weight: "700", style: "normal" },
+    { path: "../../public/fonts/jakarta-4.woff2", weight: "800", style: "normal" },
+  ],
+  variable: "--font-jakarta",
+  display: "swap",
+  preload: false,
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const inter = localFont({
+  src: [
+    { path: "../../public/fonts/inter-0.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/inter-1.woff2", weight: "500", style: "normal" },
+    { path: "../../public/fonts/inter-2.woff2", weight: "600", style: "normal" },
+    { path: "../../public/fonts/inter-3.woff2", weight: "700", style: "normal" },
+    { path: "../../public/fonts/inter-4.woff2", weight: "800", style: "normal" },
+  ],
+  variable: "--font-inter",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -40,11 +56,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${jakarta.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <SiteHeader />
-        {children}
+        <main id="main">{children}</main>
         <SiteFooter />
         <BrowserCache />
       </body>

@@ -41,7 +41,6 @@ export function ShowcaseCardImage({
       alt={alt}
       className="scroll-img w-full h-auto object-top transition-transform duration-[8s] ease-in-out"
       loading="lazy"
-      unoptimized
       onError={() => setFailedSource({ key: sourceKey, index: sourceIndex + 1 })}
     />
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { cacheLife } from "next/cache";
+import { cacheLife, cacheTag } from "next/cache";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
@@ -13,7 +13,12 @@ import {
 } from "@/lib/service-details";
 import { getAllServices, getServiceDetail } from "@/services/services";
 import { plainText } from "@/lib/plain-text";
-import { oneMonthCachePolicy } from "@/lib/cache-policy";
+import { wordpressCachePolicy } from "@/lib/cache-policy";
+import { getLatestFeedback } from "@/services/feedback";
+import { featuredProjects, type ProjectResponse } from "@/services/projects";
+import type { FeedbackResponse } from "@/services/feedback";
+import SelectedWorksSkeleton from "@/components/home/SelectedWorksSkeleton";
+import FeedbackSkeleton, { FeedbackSummarySkeleton } from "@/components/home/FeedbackSkeleton";
 
 type ServicePageProps = {
   params: Promise<{ serviceName: string }>;
@@ -44,7 +49,8 @@ export async function generateMetadata({
 
 async function CachedServiceContent({ serviceName }: { serviceName: string }) {
   "use cache";
-  cacheLife(oneMonthCachePolicy);
+  cacheLife(wordpressCachePolicy);
+  cacheTag("wp:services", `wp:service:${serviceName}`);
 
   const service = await getServiceDetail(serviceName);
   if (!service) return null;
@@ -70,6 +76,26 @@ async function CachedServiceContent({ serviceName }: { serviceName: string }) {
   );
 }
 
+async function CachedServiceShowcaseAndReviews() {
+  "use cache";
+  cacheLife(wordpressCachePolicy);
+  cacheTag("wp:home");
+
+  const [projects, feedback] = await Promise.all([
+    featuredProjects().catch(() => [] as ProjectResponse[]),
+    getLatestFeedback().catch(
+      () => ({ items: [], total: 0 }) as { items: FeedbackResponse[]; total: number },
+    ),
+  ]);
+
+  return (
+    <>
+      <SelectedWorks projects={projects} />
+      <TestimonialsSection initialData={feedback} />
+    </>
+  );
+}
+
 async function ServiceContent({ params }: ServicePageProps) {
   const { serviceName } = await params;
   const service = await getServiceDetail(serviceName);
@@ -91,8 +117,21 @@ export default function ServiceDetailsPage({ params }: ServicePageProps) {
       >
         <ServiceContent params={params} />
       </Suspense>
-      <SelectedWorks />
-      <TestimonialsSection />
+      <Suspense
+        fallback={
+          <>
+            <SelectedWorksSkeleton />
+            <section className="relative bg-white px-6 py-24 lg:py-40">
+              <div className="mx-auto max-w-7xl">
+                <FeedbackSummarySkeleton />
+                <FeedbackSkeleton />
+              </div>
+            </section>
+          </>
+        }
+      >
+        <CachedServiceShowcaseAndReviews />
+      </Suspense>
     </>
   );
 }

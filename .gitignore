@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/.performance/
+/.baseline-*.log
 
 # next.js
 /.next/

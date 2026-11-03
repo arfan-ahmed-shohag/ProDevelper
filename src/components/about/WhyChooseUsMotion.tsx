@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
-import gsap from "gsap";
+import type gsap from "gsap";
 
 export function WhyChooseUsMotion({ children }: { children: ReactNode }) {
   const rootRef = useRef<HTMLElement>(null);
@@ -10,33 +10,38 @@ export function WhyChooseUsMotion({ children }: { children: ReactNode }) {
     const root = rootRef.current;
     if (!root) return;
 
-    const media = gsap.matchMedia();
-    media.add("(prefers-reduced-motion: no-preference)", () => {
-      const context = gsap.context(() => {
-        const floats: [string, number, number, number][] = [
-          ["#blob-why-1", 40, 20, 8],
-          ["#blob-why-2", -30, -40, 10],
-        ];
+    let active = true;
+    let media: ReturnType<typeof gsap.matchMedia> | undefined;
+    void import("gsap").then(({ default: gsap }) => {
+      if (!active) return;
+      media = gsap.matchMedia();
+      media.add("(prefers-reduced-motion: no-preference)", () => {
+        const context = gsap.context(() => {
+          const floats: [string, number, number, number][] = [
+            ["#blob-why-1", 40, 20, 8],
+            ["#blob-why-2", -30, -40, 10],
+          ];
 
-        floats.forEach(([selector, x, y, duration]) => {
-          const element = root.querySelector(selector);
-          if (!element) return;
+          floats.forEach(([selector, x, y, duration]) => {
+            const element = root.querySelector(selector);
+            if (!element) return;
 
-          gsap.to(element, {
-            x,
-            y,
-            duration,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut",
+            gsap.to(element, {
+              x,
+              y,
+              duration,
+              repeat: -1,
+              yoyo: true,
+              ease: "sine.inOut",
+            });
           });
-        });
-      }, root);
+        }, root);
 
-      return () => context.revert();
+        return () => context.revert();
+      });
+
     });
-
-    return () => media.revert();
+    return () => { active = false; media?.revert(); };
   }, []);
 
   return (
