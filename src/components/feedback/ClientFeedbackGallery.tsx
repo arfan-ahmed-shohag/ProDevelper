@@ -15,10 +15,18 @@ import FeedbackCard from "@/components/home/FeedbackCard";
 import FeedbackSkeleton, { FeedbackCardSkeleton } from "@/components/home/FeedbackSkeleton";
 
 type CachedFeedbackCatalog = FeedbackPageResult & { loadedPages: number };
-const refreshAfter = 5 * 60 * 1000;
 
 function pageCacheKey(page: number) {
   return `client-feedback-page-${page}-v3`;
+}
+
+function isFeedbackPage(data: unknown): data is FeedbackPageResult {
+  if (!data || typeof data !== "object") return false;
+  const page = data as FeedbackPageResult;
+  return Number.isInteger(page.page) && page.page > 0 && Number.isInteger(page.total) && page.total >= 0 &&
+    Number.isInteger(page.totalPages) && page.totalPages >= 0 && Array.isArray(page.items) &&
+    page.items.every(item => Number.isInteger(item.id) && typeof item.title?.rendered === "string" &&
+      typeof item.content?.rendered === "string");
 }
 
 export default function ClientFeedbackGallery({
@@ -56,11 +64,26 @@ export default function ClientFeedbackGallery({
   }, []);
 
   useEffect(() => {
+    if (initialData.items.length) {
+      writeBrowserDataCache(pageCacheKey(1), initialData);
+      return;
+    }
+    const cached = readBrowserDataCache<unknown>(pageCacheKey(1));
+    if (cached && isFeedbackPage(cached.data)) {
+      queueMicrotask(() => commitCatalog({ ...cached.data as FeedbackPageResult, loadedPages: 1 }));
+      return;
+    }
+    void requestPage(1).then(pageData => {
+      commitCatalog({ ...pageData, loadedPages: 1 });
+    }).catch(() => setError("Client feedback could not be loaded. Please try again."));
+  }, [commitCatalog, initialData, requestPage]);
+
+  useEffect(() => {
     const nextPage = catalog.loadedPages + 1;
     if (nextPage > catalog.totalPages) return;
 
     const cachedPage = readBrowserDataCache<FeedbackPageResult>(pageCacheKey(nextPage));
-    if (cachedPage && Date.now() - cachedPage.updatedAt < refreshAfter) return;
+    if (cachedPage && isFeedbackPage(cachedPage.data)) return;
 
     // Warm the next page before the user presses Load More.
     void requestPage(nextPage).catch(() => {});
@@ -95,12 +118,8 @@ export default function ClientFeedbackGallery({
 
     setError("");
     const cachedPage = readBrowserDataCache<FeedbackPageResult>(pageCacheKey(nextPage));
-    if (cachedPage) {
+    if (cachedPage && isFeedbackPage(cachedPage.data)) {
       applyPage(cachedPage.data);
-      if (Date.now() - cachedPage.updatedAt < refreshAfter) return;
-
-      // Serve stale cached data immediately, then refresh it in the background.
-      void requestPage(nextPage).then(applyPage).catch(() => {});
       return;
     }
 

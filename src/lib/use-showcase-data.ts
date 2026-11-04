@@ -15,7 +15,7 @@ type View = {
 
 export function useShowcaseData(kind: ShowcaseKind, initial: ProjectShowcaseResult, initialError: string, initialQuery = { search: "", filters: "" }) {
   const [view, setView] = useState<View>({ ...initial, currentPage: 1 });
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(!initial.projects.length && !initialError);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState(initialError);
   const [offline, setOffline] = useState(false);
@@ -88,7 +88,7 @@ export function useShowcaseData(kind: ShowcaseKind, initial: ProjectShowcaseResu
             if (number > Math.max(1, first.totalPages)) pages.current.delete(number);
           }
           publish();
-        } else if (scope === initialRef.current.scope && !initialRef.current.error) {
+        } else if (scope === initialRef.current.scope && !initialRef.current.error && initialRef.current.data.refreshedAt > 0) {
           const seed = initialRef.current.data;
           pages.current.set(1, seed);
           publish();
@@ -96,9 +96,10 @@ export function useShowcaseData(kind: ShowcaseKind, initial: ProjectShowcaseResu
         }
         setLoading(!pages.current.has(1));
         setOffline(!navigator.onLine);
-        // A first server-rendered visit already supplied this page. Repeat visits
-        // and old offline HTML always check the GET reader in the background.
-        if (!first && pages.current.has(1) && Date.now() - initialRef.current.data.refreshedAt < 60000) return;
+        if (pages.current.has(1)) {
+          setError("");
+          return;
+        }
       }
 
       const data = await requestShowcasePage(kind, page, search, filters, signal);
@@ -158,31 +159,17 @@ export function useShowcaseData(kind: ShowcaseKind, initial: ProjectShowcaseResu
 
   useEffect(() => { loadRef.current = loadResults; }, [loadResults]);
   useEffect(() => {
-    const online = () => {
-      setOffline(false);
-      if (!busy.current) void loadRef.current?.(activeQuery.current.search, activeQuery.current.filters, 1, false);
-    };
+    const online = () => setOffline(false);
     const offline = () => setOffline(true);
-    let lastRefresh = Date.now();
-    const visible = () => {
-      if (document.visibilityState === "visible" && navigator.onLine && !busy.current && activeScope.current && Date.now() - lastRefresh >= 60000) {
-        lastRefresh = Date.now();
-        void loadRef.current?.(activeQuery.current.search, activeQuery.current.filters, 1, false);
-      }
-    };
-    const interval = window.setInterval(visible, 60000);
     const requestController = controller;
     const requestGeneration = generation;
     window.addEventListener("online", online);
     window.addEventListener("offline", offline);
-    document.addEventListener("visibilitychange", visible);
     return () => {
       requestGeneration.current++;
       requestController.current?.abort();
-      window.clearInterval(interval);
       window.removeEventListener("online", online);
       window.removeEventListener("offline", offline);
-      document.removeEventListener("visibilitychange", visible);
     };
   }, []);
 

@@ -1,11 +1,10 @@
 import StatsSection from "@/components/home/StatsSection";
 import TechnologySection from "@/components/home/TechnologySection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
+import BrowserCachedHomeData from "@/components/home/BrowserCachedHomeData";
 import PageHero from "@/components/PageHero";
 import WhyChooseUs from "@/components/about/WhyChooseUs";
 import FaqSection from "@/components/about/FaqSection";
 import { Metadata } from "next";
-import { getLatestFeedback } from "@/services/feedback";
 
 export const metadata: Metadata = {
     title: { absolute: "About Us – Prodeveloper_2" },
@@ -13,9 +12,7 @@ export const metadata: Metadata = {
     alternates: { canonical: "/about-us/" },
 };
 
-export default async function AboutUsPage() {
-    const feedback = await getLatestFeedback();
-
+export default function AboutUsPage() {
     return (
         <>
             <PageHero
@@ -35,7 +32,7 @@ export default async function AboutUsPage() {
             />
             <TechnologySection />
             <StatsSection />
-            <TestimonialsSection initialData={feedback} />
+            <BrowserCachedHomeData showServices={false} showProjects={false} />
             <WhyChooseUs />
             <FaqSection />
         </>

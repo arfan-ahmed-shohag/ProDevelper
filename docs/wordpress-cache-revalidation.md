@@ -24,6 +24,10 @@ Accepted values are `service`, `p-showcase`, `d-showcase`, `c-feedback`,
 The aliases `project-showcase` and
 `demo-showcase` are also accepted. Requests without a valid secret are rejected.
 
+Blog events additionally accept `post` (alias `posts`) and `category` (alias
+`categories`). They invalidate `wp:blog:posts`, `wp:blog:categories`, `/blog`, and
+`/blog/[slug]`. See [the blog setup](./blog.md) for query and rendering behavior.
+
 Existing payload keys `post_type`, `taxonomy`, and `type` are supported, in that
 precedence order. Send one content type per request. The action can be publish,
 update, delete, trash/untrash, status change, or taxonomy assignment change: the
@@ -42,11 +46,13 @@ Next regenerates it. `revalidatePath` also invalidates the affected page routes,
 including the service detail pattern where featured projects/reviews appear.
 There is no webhook parameter that can invalidate arbitrary tags or paths.
 
-Server entries revalidate after 60 seconds and expire after one hour. The client
-router stale time is 60 seconds. These settings are independent of the browser's
-30-day IndexedDB retention. A webhook cannot clear a visitor's IndexedDB; GET
-refreshes on repeat visits, reconnect, and visible one-minute intervals synchronize
-the pages that visitor has already requested.
+Most server entries revalidate after 60 seconds and expire after one hour. Blog
+article bodies use a 30-day server cache. Next client-router segments, browser
+IndexedDB/localStorage data, and service-worker pages/assets retain visited
+content for 30 days and serve valid entries without a refresh request. A webhook
+invalidates server caches but cannot clear a visitor's browser storage; that
+visitor can continue seeing the saved version until browser entries expire or
+site data is cleared.
 
 ## Scoped showcase filter counts
 

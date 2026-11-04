@@ -3,6 +3,10 @@
 Audit date: 2026-11-03. Existing uncommitted changes were present before this work;
 they are preserved. This is an optimization of the existing app, not a rebuild.
 
+The original audit below predates the browser-cache follow-up at the end of this
+file. That follow-up changes refresh behavior to cache-first for 30 days and adds
+browser caching for blog and service detail data.
+
 ## Evidence before implementation
 
 - Both showcase pages initially request 10 items, but `getShowcaseFilters` then
@@ -67,6 +71,9 @@ Installed references read: `use-cache`, `cacheLife`, `cacheTag`, `revalidateTag`
 `node_modules/next/dist/docs/01-app/`.
 
 ## Implemented behavior
+
+This section records the preceding implementation. The follow-up section below
+supersedes its background-refresh and service-worker validation behavior.
 
 - `/api/showcase` is a public GET reader of published portfolio data. Both the
   initial Server Components and this reader use the same normalized cached
@@ -196,13 +203,38 @@ Existing edits/deletions outside this list were already present and preserved.
    guessed ratio would change the design.
 4. Investigate intermittent WordPress latency/timeouts and provide a shared Next
    cache backend if multi-instance origin deduplication is required. Existing
-   cached browser content survives failures, but uncached data still needs a
-   healthy origin. Offline navigation requires a previously saved HTML page and
-   its assets. A cold server's initial SSR stream may still await WordPress before
-   the gallery hydrates; saved service-worker HTML avoids that on repeat visits.
+   cached browser content survives failures, but each uncached query still needs
+   a healthy origin. Offline navigation requires a previously saved HTML page and
+   its assets. Blog article metadata may still need a cold server cache read.
 5. Existing color-contrast/heading-order findings and a navigation link to the
    unimplemented `/blog` route are preserved, rather than changing the design or
    removing a URL. No contact route exists in this repository. Production must set
    the existing `NEXT_PUBLIC_SITE_URL` so metadata does not use its localhost
    fallback. No field INP, real-user CWV, broad device matrix, or sustained
    multi-instance load test was measured.
+
+## Follow-up: browser-first 30-day caching
+
+- Home, about, services, service detail, project showcase, demo showcase, blog
+  listing/detail, and client feedback now read saved browser data first. Dynamic
+  content is stored in IndexedDB or localStorage for 30 days; valid records skip
+  the matching API/Server Function call, including reconnect and visibility
+  events. Uncached search/filter/page queries fetch once and get their own key.
+- Next's client-router page segments also retain static and dynamic routes for
+  30 days, so returning to an already loaded route does not need an RSC server
+  roundtrip during that period.
+- Service worker navigation HTML and cached assets now use cache-first behavior
+  for 30 days. `CHECK_PAGE` and `WARM_PAGE` also avoid network requests for a
+  valid saved page. RSC, Next transport, Server Function and API responses remain
+  outside its HTML cache.
+- Project/demo/blog pages no longer fetch their main data in Server Components.
+  The blog article endpoint returns the post separately from its sidebar so the
+  body can render before related posts/topics finish loading. Blog detail loading
+  now uses a hero, article column, and sidebar skeleton matching its page layout.
+  The article reader also skips the former extra media-dimensions request.
+- Shared IndexedDB limits are now 300 entries / 64 MiB, with a 2 MiB per-entry
+  limit. The service worker retains up to 120 HTML pages.
+- Follow-up checks: ESLint and standalone TypeScript passed. `next build` compiled
+  the bundle but the environment failed to spawn Next's TypeScript worker
+  (`spawn EPERM`); a separate `tsc --noEmit` passed. Regression/browser suites
+  were not rerun for this follow-up.

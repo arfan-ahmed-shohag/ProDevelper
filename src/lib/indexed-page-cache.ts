@@ -3,8 +3,8 @@ const databaseName = "prodeveloper-dynamic";
 const storeName = "pages";
 const schema = 1;
 export const pageRetentionMs = 30 * 24 * 60 * 60 * 1000;
-const maxEntries = 120;
-const maxBytes = 12 * 1024 * 1024;
+const maxEntries = 300;
+const maxBytes = 64 * 1024 * 1024;
 
 export type CachedPage<T> = {
   key: string;
@@ -85,7 +85,7 @@ export async function writeCachedPage<T>(scope: string, page: number, data: T, r
   if (!Number.isFinite(refreshedAt) || Date.now() - refreshedAt >= pageRetentionMs) return;
   const serialized = JSON.stringify(data);
   const bytes = serialized.length * 2;
-  if (bytes > 512 * 1024) return;
+  if (bytes > 2 * 1024 * 1024) return;
   const db = await database();
   if (!db) return;
   await new Promise<void>((resolve) => {

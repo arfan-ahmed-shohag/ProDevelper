@@ -4,6 +4,8 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 import ts from "typescript";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
 import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 
@@ -14,10 +16,11 @@ function loader(overrides = {}, globals = {}) {
     if (name === "server-only") return {};
     if (!name.startsWith("@/")) return require(name);
     const filename = path.resolve("src", `${name.slice(2)}.ts`);
-    const resolved = fs.existsSync(filename) ? filename : path.resolve("src", name.slice(2), "index.ts");
+    const resolved = [filename, filename.replace(/\.ts$/, ".tsx"), path.resolve("src", name.slice(2), "index.ts")].find(file => fs.existsSync(file));
+    if (!resolved) throw new Error(`Module not found: ${name}`);
     if (modules.has(resolved)) return modules.get(resolved).exports;
     const code = ts.transpileModule(fs.readFileSync(resolved, "utf8"), {
-      compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS },
+      compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX },
     }).outputText;
     const loaded = { exports: {} };
     modules.set(resolved, loaded);
@@ -217,7 +220,7 @@ test("service worker never stores RSC, Server Functions or API responses as HTML
   assert.equal(count, 0);
 });
 
-test("service worker shares one navigation request, conditionally validates, and expires offline HTML", async () => {
+test("service worker serves cached navigation without requesting the server for 30 days", async () => {
   let count = 0, offline = false, conditional = false;
   const sw = serviceWorker(async (_url, init) => {
     count++;
@@ -232,11 +235,14 @@ test("service worker shares one navigation request, conditionally validates, and
   assert.equal(count, 1);
   conditional = true;
   assert.match(await (await sw.navigate("https://site.test/")).text(), /Saved/);
+  assert.equal(count, 1);
   offline = true;
   assert.match(await (await sw.navigate("https://site.test/")).text(), /Saved/);
+  assert.equal(count, 1);
   const meta = await sw.caches.open("prodeveloper-browser-v2-metadata");
   await meta.put("https://site.test/", Response.json({ savedAt: Date.now() - 31 * 86400000 }));
   assert.equal((await sw.navigate("https://site.test/")).status, 503);
+  assert.equal(count, 2);
   assert.equal(await (await sw.caches.open("prodeveloper-browser-v2-pages")).match("https://site.test/"), undefined);
 });
 
@@ -256,4 +262,126 @@ test("service worker upgrades clean only this application's older caches", async
   await work;
   assert.equal(sw.stores.has("unrelated-cache"), true);
   assert.equal(sw.stores.has("prodeveloper-browser-v1-pages"), false);
+});
+
+test("blog readers fetch ten posts, preserve totals, and reuse post metadata without embeds", async () => {
+  const urls = [];
+  const load = loader({ "next/cache": cache }, { fetch: async url => {
+    urls.push(new URL(url));
+    return Response.json([{ id: 42, slug: "wordpress-guide", date: "2026-04-26T12:00:00", title: { rendered: "WordPress &amp; AI" },
+      excerpt: { rendered: "<p>A practical guide.</p>" }, categories: [5],
+      post_meta: { featured_image: "https://prodeveloper2.com/wp-content/uploads/guide.png", author_name: "Nizam", reading_time: "3 min read", categories: ["Tutorial"] },
+    }], { headers: { "X-WP-Total": "25", "X-WP-TotalPages": "3" } });
+  } });
+  const result = await load("@/services/blog").getBlogPage(2, " wordpress ", 5);
+  assert.equal(urls.length, 1);
+  assert.equal(urls[0].searchParams.get("per_page"), "10");
+  assert.equal(urls[0].searchParams.get("page"), "2");
+  assert.equal(urls[0].searchParams.get("search"), "wordpress");
+  assert.equal(urls[0].searchParams.get("categories"), "5");
+  assert.equal(urls[0].searchParams.get("_embed"), null);
+  assert.ok(!urls[0].searchParams.get("_fields").includes("content"));
+  assert.equal(result.total, 25);
+  assert.equal(result.totalPages, 3);
+  assert.equal(result.posts[0].title, "WordPress & AI");
+  assert.equal(result.posts[0].author, "Nizam");
+});
+
+test("blog search/category keys isolate data and reject corrupt stored post fields", () => {
+  const { blogScope, normalizeBlogQuery, blogHref, isBlogPage } = loader()("@/lib/blog");
+  assert.equal(blogScope(normalizeBlogQuery(" wordpress ", "5")), blogScope({ search: "wordpress", category: 5 }));
+  assert.notEqual(blogScope({ search: "wordpress", category: 5 }), blogScope({ search: "wordpress", category: 6 }));
+  assert.equal(blogHref({ search: "wordpress", category: 5 }), "/blog/?search=wordpress&categories=5");
+  assert.equal(isBlogPage({ posts: [null], total: 1, totalPages: 1, refreshedAt: Date.now() }), false);
+  assert.equal(isBlogPage({ posts: [], total: 0, totalPages: 0, refreshedAt: Date.now() }), true);
+});
+
+test("blog categories request nonempty terms and also exclude zero-count responses", async () => {
+  let requested;
+  const load = loader({ "next/cache": cache }, { fetch: async url => {
+    requested = new URL(url);
+    return Response.json([
+      { id: 1, name: "Empty", slug: "empty", count: 0 },
+      { id: 2, name: "AI Related", slug: "ai-related", count: 5 },
+    ]);
+  } });
+  const categories = await load("@/services/blog").getBlogCategories();
+  assert.equal(requested.searchParams.get("hide_empty"), "true");
+  assert.equal(categories.length, 1);
+  assert.equal(categories[0].id, 2);
+  const { populatedBlogCategories } = load("@/lib/blog");
+  assert.equal(populatedBlogCategories([{ id: 1, count: 0 }, { id: 2, count: 5 }]).length, 1);
+});
+
+test("article image dimensions preserve the featured image's natural aspect ratio", async () => {
+  for (const sized of [false, true]) {
+    const urls = [];
+    const load = loader({ "next/cache": cache }, { fetch: async url => {
+      urls.push(new URL(url));
+      if (url.includes("/media/")) return Response.json({ id: 10, media_details: { width: 740, height: 670 } });
+      return Response.json([{ id: 42, slug: "chatbots", date: "2026-04-26T12:00:00", title: { rendered: "AI Chatbots" },
+        featured_media: 10, content: { rendered: "<p>Article</p>" },
+        post_meta: { featured_image: `https://prodeveloper2.com/wp-content/uploads/chatbots${sized ? "-1024x530" : ""}.png` },
+      }]);
+    } });
+    const article = await load("@/services/blog").getBlogArticle("chatbots");
+    assert.equal(article.imageWidth, sized ? 1024 : 740);
+    assert.equal(article.imageHeight, sized ? 530 : 670);
+    assert.equal(urls.length, sized ? 1 : 2);
+  }
+});
+
+test("adjacent article queries read one post in the appropriate date direction", async () => {
+  const urls = [];
+  const load = loader({ "next/cache": cache }, { fetch: async url => { urls.push(new URL(url)); return Response.json([]); } });
+  const { getBlogNeighbor } = load("@/services/blog");
+  await getBlogNeighbor(42, "2026-04-26T12:00:00", "previous");
+  await getBlogNeighbor(42, "2026-04-26T12:00:00", "next");
+  assert.equal(urls[0].searchParams.get("before"), "2026-04-26T12:00:00");
+  assert.equal(urls[0].searchParams.get("order"), "desc");
+  assert.equal(urls[1].searchParams.get("after"), "2026-04-26T12:00:00");
+  assert.equal(urls[1].searchParams.get("order"), "asc");
+  assert.ok(urls.every(url => url.searchParams.get("per_page") === "1" && url.searchParams.get("exclude") === "42"));
+});
+
+test("public blog API validates page/search/category inputs without calling WordPress", async () => {
+  let calls = 0;
+  const load = loader({ "@/services/blog": {
+    getBlogPage: async () => { calls++; return { posts: [], total: 0, totalPages: 0 }; },
+    getBlogCategories: async () => [],
+  } });
+  const { GET } = load("@/app/api/blog/route");
+  for (const query of ["page=0", "page=abc", "categories=-5", "categories=javascript", "resource=private", `search=${"a".repeat(201)}`]) {
+    assert.equal((await GET(new Request(`https://site.test/api/blog?${query}`))).status, 400);
+  }
+  assert.equal(calls, 0);
+  assert.equal((await GET(new Request("https://site.test/api/blog?page=2&categories=5"))).status, 200);
+  assert.equal(calls, 1);
+});
+
+test("blog webhook aliases invalidate both article and category caches", async () => {
+  const tags = [];
+  const load = loader({ "next/cache": { ...cache, revalidateTag: tag => tags.push(tag) } });
+  const { POST } = load("@/app/api/revalidate/route");
+  for (const payload of [{ post_type: "post" }, { taxonomy: "category" }, { type: "posts" }, { type: "categories" }]) {
+    tags.length = 0;
+    const response = await POST(new Request("https://site.test/api/revalidate", { method: "POST", headers: { Authorization: "Bearer test-secret" }, body: JSON.stringify(payload) }));
+    assert.equal(response.status, 200);
+    assert.ok(tags.includes("wp:blog:posts") && tags.includes("wp:blog:categories"));
+  }
+});
+
+test("WordPress articles preserve safe images and text while removing scripts, handlers and unsafe URLs", () => {
+  const load = loader({ "next/image": { __esModule: true, default: props => createElement("img", { src: props.src, alt: props.alt }) } });
+  const Article = load("@/components/blog/WordPressArticle").default;
+  const html = renderToStaticMarkup(createElement(Article, { html: '<div onclick="alert(1)" style="position:fixed"><h1>Article &amp; Guide</h1><script>alert(1)</script><iframe src="https://bad.test"></iframe><p>Content <a href="jav&#x61;script:alert(1)">unsafe</a> <a href="https://example.com/" target="_blank">safe</a></p><img src="/wp-content/uploads/test.jpg" onerror="alert(1)"><img src="/assets/reference.webp"><img src="https://bad.test/image.jpg"><img src="data:image/svg+xml,bad"></div>' }));
+  assert.match(html, /<h2>Article &amp; Guide<\/h2>/);
+  assert.match(html, /https:\/\/prodeveloper2.com\/wp-content\/uploads\/test.jpg/);
+  assert.match(html, /rel="noopener noreferrer"/);
+  assert.doesNotMatch(html, /<script|<iframe|onclick|onerror|style=|javascript:|data:image/);
+  assert.ok(html.includes('src="/assets/reference.webp"'));
+  assert.ok(!html.includes("bad.test"));
+  const imageParagraph = renderToStaticMarkup(createElement(Article, { html: '<p><img src="/wp-content/uploads/test.jpg" alt="Example"></p>' }));
+  assert.match(imageParagraph, /<p><span/);
+  assert.doesNotMatch(imageParagraph, /<figure/);
 });

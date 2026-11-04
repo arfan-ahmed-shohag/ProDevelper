@@ -1,9 +1,8 @@
 import PageHero from "@/components/PageHero";
 import ServicesSection from "@/components/ServicesSection";
-import { Metadata } from "next";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
-import { getAllServiceCards } from "@/services/services";
-import { getLatestFeedback } from "@/services/feedback";
+import type { Metadata } from "next";
+import BrowserCachedHomeData from "@/components/home/BrowserCachedHomeData";
+import IndustriesWeServe from "@/components/services/IndustriesWeServe";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -11,12 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services/" },
 };
 
-export default async function ServicesPage() {
-  const [services, feedback] = await Promise.all([
-    getAllServiceCards().catch(() => []),
-    getLatestFeedback().catch(() => ({ items: [], total: 0 })),
-  ]);
-
+export default function ServicesPage() {
   return (
     <>
       <PageHero
@@ -38,12 +32,12 @@ export default async function ServicesPage() {
         ]}
       />
       <ServicesSection
-        initialServices={services}
+        initialServices={[]}
         source="all"
         initialCount={12}
-        useCachedData={false}
       />
-      <TestimonialsSection initialData={feedback} />
+      <IndustriesWeServe />
+      <BrowserCachedHomeData showServices={false} showProjects={false} />
     </>
   );
 }

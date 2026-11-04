@@ -136,6 +136,12 @@ details[open] > .faq-trigger {
   line-height: 1.8;
   color: rgb(var(--rgb-article-text));
 }
+.blog-entry {
+  overflow-wrap: anywhere;
+}
+.cms-rich-text .blog-content-image img {
+  margin: 0;
+}
 .cms-rich-text h1,
 .cms-rich-text h2,
 .cms-rich-text h3 {

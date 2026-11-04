@@ -183,7 +183,10 @@ export default function ShowcaseGallery({
     const refresh = async () => {
       const cached = await readCachedPages(scope, isFilterData);
       if (controller.signal.aborted) return;
-      if (cached[0]) apply(cached[0].data);
+      if (cached[0]) {
+        apply(cached[0].data);
+        return;
+      }
       try {
         const data = await requestShowcaseFilters(kind, controller.signal);
         if (!isFilterData(data)) throw new Error("Invalid filters");

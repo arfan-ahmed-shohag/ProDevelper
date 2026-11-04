@@ -3,7 +3,6 @@ const PAGE_CACHE = `${PREFIX}pages`;
 const ASSET_CACHE = `${PREFIX}assets`;
 const META_CACHE = `${PREFIX}metadata`;
 const RETENTION = 30 * 24 * 60 * 60 * 1000;
-const DAY = 24 * 60 * 60 * 1000;
 const updates = new Map();
 
 function pageUrl(value) {
@@ -11,8 +10,8 @@ function pageUrl(value) {
   const path = url.pathname.replace(/\/$/, "") || "/";
   // Only the public routes implemented by this app may store HTML.
   if (url.origin !== self.location.origin ||
-    !/^\/(?:about-us|services(?:\/[a-z0-9-]+)?|project-showcase|demo-showcase|client-feedback|faq|privacy-policy|terms-and-conditions)?$/.test(path) ||
-    [...url.searchParams.keys()].some(key => !["search", "filters"].includes(key)) || url.search.length > 1600) return null;
+    !/^\/(?:about-us|services(?:\/[a-z0-9-]+)?|blog(?:\/[a-z0-9%_-]+)?|project-showcase|demo-showcase|client-feedback|faq|privacy-policy|terms-and-conditions)?$/i.test(path) ||
+    [...url.searchParams.keys()].some(key => !(path === "/blog" ? ["search", "s_query", "categories", "category"] : ["search", "filters"]).includes(key)) || url.search.length > 1600) return null;
   url.pathname = path;
   url.hash = "";
   url.searchParams.sort();
@@ -41,6 +40,18 @@ async function forget(cacheName, key) {
     caches.open(cacheName).then(cache => cache.delete(key)),
     caches.open(META_CACHE).then(cache => cache.delete(typeof key === "string" ? key : key.url)),
   ]);
+}
+
+async function freshPage(key) {
+  try {
+    const cache = await caches.open(PAGE_CACHE);
+    const response = await cache.match(key);
+    if (!response) return null;
+    const saved = await metadata(key);
+    if (saved && Date.now() - saved.savedAt < RETENTION) return response;
+    await forget(PAGE_CACHE, key);
+  } catch { /* Fall through to the network when cached navigation is unreadable. */ }
+  return null;
 }
 
 async function trim(cacheName, limit) {
@@ -103,8 +114,7 @@ async function asset(request, warm = false) {
     const saved = cached ? await metadata(request.url) : null;
     const age = saved ? Date.now() - saved.savedAt : Infinity;
     if (age >= RETENTION) { await forget(ASSET_CACHE, request); cached = undefined; }
-    const immutable = new URL(request.url).pathname.startsWith("/_next/static/");
-    if (cached && age < (immutable ? RETENTION : DAY)) return cached;
+    if (cached && age < RETENTION) return cached;
   } catch { /* Storage can be disabled independently of the network. */ }
   try {
     // First-visit resources arrived before SW control. Reuse the browser HTTP
@@ -129,7 +139,7 @@ self.addEventListener("install", event => event.waitUntil(self.skipWaiting()));
 self.addEventListener("activate", event => event.waitUntil((async () => {
   const names = await caches.keys();
   await Promise.all(names.filter(name => name.startsWith("prodeveloper-browser-") && !name.startsWith(PREFIX)).map(name => caches.delete(name)));
-  await Promise.all([trim(PAGE_CACHE, 20), trim(ASSET_CACHE, 96)]).catch(() => {});
+  await Promise.all([trim(PAGE_CACHE, 120), trim(ASSET_CACHE, 96)]).catch(() => {});
   await self.clients.claim();
 })()));
 
@@ -140,20 +150,10 @@ self.addEventListener("fetch", event => {
     new URL(request.url).searchParams.has("_rsc")) return;
   const key = request.mode === "navigate" ? pageUrl(request.url) : null;
   if (key) {
-    const update = refreshPage(key);
-    event.waitUntil(update.catch(() => {}));
     event.respondWith((async () => {
-      let cached;
-      try {
-        cached = await (await caches.open(PAGE_CACHE)).match(key);
-        const saved = cached ? await metadata(key) : null;
-        if (cached && (!saved || Date.now() - saved.savedAt >= RETENTION)) {
-          await forget(PAGE_CACHE, key);
-          cached = undefined;
-        }
-      } catch { /* Fall through to the one in-flight network request. */ }
+      const cached = await freshPage(key);
       if (cached) return cached;
-      try { return await update; } catch { return offlineResponse(); }
+      try { return await refreshPage(key); } catch { return offlineResponse(); }
     })());
   } else if (isAsset(request.url)) {
     event.respondWith(asset(request));
@@ -167,13 +167,13 @@ self.addEventListener("message", event => {
   if (!key) return;
   event.waitUntil((async () => {
     if (event.data.type === "WARM_PAGE") {
-      if (!(await (await caches.open(PAGE_CACHE)).match(key))) await refreshPage(key);
+      if (!(await freshPage(key))) await refreshPage(key);
       const assets = Array.isArray(event.data.assets) ? [...new Set(event.data.assets)].filter(isAsset).slice(0, 96) : [];
       for (let start = 0; start < assets.length; start += 4) {
         await Promise.all(assets.slice(start, start + 4).map(url => asset(new Request(url), true).catch(() => {})));
       }
     } else {
-      await refreshPage(key);
+      if (!(await freshPage(key))) await refreshPage(key);
     }
   })().catch(() => {}));
 });

@@ -9,9 +9,19 @@ type ContentType =
   | "industry-type"
   | "functionality"
   | "demo-tags"
-  | "project-categories";
+  | "project-categories"
+  | "post"
+  | "category";
 
 const invalidation: Record<ContentType, { tags: string[]; paths: string[] }> = {
+  post: {
+    tags: ["wp:blog:posts", "wp:blog:categories"],
+    paths: ["/blog", "/blog/[slug]"],
+  },
+  category: {
+    tags: ["wp:blog:posts", "wp:blog:categories"],
+    paths: ["/blog", "/blog/[slug]"],
+  },
   service: {
     tags: ["wp:services", "wp:home"],
     paths: ["/", "/services", "/services/[serviceName]"],
@@ -47,6 +57,10 @@ const invalidation: Record<ContentType, { tags: string[]; paths: string[] }> = {
 };
 
 const contentAliases: Record<string, ContentType> = {
+  post: "post",
+  posts: "post",
+  category: "category",
+  categories: "category",
   service: "service",
   "p-showcase": "p-showcase",
   "project-showcase": "p-showcase",
