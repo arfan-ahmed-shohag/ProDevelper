@@ -20,9 +20,8 @@ export default function ServiceGridList({
   placeholderCount?: number;
   loadMoreLabel?: string;
 }) {
-  const [visibleCount, setVisibleCount] = useState(() =>
-    Math.min(initialCount, services.length),
-  );
+  const [visibleCount, setVisibleCount] = useState<number | null>(null);
+  const displayedCount = visibleCount ?? Math.min(initialCount, services.length);
 
   return (
     <>
@@ -30,7 +29,7 @@ export default function ServiceGridList({
         id="service-grid"
         className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
       >
-        {services.slice(0, visibleCount).map((service, index) => (
+        {services.slice(0, displayedCount).map((service, index) => (
           <ServiceGrid
             key={service.href}
             service={service}
@@ -42,14 +41,12 @@ export default function ServiceGridList({
           <ServiceGridSkeletonCard key={`placeholder-${index}`} />
         ))}
       </div>
-      {visibleCount < services.length && (
+      {displayedCount < services.length && (
         <div className="mt-20 text-center">
           <button
             type="button"
             onClick={() =>
-              setVisibleCount((count) =>
-                Math.min(count + batchSize, services.length),
-              )
+              setVisibleCount(Math.min(displayedCount + batchSize, services.length))
             }
             className="group relative inline-flex min-w-60 items-center justify-center gap-3 overflow-hidden rounded-full bg-brand-dark px-12 py-5 font-black text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-green/20"
           >

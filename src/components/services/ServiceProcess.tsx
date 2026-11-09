@@ -2,6 +2,7 @@ import { serviceDetailLayout } from "@/lib/service-details";
 import { plainText } from "@/lib/plain-text";
 import type { ServiceProcessStep } from "@/services/services";
 import Skeleton from "@/components/Skeleton";
+import Image from "next/image";
 
 export default function ServiceProcess({
   steps,
@@ -75,6 +76,15 @@ export default function ServiceProcess({
                 <div className={`relative z-10 transition-transform duration-700 group-hover:scale-105 ${loading ? "w-full max-w-[500px]" : ""}`}>
                   {loading ? (
                     <Skeleton className="aspect-[3/2] w-full rounded-[2.5rem]" />
+                  ) : step.image && step.image_width && step.image_height ? (
+                    <Image
+                      src={step.image}
+                      alt={plainText(step.title)}
+                      width={step.image_width}
+                      height={step.image_height}
+                      sizes="(max-width: 767px) 90vw, 500px"
+                      className="w-full h-auto md:w-[500px] md:h-auto object-contain drop-shadow-2xl"
+                    />
                   ) : step.image && (
                     // The API supplies image URLs without intrinsic dimensions.
                     // eslint-disable-next-line @next/next/no-img-element

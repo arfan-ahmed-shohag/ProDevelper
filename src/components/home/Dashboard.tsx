@@ -1,10 +1,10 @@
 "use client";
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
+import { useEffect, useRef } from "react";
+import type gsap from "gsap";
 import Image from "next/image";
 export function Dashboard() {
   const rootRef = useRef<HTMLDivElement>(null);
-  useLayoutEffect(() => {
+  useEffect(() => {
     const element = rootRef.current;
     if (!element) return;
     const scope = element;
@@ -17,144 +17,162 @@ export function Dashboard() {
         .join(", ");
       return `rgba(${channels}, ${opacity})`;
     };
-    const media = gsap.matchMedia();
-    media.add("(prefers-reduced-motion: no-preference)", () => {
-      const context = gsap.context(() => {
-        function startPerfectAnimation() {
-          const cursor = scope.querySelector<HTMLElement>("#magic-cursor")!;
-          const btnSpeed = scope.querySelector<HTMLElement>("#btn-speed")!;
-          const btnDone = scope.querySelector<HTMLElement>("#btn-done")!;
-          const btnCode = scope.querySelector<HTMLElement>("#btn-code")!;
-          const badge = scope.querySelector<HTMLElement>("#floating-badge")!;
-          const container = scope;
-          const speedCount = scope.querySelector<HTMLElement>("#speed-count")!;
-          const getPos = (el: HTMLElement) => {
-            const rect = el.getBoundingClientRect();
-            const contRect = container.getBoundingClientRect();
-            return {
-              x: rect.left - contRect.left + rect.width / 2,
-              y: rect.top - contRect.top + rect.height / 2,
+    let active = true;
+    let media: ReturnType<typeof gsap.matchMedia> | undefined;
+    let timeline: gsap.core.Timeline | undefined;
+    let visible = true;
+    const pause = () => timeline?.paused(!visible || document.hidden);
+    const observer = new IntersectionObserver(entries => { visible = entries[0].isIntersecting; pause(); });
+    observer.observe(element);
+    document.addEventListener("visibilitychange", pause);
+    void import("gsap").then(({ default: gsap }) => {
+      if (!active) return;
+      media = gsap.matchMedia();
+      media.add("(prefers-reduced-motion: no-preference)", () => {
+        const context = gsap.context(() => {
+          function startPerfectAnimation() {
+            const cursor = scope.querySelector<HTMLElement>("#magic-cursor")!;
+            const btnSpeed = scope.querySelector<HTMLElement>("#btn-speed")!;
+            const btnDone = scope.querySelector<HTMLElement>("#btn-done")!;
+            const btnCode = scope.querySelector<HTMLElement>("#btn-code")!;
+            const badge = scope.querySelector<HTMLElement>("#floating-badge")!;
+            const container = scope;
+            const speedCount = scope.querySelector<HTMLElement>("#speed-count")!;
+            const getPos = (el: HTMLElement) => {
+              const rect = el.getBoundingClientRect();
+              const contRect = container.getBoundingClientRect();
+              return {
+                x: rect.left - contRect.left + rect.width / 2,
+                y: rect.top - contRect.top + rect.height / 2,
+              };
             };
-          };
-          const tl = gsap.timeline({ repeat: -1, repeatDelay: 1.5 });
-          tl.set(cursor, { opacity: 0, x: 500, y: 400 })
-            .set(badge, { opacity: 0, y: 30, scale: 0.8 })
-            .set(["#line1", "#line2", "#line3"], {
-              width: 0,
-              borderRight: () => `2px solid ${themeColor("brand-light")}`,
-            })
-            .set("#profile-img", { rotation: -45, scale: 0.5 });
-          tl.to("#line1", { width: "100%", duration: 1, ease: "steps(25)" })
-            .set("#line1", { borderRight: "none" })
-            .to("#line2", { width: "100%", duration: 1, ease: "steps(30)" })
-            .set("#line2", { borderRight: "none" })
-            .to("#line3", { width: "100%", duration: 0.8, ease: "steps(20)" })
-            .to({}, { duration: 0.5 });
-          const posSpeed = getPos(btnSpeed);
-          tl.to(cursor, { opacity: 1, duration: 0.5 })
-            .to(cursor, {
-              x: posSpeed.x,
-              y: posSpeed.y - 73,
-              duration: 1.2,
+            const tl = gsap.timeline({ repeat: -1, repeatDelay: 1.5 });
+            timeline = tl;
+            pause();
+            tl.set(cursor, { opacity: 0, x: 500, y: 400 })
+              .set(badge, { opacity: 0, y: 30, scale: 0.8 })
+              .set(["#line1", "#line2", "#line3"], {
+                width: 0,
+                borderRight: () => `2px solid ${themeColor("brand-light")}`,
+              })
+              .set("#profile-img", { rotation: -45, scale: 0.5 });
+            tl.to("#line1", { width: "100%", duration: 1, ease: "steps(25)" })
+              .set("#line1", { borderRight: "none" })
+              .to("#line2", { width: "100%", duration: 1, ease: "steps(30)" })
+              .set("#line2", { borderRight: "none" })
+              .to("#line3", { width: "100%", duration: 0.8, ease: "steps(20)" })
+              .to({}, { duration: 0.5 });
+            const posSpeed = getPos(btnSpeed);
+            tl.to(cursor, { opacity: 1, duration: 0.5 })
+              .to(cursor, {
+                x: posSpeed.x,
+                y: posSpeed.y - 73,
+                duration: 1.2,
+                ease: "power3.inOut",
+              })
+              .to(btnSpeed, { scale: 0.8, duration: 0.1 })
+              .to(btnSpeed, {
+                scale: 1,
+                duration: 0.1,
+                backgroundColor: () => themeColor("brand-light"),
+                color: () => themeColor("black"),
+              })
+              .to(
+                btnCode,
+                {
+                  backgroundColor: () => themeColor("white", 0.05),
+                  color: () => themeColor("white", 0.2),
+                },
+                "-=0.2",
+              )
+              .to("#state-1", { opacity: 0, y: -20, duration: 0.4 })
+              .to("#state-2", { opacity: 1, y: 0, duration: 0.4 }, "-=0.2")
+              .to(speedCount, {
+                innerText: 99,
+                duration: 1.5,
+                snap: { innerText: 1 },
+                ease: "power2.out",
+              })
+              .to({}, { duration: 1 });
+            const posDone = getPos(btnDone);
+            tl.to(cursor, {
+              x: posDone.x,
+              y: posDone.y - 73,
+              duration: 1,
               ease: "power3.inOut",
             })
-            .to(btnSpeed, { scale: 0.8, duration: 0.1 })
-            .to(btnSpeed, {
-              scale: 1,
-              duration: 0.1,
-              backgroundColor: () => themeColor("brand-light"),
-              color: () => themeColor("black"),
-            })
-            .to(
-              btnCode,
-              {
-                backgroundColor: () => themeColor("white", 0.05),
-                color: () => themeColor("white", 0.2),
-              },
-              "-=0.2",
-            )
-            .to("#state-1", { opacity: 0, y: -20, duration: 0.4 })
-            .to("#state-2", { opacity: 1, y: 0, duration: 0.4 }, "-=0.2")
-            .to(speedCount, {
-              innerText: 99,
-              duration: 1.5,
-              snap: { innerText: 1 },
-              ease: "power2.out",
-            })
-            .to({}, { duration: 1 });
-          const posDone = getPos(btnDone);
-          tl.to(cursor, {
-            x: posDone.x,
-            y: posDone.y - 73,
-            duration: 1,
-            ease: "power3.inOut",
-          })
-            .to(btnDone, { scale: 0.8, duration: 0.1 })
-            .to(btnDone, {
-              scale: 1,
-              duration: 0.1,
-              backgroundColor: () => themeColor("brand-light"),
-              color: () => themeColor("black"),
-            })
-            .to(
-              btnSpeed,
-              {
-                backgroundColor: () => themeColor("white", 0.05),
-                color: () => themeColor("white", 0.2),
-              },
-              "-=0.2",
-            )
-            .to("#state-2", { opacity: 0, y: -20, duration: 0.4 })
-            .to("#state-3", { opacity: 1, duration: 0.1 })
-            .to("#profile-img", {
-              scale: 1,
-              rotation: 0,
-              duration: 0.8,
-              ease: "back.out(1.7)",
-            })
-            .from(
-              "#success-text",
-              { opacity: 0, y: 10, duration: 0.4 },
-              "-=0.4",
-            )
-            .to(
-              badge,
-              {
-                opacity: 1,
-                y: 0,
+              .to(btnDone, { scale: 0.8, duration: 0.1 })
+              .to(btnDone, {
                 scale: 1,
-                duration: 0.6,
-                ease: "elastic.out(1, 0.7)",
-                onComplete: () => badge.classList.add("badge-glow"),
-              },
-              "-=0.3",
-            )
-            .to(badge, {
-              y: -10,
-              duration: 1.5,
-              repeat: 1,
-              yoyo: !0,
-              ease: "sine.inOut",
-            })
-            .to({}, { duration: 1.5 });
-          tl.to([cursor, badge, "#state-3"], { opacity: 0, duration: 0.5 })
-            .set(btnCode, {
-              backgroundColor: () => themeColor("brand-light"),
-              color: () => themeColor("black"),
-            })
-            .set(btnDone, {
-              backgroundColor: () => themeColor("white", 0.05),
-              color: () => themeColor("white", 0.2),
-            })
-            .set("#state-1", { opacity: 1, y: 0 })
-            .set(speedCount, { innerText: 0 })
-            .call(() => badge.classList.remove("badge-glow"));
-        }
-        startPerfectAnimation();
-      }, scope);
-      return () => context.revert();
+                duration: 0.1,
+                backgroundColor: () => themeColor("brand-light"),
+                color: () => themeColor("black"),
+              })
+              .to(
+                btnSpeed,
+                {
+                  backgroundColor: () => themeColor("white", 0.05),
+                  color: () => themeColor("white", 0.2),
+                },
+                "-=0.2",
+              )
+              .to("#state-2", { opacity: 0, y: -20, duration: 0.4 })
+              .to("#state-3", { opacity: 1, duration: 0.1 })
+              .to("#profile-img", {
+                scale: 1,
+                rotation: 0,
+                duration: 0.8,
+                ease: "back.out(1.7)",
+              })
+              .from(
+                "#success-text",
+                { opacity: 0, y: 10, duration: 0.4 },
+                "-=0.4",
+              )
+              .to(
+                badge,
+                {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  duration: 0.6,
+                  ease: "elastic.out(1, 0.7)",
+                  onComplete: () => badge.classList.add("badge-glow"),
+                },
+                "-=0.3",
+              )
+              .to(badge, {
+                y: -10,
+                duration: 1.5,
+                repeat: 1,
+                yoyo: !0,
+                ease: "sine.inOut",
+              })
+              .to({}, { duration: 1.5 });
+            tl.to([cursor, badge, "#state-3"], { opacity: 0, duration: 0.5 })
+              .set(btnCode, {
+                backgroundColor: () => themeColor("brand-light"),
+                color: () => themeColor("black"),
+              })
+              .set(btnDone, {
+                backgroundColor: () => themeColor("white", 0.05),
+                color: () => themeColor("white", 0.2),
+              })
+              .set("#state-1", { opacity: 1, y: 0 })
+              .set(speedCount, { innerText: 0 })
+              .call(() => badge.classList.remove("badge-glow"));
+          }
+          startPerfectAnimation();
+        }, scope);
+        return () => context.revert();
+      });
     });
-    return () => media.revert();
+    return () => {
+      active = false;
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", pause);
+      media?.revert();
+    };
   }, []);
   return (
     <div

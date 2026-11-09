@@ -1,98 +1,64 @@
 import type { Metadata } from "next";
-import { cacheLife } from "next/cache";
 import { Suspense } from "react";
-import { notFound } from "next/navigation";
-import PageHero from "@/components/PageHero";
-import ServiceProcess, { ServiceProcessSkeleton } from "@/components/services/ServiceProcess";
+import BrowserCachedServiceDetail from "@/components/services/BrowserCachedServiceDetail";
 import ServiceHeroSkeleton from "@/components/services/ServiceHeroSkeleton";
-import SelectedWorks from "@/components/home/SelectedWorks";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
-import {
-  getServicePath,
-  serviceDetailLayout,
-} from "@/lib/service-details";
-import { getAllServices, getServiceDetail } from "@/services/services";
-import { plainText } from "@/lib/plain-text";
-import { oneMonthCachePolicy } from "@/lib/cache-policy";
+import { ServiceProcessSkeleton } from "@/components/services/ServiceProcess";
+import SelectedWorksSkeleton from "@/components/home/SelectedWorksSkeleton";
+import FeedbackSkeleton, { FeedbackSummarySkeleton } from "@/components/home/FeedbackSkeleton";
+import BrowserCachedHomeData from "@/components/home/BrowserCachedHomeData";
+import { getServicePath } from "@/lib/service-details";
 
 type ServicePageProps = {
   params: Promise<{ serviceName: string }>;
 };
 
-export async function generateStaticParams() {
-  const services = await getAllServices();
-  return services.map((service) => ({ serviceName: service.slug }));
-}
-
 export async function generateMetadata({
   params,
 }: ServicePageProps): Promise<Metadata> {
   const { serviceName } = await params;
-  const service = await getServiceDetail(serviceName);
-  if (!service) notFound();
+  const title = serviceName
+    .split(/[-_]+/)
+    .filter(Boolean)
+    .map((part) => {
+      if (part.toLowerCase() === "wordpress") return "WordPress";
+      if (part.toLowerCase() === "seo") return "SEO";
+      return part[0].toUpperCase() + part.slice(1);
+    })
+    .join(" ");
 
   return {
-    title: plainText(service.title.rendered),
-    description: plainText(
-      service.service_data?.short_intro ||
-        service.service_data?.description ||
-        service.content.rendered,
-    ).slice(0, 160),
-    alternates: { canonical: getServicePath(service.slug) },
+    title,
+    description: `Explore our ${title.toLowerCase()} service.`,
+    alternates: { canonical: getServicePath(serviceName) },
   };
 }
 
-async function CachedServiceContent({ serviceName }: { serviceName: string }) {
-  "use cache";
-  cacheLife(oneMonthCachePolicy);
-
-  const service = await getServiceDetail(serviceName);
-  if (!service) return null;
-
-  return (
-    <>
-      <PageHero
-        variant="service"
-        badge={serviceDetailLayout.hero.badge}
-        title={plainText(service.title.rendered)}
-        description={plainText(
-          service.service_data?.short_intro ||
-            service.service_data?.description ||
-            service.content.rendered,
-        )}
-        stats={(service.service_data?.trust_indicators ?? []).map((indicator) => ({
-          value: plainText(indicator.heading),
-          label: plainText(indicator.sub_heading),
-        }))}
-      />
-      <ServiceProcess steps={service.service_data?.process_steps ?? []} />
-    </>
-  );
-}
-
-async function ServiceContent({ params }: ServicePageProps) {
+async function ServiceDetails({ params }: ServicePageProps) {
   const { serviceName } = await params;
-  const service = await getServiceDetail(serviceName);
-  if (!service) notFound();
-
-  return <CachedServiceContent serviceName={serviceName} />;
+  return <>
+    <BrowserCachedServiceDetail slug={serviceName} />
+    <BrowserCachedHomeData showServices={false} />
+  </>;
 }
 
 export default function ServiceDetailsPage({ params }: ServicePageProps) {
   return (
-    <>
-      <Suspense
-        fallback={
-          <>
-            <ServiceHeroSkeleton />
-            <ServiceProcessSkeleton />
-          </>
-        }
-      >
-        <ServiceContent params={params} />
-      </Suspense>
-      <SelectedWorks />
-      <TestimonialsSection />
-    </>
+    <Suspense
+      fallback={
+        <>
+          <ServiceHeroSkeleton />
+          <ServiceProcessSkeleton />
+          <SelectedWorksSkeleton />
+          <section className="relative bg-white px-6 py-24 lg:py-40">
+            <div className="mx-auto max-w-7xl">
+              <FeedbackSummarySkeleton />
+              <FeedbackSkeleton />
+            </div>
+          </section>
+        </>
+      }
+    >
+      <ServiceDetails params={params} />
+    </Suspense>
   );
 }

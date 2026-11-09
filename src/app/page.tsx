@@ -1,33 +1,18 @@
+import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
-import ServicesSection from "@/components/ServicesSection";
-import SelectedWorks from "@/components/home/SelectedWorks";
+import BrowserCachedHomeData from "@/components/home/BrowserCachedHomeData";
 import TechnologySection from "@/components/home/TechnologySection";
 import StatsSection from "@/components/home/StatsSection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
-import { Metadata } from "next";
-import serviceData from "@/data/services.json";
-import { cacheLife } from "next/cache";
-import { oneMonthCachePolicy } from "@/lib/cache-policy";
 
 export const metadata: Metadata = { title: { absolute: "Prodeveloper_2" } };
 
-export default async function Home () {
-  "use cache";
-  cacheLife(oneMonthCachePolicy);
-
+export default function Home() {
   return (
     <>
       <Hero />
-      <ServicesSection
-        initialServices={[]}
-        source="featured"
-        useCachedData={false}
-        viewAll={serviceData.home.viewAll}
-      />
-      <SelectedWorks />
+      <BrowserCachedHomeData />
       <TechnologySection />
       <StatsSection />
-      <TestimonialsSection />
     </>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
-import gsap from "gsap";
+import type gsap from "gsap";
 
 export function StatsMotion({ children }: { children: ReactNode }) {
   const rootRef = useRef<HTMLElement>(null);
@@ -14,7 +14,7 @@ export function StatsMotion({ children }: { children: ReactNode }) {
     let media: ReturnType<typeof gsap.matchMedia> | undefined;
 
     // ScrollTrigger must initialize after hydration because it measures the page.
-    import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+    Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(([{ default: gsap }, { ScrollTrigger }]) => {
       if (!active) return;
 
       gsap.registerPlugin(ScrollTrigger);

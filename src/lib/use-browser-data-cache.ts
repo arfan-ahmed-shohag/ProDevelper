@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 
 const browserCacheLifetime = 30 * 24 * 60 * 60 * 1000;
-const browserRefreshAfter = 5 * 60 * 1000;
 const pendingRequests = new Map<string, Promise<unknown>>();
 
 type CacheEntry<T> = {
@@ -19,7 +18,7 @@ export function readBrowserDataCache<T>(key: string): CacheEntry<T> | null {
     const entry = JSON.parse(raw) as CacheEntry<T>;
     if (
       !Number.isFinite(entry.updatedAt) ||
-      Date.now() - entry.updatedAt > browserCacheLifetime
+      Date.now() - entry.updatedAt >= browserCacheLifetime
     ) {
       window.localStorage.removeItem(key);
       return null;
@@ -54,7 +53,7 @@ export function useBrowserDataCache<T>(
   key: string,
   initialData: T,
   load: () => Promise<T>,
-  refreshAfter = browserRefreshAfter,
+  refreshAfter = browserCacheLifetime,
   refreshOnFocus = false,
   useCachedData = true,
 ) {

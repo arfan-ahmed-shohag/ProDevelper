@@ -7,6 +7,15 @@ export type ShowcaseSelection = ShowcaseFilterOption & {
   taxonomy: ShowcaseFilterGroup["taxonomy"];
 };
 
+function normalizeFilterIdentifier(value: string) {
+  return value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]/g, "");
+}
+
 export function parseShowcaseFilters(
   filters: string,
   groups: ShowcaseFilterGroup[],
@@ -17,10 +26,17 @@ export function parseShowcaseFilters(
     if (separator < 0) continue;
     const taxonomy = entry.slice(0, separator);
     if (taxonomy !== "industry-type" && taxonomy !== "functionality") continue;
-    const slugs = new Set(entry.slice(separator + 1).split(","));
+    const identifiers = entry.slice(separator + 1).split(",").map((item) => item.trim());
+    const normalizedIdentifiers = new Set(identifiers.map(normalizeFilterIdentifier));
     const group = groups.find((item) => item.taxonomy === taxonomy);
     for (const option of group?.options ?? []) {
-      if (slugs.has(option.slug)) selected.push({ ...option, taxonomy });
+      if (
+        identifiers.includes(option.slug) ||
+        normalizedIdentifiers.has(normalizeFilterIdentifier(option.slug)) ||
+        normalizedIdentifiers.has(normalizeFilterIdentifier(option.label))
+      ) {
+        selected.push({ ...option, taxonomy });
+      }
     }
   }
   return selected;

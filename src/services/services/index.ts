@@ -1,13 +1,16 @@
 "use server"
 
-import { cacheLife } from "next/cache";
-import { oneMonthCachePolicy } from "@/lib/cache-policy";
+import { cacheLife, cacheTag } from "next/cache";
+import { wordpressCachePolicy } from "@/lib/cache-policy";
 import { toServiceCard, type ServiceCardData } from "@/lib/service-card";
+import { wordpressJson, wordpressUrl } from "@/lib/wordpress";
 
 export type ServiceProcessStep = {
     title: string;
     text: string;
     image?: string | null;
+    image_width?: number;
+    image_height?: number;
 };
 
 export type ServiceResponse = {
@@ -28,46 +31,49 @@ export type ServiceResponse = {
 
 export const featuredServices = async (): Promise<ServiceResponse[]> => {
     "use cache";
-    cacheLife(oneMonthCachePolicy);
+    cacheLife(wordpressCachePolicy);
+    cacheTag("wp:services");
 
-    const res = await fetch(`${process.env.NEXT_BASE_URL}/service?services-categories=118&per_page=6&orderby=date&order=desc`);
-    if (!res.ok) {
-        throw new Error("Failed to fetch featured services");
-    }
-
-    return res.json();
+    const params = new URLSearchParams({
+        "services-categories": "118",
+        per_page: "6",
+        orderby: "date",
+        order: "desc",
+        _fields: "slug,title,content,service_data",
+    });
+    return wordpressJson<ServiceResponse[]>(wordpressUrl("service", params));
 }
 
 export const getAllServices = async (): Promise<ServiceResponse[]> => {
     "use cache";
-    cacheLife(oneMonthCachePolicy);
+    cacheLife(wordpressCachePolicy);
+    cacheTag("wp:services");
 
-    const res = await fetch(
-        `${process.env.NEXT_BASE_URL}/service?per_page=100&_fields=slug,title,content,service_data`,
-    );
-    if (!res.ok) {
-        throw new Error("Failed to fetch services");
-    }
-
-    return res.json();
+    return wordpressJson<ServiceResponse[]>(wordpressUrl("service", new URLSearchParams({
+        per_page: "100", _fields: "slug,title,content,service_data",
+    })));
 }
 
 export const getServiceDetail = async (serviceSlug: string): Promise<ServiceResponse | null> => {
     "use cache";
-    cacheLife(oneMonthCachePolicy);
+    cacheLife(wordpressCachePolicy);
+    cacheTag("wp:services", `wp:service:${serviceSlug}`);
 
-    const services = await getAllServices();
-    return services.find((service) => service.slug === serviceSlug) ?? null;
+    // This small dictionary is already requested by generateStaticParams and
+    // the services page. Reuse it instead of issuing a request per prerender.
+    return (await getAllServices()).find(service => service.slug === serviceSlug) ?? null;
 }
 
 export const getFeaturedServiceCards = async (): Promise<ServiceCardData[]> => {
     "use cache";
-    cacheLife(oneMonthCachePolicy);
+    cacheLife(wordpressCachePolicy);
+    cacheTag("wp:services");
     return (await featuredServices()).map(toServiceCard);
 };
 
 export const getAllServiceCards = async (): Promise<ServiceCardData[]> => {
     "use cache";
-    cacheLife(oneMonthCachePolicy);
+    cacheLife(wordpressCachePolicy);
+    cacheTag("wp:services");
     return (await getAllServices()).map(toServiceCard);
 };

@@ -1,7 +1,8 @@
 import PageHero from "@/components/PageHero";
 import ServicesSection from "@/components/ServicesSection";
-import { Metadata } from "next";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
+import type { Metadata } from "next";
+import BrowserCachedHomeData from "@/components/home/BrowserCachedHomeData";
+import IndustriesWeServe from "@/components/services/IndustriesWeServe";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -35,7 +36,8 @@ export default function ServicesPage() {
         source="all"
         initialCount={12}
       />
-      <TestimonialsSection />
+      <IndustriesWeServe />
+      <BrowserCachedHomeData showServices={false} showProjects={false} />
     </>
   );
 }

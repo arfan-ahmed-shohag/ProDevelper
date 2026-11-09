@@ -1,11 +1,11 @@
-"use server";
+import "server-only";
 
-import { cacheLife } from "next/cache";
-import { oneMonthCachePolicy } from "@/lib/cache-policy";
-import { buildShowcaseFilterGroups } from "@/lib/showcase-catalog";
+import { cacheLife, cacheTag } from "next/cache";
+import { wordpressCachePolicy } from "@/lib/cache-policy";
+import { plainText } from "@/lib/plain-text";
+import { fetchWordPress, wordpressUrl, wordpressJson, WordPressError } from "@/lib/wordpress";
+import { normalizeShowcaseQuery, showcasePageSize } from "@/lib/showcase-query";
 
-const pageSize = 10;
-const requestTimeoutMs = 8000;
 export type ShowcaseKind = "projects" | "demos";
 const showcaseEndpoint: Record<ShowcaseKind, string> = {
   projects: "p-showcase",
@@ -43,7 +43,7 @@ export type ShowcaseFilterOption = {
   id: number;
   label: string;
   slug: string;
-  count: number;
+  count: number | null;
 };
 
 export type ShowcaseFilterGroup = {
@@ -52,128 +52,18 @@ export type ShowcaseFilterGroup = {
   options: ShowcaseFilterOption[];
 };
 
+export type ShowcaseFilterData = {
+  groups: ShowcaseFilterGroup[];
+  demoTagNames: Record<number, string>;
+  countsAvailable?: boolean;
+};
+
 export type ProjectShowcaseResult = {
   projects: ProjectResponse[];
   total: number;
   totalPages: number;
+  refreshedAt: number;
 };
-
-function apiUrl(path: string, params?: URLSearchParams) {
-  const baseUrl = process.env.NEXT_BASE_URL;
-  if (!baseUrl) throw new Error("NEXT_BASE_URL is not configured");
-  return `${baseUrl}/${path}${params?.size ? `?${params}` : ""}`;
-}
-
-async function fetchWordPress(url: string, errorMessage: string) {
-  let lastError: unknown;
-
-  for (let attempt = 0; attempt < 2; attempt += 1) {
-    let response: Response;
-    try {
-      response = await fetch(url, { signal: AbortSignal.timeout(requestTimeoutMs) });
-    } catch (error) {
-      lastError = error;
-      if (attempt === 0) {
-        await new Promise((resolve) => setTimeout(resolve, 250));
-        continue;
-      }
-      break;
-    }
-
-    if (response.ok) return response;
-
-    lastError = new Error(`${errorMessage} (${response.status})`);
-    if (response.status < 500 && response.status !== 429) break;
-    if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 250));
-  }
-
-  throw lastError instanceof Error ? lastError : new Error(errorMessage);
-}
-
-async function fetchPagedCollection<T>(
-  path: string,
-  params: URLSearchParams,
-  errorMessage: string,
-) {
-  const firstParams = new URLSearchParams(params);
-  firstParams.set("page", "1");
-  const firstResponse = await fetchWordPress(apiUrl(path, firstParams), errorMessage);
-
-  const firstPage = (await firstResponse.json()) as T[];
-  const totalPages = Number(firstResponse.headers.get("X-WP-TotalPages") || 1);
-  const remainingPages = await Promise.all(
-    Array.from({ length: Math.max(0, totalPages - 1) }, async (_, index) => {
-      const pageParams = new URLSearchParams(firstParams);
-      pageParams.set("page", String(index + 2));
-      const response = await fetchWordPress(apiUrl(path, pageParams), errorMessage);
-      return (await response.json()) as T[];
-    }),
-  );
-
-  return [...firstPage, ...remainingPages.flat()];
-}
-
-export async function getShowcaseCatalog(kind: ShowcaseKind): Promise<ProjectResponse[]> {
-  "use cache";
-  cacheLife(oneMonthCachePolicy);
-
-  const params = new URLSearchParams({
-    per_page: "100",
-    orderby: "date",
-    order: "desc",
-    _embed: "wp:featuredmedia,wp:term",
-    _fields:
-      "id,slug,date,title,link,industry-type,functionality,demo-tags,tag_list,project_data,_links,_embedded",
-  });
-
-  const posts = await fetchPagedCollection<ProjectResponse>(
-    showcaseEndpoint[kind],
-    params,
-    `Failed to fetch ${kind} catalog`,
-  );
-
-  return posts.map((post) => ({
-    id: post.id,
-    slug: post.slug,
-    date: post.date,
-    title: post.title,
-    link: post.link,
-    "industry-type": post["industry-type"] ?? [],
-    functionality: post.functionality ?? [],
-    "demo-tags": post["demo-tags"] ?? [],
-    tag_list: post.tag_list ?? [],
-    project_data: post.project_data
-      ? {
-          website_link: post.project_data.website_link,
-          featured_image: post.project_data.featured_image,
-        }
-      : undefined,
-    _embedded: {
-      "wp:featuredmedia": (post._embedded?.["wp:featuredmedia"] ?? []).map((media) => ({
-        source_url: media.source_url,
-        media_details: media.media_details
-          ? {
-              width: media.media_details.width,
-              height: media.media_details.height,
-            }
-          : undefined,
-      })),
-      "wp:term": (post._embedded?.["wp:term"] ?? []).map((group) =>
-        group.map(({ id, name, slug, taxonomy }) => ({ id, name, slug, taxonomy })),
-      ),
-    },
-  }));
-}
-
-export async function getShowcaseFilters(kind: ShowcaseKind): Promise<ShowcaseFilterGroup[]> {
-  "use cache";
-  cacheLife(oneMonthCachePolicy);
-  return buildShowcaseFilterGroups(kind, await getShowcaseCatalog(kind));
-}
-
-export async function getProjectShowcaseFilters() {
-  return getShowcaseFilters("projects");
-}
 
 function parseFilterIds(filters: string) {
   const selected: { taxonomy: ShowcaseFilterGroup["taxonomy"]; id: number }[] = [];
@@ -190,6 +80,73 @@ function parseFilterIds(filters: string) {
   return selected;
 }
 
+type ShowcaseTaxonomyTerm = { id: number; name: string; slug: string };
+
+async function getTaxonomyTerms(taxonomy: string): Promise<ShowcaseTaxonomyTerm[]> {
+  "use cache";
+  cacheLife(wordpressCachePolicy);
+  cacheTag("wp:showcase:projects:filters", "wp:showcase:demos:filters");
+  const terms: ShowcaseTaxonomyTerm[] = [];
+  // Only paginate taxonomy dictionaries, never the showcase post collection.
+  for (let page = 1; page <= 20; page++) {
+    const response = await fetchWordPress(wordpressUrl(taxonomy, new URLSearchParams({
+      per_page: "100", page: String(page), hide_empty: "false", _fields: "id,name,slug",
+    })));
+    terms.push(...await response.json() as ShowcaseTaxonomyTerm[]);
+    if (page >= Number(response.headers.get("X-WP-TotalPages") || 1)) return terms;
+  }
+  throw new Error("Taxonomy exceeds the supported dictionary size");
+}
+
+async function getScopedFilters(kind: ShowcaseKind): Promise<ShowcaseFilterData | null> {
+  "use cache";
+  cacheLife(wordpressCachePolicy);
+  cacheTag(`wp:showcase:${kind}:filters`);
+  const base = process.env.NEXT_BASE_URL?.replace(/\/$/, "");
+  const endpoint = process.env.WORDPRESS_SHOWCASE_FILTERS_URL ||
+    (base?.endsWith("/wp/v2") ? `${base.slice(0, -6)}/pro-developer/v1/showcase-filters` : "");
+  if (!endpoint) return null;
+  try {
+    const url = new URL(endpoint);
+    url.searchParams.set("kind", kind);
+    const data = await wordpressJson<ShowcaseFilterData>(url.href);
+    if (!Array.isArray(data.groups) || !data.groups.every(group =>
+      ["industry-type", "functionality"].includes(group.taxonomy) && Array.isArray(group.options) &&
+      group.options.every(option => Number.isInteger(option.id) && typeof option.label === "string" &&
+        typeof option.slug === "string" && typeof option.count === "number" && option.count >= 0)
+    )) throw new Error("Invalid scoped filter response");
+    return { ...data, countsAvailable: true };
+  } catch (error) {
+    if (error instanceof WordPressError && error.status === 404) return null;
+    throw error;
+  }
+}
+
+export async function getShowcaseFilters(kind: ShowcaseKind): Promise<ShowcaseFilterData> {
+  "use cache";
+  cacheLife(wordpressCachePolicy);
+  cacheTag(`wp:showcase:${kind}:filters`);
+  const scoped = await getScopedFilters(kind);
+  if (scoped) return scoped;
+  const [industries, functionalities, demoTags] = await Promise.all([
+    getTaxonomyTerms("industry-type"), getTaxonomyTerms("functionality"),
+    kind === "demos" ? getTaxonomyTerms("demo-tags") : Promise.resolve([]),
+  ]);
+  // WP term.count can include other post types. Until the scoped endpoint is
+  // installed, retain all filter controls and omit counts rather than inventing them.
+  const options = (terms: ShowcaseTaxonomyTerm[]) => terms.map(term => ({
+    id: term.id, label: plainText(term.name), slug: term.slug, count: null,
+  })).sort((a, b) => a.label.localeCompare(b.label));
+  return {
+    countsAvailable: false,
+    groups: [
+      { taxonomy: "industry-type", name: kind === "demos" ? "Industry Type" : "Industry", options: options(industries) },
+      { taxonomy: "functionality", name: "Functionality", options: options(functionalities) },
+    ],
+    demoTagNames: Object.fromEntries(demoTags.map(term => [term.id, plainText(term.name)])),
+  };
+}
+
 async function fetchProjectPage(
   kind: ShowcaseKind,
   page: number,
@@ -197,41 +154,44 @@ async function fetchProjectPage(
   search = "",
 ): Promise<ProjectShowcaseResult> {
   const params = new URLSearchParams({
-    per_page: String(pageSize),
+    per_page: String(showcasePageSize),
     page: String(page),
     orderby: "date",
     order: "desc",
-    _embed: "wp:featuredmedia,wp:term",
-    _fields: "id,title,link,industry-type,functionality,tag_list,project_data,acf,_links,_embedded",
+    _embed: "wp:featuredmedia",
+    _fields: "id,title,link,industry-type,functionality,demo-tags,tag_list,project_data.featured_image,project_data.website_link,acf.website-link,_links,_embedded.wp:featuredmedia.source_url,_embedded.wp:featuredmedia.media_details.width,_embedded.wp:featuredmedia.media_details.height",
   });
   if (search) params.set("search", search);
   for (const filter of selected) params.append(`${filter.taxonomy}[]`, String(filter.id));
 
   const response = await fetchWordPress(
-    apiUrl(showcaseEndpoint[kind], params),
-    `Failed to fetch ${kind} showcase`,
+    wordpressUrl(showcaseEndpoint[kind], params),
   );
   const projects = (await response.json()) as ProjectResponse[];
+  if (!Array.isArray(projects) || projects.length > showcasePageSize ||
+    !projects.every(project => Number.isInteger(project.id) && typeof project.title?.rendered === "string")) {
+    throw new Error("Invalid WordPress showcase response");
+  }
   return {
     projects,
+    refreshedAt: Date.now(),
     total: Number(response.headers.get("X-WP-Total") || projects.length),
     totalPages: Number(response.headers.get("X-WP-TotalPages") || 1),
   };
 }
 
-export async function getShowcaseResults(
-  kind: ShowcaseKind,
-  page = 1,
-  search = "",
-  filters = "",
-): Promise<ProjectShowcaseResult> {
+async function cachedShowcasePage(kind: ShowcaseKind, page: number, search: string, filters: string) {
   "use cache";
-  cacheLife(oneMonthCachePolicy);
+  cacheLife(wordpressCachePolicy);
+  cacheTag(`wp:showcase:${kind}`);
+  return fetchProjectPage(kind, page, parseFilterIds(filters), search);
+}
 
-  const normalizedPage = Math.max(1, Math.floor(page));
-  const query = search.trim();
-  const selected = parseFilterIds(filters);
-  return fetchProjectPage(kind, normalizedPage, selected, query);
+export async function getShowcaseResults(
+  kind: ShowcaseKind, page = 1, search = "", filters = "",
+): Promise<ProjectShowcaseResult> {
+  const query = normalizeShowcaseQuery(search, filters);
+  return cachedShowcasePage(kind, Math.min(10000, Math.max(1, Math.floor(page) || 1)), query.search, query.filters);
 }
 
 export async function getProjectShowcaseResults(
@@ -244,14 +204,14 @@ export async function getProjectShowcaseResults(
 
 export const featuredProjects = async (): Promise<ProjectResponse[]> => {
   "use cache";
-  cacheLife(oneMonthCachePolicy);
+  cacheLife(wordpressCachePolicy);
+  cacheTag("wp:showcase:projects", "wp:home:featured-projects");
 
-  const res = await fetch(
-    `${process.env.NEXT_BASE_URL}/p-showcase?project-categories=134&per_page=4&_embed=wp:featuredmedia&_fields=id,title,link,project_data,tag_list,_embedded`,
-  );
-  if (!res.ok) {
-    throw new Error("Failed to fetch featured projects");
-  }
-
-  return res.json();
+  const params = new URLSearchParams({
+    "project-categories": "134",
+    per_page: "4",
+    _embed: "wp:featuredmedia",
+    _fields: "id,title,link,project_data.featured_image,project_data.website_link,acf.website-link,tag_list,_links,_embedded.wp:featuredmedia.source_url,_embedded.wp:featuredmedia.media_details",
+  });
+  return wordpressJson<ProjectResponse[]>(wordpressUrl("p-showcase", params));
 };

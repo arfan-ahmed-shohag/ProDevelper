@@ -1,7 +1,7 @@
 "use client";
 
-import { useLayoutEffect, useRef, type ReactNode } from "react";
-import gsap from "gsap";
+import { useEffect, useRef, type ReactNode } from "react";
+import type gsap from "gsap";
 
 type CollapseProps = {
   open: boolean;
@@ -22,30 +22,34 @@ export function Collapse({
 }: CollapseProps) {
   const rootRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const element = rootRef.current;
     if (!element) return;
 
-    gsap.killTweensOf(element);
-    const currentHeight = element.getBoundingClientRect().height;
-    const currentOpacity = Number.parseFloat(getComputedStyle(element).opacity);
-    const tween = gsap.fromTo(
-      element,
-      { height: currentHeight, opacity: Number.isFinite(currentOpacity) ? currentOpacity : 0 },
-      {
-        height: open ? "auto" : 0,
-        opacity: open ? 1 : 0,
-        duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? 0
-          : duration,
-        ease: "sine.inOut",
-        overwrite: true,
-      },
-    );
+    let active = true;
+    let tween: gsap.core.Tween | undefined;
+    void import("gsap").then(({ default: gsap }) => {
+      if (!active) return;
+      gsap.killTweensOf(element);
+      const currentHeight = element.getBoundingClientRect().height;
+      const currentOpacity = Number.parseFloat(getComputedStyle(element).opacity);
+      tween = gsap.fromTo(
+        element,
+        { height: currentHeight, opacity: Number.isFinite(currentOpacity) ? currentOpacity : 0 },
+        {
+          height: open ? "auto" : 0,
+          opacity: open ? 1 : 0,
+          duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? 0
+            : duration,
+          ease: "sine.inOut",
+          overwrite: true,
+        },
+      );
 
-    return () => {
-      tween.kill();
-    };
+    });
+    return () => { active = false; tween?.kill(); };
+
   }, [open, duration]);
 
   return (

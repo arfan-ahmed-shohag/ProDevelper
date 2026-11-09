@@ -1,13 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useShowcaseData } from "@/lib/use-showcase-data";
+import { requestShowcaseFilters } from "@/lib/showcase-client";
+import { readCachedPages, writeCachedPage } from "@/lib/indexed-page-cache";
 import { Collapse } from "@/components/Collapse";
 import SelectedWorkCard from "@/components/home/SelectedWorkCard";
 import { SelectedWorksGrid } from "@/components/home/SelectedWorksGrid";
-import {
-  buildShowcaseFilterGroups,
-  filterShowcaseCatalog,
-} from "@/lib/showcase-catalog";
 import {
   parseShowcaseFilters,
   serializeShowcaseFilterIds,
@@ -16,339 +15,71 @@ import {
 } from "@/lib/project-showcase";
 import type {
   ProjectResponse,
-  ProjectShowcaseResult,
   ShowcaseKind,
   ShowcaseFilterGroup,
-} from "@/services/projects";
-import {
-  getShowcaseCatalog,
-  getShowcaseResults,
+  ShowcaseFilterData,
 } from "@/services/projects";
 import { ShowcaseCardSkeleton } from "./ShowcaseGallerySkeleton";
 
-const browserCachePrefix = "showcase-results-v3:";
-const browserCacheLifetime = 30 * 24 * 60 * 60 * 1000;
-const browserCacheLimit = 8;
-const browserCatalogPrefix = "showcase-catalog-v4:";
-const browserCatalogLifetime = 30 * 24 * 60 * 60 * 1000;
-const browserCatalogRefreshAfter = 5 * 60 * 1000;
-const showcasePageSize = 10;
-
-type BrowserCacheEntry = {
-  createdAt: number;
-  lastUsedAt: number;
-  result: ProjectShowcaseResult;
-};
-
-type BrowserCatalogEntry = {
-  createdAt: number;
-  projects: ProjectResponse[];
-};
-
-function browserCacheKey(search: string, filters: string) {
-  return `${browserCachePrefix}${encodeURIComponent(
-    JSON.stringify([search.trim().toLocaleLowerCase(), filters]),
-  )}`;
-}
-
-function readBrowserResult(key: string): ProjectShowcaseResult | null {
-  try {
-    const raw = window.localStorage.getItem(key);
-    if (!raw) return null;
-    const entry = JSON.parse(raw) as BrowserCacheEntry;
-    if (Date.now() - entry.createdAt > browserCacheLifetime) {
-      window.localStorage.removeItem(key);
-      return null;
-    }
-    entry.lastUsedAt = Date.now();
-    window.localStorage.setItem(key, JSON.stringify(entry));
-    return entry.result;
-  } catch {
-    return null;
-  }
-}
-
-function writeBrowserResult(key: string, result: ProjectShowcaseResult) {
-  try {
-    const now = Date.now();
-    window.localStorage.setItem(
-      key,
-      JSON.stringify({ createdAt: now, lastUsedAt: now, result } satisfies BrowserCacheEntry),
-    );
-
-    const entries: { key: string; lastUsedAt: number }[] = [];
-    for (let index = 0; index < window.localStorage.length; index += 1) {
-      const storageKey = window.localStorage.key(index);
-      if (!storageKey?.startsWith(browserCachePrefix)) continue;
-      const cached = window.localStorage.getItem(storageKey);
-      if (!cached) continue;
-      const entry = JSON.parse(cached) as BrowserCacheEntry;
-      if (now - entry.createdAt > browserCacheLifetime) {
-        window.localStorage.removeItem(storageKey);
-      } else {
-        entries.push({ key: storageKey, lastUsedAt: entry.lastUsedAt });
-      }
-    }
-    entries
-      .sort((a, b) => b.lastUsedAt - a.lastUsedAt)
-      .slice(browserCacheLimit)
-      .forEach(({ key: oldKey }) => window.localStorage.removeItem(oldKey));
-  } catch {
-    // Continue with server data when browser storage is unavailable or full.
-  }
-}
-
-function browserCatalogKey(kind: ShowcaseKind) {
-  return `${browserCatalogPrefix}${kind}`;
-}
-
-function readBrowserCatalog(kind: ShowcaseKind): BrowserCatalogEntry | null {
-  try {
-    const key = browserCatalogKey(kind);
-    const raw = window.localStorage.getItem(key);
-    if (!raw) return null;
-    const entry = JSON.parse(raw) as BrowserCatalogEntry;
-    if (
-      !Array.isArray(entry.projects) ||
-      !Number.isFinite(entry.createdAt) ||
-      Date.now() - entry.createdAt > browserCatalogLifetime
-    ) {
-      window.localStorage.removeItem(key);
-      return null;
-    }
-    return entry;
-  } catch {
-    return null;
-  }
-}
-
-function writeBrowserCatalog(
-  kind: ShowcaseKind,
-  projects: ProjectResponse[],
-) {
-  try {
-    window.localStorage.setItem(
-      browserCatalogKey(kind),
-      JSON.stringify({ createdAt: Date.now(), projects } satisfies BrowserCatalogEntry),
-    );
-  } catch {
-    // Keep the in-memory catalog available if browser storage is full.
-  }
+function isFilterData(data: unknown): data is ShowcaseFilterData {
+  if (!data || typeof data !== "object") return false;
+  const value = data as ShowcaseFilterData;
+  return Boolean(value.demoTagNames) && typeof value.demoTagNames === "object" &&
+    Object.values(value.demoTagNames).every(name => typeof name === "string") &&
+    Array.isArray(value.groups) && value.groups.every(group =>
+    ["industry-type", "functionality"].includes(group.taxonomy) && Array.isArray(group.options) &&
+    group.options.every(option => Number.isInteger(option.id) && typeof option.slug === "string" && typeof option.label === "string" &&
+      (option.count == null || (Number.isFinite(option.count) && option.count >= 0))));
 }
 
 type ShowcaseGalleryProps = {
   kind: ShowcaseKind;
+  groups: ShowcaseFilterGroup[];
+  demoTagNames?: Record<number, string>;
+  initialFiltersComplete?: boolean;
+  initialProjects: ProjectResponse[];
+  initialTotal: number;
+  initialTotalPages: number;
+  initialRefreshedAt: number;
+  initialError?: string;
   initialSearch?: string;
   initialSelected?: ShowcaseSelection[];
 };
 
 export default function ShowcaseGallery({
   kind,
+  groups,
+  demoTagNames: initialDemoTagNames = {},
+  initialFiltersComplete = false,
+  initialProjects,
+  initialTotal,
+  initialTotalPages,
+  initialRefreshedAt,
+  initialError = "",
   initialSearch = "",
   initialSelected = [],
 }: ShowcaseGalleryProps) {
-  const [filterGroups, setFilterGroups] = useState<ShowcaseFilterGroup[]>([]);
-  const filterGroupsRef = useRef<ShowcaseFilterGroup[]>([]);
+  const [filterGroups, setFilterGroups] = useState(groups);
+  const filterGroupsRef = useRef(groups);
+  const [demoTagNames, setDemoTagNames] = useState(initialDemoTagNames);
   const [search, setSearch] = useState(initialSearch);
   const [appliedSearch, setAppliedSearch] = useState(initialSearch);
+  const [filtersReady, setFiltersReady] = useState(initialFiltersComplete);
+  const [filterError, setFilterError] = useState("");
   const [selected, setSelected] = useState(initialSelected);
   const selectedRef = useRef(initialSelected);
-  const appliedSearchRef = useRef(initialSearch);
-  const currentPageRef = useRef(1);
-  const catalogRef = useRef<ProjectResponse[] | null>(null);
-  const catalogPromiseRef = useRef<Promise<ProjectResponse[] | null> | null>(null);
   const searchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const requestId = useRef(0);
-  const [projects, setProjects] = useState<ProjectResponse[]>([]);
-  const [total, setTotal] = useState(0);
-  const [totalPages, setTotalPages] = useState(0);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [loading, setLoading] = useState(true);
-  const [loadingMore, setLoadingMore] = useState(false);
-  const [error, setError] = useState("");
+  const lastUrlQuery = useRef("");
+  const { projects, total, totalPages, currentPage, loading, loadingMore, error, offline, loadResults: loadData } = useShowcaseData(kind, {
+    projects: initialProjects, total: initialTotal, totalPages: initialTotalPages, refreshedAt: initialRefreshedAt,
+  }, initialError, { search: initialSearch, filters: serializeShowcaseFilterIds(initialSelected) });
+  const loadResults = useCallback((query: string, selection: ShowcaseSelection[], page: number, append: boolean) =>
+    loadData(query, serializeShowcaseFilterIds(selection), page, append), [loadData]);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [filterButtonShown, setFilterButtonShown] = useState(true);
-  const [openGroups, setOpenGroups] = useState<string[]>([]);
-
-  const applyCatalog = useCallback(
-    (catalog: ProjectResponse[]) => {
-      catalogRef.current = catalog;
-      const nextGroups = buildShowcaseFilterGroups(kind, catalog);
-      filterGroupsRef.current = nextGroups;
-      setFilterGroups(nextGroups);
-      setOpenGroups((current) =>
-        current.length ? current : nextGroups.map((group) => group.taxonomy),
-      );
-
-      const urlFilters = new URLSearchParams(window.location.search).get("filters");
-      if (urlFilters) {
-        const urlSelection = parseShowcaseFilters(urlFilters, nextGroups);
-        selectedRef.current = urlSelection;
-        setSelected(urlSelection);
-      }
-
-      requestId.current += 1;
-      const query = appliedSearchRef.current;
-      const selection = selectedRef.current;
-      const matches = filterShowcaseCatalog(catalog, query, selection);
-      const pageCount = Math.ceil(matches.length / showcasePageSize);
-      const page = Math.max(1, Math.min(currentPageRef.current, pageCount || 1));
-      const pageResult = {
-        projects: matches.slice(0, page * showcasePageSize),
-        total: matches.length,
-        totalPages: pageCount,
-      };
-
-      setProjects(pageResult.projects);
-      setTotal(pageResult.total);
-      setTotalPages(pageResult.totalPages);
-      setCurrentPage(page);
-      currentPageRef.current = page;
-      setLoading(false);
-      setLoadingMore(false);
-      setError("");
-
-      writeBrowserResult(
-        browserCacheKey(`${kind}:${query}`, serializeShowcaseFilterIds(selection)),
-        {
-          ...pageResult,
-          projects: pageResult.projects.slice(0, showcasePageSize),
-        },
-      );
-    },
-    [kind],
+  const [openGroups, setOpenGroups] = useState(() =>
+    groups.map((group) => group.taxonomy),
   );
-
-  const loadResults = useCallback(
-    async (
-      query: string,
-      selection: ShowcaseSelection[],
-      page: number,
-      append: boolean,
-    ) => {
-      const thisRequest = ++requestId.current;
-      setError("");
-      const filters = serializeShowcaseFilterIds(selection);
-      const cacheKey = browserCacheKey(`${kind}:${query}`, filters);
-      const browserResult = !append && page === 1 ? readBrowserResult(cacheKey) : null;
-      let catalog = catalogRef.current;
-      if (!catalog && catalogPromiseRef.current) {
-        catalog = await catalogPromiseRef.current.catch(() => null);
-      }
-      if (thisRequest !== requestId.current) return;
-      if (append) {
-        setLoading(false);
-        setLoadingMore(true);
-      } else {
-        setLoadingMore(false);
-        setLoading(
-          !browserResult &&
-            !catalog &&
-            (query.trim().length > 0 || selection.length > 0),
-        );
-      }
-      if (browserResult) {
-        setProjects(browserResult.projects);
-        setTotal(browserResult.total);
-        setTotalPages(browserResult.totalPages);
-        setCurrentPage(1);
-      }
-
-      try {
-        const matches = catalog
-          ? filterShowcaseCatalog(catalog, query, selection)
-          : null;
-        const data = matches
-          ? {
-              projects: matches.slice((page - 1) * showcasePageSize, page * showcasePageSize),
-              total: matches.length,
-              totalPages: Math.ceil(matches.length / showcasePageSize),
-            }
-          : await getShowcaseResults(kind, page, query, filters);
-        if (thisRequest !== requestId.current) return;
-
-        setProjects((current) =>
-          append ? [...current, ...data.projects] : data.projects,
-        );
-        setTotal(data.total);
-        setTotalPages(data.totalPages);
-        setCurrentPage(page);
-        currentPageRef.current = page;
-        if (!append && page === 1) writeBrowserResult(cacheKey, data);
-      } catch (reason) {
-        if (thisRequest !== requestId.current) return;
-        if (!browserResult && !catalog) {
-          setError(
-            reason instanceof Error
-              ? reason.message
-              : "Showcase items could not be loaded. Please try again.",
-          );
-        }
-        if (!append && !browserResult && !catalog) {
-          setProjects([]);
-          setTotal(0);
-          setTotalPages(0);
-        }
-      } finally {
-        if (thisRequest === requestId.current) {
-          setLoading(false);
-          setLoadingMore(false);
-        }
-      }
-    },
-    [kind],
-  );
-
-  useEffect(() => {
-    let disposed = false;
-    catalogRef.current = null;
-    const cached = readBrowserCatalog(kind);
-    let cachedApplyTimer: number | undefined;
-    if (cached) {
-      catalogRef.current = cached.projects;
-      catalogPromiseRef.current = Promise.resolve(cached.projects);
-      cachedApplyTimer = window.setTimeout(() => {
-        if (!disposed) applyCatalog(cached.projects);
-      }, 0);
-    }
-
-    const shouldRefresh = !cached || Date.now() - cached.createdAt > browserCatalogRefreshAfter;
-    let refreshTimer: number | undefined;
-
-    if (shouldRefresh) {
-      const catalogPromise = getShowcaseCatalog(kind);
-      catalogPromiseRef.current = catalogPromise;
-      const startRefresh = () => {
-        void catalogPromise
-          .then((nextCatalog) => {
-            if (disposed) return;
-            writeBrowserCatalog(kind, nextCatalog);
-            applyCatalog(nextCatalog);
-          })
-          .catch((reason: unknown) => {
-            if (disposed || cached) return;
-            setError(
-              reason instanceof Error
-                ? reason.message
-                : "Showcase items could not be loaded. Please try again.",
-            );
-            setLoading(false);
-          });
-      };
-
-      if (cached) {
-        refreshTimer = window.setTimeout(startRefresh, 250);
-      } else {
-        startRefresh();
-      }
-    }
-
-    return () => {
-      disposed = true;
-      if (cachedApplyTimer !== undefined) window.clearTimeout(cachedApplyTimer);
-      if (refreshTimer !== undefined) window.clearTimeout(refreshTimer);
-    };
-  }, [applyCatalog, kind]);
 
   const updateUrl = (query: string, selection: ShowcaseSelection[]) => {
     const params = new URLSearchParams();
@@ -368,11 +99,9 @@ export default function ShowcaseGallery({
     if (searchTimer.current) clearTimeout(searchTimer.current);
     setSearch(query);
     setAppliedSearch(query);
-    appliedSearchRef.current = query;
     setSelected(selection);
     selectedRef.current = selection;
-    setCurrentPage(1);
-    currentPageRef.current = 1;
+    lastUrlQuery.current = JSON.stringify([query, serializeShowcaseFilterIds(selection)]);
     updateUrl(query, selection);
     void loadResults(query, selection, 1, false);
   };
@@ -416,50 +145,65 @@ export default function ShowcaseGallery({
   }, [filtersOpen]);
 
   useEffect(() => {
-    const syncFromUrl = (loadDefaultState: boolean) => {
+    const syncFromUrl = () => {
       if (searchTimer.current) clearTimeout(searchTimer.current);
       const params = new URLSearchParams(window.location.search);
       const query = params.get("search") || "";
       const filters = params.get("filters") || "";
+      // Slug-based URLs must wait for the dictionary; never send an unfiltered
+      // request first and accidentally replace the selected combination.
+      if (filters && !filtersReady) return;
       const nextSelection = parseShowcaseFilters(filters, filterGroupsRef.current);
       setSearch(query);
       setAppliedSearch(query);
-      appliedSearchRef.current = query;
       setSelected(nextSelection);
       selectedRef.current = nextSelection;
-      setCurrentPage(1);
-      currentPageRef.current = 1;
-      const cacheKey = browserCacheKey(`${kind}:${query}`, serializeShowcaseFilterIds(nextSelection));
-      const cached = readBrowserResult(cacheKey);
+      const signature = JSON.stringify([query, serializeShowcaseFilterIds(nextSelection)]);
+      if (lastUrlQuery.current === signature) return;
+      lastUrlQuery.current = signature;
+      void loadResults(query, nextSelection, 1, false);
+    };
+    syncFromUrl();
+    window.addEventListener("popstate", syncFromUrl);
+    return () => window.removeEventListener("popstate", syncFromUrl);
+  }, [filtersReady, filterGroups, loadResults]);
 
-      if (cached) {
-        setProjects(cached.projects);
-        setTotal(cached.total);
-        setTotalPages(cached.totalPages);
-      } else if (query || filters) {
-        setProjects([]);
-        setTotal(0);
-        setTotalPages(0);
+  useEffect(() => {
+    const controller = new AbortController();
+    const scope = `filters:${kind}`;
+    const apply = (data: ShowcaseFilterData) => {
+      if (controller.signal.aborted) return;
+      filterGroupsRef.current = data.groups;
+      setFilterGroups(current => JSON.stringify(current) === JSON.stringify(data.groups) ? current : data.groups);
+      setDemoTagNames(current => JSON.stringify(current) === JSON.stringify(data.demoTagNames) ? current : data.demoTagNames);
+      setOpenGroups(current => current.length ? current : data.groups.map(group => group.taxonomy));
+      setFiltersReady(true);
+      setFilterError("");
+    };
+    const refresh = async () => {
+      const cached = await readCachedPages(scope, isFilterData);
+      if (controller.signal.aborted) return;
+      if (cached[0]) {
+        apply(cached[0].data);
+        return;
       }
-
-      if (query || filters || loadDefaultState) {
-        void loadResults(query, nextSelection, 1, false);
+      try {
+        const data = await requestShowcaseFilters(kind, controller.signal);
+        if (!isFilterData(data)) throw new Error("Invalid filters");
+        apply(data);
+        void writeCachedPage(scope, 1, data, Date.now());
+      } catch {
+        if (!controller.signal.aborted && !cached.length && !initialFiltersComplete) setFilterError("Filters are temporarily unavailable. Reconnect or reload to try again.");
       }
     };
+    void refresh();
+    return () => controller.abort();
+  }, [kind, initialFiltersComplete]);
 
-    const onPopState = () => syncFromUrl(true);
-    syncFromUrl(false);
-    window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
-  }, [loadResults, kind]);
-
-  useEffect(
-    () => () => {
-      if (searchTimer.current) clearTimeout(searchTimer.current);
-      requestId.current += 1;
-    },
-    [],
-  );
+  useEffect(() => () => {
+    lastUrlQuery.current = "";
+    if (searchTimer.current) clearTimeout(searchTimer.current);
+  }, []);
 
   const tags = selected.map((item) => (
     <button
@@ -575,6 +319,7 @@ export default function ShowcaseGallery({
                 <div className="relative mb-8 px-1">
                   <input
                     id="searchInput"
+                    maxLength={200}
                     type="text"
                     aria-label={`Search ${kind === "demos" ? "demos" : "projects"}`}
                     value={search}
@@ -599,6 +344,7 @@ export default function ShowcaseGallery({
                   {tags}
                 </div>
 
+                {filterError && <p role="status" className="mb-4 text-xs text-slate-500">{filterError}</p>}
                 <div id="filter-container" className="space-y-4 px-1">
             {filterGroups.map((group) => {
                     const expanded = openGroups.includes(group.taxonomy);
@@ -708,18 +454,20 @@ export default function ShowcaseGallery({
                       <SelectedWorkCard
                         project={project}
                         variant="showcase"
+                        demoTagNames={demoTagNames}
                       />
                     </article>
                   ))}
               {loadingMore && Array.from({ length: 10 }, (_, index) => <ShowcaseCardSkeleton key={`more-${index}`} />)}
             </SelectedWorksGrid>
 
+            {offline && <p role="status" className="mt-6 text-sm text-slate-500">You are offline. Showing saved work.</p>}
             {error ? (
               <div role="alert" className="rounded-3xl bg-slate-50 p-12 text-center text-slate-500">
                 <p>{error}</p>
                 <button
                   type="button"
-                  onClick={() => void loadResults(appliedSearch, selected, currentPage, false)}
+                  onClick={() => void loadResults(appliedSearch, selected, 1, false)}
                   className="mt-4 font-bold text-brand-light underline"
                 >
                   Try again
@@ -734,7 +482,7 @@ export default function ShowcaseGallery({
               </div>
             ) : null}
 
-            {!error && !loading && currentPage < totalPages && (
+            {!loading && currentPage < totalPages && (
               <div id="loadMoreContainer" className="mt-20 text-center">
                 <button
                   id="load-more-btn"

@@ -940,7 +940,8 @@ body {
   color: rgb(var(--rgb-white));
   overflow-x: hidden;
 }
-.hero-bg {
+.hero-bg,
+body:has(.not-found-page) .pd_header:not(.pd_sticky) {
   background:
     radial-gradient(
       circle at 10% 20%,

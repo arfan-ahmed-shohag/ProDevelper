@@ -23,14 +23,46 @@ export default function CachedServiceCards({
   cardLinkLabel: string;
   useCachedData?: boolean;
 }) {
+  if (!useCachedData) {
+    return (
+      <ServiceGridList
+        services={initialServices}
+        initialCount={initialCount}
+        cardLinkLabel={cardLinkLabel}
+        placeholderCount={initialServices.length ? 0 : initialCount}
+      />
+    );
+  }
+
+  return (
+    <BrowserCachedServiceCards
+      initialServices={initialServices}
+      initialCount={initialCount}
+      source={source}
+      cardLinkLabel={cardLinkLabel}
+    />
+  );
+}
+
+function BrowserCachedServiceCards({
+  initialServices,
+  initialCount,
+  source,
+  cardLinkLabel,
+}: {
+  initialServices: ServiceCardData[];
+  initialCount: number;
+  source: ServiceCardSource;
+  cardLinkLabel: string;
+}) {
   const loader = source === "all" ? getAllServiceCards : getFeaturedServiceCards;
   const services = useBrowserDataCache(
     `service-cards-${source}-v1`,
     initialServices,
     loader,
-    useCachedData ? undefined : 0,
+    undefined,
     false,
-    useCachedData,
+    true,
   );
 
   return (

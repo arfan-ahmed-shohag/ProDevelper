@@ -1,8 +1,9 @@
 "use server";
 
-import { cacheLife } from "next/cache";
-import { oneMonthCachePolicy } from "@/lib/cache-policy";
+import { cacheLife, cacheTag } from "next/cache";
+import { wordpressCachePolicy } from "@/lib/cache-policy";
 import { feedbackPageSize } from "@/lib/feedback";
+import { fetchWordPress } from "@/lib/wordpress";
 
 export type FeedbackResponse = {
   id: number;
@@ -31,6 +32,7 @@ function feedbackPageUrl(page: number, perPage: number) {
     orderby: "date",
     order: "desc",
     _embed: "wp:featuredmedia",
+    _fields: "id,title,content,rating,_links,_embedded.wp:featuredmedia.source_url",
   });
   return `${baseUrl}/c-feedback?${params}`;
 }
@@ -53,29 +55,26 @@ async function parseFeedbackPage(
 }
 
 async function fetchFeedbackPage(page: number, perPage: number) {
-  const res = await fetch(feedbackPageUrl(page, perPage));
+  const res = await fetchWordPress(feedbackPageUrl(page, perPage));
   return parseFeedbackPage(res, page, perPage);
 }
 
-export async function getFreshFeedbackPage(): Promise<FeedbackPageResult> {
-  const res = await fetch(feedbackPageUrl(1, feedbackPageSize), {
-    cache: "no-store",
-  });
-  return parseFeedbackPage(res, 1, feedbackPageSize);
-}
-
-export async function getFreshLatestFeedback(): Promise<{
+export async function getLatestFeedback(): Promise<{
   items: FeedbackResponse[];
   total: number;
 }> {
-  const res = await fetch(feedbackPageUrl(1, 9), { cache: "no-store" });
-  const result = await parseFeedbackPage(res, 1, 9);
+  "use cache";
+  cacheLife(wordpressCachePolicy);
+  cacheTag("wp:feedback", "wp:home:feedback");
+
+  const result = await fetchFeedbackPage(1, 9);
   return { items: result.items, total: result.total };
 }
 
 export const getFeedbackPage = async (page = 1): Promise<FeedbackPageResult> => {
   "use cache";
-  cacheLife(oneMonthCachePolicy);
+  cacheLife(wordpressCachePolicy);
+  cacheTag("wp:feedback");
   const normalizedPage = Math.max(1, Math.floor(page));
   return fetchFeedbackPage(normalizedPage, feedbackPageSize);
 };

@@ -1,6 +1,6 @@
 import StatsSection from "@/components/home/StatsSection";
 import TechnologySection from "@/components/home/TechnologySection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
+import BrowserCachedHomeData from "@/components/home/BrowserCachedHomeData";
 import PageHero from "@/components/PageHero";
 import WhyChooseUs from "@/components/about/WhyChooseUs";
 import FaqSection from "@/components/about/FaqSection";
@@ -32,7 +32,7 @@ export default function AboutUsPage() {
             />
             <TechnologySection />
             <StatsSection />
-            <TestimonialsSection />
+            <BrowserCachedHomeData showServices={false} showProjects={false} />
             <WhyChooseUs />
             <FaqSection />
         </>

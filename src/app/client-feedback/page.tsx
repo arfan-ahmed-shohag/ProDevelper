@@ -26,7 +26,7 @@ export default function ClientFeedbackPage() {
           { value: "250%", label: "Growth Boost" },
         ]}
       />
-      <ClientFeedbackGallery />
+      <ClientFeedbackGallery initialData={{ items: [], page: 1, total: 0, totalPages: 0 }} />
     </>
   );
 }
